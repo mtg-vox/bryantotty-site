@@ -5,67 +5,136 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Web Development Journey - Bryan Totty</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config = { theme: { extend: { colors: { dark: '#0a0a0a' } } } }</script>
+    <script>tailwind.config = { theme: { extend: { colors: { dark: '#050505', glow: '#c8102e' } } } }</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
 </head>
 <body class="bg-dark text-white font-['Inter'] min-h-screen">
-    <nav class="fixed top-0 w-full z-50 bg-dark/90 backdrop-blur-md border-b border-white/5">
+    <div class="grid-bg" aria-hidden="true"></div>
+    <nav class="fixed top-0 w-full z-50 bg-dark/80 backdrop-blur-xl border-b border-white/5">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/" class="text-xl font-bold tracking-tight">BRYANTOTTY</a>
-            <div class="hidden md:flex gap-8 text-sm font-medium tracking-wide">
-                <a href="/" class="text-white/60 hover:text-white transition">HOME</a>
-                <a href="../about.html" class="text-white/60 hover:text-white transition">ABOUT</a>
-                <a href="../blog.html" class="text-white/90 hover:text-white transition">BLOG</a>
-                <a href="../projects.html" class="text-white/60 hover:text-white transition">PROJECTS</a>
-                <a href="../contact.html" class="text-white/60 hover:text-white transition">CONTACT</a>
+            <a href="/" class="text-xl font-black tracking-tighter"><span class="text-white">BRYAN</span><span class="text-glow">TOTTY</span></a>
+            <div class="hidden md:flex gap-8 text-xs font-semibold tracking-[0.2em] uppercase">
+                <a href="/" class="text-white/50 hover:text-glow transition-colors">Home</a>
+                <a href="../about.html" class="text-white/50 hover:text-glow transition-colors">About</a>
+                <a href="../blog.html" class="text-white hover:text-glow transition-colors">Blog</a>
+                <a href="../projects.html" class="text-white/50 hover:text-glow transition-colors">Projects</a>
+                <a href="../contact.html" class="text-white/50 hover:text-glow transition-colors">Contact</a>
             </div>
             <button id="menu-btn" class="md:hidden text-white" aria-label="Toggle menu">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                </svg>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
             </button>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-dark/95 backdrop-blur-md">
-            <div class="flex flex-col px-6 py-4 gap-4 text-sm font-medium tracking-wide">
-                <a href="/" class="text-white/60 hover:text-white transition">HOME</a>
-                <a href="../about.html" class="text-white/60 hover:text-white transition">ABOUT</a>
-                <a href="../blog.html" class="text-white/90 hover:text-white transition">BLOG</a>
-                <a href="../projects.html" class="text-white/60 hover:text-white transition">PROJECTS</a>
-                <a href="../contact.html" class="text-white/60 hover:text-white transition">CONTACT</a>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-dark/95 backdrop-blur-xl">
+            <div class="flex flex-col px-6 py-4 gap-4 text-xs font-semibold tracking-[0.2em] uppercase">
+                <a href="/" class="text-white/50">Home</a><a href="../about.html" class="text-white/50">About</a>
+                <a href="../blog.html" class="text-white">Blog</a><a href="../projects.html" class="text-white/50">Projects</a>
+                <a href="../contact.html" class="text-white/50">Contact</a>
             </div>
         </div>
     </nav>
 
     <main class="pt-28 pb-20 px-6">
         <div class="max-w-3xl mx-auto">
-            <a href="../blog.html" class="text-white/40 hover:text-white/70 text-sm mb-6 inline-block">&larr; Back to Blog</a>
+            <a href="../blog.html" class="text-white/40 hover:text-glow text-sm mb-6 inline-block transition-colors">&larr; Back to Blog</a>
             <div class="flex items-center gap-3 mb-4">
-                <span class="text-xs text-white/40">February 12, 2023</span>
+                <span class="text-xs text-white/40 font-['JetBrains_Mono']">February 12, 2023</span>
                 <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400">Web Design</span>
             </div>
             <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-8">My Web Development Journey</h1>
-            <div class="text-white/70 leading-relaxed space-y-4">
-                <p>In this blog, I'm going to document some of my web development journey.</p>
-                <p>Content from the original Webflow blog post can be added here.</p>
+
+            <div class="text-white/70 leading-relaxed space-y-6">
+                <h3 class="text-xl font-semibold text-white/90 pt-4">My Journey</h3>
+
+                <p>Originally, I started coding html pre css in the early 90s when I was a kid just trying to explore the Interwebs. Back then, I had very limited resources and just a few books that I could access which required traveling a significant distance to get a hold of. So I just started to learn off of the few html training websites available in the early 90s and experimented with creating the most basic of websites using html only.</p>
+
+                <p>Fast forward to 2022 and I'm very interested in web3, but my daily job consists more of project and program management so I don't get my hands as dirty on a daily basis as I used to when I was a Linux engineer.</p>
+
+                <p>I have this idea where I want to start a crypto security company, but I needed to work backwards instead of just jumping into say solidity for Ethereum.</p>
+
+                <p>Html, css, and javascript are a good starting place, and then I'd recommend adding in blockchain fundamentals and object oriented languages like c++ then adding Solidity.</p>
+
+                <p>Where to start was one of my biggest challenges, but I finally came up with a curriculum which would have taken a year or two traditionally and tens of thousands of dollars, but I found a good selection of high quality courses for under $250. Well worth the investment!</p>
+
+                <ul class="list-disc list-inside space-y-2 text-white/60">
+                    <li><a href="https://www.udemy.com/course/the-complete-web-development-bootcamp/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">The Complete 2023 Web Development Bootcamp</a></li>
+                    <li><a href="https://www.udemy.com/course/beginning-c-plus-plus-programming/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">Beginning C++ Programming - From Beginner to Beyond</a></li>
+                    <li><a href="https://www.udemy.com/course/blockchain-developer/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">Ethereum Blockchain Developer Bootcamp With Solidity (2022)</a></li>
+                    <li><a href="https://www.udemy.com/course/ethereum-and-solidity-the-complete-developers-guide/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">Ethereum and Solidity: The Complete Developer's Guide</a></li>
+                    <li><a href="https://www.udemy.com/course/the-complete-javascript-course/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">The Complete JavaScript Course 2023: From Zero to Expert!</a></li>
+                </ul>
+
+                <h3 class="text-xl font-semibold text-white/90 pt-8">The History of Web Development</h3>
+
+                <p>The history of web development is closely tied to the history of the internet, as the web (short for "World Wide Web") is a vast network of interconnected documents and other resources that are accessed via the internet.</p>
+
+                <p>The first recognizable form of the modern internet can be traced back to the 1960s, when the Advanced Research Projects Agency (ARPA) developed a network called ARPANET to connect researchers at different universities and research institutions. In the 1970s, the internet began to expand beyond the research community and was opened up to commercial use.</p>
+
+                <p>In 1989, Tim Berners-Lee, a computer scientist at CERN (the European Organization for Nuclear Research), proposed a new way of organizing and accessing information on the internet. He called this system the "World Wide Web," and he developed the first web browser and server software to access it.</p>
+
+                <p>At this point, the web was still a fairly primitive system, and it was primarily used to share scientific and research information. In the 1990s, however, the web began to evolve rapidly as more and more people began to use it for a wide range of purposes.</p>
+
+                <p>During this time, web development tools and technologies also evolved quickly. In 1994, the first version of the JavaScript programming language was released, which allowed developers to create more interactive and dynamic websites. In 1996, the first version of the PHP programming language was released, which made it easier to build dynamic websites that could interact with databases.</p>
+
+                <p>In the late 1990s, the rise of e-commerce websites and the widespread adoption of broadband internet led to a surge in the demand for web development skills. This trend has continued to the present day, and web development has become a vital part of the technology industry.</p>
+
+                <p>Today, web development encompasses a wide range of activities, including web design, web content development, client-side/server-side scripting, and network security configuration. It is a rapidly evolving field, and new technologies and tools are being developed all the time.</p>
+
+                <h3 class="text-xl font-semibold text-white/90 pt-8">How to Get Started In Web Development</h3>
+
+                <p>Web development refers to the process of building and maintaining websites. It encompasses a wide range of activities, including web design, web content development, client-side/server-side scripting, and network security configuration.</p>
+
+                <p>If you are interested in getting started in web development, there are a few steps you can follow:</p>
+
+                <h4 class="text-lg font-semibold text-white/80 pt-2">1. Familiarize yourself with the basics:</h4>
+                <ul class="list-disc list-inside space-y-2 text-white/60">
+                    <li><strong class="text-white/80">HTML:</strong> HTML (HyperText Markup Language) is a standard markup language used to create web pages. It allows you to structure the content of your website, create headings, paragraphs, lists, links, and more.</li>
+                    <li><strong class="text-white/80">CSS:</strong> CSS (Cascading Style Sheets) is a style sheet language used to describe the look and formatting of a document written in HTML. It allows you to control the layout, colors, and fonts of your website.</li>
+                    <li><strong class="text-white/80">JavaScript:</strong> JavaScript is a programming language used to add interactivity to websites. It allows you to create things like drop-down menus, pop-ups, and more.</li>
+                </ul>
+
+                <h4 class="text-lg font-semibold text-white/80 pt-2">2. Choose a development environment:</h4>
+                <ul class="list-disc list-inside space-y-2 text-white/60">
+                    <li><strong class="text-white/80">Local development environment:</strong> A set of tools that allows you to build and test websites on your own computer. Some popular options include Visual Studio Code and Sublime Text.</li>
+                    <li><strong class="text-white/80">Remote development environment:</strong> A set of tools that allows you to build and test websites on a remote server. Some popular options include GitHub and GitLab.</li>
+                </ul>
+
+                <h4 class="text-lg font-semibold text-white/80 pt-2">3. Learn a server-side programming language:</h4>
+                <ul class="list-disc list-inside space-y-2 text-white/60">
+                    <li><strong class="text-white/80">PHP:</strong> A popular server-side programming language used to build dynamic websites.</li>
+                    <li><strong class="text-white/80">Ruby:</strong> A general-purpose programming language known for its simplicity and flexibility.</li>
+                    <li><strong class="text-white/80">Python:</strong> A popular programming language known for its simplicity and readability.</li>
+                </ul>
+
+                <h4 class="text-lg font-semibold text-white/80 pt-2">4. Learn a framework:</h4>
+                <ul class="list-disc list-inside space-y-2 text-white/60">
+                    <li>Django (Python)</li>
+                    <li>Ruby on Rails (Ruby)</li>
+                    <li>Laravel (PHP)</li>
+                    <li>Express.js (JavaScript)</li>
+                </ul>
+
+                <h4 class="text-lg font-semibold text-white/80 pt-2">5. Choose a database:</h4>
+                <ul class="list-disc list-inside space-y-2 text-white/60">
+                    <li><strong class="text-white/80">MySQL:</strong> A free, open-source database management system.</li>
+                    <li><strong class="text-white/80">PostgreSQL:</strong> A free, open-source object-relational database management system.</li>
+                    <li><strong class="text-white/80">MongoDB:</strong> A free, open-source NoSQL database management system.</li>
+                </ul>
+
+                <h4 class="text-lg font-semibold text-white/80 pt-2">6. Learn about version control:</h4>
+                <p>Version control is a system that tracks changes to a file or set of files over time.</p>
             </div>
-            <p class="text-white/30 text-sm mt-8">Written by Bryan Totty</p>
+
+            <p class="text-white/30 text-sm mt-12 font-['JetBrains_Mono']">Written by Bryan Totty</p>
         </div>
     </main>
 
-    <footer class="border-t border-white/5 py-8 px-6">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/40">
-            <span>&copy; 2025 Bryan Totty. All rights reserved.</span>
-            <div class="flex gap-6">
-                <a href="/" class="hover:text-white/70 transition">HOME</a>
-                <a href="../about.html" class="hover:text-white/70 transition">ABOUT</a>
-                <a href="../blog.html" class="hover:text-white/70 transition">BLOG</a>
-                <a href="../projects.html" class="hover:text-white/70 transition">PROJECTS</a>
-                <a href="../privacy.html" class="hover:text-white/70 transition">PRIVACY</a>
-                <a href="../contact.html" class="hover:text-white/70 transition">CONTACT</a>
-            </div>
+    <footer class="border-t border-white/5 py-10 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-white/30 tracking-wider">
+            <span class="font-['JetBrains_Mono']">&copy; 2025 BRYAN TOTTY</span>
+            <div class="flex gap-6 uppercase"><a href="/" class="hover:text-glow transition-colors">Home</a><a href="../about.html" class="hover:text-glow transition-colors">About</a><a href="../blog.html" class="hover:text-glow transition-colors">Blog</a><a href="../projects.html" class="hover:text-glow transition-colors">Projects</a><a href="../privacy.html" class="hover:text-glow transition-colors">Privacy</a><a href="../contact.html" class="hover:text-glow transition-colors">Contact</a></div>
         </div>
     </footer>
     <script src="../main.js"></script>

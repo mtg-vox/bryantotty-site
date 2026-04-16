@@ -5,54 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Do You Need a New Mouse and Keyboard? - Bryan Totty</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config = { theme: { extend: { colors: { dark: '#0a0a0a' } } } }</script>
+    <script>tailwind.config = { theme: { extend: { colors: { dark: '#050505', glow: '#c8102e' } } } }</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
 </head>
 <body class="bg-dark text-white font-['Inter'] min-h-screen">
-    <nav class="fixed top-0 w-full z-50 bg-dark/90 backdrop-blur-md border-b border-white/5">
+    <div class="grid-bg" aria-hidden="true"></div>
+    <nav class="fixed top-0 w-full z-50 bg-dark/80 backdrop-blur-xl border-b border-white/5">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/" class="text-xl font-bold tracking-tight">BRYANTOTTY</a>
-            <div class="hidden md:flex gap-8 text-sm font-medium tracking-wide">
-                <a href="/" class="text-white/60 hover:text-white transition">HOME</a>
-                <a href="../about.html" class="text-white/60 hover:text-white transition">ABOUT</a>
-                <a href="../blog.html" class="text-white/90 hover:text-white transition">BLOG</a>
-                <a href="../projects.html" class="text-white/60 hover:text-white transition">PROJECTS</a>
-                <a href="../contact.html" class="text-white/60 hover:text-white transition">CONTACT</a>
+            <a href="/" class="text-xl font-black tracking-tighter"><span class="text-white">BRYAN</span><span class="text-glow">TOTTY</span></a>
+            <div class="hidden md:flex gap-8 text-xs font-semibold tracking-[0.2em] uppercase">
+                <a href="/" class="text-white/50 hover:text-glow transition-colors">Home</a>
+                <a href="../about.html" class="text-white/50 hover:text-glow transition-colors">About</a>
+                <a href="../blog.html" class="text-white hover:text-glow transition-colors">Blog</a>
+                <a href="../projects.html" class="text-white/50 hover:text-glow transition-colors">Projects</a>
+                <a href="../contact.html" class="text-white/50 hover:text-glow transition-colors">Contact</a>
             </div>
             <button id="menu-btn" class="md:hidden text-white" aria-label="Toggle menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
             </button>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-dark/95 backdrop-blur-md">
-            <div class="flex flex-col px-6 py-4 gap-4 text-sm font-medium tracking-wide">
-                <a href="/" class="text-white/60">HOME</a><a href="../about.html" class="text-white/60">ABOUT</a>
-                <a href="../blog.html" class="text-white/90">BLOG</a><a href="../projects.html" class="text-white/60">PROJECTS</a>
-                <a href="../contact.html" class="text-white/60">CONTACT</a>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-dark/95 backdrop-blur-xl">
+            <div class="flex flex-col px-6 py-4 gap-4 text-xs font-semibold tracking-[0.2em] uppercase">
+                <a href="/" class="text-white/50">Home</a><a href="../about.html" class="text-white/50">About</a>
+                <a href="../blog.html" class="text-white">Blog</a><a href="../projects.html" class="text-white/50">Projects</a>
+                <a href="../contact.html" class="text-white/50">Contact</a>
             </div>
         </div>
     </nav>
+
     <main class="pt-28 pb-20 px-6">
         <div class="max-w-3xl mx-auto">
-            <a href="../blog.html" class="text-white/40 hover:text-white/70 text-sm mb-6 inline-block">&larr; Back to Blog</a>
+            <a href="../blog.html" class="text-white/40 hover:text-glow text-sm mb-6 inline-block transition-colors">&larr; Back to Blog</a>
             <div class="flex items-center gap-3 mb-4">
-                <span class="text-xs text-white/40">February 12, 2023</span>
+                <span class="text-xs text-white/40 font-['JetBrains_Mono']">February 12, 2023</span>
                 <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-green-500/10 text-green-400">Opinion</span>
             </div>
             <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-8">Do You Need a New Mouse and Keyboard?</h1>
-            <div class="text-white/70 leading-relaxed space-y-4">
-                <p>Do you need a new mouse and keyboard?</p>
-                <p>Content from the original Webflow blog post can be added here.</p>
+
+            <div class="text-white/70 leading-relaxed space-y-6">
+                <p>I highly recommend getting a high quality mouse and keyboard.</p>
+
+                <p>I've spent over 15 years working on computers for a living, and even if you're not a "technical" person like a developer or sysadmin, you will still benefit long term from having a high quality mouse and keyboard.</p>
+
+                <p>This is especially true for those who work off laptops. I don't recommend that you make it a long term habit to type and use the touchpad if you spend more than an hour a day on the laptop. You'll soon find your fingers going numb, and it's inevitable that you'll have terrible posture throughout the day. You can still use your laptop, but it's much more ergonomic to get an external mouse and keyboard and place your screen at an optimal distance.</p>
+
+                <h3 class="text-xl font-semibold text-white/90 pt-4">Wireless or wired?</h3>
+
+                <p>If you're gaming, I always recommend using wired peripherals. It seems that this is still the case even in 2020. Maybe in several years you won't be able to tell any difference, but you certainly can with current technology.</p>
+
+                <p>If you do any type of design work, I'd recommend at least having the option of plugging in and you could switch over to wireless on occasion for days you prefer more freedom of movement. For accuracy, a wired device is still better.</p>
+
+                <p>If you are a professional using a computer all day, this assumes you make some kind of decent living and have a multiple hundred or several thousand dollar computer. Having a 15 year old cheap mouse is just plain silly. If you can afford it, find and buy something high quality! Your fingers, arms, wrists, and sanity will thank you for the rest of your life!</p>
+
+                <h3 class="text-xl font-semibold text-white/90 pt-4">Do you really need high end mice and keyboards if you're not a gamer?</h3>
+
+                <p>No you don't need them, but you will certainly notice that your mouse will respond more seamlessly across the screen, and I think that matters because you'll likely use your computer for thousands or tens of thousands of hours throughout your lifetime... until these types of devices become obsolete.</p>
+
+                <p>I think most people don't realize a poor quality mouse setup inserts a sort of jitter into their mind. The cursor will skip small and inconsistent parts across the screen. Many people think this is just how mice are — it's not the case. I have no proof, but I suspect this is not good for your brain over the long term.</p>
+
+                <p>What you don't need with a "gaming mouse" or "gaming keyboard" is all of the fancy LED color configurations and other features, but you'll still benefit from reduced latency, accuracy, and typically better ergonomics and feel. Don't get me wrong, the lights are cool and can help you see in the dark, but obviously not necessary.</p>
+
+                <h3 class="text-xl font-semibold text-white/90 pt-4">Wireless Tips</h3>
+
+                <p>When using a wireless mouse, it's not recommended to use the bluetooth connection unless for temporary convenience or necessary. Bluetooth is laggy and less accurate.</p>
+
+                <p>Instead, use the 2.4G (or similar) option if your mouse has one. Of course, the best is to plug it in, but that adds back in the clunky cable feel.</p>
+
+                <p>When using a wireless keyboard, the connection speed is usually fast enough that you won't notice much difference, but older wireless keyboards may be slower or become worse over time.</p>
+
+                <h3 class="text-xl font-semibold text-white/90 pt-4">Brands I like</h3>
+
+                <p><a href="https://www.corsair.com/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline font-semibold">Corsair</a> — I have several high end mice from them. They make good long lasting and accurate products.</p>
+
+                <p><a href="https://www.logitech.com/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline font-semibold">Logitech</a> — unlike Corsair which is more targeted at high end gamers, Logitech has the full spectrum from entry level to even some products that I've seen are more expensive than Corsair (~$250 keyboard).</p>
+
+                <p><a href="https://www.apple.com/shop/mac/mac-accessories/mice-keyboards" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline font-semibold">Apple</a> also puts out pretty high quality default products, but in Apple style customization is very limited if at all available.</p>
+
+                <p>Learn the higher quality brands, instead of just relying on an Amazon search, because you can find a lot of junk that just gets pushed to the top sometimes. You also want a reputable brand which has consistent driver updates in case there is any bug, feature, or security issue.</p>
+
+                <p>Go to those manufacturers' websites to find their line of products, which can be easier to make a decision and see the options.</p>
             </div>
-            <p class="text-white/30 text-sm mt-8">Written by Bryan Totty</p>
+
+            <p class="text-white/30 text-sm mt-12 font-['JetBrains_Mono']">Written by Bryan Totty</p>
         </div>
     </main>
-    <footer class="border-t border-white/5 py-8 px-6">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/40">
-            <span>&copy; 2025 Bryan Totty. All rights reserved.</span>
-            <div class="flex gap-6"><a href="/" class="hover:text-white/70">HOME</a><a href="../about.html" class="hover:text-white/70">ABOUT</a><a href="../blog.html" class="hover:text-white/70">BLOG</a><a href="../projects.html" class="hover:text-white/70">PROJECTS</a><a href="../privacy.html" class="hover:text-white/70">PRIVACY</a><a href="../contact.html" class="hover:text-white/70">CONTACT</a></div>
+
+    <footer class="border-t border-white/5 py-10 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-white/30 tracking-wider">
+            <span class="font-['JetBrains_Mono']">&copy; 2025 BRYAN TOTTY</span>
+            <div class="flex gap-6 uppercase"><a href="/" class="hover:text-glow transition-colors">Home</a><a href="../about.html" class="hover:text-glow transition-colors">About</a><a href="../blog.html" class="hover:text-glow transition-colors">Blog</a><a href="../projects.html" class="hover:text-glow transition-colors">Projects</a><a href="../privacy.html" class="hover:text-glow transition-colors">Privacy</a><a href="../contact.html" class="hover:text-glow transition-colors">Contact</a></div>
         </div>
     </footer>
     <script src="../main.js"></script>

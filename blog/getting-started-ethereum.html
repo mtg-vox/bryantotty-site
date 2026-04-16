@@ -5,54 +5,170 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Getting Started on Ethereum - Bryan Totty</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config = { theme: { extend: { colors: { dark: '#0a0a0a' } } } }</script>
+    <script>tailwind.config = { theme: { extend: { colors: { dark: '#050505', glow: '#c8102e' } } } }</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
 </head>
 <body class="bg-dark text-white font-['Inter'] min-h-screen">
-    <nav class="fixed top-0 w-full z-50 bg-dark/90 backdrop-blur-md border-b border-white/5">
+    <div class="grid-bg" aria-hidden="true"></div>
+    <nav class="fixed top-0 w-full z-50 bg-dark/80 backdrop-blur-xl border-b border-white/5">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/" class="text-xl font-bold tracking-tight">BRYANTOTTY</a>
-            <div class="hidden md:flex gap-8 text-sm font-medium tracking-wide">
-                <a href="/" class="text-white/60 hover:text-white transition">HOME</a>
-                <a href="../about.html" class="text-white/60 hover:text-white transition">ABOUT</a>
-                <a href="../blog.html" class="text-white/90 hover:text-white transition">BLOG</a>
-                <a href="../projects.html" class="text-white/60 hover:text-white transition">PROJECTS</a>
-                <a href="../contact.html" class="text-white/60 hover:text-white transition">CONTACT</a>
+            <a href="/" class="text-xl font-black tracking-tighter"><span class="text-white">BRYAN</span><span class="text-glow">TOTTY</span></a>
+            <div class="hidden md:flex gap-8 text-xs font-semibold tracking-[0.2em] uppercase">
+                <a href="/" class="text-white/50 hover:text-glow transition-colors">Home</a>
+                <a href="../about.html" class="text-white/50 hover:text-glow transition-colors">About</a>
+                <a href="../blog.html" class="text-white hover:text-glow transition-colors">Blog</a>
+                <a href="../projects.html" class="text-white/50 hover:text-glow transition-colors">Projects</a>
+                <a href="../contact.html" class="text-white/50 hover:text-glow transition-colors">Contact</a>
             </div>
             <button id="menu-btn" class="md:hidden text-white" aria-label="Toggle menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
             </button>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-dark/95 backdrop-blur-md">
-            <div class="flex flex-col px-6 py-4 gap-4 text-sm font-medium tracking-wide">
-                <a href="/" class="text-white/60">HOME</a><a href="../about.html" class="text-white/60">ABOUT</a>
-                <a href="../blog.html" class="text-white/90">BLOG</a><a href="../projects.html" class="text-white/60">PROJECTS</a>
-                <a href="../contact.html" class="text-white/60">CONTACT</a>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-dark/95 backdrop-blur-xl">
+            <div class="flex flex-col px-6 py-4 gap-4 text-xs font-semibold tracking-[0.2em] uppercase">
+                <a href="/" class="text-white/50">Home</a><a href="../about.html" class="text-white/50">About</a>
+                <a href="../blog.html" class="text-white">Blog</a><a href="../projects.html" class="text-white/50">Projects</a>
+                <a href="../contact.html" class="text-white/50">Contact</a>
             </div>
         </div>
     </nav>
+
     <main class="pt-28 pb-20 px-6">
         <div class="max-w-3xl mx-auto">
-            <a href="../blog.html" class="text-white/40 hover:text-white/70 text-sm mb-6 inline-block">&larr; Back to Blog</a>
+            <a href="../blog.html" class="text-white/40 hover:text-glow text-sm mb-6 inline-block transition-colors">&larr; Back to Blog</a>
             <div class="flex items-center gap-3 mb-4">
-                <span class="text-xs text-white/40">February 12, 2023</span>
+                <span class="text-xs text-white/40 font-['JetBrains_Mono']">February 12, 2023</span>
                 <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-purple-500/10 text-purple-400">Crypto</span>
             </div>
-            <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-8">Getting Started on Ethereum</h1>
-            <div class="text-white/70 leading-relaxed space-y-4">
-                <p>An in progress worksheet on some notes for my journey of getting started in Ethereum development.</p>
-                <p>Content from the original Webflow blog post can be added here.</p>
+            <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-8">Getting Started on Ethereum (In Progress...)</h1>
+
+            <div class="text-white/70 leading-relaxed space-y-6">
+                <p class="italic text-white/50">*This document won't be maintained as the ecosystem is frequently changing but some scratch notes of mine..*</p>
+
+                <h3 class="text-xl font-semibold text-white/90 pt-4">So you want to be a Blockchain developer?</h3>
+
+                <p><a href="https://tr3y.io/articles/crypto/how2bloccchain.html" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">https://tr3y.io/articles/crypto/how2bloccchain.html</a></p>
+
+                <h4 class="text-lg font-semibold text-white/80 pt-2">What do blockchain developers commonly work with?</h4>
+                <ul class="list-disc list-inside space-y-1 text-white/60">
+                    <li>Work with blockchains</li>
+                    <li>Smart Contracts</li>
+                    <li>Work with Solidity</li>
+                    <li>Work with Truffle</li>
+                    <li>Web3</li>
+                    <li>React.js</li>
+                </ul>
+
+                <h4 class="text-lg font-semibold text-white/80 pt-4">Timeframe (aggressive if you have some development / technical background)</h4>
+                <p>10-20hrs a week of focused study.</p>
+                <ul class="list-disc list-inside space-y-1 text-white/60">
+                    <li>1-3 months you may get work for small nft project or rug erc20 projects (your choice)</li>
+                    <li>3-6 months small funded startup (more legitimate projects)</li>
+                    <li>6-12 months probably a larger / midsize company (legitimate business)</li>
+                </ul>
+
+                <h4 class="text-lg font-semibold text-white/80 pt-4">Crypto Devs Community on Discord (highly recommend to join)</h4>
+                <p class="italic text-white/50">*Watch for scams in DMs*</p>
+                <ul class="list-disc list-inside space-y-1 text-white/60">
+                    <li>Crypto Devs</li>
+                    <li><a href="https://discord.gg/AQ96PSkcrV" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">https://discord.gg/AQ96PSkcrV</a></li>
+                </ul>
+
+                <h3 class="text-xl font-semibold text-white/90 pt-8">Online Training</h3>
+                <p>Good but less brand recognition for larger companies. This will get you up to speed quicker, but bigger companies may need more proof of your knowledge.</p>
+
+                <h4 class="text-lg font-semibold text-white/80 pt-4">Core Fundamentals of Blockchain and Ethereum</h4>
+                <ul class="list-disc list-inside space-y-2 text-white/60">
+                    <li>Build an Ethereum Blockchain App — <a href="https://www.linkedin.com/learning/paths/build-an-ethereum-blockchain-app" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">LinkedIn Learning Path</a></li>
+                    <li>Udemy - <a href="https://www.udemy.com/course/ethereum-and-solidity-the-complete-developers-guide/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">Ethereum and Solidity: The Complete Developer's Guide</a> - $21.99</li>
+                    <li>Udemy - <a href="https://www.udemy.com/course/blockchain-for-business-the-new-industrial-revolution/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">Blockchain for Business: The New Industrial Revolution</a> (Non-dev)</li>
+                    <li>Udemy - <a href="https://www.udemy.com/course/blockchain-developer/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">Ethereum Blockchain Developer Bootcamp With Solidity (2022)</a></li>
+                    <li><a href="https://www.coursera.org/courses?query=ethereum" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">Coursera Ethereum courses</a></li>
+                    <li>Udacity - <a href="https://www.udacity.com/course/blockchain-developer-nanodegree--nd1309" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">Become a Blockchain Developer</a> - $1356 (requires prerequisites)</li>
+                </ul>
+
+                <h3 class="text-xl font-semibold text-white/90 pt-8">Traditional / Fast Track University Training</h3>
+                <p>More traditional but fast track route training from well known universities. These are blockchain, but are geared towards the FinTech route.</p>
+                <ul class="list-disc list-inside space-y-2 text-white/60">
+                    <li><a href="https://bootcamp.cvn.columbia.edu/fintech/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">Columbia Engineering FinTech Boot Camp</a> - 24 weeks - $12k - technical</li>
+                    <li><a href="https://oxford.esmelearning.com/products/oxford-blockchain-strategy" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">Oxford Blockchain Strategy</a> - 6 weeks - $3.5k - high level, not developer</li>
+                    <li><a href="https://bootcamp.rutgers.edu/fintech/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">Rutgers FinTech Bootcamp</a> - 24 weeks - $13k - technical</li>
+                    <li><a href="https://bootcamp.berkeley.edu/fintech/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">Berkeley FinTech Boot Camp</a></li>
+                </ul>
+
+                <h3 class="text-xl font-semibold text-white/90 pt-8">Solidity (Ethereum) Training</h3>
+                <ul class="list-disc list-inside space-y-2 text-white/60">
+                    <li><a href="https://youtu.be/ipwxYa-F1uY" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">Solidity Tutorial - Full Course on Ethereum, Blockchain Development, Smart Contracts, and the EVM</a> - 2 hrs (Free)</li>
+                </ul>
+
+                <h3 class="text-xl font-semibold text-white/90 pt-8">How to get started with blockchain — Quote from a Dev</h3>
+
+                <blockquote class="border-l-2 border-glow/30 pl-4 text-white/50 italic">
+                    <p>"You should start with Solidity. Remix is pretty popular. People use Hardhat as well but I prefer Remix. <a href="https://remix.ethereum.org/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">remix.ethereum.org</a></p>
+                    <p class="mt-2">Also if you're going to be doing web3 functions you should get caught up on Linux servers, so you'll know how to deploy the web3 on the backend.</p>
+                    <p class="mt-2">There is a test network both for Polygon and Ethereum so you can make free contracts with those. Just Google the stuff.</p>
+                    <p class="mt-2">Although I will admit learning material is slim on Google on this stuff right now as new it is.</p>
+                    <p class="mt-2">In order to access web3 and set it up ON LINUX, first you must build an Ethereum node, or go to quicknodes.com and get a membership. They have a free option with limited calls so you can learn and get started but if you have the means it's best to run your own node."</p>
+                </blockquote>
+
+                <h3 class="text-xl font-semibold text-white/90 pt-8">Install Ethereum Development Setup (test env)</h3>
+                <p>Follow along a free training video: <a href="https://www.youtube.com/watch?v=XLahq4qyors&list=PLzGB3STNnvdESHeoaCx37XZ_ZmoMKJ4rn&index=5" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">YouTube tutorial</a></p>
+
+                <p>In my case, I installed Fedora in a VM using Parallels on macOS:</p>
+                <ul class="list-disc list-inside space-y-1 text-white/60">
+                    <li>Install Parallels — smoothest onboarding</li>
+                    <li>I had major performance issues using VirtualBox, even after installing VBox Tools</li>
+                    <li>Install Fedora from quick menu</li>
+                    <li>Install dependencies from <a href="https://www.ethdocs.org/en/latest/ethereum-clients/cpp-ethereum/building-from-source/linux.html" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">ethdocs.org</a></li>
+                </ul>
+
+                <div class="bg-white/[0.03] border border-white/10 rounded-lg p-4 my-4 font-['JetBrains_Mono'] text-xs text-white/50 overflow-x-auto">
+                    <pre>git clone --recursive https://github.com/ethereum/cpp-ethereum.git
+cd cpp-ethereum
+dnf install boost-devel leveldb-devel curl-devel libmicrohttpd-devel miniupnpc-devel gmp-devel</pre>
+                </div>
+
+                <p>Install Truffle via Snap:</p>
+                <div class="bg-white/[0.03] border border-white/10 rounded-lg p-4 my-4 font-['JetBrains_Mono'] text-xs text-white/50 overflow-x-auto">
+                    <pre>sudo dnf install snapd
+sudo ln -s /var/lib/snapd/snap /snap
+# Reboot
+sudo snap install truffle --beta</pre>
+                </div>
+
+                <p>Download and run <a href="https://next-stack.github.io/ganache/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">Ganache</a>, install Sublime Text, add Ethereum/Solidity syntax highlighting, then:</p>
+                <div class="bg-white/[0.03] border border-white/10 rounded-lg p-4 my-4 font-['JetBrains_Mono'] text-xs text-white/50 overflow-x-auto">
+                    <pre>npm install
+npm install solc
+sudo npm install -g truffle@5.1.39
+sudo npm install solc-js@0.5.0
+truffle version</pre>
+                </div>
+
+                <p class="text-white/50 italic">Important: If you have issues when you try to "truffle compile" — check the versions, reboot, and if still broken, uninstall and reinstall truffle and solc globally.</p>
+
+                <h3 class="text-xl font-semibold text-white/90 pt-8">Study Fundamentals</h3>
+                <ul class="list-disc list-inside space-y-2 text-white/60">
+                    <li><a href="https://solidity-by-example.org/first-app/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">Solidity by Example</a></li>
+                    <li><a href="https://ethernaut.openzeppelin.com/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">Ethernaut (OpenZeppelin)</a></li>
+                    <li><a href="https://101blockchains.com/become-ethereum-developer/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">101 Blockchains - Become an Ethereum Developer</a></li>
+                    <li><a href="https://ethereum-blockchain-developer.com/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">Ethereum Blockchain Developer</a> — setting up MetaMask and Remix test env</li>
+                </ul>
+
+                <p class="mt-4 text-white/50 italic">Topics to study: Consensus algorithms, Smart contracts, Transactions/Gas/Prices, Incentives for miners and security, Proof of Work vs Proof of Stake, Token standards, Sharding.</p>
             </div>
-            <p class="text-white/30 text-sm mt-8">Written by Bryan Totty</p>
+
+            <p class="text-white/30 text-sm mt-12 font-['JetBrains_Mono']">Written by Bryan Totty</p>
         </div>
     </main>
-    <footer class="border-t border-white/5 py-8 px-6">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/40">
-            <span>&copy; 2025 Bryan Totty. All rights reserved.</span>
-            <div class="flex gap-6"><a href="/" class="hover:text-white/70">HOME</a><a href="../about.html" class="hover:text-white/70">ABOUT</a><a href="../blog.html" class="hover:text-white/70">BLOG</a><a href="../projects.html" class="hover:text-white/70">PROJECTS</a><a href="../privacy.html" class="hover:text-white/70">PRIVACY</a><a href="../contact.html" class="hover:text-white/70">CONTACT</a></div>
+
+    <footer class="border-t border-white/5 py-10 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-white/30 tracking-wider">
+            <span class="font-['JetBrains_Mono']">&copy; 2025 BRYAN TOTTY</span>
+            <div class="flex gap-6 uppercase"><a href="/" class="hover:text-glow transition-colors">Home</a><a href="../about.html" class="hover:text-glow transition-colors">About</a><a href="../blog.html" class="hover:text-glow transition-colors">Blog</a><a href="../projects.html" class="hover:text-glow transition-colors">Projects</a><a href="../privacy.html" class="hover:text-glow transition-colors">Privacy</a><a href="../contact.html" class="hover:text-glow transition-colors">Contact</a></div>
         </div>
     </footer>
     <script src="../main.js"></script>

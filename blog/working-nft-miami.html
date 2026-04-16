@@ -5,54 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Working Miami NFT Week - Bryan Totty</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config = { theme: { extend: { colors: { dark: '#0a0a0a' } } } }</script>
+    <script>tailwind.config = { theme: { extend: { colors: { dark: '#050505', glow: '#c8102e' } } } }</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
 </head>
 <body class="bg-dark text-white font-['Inter'] min-h-screen">
-    <nav class="fixed top-0 w-full z-50 bg-dark/90 backdrop-blur-md border-b border-white/5">
+    <div class="grid-bg" aria-hidden="true"></div>
+    <nav class="fixed top-0 w-full z-50 bg-dark/80 backdrop-blur-xl border-b border-white/5">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/" class="text-xl font-bold tracking-tight">BRYANTOTTY</a>
-            <div class="hidden md:flex gap-8 text-sm font-medium tracking-wide">
-                <a href="/" class="text-white/60 hover:text-white transition">HOME</a>
-                <a href="../about.html" class="text-white/60 hover:text-white transition">ABOUT</a>
-                <a href="../blog.html" class="text-white/90 hover:text-white transition">BLOG</a>
-                <a href="../projects.html" class="text-white/60 hover:text-white transition">PROJECTS</a>
-                <a href="../contact.html" class="text-white/60 hover:text-white transition">CONTACT</a>
+            <a href="/" class="text-xl font-black tracking-tighter"><span class="text-white">BRYAN</span><span class="text-glow">TOTTY</span></a>
+            <div class="hidden md:flex gap-8 text-xs font-semibold tracking-[0.2em] uppercase">
+                <a href="/" class="text-white/50 hover:text-glow transition-colors">Home</a>
+                <a href="../about.html" class="text-white/50 hover:text-glow transition-colors">About</a>
+                <a href="../blog.html" class="text-white hover:text-glow transition-colors">Blog</a>
+                <a href="../projects.html" class="text-white/50 hover:text-glow transition-colors">Projects</a>
+                <a href="../contact.html" class="text-white/50 hover:text-glow transition-colors">Contact</a>
             </div>
             <button id="menu-btn" class="md:hidden text-white" aria-label="Toggle menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
             </button>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-dark/95 backdrop-blur-md">
-            <div class="flex flex-col px-6 py-4 gap-4 text-sm font-medium tracking-wide">
-                <a href="/" class="text-white/60">HOME</a><a href="../about.html" class="text-white/60">ABOUT</a>
-                <a href="../blog.html" class="text-white/90">BLOG</a><a href="../projects.html" class="text-white/60">PROJECTS</a>
-                <a href="../contact.html" class="text-white/60">CONTACT</a>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-dark/95 backdrop-blur-xl">
+            <div class="flex flex-col px-6 py-4 gap-4 text-xs font-semibold tracking-[0.2em] uppercase">
+                <a href="/" class="text-white/50">Home</a><a href="../about.html" class="text-white/50">About</a>
+                <a href="../blog.html" class="text-white">Blog</a><a href="../projects.html" class="text-white/50">Projects</a>
+                <a href="../contact.html" class="text-white/50">Contact</a>
             </div>
         </div>
     </nav>
+
     <main class="pt-28 pb-20 px-6">
         <div class="max-w-3xl mx-auto">
-            <a href="../blog.html" class="text-white/40 hover:text-white/70 text-sm mb-6 inline-block">&larr; Back to Blog</a>
+            <a href="../blog.html" class="text-white/40 hover:text-glow text-sm mb-6 inline-block transition-colors">&larr; Back to Blog</a>
             <div class="flex items-center gap-3 mb-4">
-                <span class="text-xs text-white/40">February 12, 2023</span>
+                <span class="text-xs text-white/40 font-['JetBrains_Mono']">February 12, 2023</span>
                 <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-purple-500/10 text-purple-400">Crypto</span>
             </div>
             <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-8">Working Miami NFT Week</h1>
-            <div class="text-white/70 leading-relaxed space-y-4">
+
+            <div class="text-white/70 leading-relaxed space-y-6">
                 <p>I had the honor to work the first ever Miami NFT Week event in Miami, FL 2022. During this experience I made contacts internal to the event and with many of the attendees and speakers.</p>
-                <p>Content from the original Webflow blog post can be added here.</p>
+
+                <p>There were thousands of people who attended the event at the Mana Wynwood convention center this year. The event officially kicked off tech week in Miami and started the huge amount of other events that were about to come after. Some include Bitcoin and Shitcoin.</p>
+
+                <p>The event was very artistic and fitting for the Wynwood, Miami art district. You could see vans driving by with fullscreen flashing advertisements of NFT projects and beautiful artwork throughout the entire event.</p>
+
+                <img src="https://cdn.prod.website-files.com/5be383373ed8f33c3d5afd00/6248d2f466804ad4343dbbe3_Miami%20NFT%20Week%20Logo-2.jpg" alt="Miami NFT Week" class="rounded-lg w-full my-8" loading="lazy">
+
+                <p>The future of the NFT space is vast. The conference mostly focused on the art perspective and image use cases for NFTs, but there are numerous other use cases that will be built out over time. For example, we are starting to see NFTs moving into real estate utilizing their proof of ownership capabilities. We have also seen use cases that use the NFTs for access to events and function as tickets, but the improvement over a traditional ticket is that you can add on features in the future and have a stronger relationship interaction with your end customer.</p>
+
+                <img src="https://cdn.prod.website-files.com/5be383373ed8f33c3d5afd00/624898ed84e7af1a36145cf4_Miami%20NFT%20Week%20Setup.jpg" alt="Miami NFT Week Main Stage" class="rounded-lg w-full my-8" loading="lazy">
+
+                <p>The main stage setup was lit up with multiple projectors and professional video and audio equipment in true Miami style and color scheme.</p>
+
+                <p>NFTs are also being used for Decentralized Autonomous Organizations (DAOs) in ways that may reward or track contribution or membership. The resounding focus that I heard to make these NFT projects successful was around building initial community. It was brought up several times that it is often better to focus on building your community first before you put on a technological solution without thinking through the long term consequences.</p>
+
+                <img src="https://cdn.prod.website-files.com/5be383373ed8f33c3d5afd00/6248ca1164fc5135db884046_Miami%20NFT%20Week%20Venue.jpg" alt="Miami NFT Week setting up main stage" class="rounded-lg w-full my-8" loading="lazy">
+
+                <p>The staff was onsite to setup every detail before the event started and help with anything during the event.</p>
+
+                <p>Musicians also have another potential strong use case for NFTs so that artists can get more direct contact with their fans and work to increase their revenue streams by cutting out the middle man. The musicians can decide on what logic they want programmed into their NFT smart contract and provide early access to content, access to unreleased content, event VIP access, or anything else they'd wish to provide to their fans.</p>
+
+                <img src="https://cdn.prod.website-files.com/5be383373ed8f33c3d5afd00/6248d72008b25a13c8bb93d4_NFT%20Miami%20Profile.jpg" alt="Miami NFT Week Bryan Totty" class="rounded-lg w-full my-8" loading="lazy">
+
+                <p>I spent time working the VIP tent where French Montana and Wyclef Jean held a special meet and greet for the Degen VIP ticket holders.</p>
+
+                <p><a href="https://miaminftweek.com/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">miaminftweek.com</a></p>
             </div>
-            <p class="text-white/30 text-sm mt-8">Written by Bryan Totty</p>
+
+            <p class="text-white/30 text-sm mt-12 font-['JetBrains_Mono']">Written by Bryan Totty</p>
         </div>
     </main>
-    <footer class="border-t border-white/5 py-8 px-6">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/40">
-            <span>&copy; 2025 Bryan Totty. All rights reserved.</span>
-            <div class="flex gap-6"><a href="/" class="hover:text-white/70">HOME</a><a href="../about.html" class="hover:text-white/70">ABOUT</a><a href="../blog.html" class="hover:text-white/70">BLOG</a><a href="../projects.html" class="hover:text-white/70">PROJECTS</a><a href="../privacy.html" class="hover:text-white/70">PRIVACY</a><a href="../contact.html" class="hover:text-white/70">CONTACT</a></div>
+
+    <footer class="border-t border-white/5 py-10 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-white/30 tracking-wider">
+            <span class="font-['JetBrains_Mono']">&copy; 2025 BRYAN TOTTY</span>
+            <div class="flex gap-6 uppercase"><a href="/" class="hover:text-glow transition-colors">Home</a><a href="../about.html" class="hover:text-glow transition-colors">About</a><a href="../blog.html" class="hover:text-glow transition-colors">Blog</a><a href="../projects.html" class="hover:text-glow transition-colors">Projects</a><a href="../privacy.html" class="hover:text-glow transition-colors">Privacy</a><a href="../contact.html" class="hover:text-glow transition-colors">Contact</a></div>
         </div>
     </footer>
     <script src="../main.js"></script>

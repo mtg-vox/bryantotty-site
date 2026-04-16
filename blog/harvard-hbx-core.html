@@ -5,54 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How Difficult is Harvard's HBX CORe Program? - Bryan Totty</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config = { theme: { extend: { colors: { dark: '#0a0a0a' } } } }</script>
+    <script>tailwind.config = { theme: { extend: { colors: { dark: '#050505', glow: '#c8102e' } } } }</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
 </head>
 <body class="bg-dark text-white font-['Inter'] min-h-screen">
-    <nav class="fixed top-0 w-full z-50 bg-dark/90 backdrop-blur-md border-b border-white/5">
+    <div class="grid-bg" aria-hidden="true"></div>
+    <nav class="fixed top-0 w-full z-50 bg-dark/80 backdrop-blur-xl border-b border-white/5">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/" class="text-xl font-bold tracking-tight">BRYANTOTTY</a>
-            <div class="hidden md:flex gap-8 text-sm font-medium tracking-wide">
-                <a href="/" class="text-white/60 hover:text-white transition">HOME</a>
-                <a href="../about.html" class="text-white/60 hover:text-white transition">ABOUT</a>
-                <a href="../blog.html" class="text-white/90 hover:text-white transition">BLOG</a>
-                <a href="../projects.html" class="text-white/60 hover:text-white transition">PROJECTS</a>
-                <a href="../contact.html" class="text-white/60 hover:text-white transition">CONTACT</a>
+            <a href="/" class="text-xl font-black tracking-tighter"><span class="text-white">BRYAN</span><span class="text-glow">TOTTY</span></a>
+            <div class="hidden md:flex gap-8 text-xs font-semibold tracking-[0.2em] uppercase">
+                <a href="/" class="text-white/50 hover:text-glow transition-colors">Home</a>
+                <a href="../about.html" class="text-white/50 hover:text-glow transition-colors">About</a>
+                <a href="../blog.html" class="text-white hover:text-glow transition-colors">Blog</a>
+                <a href="../projects.html" class="text-white/50 hover:text-glow transition-colors">Projects</a>
+                <a href="../contact.html" class="text-white/50 hover:text-glow transition-colors">Contact</a>
             </div>
             <button id="menu-btn" class="md:hidden text-white" aria-label="Toggle menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
             </button>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-dark/95 backdrop-blur-md">
-            <div class="flex flex-col px-6 py-4 gap-4 text-sm font-medium tracking-wide">
-                <a href="/" class="text-white/60">HOME</a><a href="../about.html" class="text-white/60">ABOUT</a>
-                <a href="../blog.html" class="text-white/90">BLOG</a><a href="../projects.html" class="text-white/60">PROJECTS</a>
-                <a href="../contact.html" class="text-white/60">CONTACT</a>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-dark/95 backdrop-blur-xl">
+            <div class="flex flex-col px-6 py-4 gap-4 text-xs font-semibold tracking-[0.2em] uppercase">
+                <a href="/" class="text-white/50">Home</a><a href="../about.html" class="text-white/50">About</a>
+                <a href="../blog.html" class="text-white">Blog</a><a href="../projects.html" class="text-white/50">Projects</a>
+                <a href="../contact.html" class="text-white/50">Contact</a>
             </div>
         </div>
     </nav>
+
     <main class="pt-28 pb-20 px-6">
         <div class="max-w-3xl mx-auto">
-            <a href="../blog.html" class="text-white/40 hover:text-white/70 text-sm mb-6 inline-block">&larr; Back to Blog</a>
+            <a href="../blog.html" class="text-white/40 hover:text-glow text-sm mb-6 inline-block transition-colors">&larr; Back to Blog</a>
             <div class="flex items-center gap-3 mb-4">
-                <span class="text-xs text-white/40">February 12, 2023</span>
+                <span class="text-xs text-white/40 font-['JetBrains_Mono']">February 12, 2023</span>
                 <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-yellow-500/10 text-yellow-400">Business</span>
             </div>
             <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-8">How Difficult is Harvard's HBX CORe Program?</h1>
-            <div class="text-white/70 leading-relaxed space-y-4">
-                <p>Harvard's program is comprised of three courses: Business Analytics, Economics for Managers, and Financial Accounting.</p>
-                <p>Content from the original Webflow blog post can be added here.</p>
+
+            <div class="text-white/70 leading-relaxed space-y-6">
+                <p>I found the program to be challenging, and I come from a mix of technology and business backgrounds. My formal bachelor's degree was from East Carolina University (ECU) in Industrial Technology with a focus on Information Security and Management. I also have two years of formal Program Management experience in the Information Security field at Red Hat.</p>
+
+                <p>The interactive web interface is a nice touch and deviation from the online Blackboard website that so many universities rely on. I don't dislike Blackboard, just the uniqueness of Universities and classes can get lost. Harvard has designed, or likely contracted the design of a nice and interactive website. Although, while attending the class during spring of 2018 there was a maintenance cycle of 8 hours where updates were performed. The updates resulted in a large performance loss and they had to either back out the changes or make additional fixes 2 days later.</p>
+
+                <p>In the program, you will find yourself watching pre-recorded videos of the 3 instructors and their case studies. The case studies are a nice touch, where video is taken onsite at a company like Amazon or PepsiCo. A specific topic or overall module is then related to the onsite video. Typically, the people interviewed are high ranking within the organization and provide significant insight.</p>
+
+                <p>The prerequisites for the HBX CORe program are minimal, and I have heard that as high as 95% of people who apply are accepted. Basically, if you utterly fail to follow the submission guidelines. Now, here is my main gripe and concern. Some may argue that this could devalue Harvard Business School (HBX), but it does not if you understand how challenging that the program is. Simply because you accept a lot of students does not mean that a lot of students will be able to pass the program. There are not set grades that are provided by the program on how you will pass or not, but percentages are given to allow you to know what to focus on. For example, focus your time and effort most on the end of module exams and of course the final exam. Also, participation is a key part, but a lesser percentage of the grade. You won't see your cumulative grade added up like you might expect if you come from a Blackboard environment. Although, you will have access to see the scores you received from the previous modules.</p>
+
+                <p>In general, I think that the program needs clarification on the prerequisite skills. Much of the courses are math and logic driven. They are by no means advanced mathematics, but it would help greatly if you are fresh out of Algebra, Calculus, and Statistics. For myself, it had been a minimum of 6 years since I had taken a math class, and this proved to put me at a disadvantage. I was able to come up to speed and dig deep within my mind to pull out those (oh yeah!) moments, but they extended my hours per week. The course claims an average of 15 hours per week. Unless you are fresh out of a bachelor's degree or exceptionally gifted, then I'd suggest 20-25 hours a week in order to pass the module exams.</p>
+
+                <p>Don't be discouraged if you do not pass the module exams or don't receive as high of a grade as you are accustomed to. They are quite challenging and are tricky. If at any moment you immediately think, "oh yeah" this one is easy... Stop, and reread the question, possibly several times. Many of those moments caused me to miss obvious questions. The courses are designed to make you think deep. They are not simply designed to cause you to memorize material, and that won't work. You really need to understand material because you should not expect that the example that you receive in a module review will be the same as the one on the module final. Typically, you might see something familiar and then they'll throw a curve ball at you that will make you want to scream "I knew the answer until you added this obscure exception to the rule!"</p>
+
+                <p>Regardless, the program is worthwhile, and you will get your money's worth if you stick with it. You will be challenged. Per my understanding, the pass/fail/honors/great honors are determined on a percentage compared to your cohort (classmates). So, just do the best that you are capable of and you will at least learn valuable insight along the way.</p>
             </div>
-            <p class="text-white/30 text-sm mt-8">Written by Bryan Totty</p>
+
+            <p class="text-white/30 text-sm mt-12 font-['JetBrains_Mono']">Written by Bryan Totty</p>
         </div>
     </main>
-    <footer class="border-t border-white/5 py-8 px-6">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/40">
-            <span>&copy; 2025 Bryan Totty. All rights reserved.</span>
-            <div class="flex gap-6"><a href="/" class="hover:text-white/70">HOME</a><a href="../about.html" class="hover:text-white/70">ABOUT</a><a href="../blog.html" class="hover:text-white/70">BLOG</a><a href="../projects.html" class="hover:text-white/70">PROJECTS</a><a href="../privacy.html" class="hover:text-white/70">PRIVACY</a><a href="../contact.html" class="hover:text-white/70">CONTACT</a></div>
+
+    <footer class="border-t border-white/5 py-10 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-white/30 tracking-wider">
+            <span class="font-['JetBrains_Mono']">&copy; 2025 BRYAN TOTTY</span>
+            <div class="flex gap-6 uppercase"><a href="/" class="hover:text-glow transition-colors">Home</a><a href="../about.html" class="hover:text-glow transition-colors">About</a><a href="../blog.html" class="hover:text-glow transition-colors">Blog</a><a href="../projects.html" class="hover:text-glow transition-colors">Projects</a><a href="../privacy.html" class="hover:text-glow transition-colors">Privacy</a><a href="../contact.html" class="hover:text-glow transition-colors">Contact</a></div>
         </div>
     </footer>
     <script src="../main.js"></script>
