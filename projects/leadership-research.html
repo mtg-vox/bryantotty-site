@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrial Supervision Field Research - Bryan Totty</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { dark: '#050505', glow: '#c8102e' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="bg-dark text-white font-['Inter'] min-h-screen">
+    <div class="grid-bg" aria-hidden="true"></div>
+    <nav class="fixed top-0 w-full z-50 bg-dark/80 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-xl font-black tracking-tighter"><span class="text-white">BRYAN</span><span class="text-glow">TOTTY</span></a>
+            <div class="hidden md:flex gap-8 text-xs font-semibold tracking-[0.2em] uppercase">
+                <a href="/" class="text-white/50 hover:text-glow transition-colors">Home</a>
+                <a href="../about.html" class="text-white/50 hover:text-glow transition-colors">About</a>
+                <a href="../blog.html" class="text-white/50 hover:text-glow transition-colors">Blog</a>
+                <a href="../projects.html" class="text-white hover:text-glow transition-colors">Projects</a>
+                <a href="../contact.html" class="text-white/50 hover:text-glow transition-colors">Contact</a>
+            </div>
+            <button id="menu-btn" class="md:hidden text-white" aria-label="Toggle menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-dark/95 backdrop-blur-xl">
+            <div class="flex flex-col px-6 py-4 gap-4 text-xs font-semibold tracking-[0.2em] uppercase">
+                <a href="/" class="text-white/50">Home</a><a href="../about.html" class="text-white/50">About</a>
+                <a href="../blog.html" class="text-white/50">Blog</a><a href="../projects.html" class="text-white">Projects</a>
+                <a href="../contact.html" class="text-white/50">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-28 pb-20 px-6">
+        <div class="max-w-3xl mx-auto">
+            <a href="../projects.html" class="text-white/40 hover:text-glow text-sm mb-6 inline-block transition-colors">&larr; Back to Projects</a>
+            <div class="mb-4">
+                <span class="text-xs font-medium px-2 py-0.5 rounded bg-yellow-500/10 text-yellow-400 font-['JetBrains_Mono'] tracking-wider">PAPERS</span>
+            </div>
+            <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-8">Industrial Supervision Field Research on Leadership and Management</h1>
+
+            <div class="text-white/70 leading-relaxed space-y-6">
+                <h2 class="text-xl font-semibold text-white/90 border-l-2 border-yellow-400/30 pl-4">Abstract</h2>
+                <p>This paper covers both leadership and management for various technology based fields. The differences between leadership and management are explained along with the ways that these roles integrate into the industry. A firsthand look is researched by interviewing a professional in the field with extensive experience in both areas. Educational importance and relevance is also examined for today's technological industry to understand how educational factors impact careers in technology based fields. Each topic is designed to translate into advice and experience that is valuable for the corporate market of today's technology standards.</p>
+
+                <h2 class="text-xl font-semibold text-white/90 border-l-2 border-yellow-400/30 pl-4 pt-6">Leadership vs. Management</h2>
+                <p>Leadership and management are powerful business skills for the technology field. The pace of technological advancement is quick and is ever changing which creates unique challenges that are industry specific. Rapid change requires leaders with a clear vision and adaptive managers who can operate efficient teams.</p>
+
+                <p>Both leadership and management are critical for business success and must be utilized appropriately. Leadership is the ability to create vision and generate followers of that vision, and a way of inspiring people along the way. Management is the tracking of metrics and employee reviews as well as the hiring and firing of employees.</p>
+
+                <p>A common misconception is that leaders are charismatic. This implies that charisma is a necessary leadership skill, which is not always true. As Kruse mentions in Forbes, "We often think of icons from history like General Patton or President Lincoln. But leadership isn't an adjective. We don't need extroverted charismatic traits to practice leadership. And those with charisma don't automatically lead" (Kruse, 2013).</p>
+
+                <p>Managers typically focus on performance, job satisfaction, and employee development within their teams. Buckingham explains in <em>What Great Managers Do</em>, "The great manager spends a good deal of time outside the office walking around, watching each person's reactions to events, listening, and taking mental notes about what each individual is drawn to and what each person struggles with" (Buckingham, 2005).</p>
+
+                <h2 class="text-xl font-semibold text-white/90 border-l-2 border-yellow-400/30 pl-4 pt-6">Executive Interview</h2>
+                <p>I conducted an interview with a professional who has held several management and leadership roles throughout his career. John (name changed for anonymity) started his technology career with an electrical engineering degree, attended an executive leadership program at the University of Pennsylvania, and studied artificial intelligence. His career includes roles as senior vice president overseeing energy utilities, enterprise integration, and asset management.</p>
+
+                <p>In the interview, John mentioned, "a leader has an idea of where a company or team is headed, knows how to motivate people, and can adapt to changing situations while keeping the same goals." He states that "it is difficult to find an individual who is both a good leader and a good manager. If someone possesses both of these qualities, then they have a great potential to go far with a company."</p>
+
+                <h2 class="text-xl font-semibold text-white/90 border-l-2 border-yellow-400/30 pl-4 pt-6">Communication</h2>
+                <p>It is simply impossible to become a great leader without being a great communicator. Myatt explains in <em>10 Communication Secrets of Great Leaders</em>, "The key to becoming a skillful communicator is rarely found in what has been taught in the world of academia" (Myatt, 2012).</p>
+
+                <p>A distinction between leadership and management is that leadership will typically deal with effectiveness and management will deal with efficiency.</p>
+
+                <h2 class="text-xl font-semibold text-white/90 border-l-2 border-yellow-400/30 pl-4 pt-6">Education in Technology</h2>
+                <p>Educational requirements in technology industries vary vastly based on position and company culture. A reality in some technology jobs shows that no formal education may be necessary. In some circumstances, social connections coupled with technical ability are enough to rise up in a company.</p>
+
+                <p>John mentions that the respect of the people who you work with is critical when in a management or leadership role. A degree may provide an entry point for a job but respect and capability will sustain a career.</p>
+
+                <h2 class="text-xl font-semibold text-white/90 border-l-2 border-yellow-400/30 pl-4 pt-6">Hiring &amp; Growth</h2>
+                <p>When hiring an employee, there are several critical qualities: technical capability, work ethic, and cultural fit. A highly technical individual without strong work ethic may waste large amounts of time. An individual who is not a cultural fit may not reach their full potential and could cause employee tension.</p>
+
+                <p>With company growth, employees and teams can become segmented from one another. Leaders have to work on varying scales within a business and must rely on effective communication between departments so that the vision remains unified.</p>
+
+                <h2 class="text-xl font-semibold text-white/90 border-l-2 border-yellow-400/30 pl-4 pt-6">Conclusion</h2>
+                <p>Leadership and management skills are valuable for personal development at any level of your career, and can apply across a large variety of job roles. A master of both is uncommon and is highly sought after in any industry. The ability to develop and identify leadership and management skills will certainly remain valuable despite changing and emerging technology trends.</p>
+
+                <h2 class="text-xl font-semibold text-white/90 border-l-2 border-yellow-400/30 pl-4 pt-6">References</h2>
+                <ul class="list-none space-y-3 text-white/50 text-sm">
+                    <li>Buckingham, M. (2005). <a href="https://hbr.org/2005/03/what-great-managers-do" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">What Great Managers Do</a>. <em>Harvard Business Review</em>.</li>
+                    <li>Ibarra, H. (2010). <a href="https://hbr.org/2010/06/becoming-a-leader-is-not-like" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">Becoming a Leader is Not Like Improving Your Golf Swing</a>. <em>Harvard Business Review</em>.</li>
+                    <li>Kruse, K. (2013). <a href="http://www.forbes.com/sites/kevinkruse/2013/04/09/what-is-leadership/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">What Is Leadership?</a> <em>Forbes</em>.</li>
+                    <li>Myatt, M. (2012). <a href="http://www.forbes.com/sites/mikemyatt/2012/04/04/10-communication-secrets-of-great-leaders/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">10 Communication Secrets of Great Leaders</a>. <em>Forbes</em>.</li>
+                    <li>Stone, J. (2014). <a href="https://www.psychologytoday.com/blog/clear-organized-and-motivated/201405/5-communication-skills-open-people-s-minds" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">5 Communication Skills that Open People's Minds</a>. <em>Psychology Today</em>.</li>
+                    <li>Wiltbank, R. (2008). <a href="http://www.wsj.com/articles/SB121441083243003809" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">In Search of Growth Leaders</a>. <em>Wall Street Journal</em>.</li>
+                    <li>Smith, J. (2015). Personal interview with J. Smith.</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="border-t border-white/5 py-10 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-white/30 tracking-wider">
+            <span class="font-['JetBrains_Mono']">&copy; 2025 BRYAN TOTTY</span>
+            <div class="flex gap-6 uppercase"><a href="/" class="hover:text-glow transition-colors">Home</a><a href="../about.html" class="hover:text-glow transition-colors">About</a><a href="../blog.html" class="hover:text-glow transition-colors">Blog</a><a href="../projects.html" class="hover:text-glow transition-colors">Projects</a><a href="../privacy.html" class="hover:text-glow transition-colors">Privacy</a><a href="../contact.html" class="hover:text-glow transition-colors">Contact</a></div>
+        </div>
+    </footer>
+    <script src="../main.js"></script>
+</body>
+</html>

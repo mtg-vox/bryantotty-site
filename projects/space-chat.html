@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space-Chat - Bryan Totty</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { dark: '#050505', glow: '#c8102e' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="bg-dark text-white font-['Inter'] min-h-screen">
+    <div class="grid-bg" aria-hidden="true"></div>
+    <nav class="fixed top-0 w-full z-50 bg-dark/80 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-xl font-black tracking-tighter"><span class="text-white">BRYAN</span><span class="text-glow">TOTTY</span></a>
+            <div class="hidden md:flex gap-8 text-xs font-semibold tracking-[0.2em] uppercase">
+                <a href="/" class="text-white/50 hover:text-glow transition-colors">Home</a>
+                <a href="../about.html" class="text-white/50 hover:text-glow transition-colors">About</a>
+                <a href="../blog.html" class="text-white/50 hover:text-glow transition-colors">Blog</a>
+                <a href="../projects.html" class="text-white hover:text-glow transition-colors">Projects</a>
+                <a href="../contact.html" class="text-white/50 hover:text-glow transition-colors">Contact</a>
+            </div>
+            <button id="menu-btn" class="md:hidden text-white" aria-label="Toggle menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-dark/95 backdrop-blur-xl">
+            <div class="flex flex-col px-6 py-4 gap-4 text-xs font-semibold tracking-[0.2em] uppercase">
+                <a href="/" class="text-white/50">Home</a><a href="../about.html" class="text-white/50">About</a>
+                <a href="../blog.html" class="text-white/50">Blog</a><a href="../projects.html" class="text-white">Projects</a>
+                <a href="../contact.html" class="text-white/50">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-28 pb-20 px-6">
+        <div class="max-w-3xl mx-auto">
+            <a href="../projects.html" class="text-white/40 hover:text-glow text-sm mb-6 inline-block transition-colors">&larr; Back to Projects</a>
+            <div class="mb-4">
+                <span class="text-xs font-medium px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 font-['JetBrains_Mono'] tracking-wider">TECH</span>
+            </div>
+            <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Space-Chat</h1>
+            <p class="text-white/40 text-sm mb-8">View our Space Chat <a href="https://drive.google.com/file/d/1lCHVj_Ucjexttehb7u6jttKZHfZRBiHd/view?usp=sharing" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">Presentation</a>.</p>
+
+            <div class="text-white/70 leading-relaxed space-y-6">
+                <h2 class="text-2xl font-semibold text-white/90 border-l-2 border-blue-400/30 pl-4">Summary</h2>
+                <p>Illicit oil tanker trade violates international sanctions and is a large problem which imposes huge economic and societal costs.</p>
+                <p>In order to provide intelligence for government agencies, hedge funds, etc. we created SpaceChat. We used a variety of data sources to track oil tanker locations. Next, we integrated ChatGPT capabilities so that a user can make natural language queries about tanker location and determine potential illicit activity.</p>
+                <p>The purpose for the integration is so that the AI can learn based on the data we fed it. This goes far beyond the typical user interface most users are familiar with. The limitation with using the baseline ChatGPT is that the AI can only make determinations based on the data it has, and integration with these premium data sources for tanker location is not included. Additionally, we used proprietary backend logic to integrate multiple sources for natural language queries.</p>
+
+                <h2 class="text-2xl font-semibold text-white/90 border-l-2 border-blue-400/30 pl-4 pt-6">What it does</h2>
+                <p>SpaceChat integrates ChatGPT into an online dashboard, allowing users to ask questions about oil tanker locations, illicit activity, and other information to try and uncover illegal oil trade.</p>
+                <p>This allows humans to immediately interact with complex data via natural language so actions can be taken against the owners of these tankers in real time.</p>
+
+                <h2 class="text-2xl font-semibold text-white/90 border-l-2 border-blue-400/30 pl-4 pt-6">How we built it</h2>
+                <p>SpaceChat was built by integrating OpenAI's language model ChatGPT into an online webpage dashboard with an up to date embedded vector database. This allows for users to ask natural language questions about oil tanker information and its owners, including location, ship type, and frequency to uncover potential illegal oil trade activity. Additional data sources and functionality were also integrated into the platform to enhance its capabilities.</p>
+
+                <h2 class="text-2xl font-semibold text-white/90 border-l-2 border-blue-400/30 pl-4 pt-6">Challenges we ran into</h2>
+                <p>We identified 3 data sources that could provide valuable insight to ChatGPT so that a user could ask targeted questions about tankers and their region or travel.</p>
+                <p>These 3 data sources needed to be correlated then merged into a single database and imported into our vector database. This presented a challenge in determining which types of questions could be answered based on how the database information is structured. Integrating priority on the databases was also an area that we had to focus on fine tuning since OpenAI already has their own data set that is outdated.</p>
+
+                <h2 class="text-2xl font-semibold text-white/90 border-l-2 border-blue-400/30 pl-4 pt-6">Accomplishments</h2>
+                <p>We are most proud that the tool we built can better help uncover illegal oil and potentially arms transactions by sanctioned countries which causes real economic and other damages.</p>
+                <p>Additionally, we built a machine learning algorithm that after training, was able to highlight ships in red for automatic detection of enemy vessels.</p>
+
+                <h2 class="text-2xl font-semibold text-white/90 border-l-2 border-blue-400/30 pl-4 pt-6">What we learned</h2>
+                <p>Creating a product that integrates multiple data sources and provides relevant information to users in a conversational manner was a learning experience in several areas including:</p>
+                <ul class="list-disc list-inside space-y-1 text-white/60">
+                    <li><strong class="text-white/80">Data engineering:</strong> merging and cleaning multiple data sources into a unified database</li>
+                    <li><strong class="text-white/80">Natural language processing:</strong> understanding the intent and context of user queries</li>
+                    <li><strong class="text-white/80">User experience:</strong> creating a user-friendly interface for asking and receiving information</li>
+                </ul>
+
+                <h2 class="text-2xl font-semibold text-white/90 border-l-2 border-blue-400/30 pl-4 pt-6">The Future of SpaceChat</h2>
+                <p>SpaceChat will become more valuable as it continues to learn. Future use cases include:</p>
+                <ul class="list-disc list-inside space-y-1 text-white/60">
+                    <li>Government agencies — Use SpaceChat for enforcement</li>
+                    <li>Hedge funds — Make trading decisions</li>
+                    <li>Illegal oil trade — Estimates based on data</li>
+                    <li>Report generation — Create automatic reports around illicit activity</li>
+                    <li>Arms trade — Addition of illegal firearms trade</li>
+                    <li>Data sources — Add additional intelligence</li>
+                    <li>Fine tuning — Tune the AI model for increased accuracy</li>
+                </ul>
+
+                <div class="flex gap-4 mt-8 pt-6 border-t border-white/10">
+                    <a href="https://www.miamihackweek.com/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline text-sm">Miami Hack Week</a>
+                    <a href="https://space-eyes.com/index.html" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline text-sm">Space-Eyes</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="border-t border-white/5 py-10 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-white/30 tracking-wider">
+            <span class="font-['JetBrains_Mono']">&copy; 2025 BRYAN TOTTY</span>
+            <div class="flex gap-6 uppercase"><a href="/" class="hover:text-glow transition-colors">Home</a><a href="../about.html" class="hover:text-glow transition-colors">About</a><a href="../blog.html" class="hover:text-glow transition-colors">Blog</a><a href="../projects.html" class="hover:text-glow transition-colors">Projects</a><a href="../privacy.html" class="hover:text-glow transition-colors">Privacy</a><a href="../contact.html" class="hover:text-glow transition-colors">Contact</a></div>
+        </div>
+    </footer>
+    <script src="../main.js"></script>
+</body>
+</html>

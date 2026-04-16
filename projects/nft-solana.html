@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFT Project on Solana - Bryan Totty</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { dark: '#050505', glow: '#c8102e' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="bg-dark text-white font-['Inter'] min-h-screen">
+    <div class="grid-bg" aria-hidden="true"></div>
+    <nav class="fixed top-0 w-full z-50 bg-dark/80 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-xl font-black tracking-tighter"><span class="text-white">BRYAN</span><span class="text-glow">TOTTY</span></a>
+            <div class="hidden md:flex gap-8 text-xs font-semibold tracking-[0.2em] uppercase">
+                <a href="/" class="text-white/50 hover:text-glow transition-colors">Home</a>
+                <a href="../about.html" class="text-white/50 hover:text-glow transition-colors">About</a>
+                <a href="../blog.html" class="text-white/50 hover:text-glow transition-colors">Blog</a>
+                <a href="../projects.html" class="text-white hover:text-glow transition-colors">Projects</a>
+                <a href="../contact.html" class="text-white/50 hover:text-glow transition-colors">Contact</a>
+            </div>
+            <button id="menu-btn" class="md:hidden text-white" aria-label="Toggle menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-dark/95 backdrop-blur-xl">
+            <div class="flex flex-col px-6 py-4 gap-4 text-xs font-semibold tracking-[0.2em] uppercase">
+                <a href="/" class="text-white/50">Home</a><a href="../about.html" class="text-white/50">About</a>
+                <a href="../blog.html" class="text-white/50">Blog</a><a href="../projects.html" class="text-white">Projects</a>
+                <a href="../contact.html" class="text-white/50">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-28 pb-20 px-6">
+        <div class="max-w-3xl mx-auto">
+            <a href="../projects.html" class="text-white/40 hover:text-glow text-sm mb-6 inline-block transition-colors">&larr; Back to Projects</a>
+            <div class="mb-4">
+                <span class="text-xs font-medium px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 font-['JetBrains_Mono'] tracking-wider">CRYPTO</span>
+            </div>
+            <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-8">NFT Project on Solana (SOL)</h1>
+
+            <div class="text-white/70 leading-relaxed space-y-6">
+                <p>For Miami Hack Week 2022, we designed a concept that allows NFT creators to make a template that allows limited customizations based on the creators criteria. A web interface will work to allow the creator to upload and define which parts of their template image can be customized and then this will be made available to someone who wishes to purchase. When purchasing you can then customize the image to your liking and then the NFT will be minted. This will allow the creator to retain royalties if desired, and the purchaser can customize their NFT.</p>
+
+                <p>Think of Bored Apes — many people like to use their NFT as an avatar for their social media or various chat services. The tool that we designed would allow the person purchasing to change the colors or modify patterns in the template. This is similar to what you might do with a video game character skin or a weapon skin, yet you are able to modify some parameters and then mint as your own custom NFT without needing to be a graphic designer. It's made simple for the end user.</p>
+
+                <h2 class="text-2xl font-semibold text-white/90 border-l-2 border-purple-400/30 pl-4 pt-4">Tech Stack</h2>
+                <p>We are utilizing web2, web3, and the Solana blockchain. Solana was chosen because of the speed and cheap transaction cost, as NFTs are quickly emerging on this blockchain.</p>
+
+                <h2 class="text-2xl font-semibold text-white/90 border-l-2 border-purple-400/30 pl-4 pt-4">Beyond Images</h2>
+                <p>This is a proof of concept using NFT images, but the technology can expand into other areas such as video, music, and more.</p>
+
+                <div class="mt-8 pt-6 border-t border-white/10">
+                    <a href="https://www.miamihackweek.com/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline text-sm">Miami Hack Week 2022</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="border-t border-white/5 py-10 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-white/30 tracking-wider">
+            <span class="font-['JetBrains_Mono']">&copy; 2025 BRYAN TOTTY</span>
+            <div class="flex gap-6 uppercase"><a href="/" class="hover:text-glow transition-colors">Home</a><a href="../about.html" class="hover:text-glow transition-colors">About</a><a href="../blog.html" class="hover:text-glow transition-colors">Blog</a><a href="../projects.html" class="hover:text-glow transition-colors">Projects</a><a href="../privacy.html" class="hover:text-glow transition-colors">Privacy</a><a href="../contact.html" class="hover:text-glow transition-colors">Contact</a></div>
+        </div>
+    </footer>
+    <script src="../main.js"></script>
+</body>
+</html>
