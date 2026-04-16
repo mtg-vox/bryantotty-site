@@ -6,27 +6,25 @@
     <title>Contact - Bryan Totty</title>
     <meta name="description" content="Get in touch with Bryan Totty.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: { extend: { colors: { dark: '#0a0a0a' } } }
-        }
-    </script>
+    <script>tailwind.config = { theme: { extend: { colors: { dark: '#050505', glow: '#c8102e' } } } }</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 </head>
 <body class="bg-dark text-white font-['Inter'] min-h-screen">
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 bg-dark/90 backdrop-blur-md border-b border-white/5">
+    <div class="grid-bg" aria-hidden="true"></div>
+
+    <nav class="fixed top-0 w-full z-50 bg-dark/80 backdrop-blur-xl border-b border-white/5">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/" class="text-xl font-bold tracking-tight">BRYANTOTTY</a>
-            <div class="hidden md:flex gap-8 text-sm font-medium tracking-wide">
-                <a href="/" class="text-white/60 hover:text-white transition">HOME</a>
-                <a href="about.html" class="text-white/60 hover:text-white transition">ABOUT</a>
-                <a href="blog.html" class="text-white/60 hover:text-white transition">BLOG</a>
-                <a href="projects.html" class="text-white/60 hover:text-white transition">PROJECTS</a>
-                <a href="contact.html" class="text-white/90 hover:text-white transition">CONTACT</a>
+            <a href="/" class="text-xl font-black tracking-tighter"><span class="text-white">BRYAN</span><span class="text-glow">TOTTY</span></a>
+            <div class="hidden md:flex gap-8 text-xs font-semibold tracking-[0.2em] uppercase">
+                <a href="/" class="text-white/50 hover:text-glow transition-colors">Home</a>
+                <a href="about.html" class="text-white/50 hover:text-glow transition-colors">About</a>
+                <a href="blog.html" class="text-white/50 hover:text-glow transition-colors">Blog</a>
+                <a href="projects.html" class="text-white/50 hover:text-glow transition-colors">Projects</a>
+                <a href="contact.html" class="text-white hover:text-glow transition-colors">Contact</a>
             </div>
             <button id="menu-btn" class="md:hidden text-white" aria-label="Toggle menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -34,47 +32,87 @@
                 </svg>
             </button>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-dark/95 backdrop-blur-md">
-            <div class="flex flex-col px-6 py-4 gap-4 text-sm font-medium tracking-wide">
-                <a href="/" class="text-white/60 hover:text-white transition">HOME</a>
-                <a href="about.html" class="text-white/60 hover:text-white transition">ABOUT</a>
-                <a href="blog.html" class="text-white/60 hover:text-white transition">BLOG</a>
-                <a href="projects.html" class="text-white/60 hover:text-white transition">PROJECTS</a>
-                <a href="contact.html" class="text-white/90 hover:text-white transition">CONTACT</a>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-dark/95 backdrop-blur-xl">
+            <div class="flex flex-col px-6 py-4 gap-4 text-xs font-semibold tracking-[0.2em] uppercase">
+                <a href="/" class="text-white/50">Home</a><a href="about.html" class="text-white/50">About</a>
+                <a href="blog.html" class="text-white/50">Blog</a><a href="projects.html" class="text-white/50">Projects</a>
+                <a href="contact.html" class="text-white">Contact</a>
             </div>
         </div>
     </nav>
 
     <main class="pt-28 pb-20 px-6">
         <div class="max-w-2xl mx-auto">
-            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-8">CONTACT</h1>
-            <p class="text-white/60 mb-12">Interested in speaking, collaborating, or connecting? Reach out through any of the channels below.</p>
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">CONTACT</h1>
+            <p class="text-white/40 font-['JetBrains_Mono'] text-xs tracking-[0.2em] uppercase mb-12">&gt; Get in touch</p>
 
-            <div class="space-y-6">
-                <a href="https://www.linkedin.com/in/bryantotty/" target="_blank" rel="noopener" 
-                   class="card flex items-center gap-4 p-5 rounded-xl border border-white/10 hover:border-white/20 bg-white/[0.02]">
+            <!-- Contact Form -->
+            <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6 mb-16">
+                <!-- Honeypot anti-spam (hidden from humans) -->
+                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+                <div>
+                    <label for="name" class="block text-xs font-semibold text-white/50 tracking-[0.15em] uppercase mb-2">Name</label>
+                    <input type="text" id="name" name="name" required
+                        class="w-full bg-white/[0.03] border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/20 focus:outline-none focus:border-glow/50 focus:ring-1 focus:ring-glow/20 transition-colors"
+                        placeholder="Your name">
+                </div>
+
+                <div>
+                    <label for="email" class="block text-xs font-semibold text-white/50 tracking-[0.15em] uppercase mb-2">Email</label>
+                    <input type="email" id="email" name="email" required
+                        class="w-full bg-white/[0.03] border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/20 focus:outline-none focus:border-glow/50 focus:ring-1 focus:ring-glow/20 transition-colors"
+                        placeholder="your@email.com">
+                </div>
+
+                <div>
+                    <label for="message" class="block text-xs font-semibold text-white/50 tracking-[0.15em] uppercase mb-2">Message</label>
+                    <textarea id="message" name="message" rows="5" required
+                        class="w-full bg-white/[0.03] border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/20 focus:outline-none focus:border-glow/50 focus:ring-1 focus:ring-glow/20 transition-colors resize-y"
+                        placeholder="What would you like to discuss?"></textarea>
+                </div>
+
+                <!-- hCaptcha -->
+                <div class="h-captcha" data-sitekey="YOUR_HCAPTCHA_SITEKEY" data-theme="dark"></div>
+
+                <button type="submit" id="submit-btn" class="hero-btn-primary w-full text-center cursor-pointer">
+                    SEND MESSAGE
+                </button>
+
+                <!-- Success/Error messages -->
+                <div id="form-success" class="hidden text-center py-4 text-green-400 font-['JetBrains_Mono'] text-sm">
+                    ✓ Message sent successfully. I'll get back to you soon.
+                </div>
+                <div id="form-error" class="hidden text-center py-4 text-red-400 font-['JetBrains_Mono'] text-sm">
+                    ✗ Something went wrong. Please try again or reach out on LinkedIn.
+                </div>
+            </form>
+
+            <!-- LinkedIn fallback -->
+            <div class="border-t border-white/5 pt-12">
+                <p class="text-white/30 text-xs font-['JetBrains_Mono'] tracking-[0.2em] uppercase mb-6">&gt; Or connect directly</p>
+                <a href="https://www.linkedin.com/in/bryantotty/" target="_blank" rel="noopener"
+                   class="card flex items-center gap-4 p-5 rounded-lg border border-white/10 hover:border-glow/30 bg-white/[0.02] group">
                     <svg class="w-8 h-8 text-blue-400 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                     <div>
-                        <h2 class="font-semibold">LinkedIn</h2>
+                        <h2 class="font-semibold group-hover:text-glow transition-colors">LinkedIn</h2>
                         <p class="text-white/50 text-sm">linkedin.com/in/bryantotty</p>
                     </div>
                 </a>
-
-
             </div>
         </div>
     </main>
 
-    <footer class="border-t border-white/5 py-8 px-6">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/40">
-            <span>&copy; 2025 Bryan Totty. All rights reserved.</span>
-            <div class="flex gap-6">
-                <a href="/" class="hover:text-white/70 transition">HOME</a>
-                <a href="about.html" class="hover:text-white/70 transition">ABOUT</a>
-                <a href="blog.html" class="hover:text-white/70 transition">BLOG</a>
-                <a href="projects.html" class="hover:text-white/70 transition">PROJECTS</a>
-                <a href="privacy.html" class="hover:text-white/70 transition">PRIVACY</a>
-                <a href="contact.html" class="hover:text-white/70 transition">CONTACT</a>
+    <footer class="border-t border-white/5 py-10 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-white/30 tracking-wider">
+            <span class="font-['JetBrains_Mono']">&copy; 2025 BRYAN TOTTY</span>
+            <div class="flex gap-6 uppercase">
+                <a href="/" class="hover:text-glow transition-colors">Home</a>
+                <a href="about.html" class="hover:text-glow transition-colors">About</a>
+                <a href="blog.html" class="hover:text-glow transition-colors">Blog</a>
+                <a href="projects.html" class="hover:text-glow transition-colors">Projects</a>
+                <a href="privacy.html" class="hover:text-glow transition-colors">Privacy</a>
+                <a href="contact.html" class="hover:text-glow transition-colors">Contact</a>
             </div>
         </div>
     </footer>
