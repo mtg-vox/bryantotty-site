@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Bryan Totty</title>
+    <meta name="description" content="About Bryan Totty - Business leader, investor, entrepreneur, musician, and nomad.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { dark: '#0a0a0a' } } }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-dark text-white font-['Inter'] min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-dark/90 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-xl font-bold tracking-tight">BRYANTOTTY</a>
+            <div class="hidden md:flex gap-8 text-sm font-medium tracking-wide">
+                <a href="/" class="text-white/60 hover:text-white transition">HOME</a>
+                <a href="about.html" class="text-white/90 hover:text-white transition">ABOUT</a>
+                <a href="blog.html" class="text-white/60 hover:text-white transition">BLOG</a>
+                <a href="projects.html" class="text-white/60 hover:text-white transition">PROJECTS</a>
+                <a href="contact.html" class="text-white/60 hover:text-white transition">CONTACT</a>
+            </div>
+            <button id="menu-btn" class="md:hidden text-white" aria-label="Toggle menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-dark/95 backdrop-blur-md">
+            <div class="flex flex-col px-6 py-4 gap-4 text-sm font-medium tracking-wide">
+                <a href="/" class="text-white/60 hover:text-white transition">HOME</a>
+                <a href="about.html" class="text-white/90 hover:text-white transition">ABOUT</a>
+                <a href="blog.html" class="text-white/60 hover:text-white transition">BLOG</a>
+                <a href="projects.html" class="text-white/60 hover:text-white transition">PROJECTS</a>
+                <a href="contact.html" class="text-white/60 hover:text-white transition">CONTACT</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-28 pb-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-16">ABOUT ME</h1>
+
+            <!-- Intro + Photo -->
+            <section class="reveal flex flex-col md:flex-row gap-10 mb-20 items-start">
+                <div class="flex-1">
+                    <h2 class="text-2xl font-semibold mb-4">Who is Bryan Totty?</h2>
+                    <p class="text-white/70 leading-relaxed">
+                        I have had the opportunity to lead international business teams, hike remote mountainsides, perform in front of large audiences, and study wealth generation and investing. My friends describe me as driven and a supportive mentor. I aim to inspire others to explore beyond their perceived limitations.
+                    </p>
+                </div>
+                <div class="w-full md:w-72 flex-shrink-0">
+                    <img src="https://cdn.prod.website-files.com/5be383373ed8f3a09c5afcda/669720dbce3cca38690b9f9c_suite%20square-p-800.jpg"
+                         alt="Bryan Totty" class="profile-img w-full" loading="lazy">
+                </div>
+            </section>
+
+            <!-- Business -->
+            <section class="reveal mb-16">
+                <h2 class="text-2xl font-semibold mb-4 border-l-2 border-white/20 pl-4">Business</h2>
+                <p class="text-white/70 leading-relaxed mb-4">
+                    My day is spent as a Technical Program Manager for Azure Storage security and compliance at Microsoft. I also spent over 10 years working on Red Hat's Product Security teams leading security initiatives. I've also had the opportunity to speak at Red Hat's Convergence and other events.
+                </p>
+                <p class="text-white/70 leading-relaxed">
+                    Earlier in my career, I contributed to server hardware research and development at IBM. <a href="https://www.linkedin.com/in/bryantotty/" target="_blank" rel="noopener" class="text-blue-400 hover:text-blue-300 underline">LinkedIn</a>.
+                </p>
+            </section>
+
+            <!-- Investing & Trading -->
+            <section class="reveal mb-16">
+                <h2 class="text-2xl font-semibold mb-4 border-l-2 border-white/20 pl-4">Investing &amp; Trading</h2>
+                <p class="text-white/70 leading-relaxed mb-4">
+                    I began studying the traditional stock market and investments pretty intensely around 2015. Knowledge is power in the space, and contrary to conventional belief, the small investors (non multi-billion dollar funds) have a lot more potential for large returns than the bigger players do. I read every possible book I could get on general finance over the course of years and would fall asleep listening to audio books related to financial success to program myself to think about it constantly.
+                </p>
+                <p class="text-white/70 leading-relaxed">
+                    In 2019, I began advanced technical analysis courses of which I have studied deeply for many years on a daily basis to understand the fundamentals of technical analysis options trading.
+                </p>
+            </section>
+
+            <!-- Entrepreneur -->
+            <section class="reveal mb-16">
+                <h2 class="text-2xl font-semibold mb-4 border-l-2 border-white/20 pl-4">Entrepreneur</h2>
+                <p class="text-white/70 leading-relaxed">
+                    My path on being an entrepreneur started with my passion for music and evolved out of necessity. In order to market, brand, and get my message out I had to become one. Later in life, I have taken that passion for business and startups and bundled it into my intense interest in technology and cryptocurrencies. I frequent meetup events and conferences to always keep learning, often where I meet other entrepreneurs whom I partner with. I am an early investor in a few small startups with big potential.
+                </p>
+            </section>
+
+            <!-- Crypto -->
+            <section class="reveal mb-16">
+                <h2 class="text-2xl font-semibold mb-4 border-l-2 border-white/20 pl-4">Crypto</h2>
+                <p class="text-white/70 leading-relaxed">
+                    The crypto market is a natural fit for my interests and skillset because I have a long background in technology and a deep study and discipline towards investing, trading, and technical analysis. It also bundles in nicely with a nomad lifestyle when you can take your tokens anywhere and easily transact internationally. It can also serve to prepare in the wake of global currency turbulence as we have seen since the 2020 pandemic. These cycles are not new, but have been accelerated by governments around the world.
+                </p>
+            </section>
+
+            <!-- Nomad -->
+            <section class="reveal mb-16">
+                <h2 class="text-2xl font-semibold mb-4 border-l-2 border-white/20 pl-4">Nomad</h2>
+                <p class="text-white/70 leading-relaxed mb-4">
+                    Community operator and curator for a high net worth nomad community closely associated with Nomad Capitalist, but not directly affiliated. I can be contacted directly if you would like to join our WhatsApp and Discord groups for the private links.
+                </p>
+                <p class="text-white/70 leading-relaxed">
+                    We share real world business experience focused on freedom, tax efficiency, and international business and investing opportunities. I am also knowledgeable towards residencies and citizenships for multiple countries to allow optimal flexibility in freedom and lifestyle.
+                </p>
+            </section>
+
+            <!-- Music -->
+            <section class="reveal mb-16">
+                <h2 class="text-2xl font-semibold mb-4 border-l-2 border-white/20 pl-4">Music</h2>
+                <p class="text-white/70 leading-relaxed mb-4">
+                    By age 25, I owned a record label, of which I was performing live shows, doing radio station interviews, building marketing strategies, professionally recording myself and clients.
+                </p>
+                <p class="text-white/70 leading-relaxed mb-4">
+                    When I started in music, there were no music streaming platforms, YouTube did not exist, and social media was not a thing. At that time, you had to hustle and network in person at shows and meet owners of venues through weeks, months, and years of dedication. We were on the streets of college campuses handing out fliers and self promoting our bands. I learned how to network and be persistent because the exposure route required getting on a radio station or TV in order to reach fans.
+                </p>
+                <p class="text-white/70 leading-relaxed mb-4">
+                    I have always enjoyed creating in a way that allows me to express myself and impact others. With my solo rap music, I really dug deep into the lyrical techniques and always challenged myself to rap in different styles and trying an array of different music from classic hip-hop to trap to rock music. Through my music, I embrace a range of ways to connect people from fun all the way to mysterious and dark music.
+                </p>
+                <p class="text-white/70 leading-relaxed">
+                    As a side project, I recorded and performed two music videos for the enterprise open source software provider company Red Hat.
+                </p>
+                <div class="mt-6">
+                    <a href="https://youtu.be/rwaaFwTluLU" target="_blank" rel="noopener" class="inline-block">
+                        <img src="https://cdn.prod.website-files.com/5be383373ed8f3a09c5afcda/645e9608bb8b00d50e4a5960_1%20-%20website%20-%20small-p-800.jpg"
+                             alt="Music Video Myrtle Beach" class="rounded-lg max-w-sm w-full hover:opacity-80 transition" loading="lazy">
+                    </a>
+                </div>
+            </section>
+
+            <!-- School -->
+            <section class="reveal mb-16">
+                <h2 class="text-2xl font-semibold mb-4 border-l-2 border-white/20 pl-4">School</h2>
+                <p class="text-white/70 leading-relaxed">
+                    I have an associates degree in Computer Networking Technology, a bachelor's of science in Information Security and Management from East Carolina University (ECU), and attended Harvard Business School for their CORe program. <a href="https://www.linkedin.com/in/bryantotty/" target="_blank" rel="noopener" class="text-blue-400 hover:text-blue-300 underline">LinkedIn</a>.
+                </p>
+            </section>
+
+            <!-- References -->
+            <section class="reveal mb-16">
+                <h2 class="text-2xl font-semibold mb-4 border-l-2 border-white/20 pl-4">References</h2>
+                <p class="text-white/70 leading-relaxed mb-4">There is much more, and more to come...</p>
+                <ul class="space-y-3">
+                    <li><a href="https://www.thehypemagazine.com/2023/07/lyrical-rapper-b-totty-working-with-infamous-producer-lx-xander/" target="_blank" rel="noopener" class="text-blue-400 hover:text-blue-300 underline">Lyrical Rapper B. Totty Working With Infamous Producer LX Xander</a></li>
+                    <li><a href="https://abc11.com/entertainment/red-hat-employee-makes-viral-rap-video-about-raleigh/1185323/" target="_blank" rel="noopener" class="text-blue-400 hover:text-blue-300 underline">Red Hat employee makes viral rap video about Raleigh</a></li>
+                    <li><a href="https://www.newsobserver.com/news/business/article57970488.html" target="_blank" rel="noopener" class="text-blue-400 hover:text-blue-300 underline">Red Hatter raps: 'We love Raleigh'</a></li>
+                </ul>
+            </section>
+
+            <!-- CTA -->
+            <section class="reveal text-center mt-20 py-12 border-t border-white/10">
+                <p class="text-white/50 text-lg mb-4">Interested in speaking?</p>
+                <a href="contact.html" class="px-8 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition">CONTACT ME</a>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 py-8 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/40">
+            <span>&copy; 2025 Bryan Totty. All rights reserved.</span>
+            <div class="flex gap-6">
+                <a href="/" class="hover:text-white/70 transition">HOME</a>
+                <a href="about.html" class="hover:text-white/70 transition">ABOUT</a>
+                <a href="blog.html" class="hover:text-white/70 transition">BLOG</a>
+                <a href="projects.html" class="hover:text-white/70 transition">PROJECTS</a>
+                <a href="privacy.html" class="hover:text-white/70 transition">PRIVACY</a>
+                <a href="contact.html" class="hover:text-white/70 transition">CONTACT</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

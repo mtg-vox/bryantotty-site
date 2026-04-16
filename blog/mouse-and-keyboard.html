@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do You Need a New Mouse and Keyboard? - Bryan Totty</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { dark: '#0a0a0a' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="bg-dark text-white font-['Inter'] min-h-screen">
+    <nav class="fixed top-0 w-full z-50 bg-dark/90 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-xl font-bold tracking-tight">BRYANTOTTY</a>
+            <div class="hidden md:flex gap-8 text-sm font-medium tracking-wide">
+                <a href="/" class="text-white/60 hover:text-white transition">HOME</a>
+                <a href="../about.html" class="text-white/60 hover:text-white transition">ABOUT</a>
+                <a href="../blog.html" class="text-white/90 hover:text-white transition">BLOG</a>
+                <a href="../projects.html" class="text-white/60 hover:text-white transition">PROJECTS</a>
+                <a href="../contact.html" class="text-white/60 hover:text-white transition">CONTACT</a>
+            </div>
+            <button id="menu-btn" class="md:hidden text-white" aria-label="Toggle menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-dark/95 backdrop-blur-md">
+            <div class="flex flex-col px-6 py-4 gap-4 text-sm font-medium tracking-wide">
+                <a href="/" class="text-white/60">HOME</a><a href="../about.html" class="text-white/60">ABOUT</a>
+                <a href="../blog.html" class="text-white/90">BLOG</a><a href="../projects.html" class="text-white/60">PROJECTS</a>
+                <a href="../contact.html" class="text-white/60">CONTACT</a>
+            </div>
+        </div>
+    </nav>
+    <main class="pt-28 pb-20 px-6">
+        <div class="max-w-3xl mx-auto">
+            <a href="../blog.html" class="text-white/40 hover:text-white/70 text-sm mb-6 inline-block">&larr; Back to Blog</a>
+            <div class="flex items-center gap-3 mb-4">
+                <span class="text-xs text-white/40">February 12, 2023</span>
+                <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-green-500/10 text-green-400">Opinion</span>
+            </div>
+            <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-8">Do You Need a New Mouse and Keyboard?</h1>
+            <div class="text-white/70 leading-relaxed space-y-4">
+                <p>Do you need a new mouse and keyboard?</p>
+                <p>Content from the original Webflow blog post can be added here.</p>
+            </div>
+            <p class="text-white/30 text-sm mt-8">Written by Bryan Totty</p>
+        </div>
+    </main>
+    <footer class="border-t border-white/5 py-8 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/40">
+            <span>&copy; 2025 Bryan Totty. All rights reserved.</span>
+            <div class="flex gap-6"><a href="/" class="hover:text-white/70">HOME</a><a href="../about.html" class="hover:text-white/70">ABOUT</a><a href="../blog.html" class="hover:text-white/70">BLOG</a><a href="../projects.html" class="hover:text-white/70">PROJECTS</a><a href="../privacy.html" class="hover:text-white/70">PRIVACY</a><a href="../contact.html" class="hover:text-white/70">CONTACT</a></div>
+        </div>
+    </footer>
+    <script src="../main.js"></script>
+</body>
+</html>

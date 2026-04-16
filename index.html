@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bryan Totty - Technologist, Investor, Musician</title>
+    <meta name="description" content="Bryan Totty - Technologist, Investor, Musician. Technical Program Manager, trader, entrepreneur, and recording artist.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0a0a0a',
+                        accent: '#e2e8f0',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-dark text-white font-['Inter'] min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-dark/90 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-xl font-bold tracking-tight">BRYANTOTTY</a>
+            <div class="hidden md:flex gap-8 text-sm font-medium tracking-wide">
+                <a href="/" class="text-white/90 hover:text-white transition">HOME</a>
+                <a href="about.html" class="text-white/60 hover:text-white transition">ABOUT</a>
+                <a href="blog.html" class="text-white/60 hover:text-white transition">BLOG</a>
+                <a href="projects.html" class="text-white/60 hover:text-white transition">PROJECTS</a>
+                <a href="contact.html" class="text-white/60 hover:text-white transition">CONTACT</a>
+            </div>
+            <button id="menu-btn" class="md:hidden text-white" aria-label="Toggle menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-dark/95 backdrop-blur-md">
+            <div class="flex flex-col px-6 py-4 gap-4 text-sm font-medium tracking-wide">
+                <a href="/" class="text-white/90 hover:text-white transition">HOME</a>
+                <a href="about.html" class="text-white/60 hover:text-white transition">ABOUT</a>
+                <a href="blog.html" class="text-white/60 hover:text-white transition">BLOG</a>
+                <a href="projects.html" class="text-white/60 hover:text-white transition">PROJECTS</a>
+                <a href="contact.html" class="text-white/60 hover:text-white transition">CONTACT</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="flex items-center justify-center min-h-screen px-6">
+        <div class="text-center max-w-3xl">
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight">
+                Technologist,<br>Investor,<br>Musician.
+            </h1>
+            <div class="flex flex-wrap justify-center gap-4 mt-10">
+                <a href="about.html" class="px-8 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition">ABOUT</a>
+                <a href="projects.html" class="px-8 py-3 border border-white/30 rounded-lg hover:border-white/60 transition">PROJECTS</a>
+                <a href="blog.html" class="px-8 py-3 border border-white/30 rounded-lg hover:border-white/60 transition">BLOGS</a>
+                <a href="contact.html" class="px-8 py-3 border border-white/30 rounded-lg hover:border-white/60 transition">CONTACT</a>
+            </div>
+            <div class="flex justify-center gap-6 mt-12">
+                <a href="https://www.linkedin.com/in/bryantotty/" target="_blank" rel="noopener" class="text-white/50 hover:text-white transition" aria-label="LinkedIn">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="https://www.reverbnation.com/btotty" target="_blank" rel="noopener" class="text-white/50 hover:text-white transition" aria-label="ReverbNation">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm3.5 17h-7a.5.5 0 01-.5-.5v-9a.5.5 0 01.5-.5h5a3.5 3.5 0 011.826 6.487L17.2 16.1a.5.5 0 01-.45.9h-2.5a.5.5 0 01-.45-.28l-1.8-3.72H10v3.5a.5.5 0 01-.5.5z"/></svg>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 py-8 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/40">
+            <span>&copy; 2025 Bryan Totty. All rights reserved.</span>
+            <div class="flex gap-6">
+                <a href="/" class="hover:text-white/70 transition">HOME</a>
+                <a href="about.html" class="hover:text-white/70 transition">ABOUT</a>
+                <a href="blog.html" class="hover:text-white/70 transition">BLOG</a>
+                <a href="projects.html" class="hover:text-white/70 transition">PROJECTS</a>
+                <a href="privacy.html" class="hover:text-white/70 transition">PRIVACY</a>
+                <a href="contact.html" class="hover:text-white/70 transition">CONTACT</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
