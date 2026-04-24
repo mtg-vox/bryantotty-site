@@ -216,8 +216,8 @@ main, section, footer, nav {
 /* --- Hero Image --- */
 .hero-image-wrapper {
     position: relative;
-    width: 380px;
-    height: 380px;
+    width: 440px;
+    height: 440px;
 }
 
 .hero-image {
@@ -346,14 +346,24 @@ main, section, footer, nav {
 /* --- Responsive adjustments --- */
 @media (max-width: 768px) {
     .hero-image-wrapper {
-        width: 280px;
-        height: 280px;
+        width: 320px;
+        height: 320px;
     }
 
     .hero-glow {
         top: 12px;
         left: 12px;
     }
-}
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+
+    .hero-cta-row {
+        justify-content: center;
+    }
+
+    .hero-pills-row {
+        justify-content: center;
+    }
+
+    .domain-card p {
+        font-size: 0.9375rem;
+    }
 }
