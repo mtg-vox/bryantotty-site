@@ -1,0 +1,38 @@
+# Bryan Totty - bryantotty.com
+
+## About
+Bryan Totty is a Senior Technical Program Manager specializing in cloud security, cybersecurity, and AI automation. He currently leads GRC cloud security programs for Azure Storage at Microsoft, covering compliance with NIST 800-53, SOC 2, FedRAMP, and GDPR across 40+ engineering teams.
+
+## Career
+- Microsoft (2024-Present): Security Technical Program Manager / Product Manager for Azure Storage
+- Meta (2022-2024): Security Enterprise Technical Program Manager
+- Red Hat (2012-2022): Senior Security Technical Program Manager and Security Senior Technical Support Engineer
+- IBM (2011-2012): Server Test Engineer
+
+## Expertise
+Cloud Security, Cybersecurity, AI & Automation, Market Analysis, Music Production, Branding & Design, Digital Marketing
+
+## Technical Skills
+Azure, AWS, Docker, Kubernetes, Python, PowerShell, Bash, KQL, Linux, SELinux, GitHub, CI/CD, IAM/RBAC, SIEM, OpenSSL/TLS
+
+## Certifications
+- RHCE (Red Hat Certified Engineer)
+- CCNA (Cisco Certified Network Associate)
+- RHCVA (Red Hat Certified Virtualization Administrator)
+- RHCSA (Red Hat Certified Systems Administrator)
+
+## Education
+- Core Credential of Readiness (CORe), Harvard Business School
+- BS Cyber Security, East Carolina University
+- AS Computer Network Technology, Wake Technical Community College
+
+## Key Pages
+- Home: https://bryantotty.com/
+- About: https://bryantotty.com/about.html
+- Projects: https://bryantotty.com/projects.html
+- Blog: https://bryantotty.com/blog.html
+- Contact: https://bryantotty.com/contact.html
+
+## Contact
+- LinkedIn: https://www.linkedin.com/in/bryantotty/
+- Website: https://bryantotty.com/contact.html
