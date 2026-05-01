@@ -10,7 +10,7 @@
     <meta name="description" content="Miami Hack Week 2022 — customizable NFT minting platform on the Solana blockchain with creator-defined templates.">
     <meta property="og:title" content="NFT Project on Solana - Bryan Totty">
     <meta property="og:description" content="Miami Hack Week 2022 — customizable NFT minting platform on the Solana blockchain with creator-defined templates.">
-    <meta property="og:image" content="../images/projects/nft-whiteboard.jpeg">
+    <meta property="og:image" content="../images/projects/nft-solana/card.svg">
     <meta property="og:type" content="article">
     <link rel="canonical" href="https://bryantotty.com/projects/nft-solana.html">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
@@ -46,34 +46,98 @@
         </div>
     </nav>
 
-    <main class="pt-28 pb-20 px-6">
+    <main class="pt-28 pb-24 px-6">
         <div class="max-w-3xl mx-auto">
-            <a href="../projects.html" class="text-white/40 hover:text-glow text-sm mb-6 inline-block transition-colors">&larr; Back to Projects</a>
-            <div class="mb-4">
+            <a href="../projects.html" class="text-white/40 hover:text-glow text-sm mb-8 inline-block transition-colors">&larr; Back to Projects</a>
+
+            <!-- Header -->
+            <div class="mb-6 flex items-center gap-3 flex-wrap">
                 <span class="text-xs font-medium px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 font-['JetBrains_Mono'] tracking-wider">CRYPTO</span>
+                <span class="text-xs font-['JetBrains_Mono'] tracking-[0.2em] uppercase text-white/40">Miami Hack Week · 2022</span>
             </div>
-            <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-8">NFT Project on Solana (SOL)</h1>
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 leading-[1.1]">A customizable NFT minting platform on Solana.</h1>
+            <p class="text-white/55 text-lg leading-relaxed mb-12 max-w-2xl">A creator defines the template &mdash; layers, customizable regions, royalty splits. The buyer tweaks it. Solana mints it. Both sides win.</p>
 
-            <div class="text-white/70 leading-relaxed space-y-6">
-                <p>For Miami Hack Week 2022, we designed a concept that allows NFT creators to make a template that allows limited customizations based on the creators criteria. A web interface will work to allow the creator to upload and define which parts of their template image can be customized and then this will be made available to someone who wishes to purchase. When purchasing you can then customize the image to your liking and then the NFT will be minted. This will allow the creator to retain royalties if desired, and the purchaser can customize their NFT.</p>
+            <!-- Hero visual -->
+            <div class="rounded-lg overflow-hidden border border-white/10 bg-white/[0.02] mb-16">
+                <img src="../images/projects/nft-solana/card.svg" alt="Three-step NFT customization flow on Solana" class="w-full block" loading="eager">
+            </div>
 
-                <p>Think of Bored Apes — many people like to use their NFT as an avatar for their social media or various chat services. The tool that we designed would allow the person purchasing to change the colors or modify patterns in the template. This is similar to what you might do with a video game character skin or a weapon skin, yet you are able to modify some parameters and then mint as your own custom NFT without needing to be a graphic designer. It's made simple for the end user.</p>
-
-                <h2 class="text-2xl font-semibold text-white/90 border-l-2 border-purple-400/30 pl-4 pt-4">Tech Stack</h2>
-                <p>We are utilizing web2, web3, and the Solana blockchain. Solana was chosen because of the speed and cheap transaction cost, as NFTs are quickly emerging on this blockchain.</p>
-
-                <h2 class="text-2xl font-semibold text-white/90 border-l-2 border-purple-400/30 pl-4 pt-4">Beyond Images</h2>
-                <p>This is a proof of concept using NFT images, but the technology can expand into other areas such as video, music, and more.</p>
-
-                <img src="../images/projects/nft-whiteboard.jpeg" alt="NFT Concept Whiteboarding" class="rounded-lg w-full my-6" loading="lazy">
-                <p class="text-white/40 text-xs italic">Concept white-boarding visual</p>
-
-                <img src="../images/projects/nft-visual-concept.jpeg" alt="NFT Visual Concept" class="rounded-lg w-full my-6" loading="lazy">
-                <p class="text-white/40 text-xs italic">Visual concept design</p>
-
-                <div class="mt-8 pt-6 border-t border-white/10">
-                    <a href="https://www.miamihackweek.com/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline text-sm">Miami Hack Week 2022</a>
+            <!-- The Idea -->
+            <section class="mb-16">
+                <p class="font-['JetBrains_Mono'] text-xs tracking-[0.3em] uppercase text-purple-400 mb-3">01 · The Idea</p>
+                <h2 class="text-2xl md:text-3xl font-semibold text-white mb-5 leading-snug">Templated NFTs that the buyer helps design.</h2>
+                <div class="text-white/65 leading-relaxed space-y-4 text-base">
+                    <p>Most NFT collections ship as fixed art. The buyer has no say. Our concept inverts that: the <strong class="text-white">creator</strong> uploads a template and defines exactly which regions, colors, and patterns can be modified. The <strong class="text-white">buyer</strong> then customizes within those rules and mints their unique piece on-chain.</p>
+                    <p>Think Bored Apes meets a character creator. The creator still controls the brand and earns royalties. The buyer gets a one-of-one piece without needing to be a graphic designer.</p>
                 </div>
+            </section>
+
+            <!-- Whiteboarding visual (cropped) -->
+            <figure class="mb-16">
+                <div class="rounded-lg overflow-hidden border border-white/10 bg-white/[0.02] aspect-[16/9]">
+                    <img src="../images/projects/nft-whiteboard.jpeg" alt="Whiteboard sketch of the NFT customization concept" class="w-full h-full object-cover object-top" loading="lazy">
+                </div>
+                <figcaption class="text-white/40 text-xs italic mt-3 text-center font-['JetBrains_Mono'] tracking-wider">Concept whiteboarding · Miami Hack Week 2022</figcaption>
+            </figure>
+
+            <!-- How It Works -->
+            <section class="mb-16">
+                <p class="font-['JetBrains_Mono'] text-xs tracking-[0.3em] uppercase text-purple-400 mb-3">02 · How It Works</p>
+                <h2 class="text-2xl md:text-3xl font-semibold text-white mb-8 leading-snug">Three steps from template to mint.</h2>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="border border-white/10 bg-white/[0.02] rounded-lg p-6">
+                        <p class="font-['JetBrains_Mono'] text-[11px] text-purple-400 tracking-[0.2em] mb-2">STEP 01</p>
+                        <h3 class="text-white text-lg font-semibold mb-2">Creator builds</h3>
+                        <p class="text-white/55 text-sm leading-relaxed">Upload artwork, mark which layers are customizable, set royalty splits.</p>
+                    </div>
+                    <div class="border border-white/10 bg-white/[0.02] rounded-lg p-6">
+                        <p class="font-['JetBrains_Mono'] text-[11px] text-purple-400 tracking-[0.2em] mb-2">STEP 02</p>
+                        <h3 class="text-white text-lg font-semibold mb-2">Buyer customizes</h3>
+                        <p class="text-white/55 text-sm leading-relaxed">Tweak colors, swap patterns, adjust attributes inside the creator's rules.</p>
+                    </div>
+                    <div class="border border-white/10 bg-white/[0.02] rounded-lg p-6">
+                        <p class="font-['JetBrains_Mono'] text-[11px] text-purple-400 tracking-[0.2em] mb-2">STEP 03</p>
+                        <h3 class="text-white text-lg font-semibold mb-2">Solana mints</h3>
+                        <p class="text-white/55 text-sm leading-relaxed">The personalized NFT lands on-chain in seconds for cents — royalties intact.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tech Stack -->
+            <section class="mb-16">
+                <p class="font-['JetBrains_Mono'] text-xs tracking-[0.3em] uppercase text-purple-400 mb-3">03 · Tech Stack</p>
+                <h2 class="text-2xl md:text-3xl font-semibold text-white mb-5 leading-snug">Web2 × Web3 × Solana.</h2>
+                <p class="text-white/65 leading-relaxed text-base mb-6">A familiar web interface for upload, customization, and preview — wired to a Solana smart contract for the actual mint. We chose Solana for two reasons: <strong class="text-white">speed</strong> (mints settle in under a second) and <strong class="text-white">cost</strong> (transaction fees in fractions of a cent). At the time, NFT culture was rapidly migrating from Ethereum gas wars onto Solana for exactly these reasons.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="font-['JetBrains_Mono'] text-xs px-3 py-1 rounded border border-white/10 text-white/55 bg-white/[0.02]">Solana</span>
+                    <span class="font-['JetBrains_Mono'] text-xs px-3 py-1 rounded border border-white/10 text-white/55 bg-white/[0.02]">Anchor</span>
+                    <span class="font-['JetBrains_Mono'] text-xs px-3 py-1 rounded border border-white/10 text-white/55 bg-white/[0.02]">Phantom Wallet</span>
+                    <span class="font-['JetBrains_Mono'] text-xs px-3 py-1 rounded border border-white/10 text-white/55 bg-white/[0.02]">React</span>
+                    <span class="font-['JetBrains_Mono'] text-xs px-3 py-1 rounded border border-white/10 text-white/55 bg-white/[0.02]">IPFS</span>
+                    <span class="font-['JetBrains_Mono'] text-xs px-3 py-1 rounded border border-white/10 text-white/55 bg-white/[0.02]">Metaplex</span>
+                </div>
+            </section>
+
+            <!-- Visual concept image -->
+            <figure class="mb-16">
+                <div class="rounded-lg overflow-hidden border border-white/10 bg-white/[0.02]">
+                    <img src="../images/projects/nft-visual-concept.jpeg" alt="NFT visual concept design" class="w-full block" loading="lazy">
+                </div>
+                <figcaption class="text-white/40 text-xs italic mt-3 text-center font-['JetBrains_Mono'] tracking-wider">Visual concept exploration</figcaption>
+            </figure>
+
+            <!-- Beyond Images -->
+            <section class="mb-16">
+                <p class="font-['JetBrains_Mono'] text-xs tracking-[0.3em] uppercase text-purple-400 mb-3">04 · What's Next</p>
+                <h2 class="text-2xl md:text-3xl font-semibold text-white mb-5 leading-snug">It's not just images.</h2>
+                <p class="text-white/65 leading-relaxed text-base">The hackathon shipped a proof-of-concept around static art, but the same template-and-customize pattern extends naturally to <strong class="text-white">video</strong> (creators ship reusable VJ loops, buyers swap colors and audio), <strong class="text-white">music</strong> (stems with creator-defined remix bounds), and <strong class="text-white">in-game assets</strong> (skin templates that buyers personalize before equip). One concept, many media types.</p>
+            </section>
+
+            <!-- CTA / footer link -->
+            <div class="mt-12 pt-8 border-t border-white/10 flex items-center justify-between flex-wrap gap-4">
+                <a href="https://www.miamihackweek.com/" target="_blank" rel="noopener" class="font-['JetBrains_Mono'] text-xs tracking-[0.2em] uppercase text-purple-400 hover:text-glow transition-colors">Miami Hack Week 2022 ↗</a>
+                <a href="../projects.html" class="text-white/40 hover:text-glow text-sm transition-colors">More projects →</a>
             </div>
         </div>
     </main>

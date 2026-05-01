@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Customizable NFT minting platform on Solana">
+  <defs>
+    <radialGradient id="bg" cx="30%" cy="30%" r="90%">
+      <stop offset="0%" stop-color="#1a0b3a"/>
+      <stop offset="50%" stop-color="#0a0418"/>
+      <stop offset="100%" stop-color="#020107"/>
+    </radialGradient>
+    <linearGradient id="solanaGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#9945FF"/>
+      <stop offset="100%" stop-color="#14F195"/>
+    </linearGradient>
+    <linearGradient id="nftA" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff6ec7"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="nftB" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#14F195"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="nftC" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fb923c"/>
+      <stop offset="100%" stop-color="#dc2626"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.08)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.02)"/>
+    </linearGradient>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M 36 0 L 0 0 0 36" fill="none" stroke="rgba(153,69,255,0.08)" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="80%">
+      <stop offset="55%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.7"/>
+    </radialGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="400" fill="url(#bg)"/>
+  <rect width="800" height="400" fill="url(#grid)"/>
+
+  <!-- Ambient orbs -->
+  <circle cx="120" cy="80" r="120" fill="#9945FF" opacity="0.12"/>
+  <circle cx="700" cy="320" r="150" fill="#14F195" opacity="0.08"/>
+
+  <!-- ========= 3 NFT cards (template → customize → mint flow) ========= -->
+  <!-- Card 1: TEMPLATE -->
+  <g transform="translate(80, 80)">
+    <rect width="180" height="240" rx="14" fill="url(#card)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+    <!-- artwork canvas -->
+    <rect x="14" y="14" width="152" height="152" rx="8" fill="url(#nftA)"/>
+    <!-- abstract shapes inside -->
+    <circle cx="60" cy="70" r="22" fill="rgba(255,255,255,0.22)"/>
+    <circle cx="100" cy="100" r="32" fill="rgba(255,255,255,0.18)"/>
+    <circle cx="130" cy="60" r="14" fill="rgba(255,255,255,0.28)"/>
+    <rect x="40" y="120" width="80" height="22" rx="6" fill="rgba(0,0,0,0.25)"/>
+    <!-- label -->
+    <text x="14" y="190" font-family="'JetBrains Mono',monospace" font-size="9" fill="#9945FF" letter-spacing="1.5">01 · TEMPLATE</text>
+    <text x="14" y="208" font-family="'Inter',sans-serif" font-size="13" font-weight="700" fill="white">Creator Defines</text>
+    <text x="14" y="222" font-family="'Inter',sans-serif" font-size="10" fill="rgba(255,255,255,0.45)">Layer rules &amp; royalties</text>
+  </g>
+
+  <!-- Arrow -->
+  <g transform="translate(270, 195)" filter="url(#glow)">
+    <path d="M 0 5 L 30 5 M 22 0 L 30 5 L 22 10" stroke="#14F195" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- Card 2: CUSTOMIZE -->
+  <g transform="translate(310, 80)">
+    <rect width="180" height="240" rx="14" fill="url(#card)" stroke="rgba(20,241,149,0.3)" stroke-width="1.5"/>
+    <!-- artwork canvas -->
+    <rect x="14" y="14" width="152" height="152" rx="8" fill="url(#nftB)"/>
+    <circle cx="60" cy="70" r="22" fill="rgba(255,255,255,0.4)"/>
+    <circle cx="100" cy="100" r="32" fill="rgba(255,255,255,0.25)"/>
+    <circle cx="130" cy="60" r="14" fill="rgba(255,255,255,0.5)"/>
+    <rect x="40" y="120" width="80" height="22" rx="6" fill="rgba(0,0,0,0.3)"/>
+
+    <!-- sliders overlay -->
+    <g transform="translate(20, 175)">
+      <rect width="140" height="3" rx="1.5" fill="rgba(255,255,255,0.12)"/>
+      <rect width="92" height="3" rx="1.5" fill="#14F195"/>
+      <circle cx="92" cy="1.5" r="5" fill="#14F195"/>
+    </g>
+    <g transform="translate(20, 188)">
+      <rect width="140" height="3" rx="1.5" fill="rgba(255,255,255,0.12)"/>
+      <rect width="50" height="3" rx="1.5" fill="#14F195"/>
+      <circle cx="50" cy="1.5" r="5" fill="#14F195"/>
+    </g>
+
+    <text x="14" y="216" font-family="'JetBrains Mono',monospace" font-size="9" fill="#14F195" letter-spacing="1.5">02 · CUSTOMIZE</text>
+    <text x="14" y="234" font-family="'Inter',sans-serif" font-size="13" font-weight="700" fill="white">Buyer Tweaks</text>
+  </g>
+
+  <!-- Arrow -->
+  <g transform="translate(500, 195)" filter="url(#glow)">
+    <path d="M 0 5 L 30 5 M 22 0 L 30 5 L 22 10" stroke="#9945FF" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- Card 3: MINT -->
+  <g transform="translate(540, 80)">
+    <rect width="180" height="240" rx="14" fill="url(#card)" stroke="rgba(153,69,255,0.4)" stroke-width="1.5"/>
+    <rect x="14" y="14" width="152" height="152" rx="8" fill="url(#nftC)"/>
+    <circle cx="60" cy="70" r="22" fill="rgba(255,255,255,0.55)"/>
+    <circle cx="100" cy="100" r="32" fill="rgba(255,255,255,0.35)"/>
+    <circle cx="130" cy="60" r="14" fill="rgba(255,255,255,0.65)"/>
+    <rect x="40" y="120" width="80" height="22" rx="6" fill="rgba(0,0,0,0.35)"/>
+    <!-- mint stamp -->
+    <g transform="translate(126, 24)" opacity="0.95">
+      <circle r="14" fill="rgba(0,0,0,0.6)" stroke="#14F195" stroke-width="1.5"/>
+      <text y="3" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" font-weight="700" fill="#14F195" letter-spacing="0.5">MINT</text>
+    </g>
+
+    <text x="14" y="190" font-family="'JetBrains Mono',monospace" font-size="9" fill="url(#solanaGrad)" letter-spacing="1.5">03 · ON-CHAIN</text>
+    <text x="14" y="208" font-family="'Inter',sans-serif" font-size="13" font-weight="700" fill="white">Solana Mint</text>
+    <text x="14" y="222" font-family="'Inter',sans-serif" font-size="10" fill="rgba(255,255,255,0.45)">Royalties retained</text>
+  </g>
+
+  <!-- Bottom brand mark -->
+  <g transform="translate(40, 365)" font-family="'JetBrains Mono',monospace" font-size="10" letter-spacing="2">
+    <text fill="rgba(255,255,255,0.5)">CUSTOMIZABLE NFT MINTING ·</text>
+    <text x="240" fill="url(#solanaGrad)" font-weight="700">SOLANA</text>
+    <text x="305" fill="rgba(255,255,255,0.5)">· MIAMI HACK WEEK '22</text>
+  </g>
+
+  <!-- Vignette -->
+  <rect width="800" height="400" fill="url(#vignette)" pointer-events="none"/>
+</svg>
