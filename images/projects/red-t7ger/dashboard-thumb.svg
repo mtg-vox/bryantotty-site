@@ -1,0 +1,196 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Artist Growth OS dashboard preview">
+  <defs>
+    <!-- Background gradient -->
+    <radialGradient id="bgGlow" cx="78%" cy="22%" r="80%">
+      <stop offset="0%" stop-color="#3a0710" stop-opacity="0.95"/>
+      <stop offset="42%" stop-color="#0d0407" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#020203" stop-opacity="1"/>
+    </radialGradient>
+    <linearGradient id="bgFlat" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a0a0c"/>
+      <stop offset="100%" stop-color="#020203"/>
+    </linearGradient>
+    <!-- Card surface -->
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#161618"/>
+      <stop offset="100%" stop-color="#0c0c0e"/>
+    </linearGradient>
+    <linearGradient id="card2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1014"/>
+      <stop offset="100%" stop-color="#0d0608"/>
+    </linearGradient>
+    <!-- Chart fades -->
+    <linearGradient id="barRed" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#c8102e" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#ff3355" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="barWhite" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.7"/>
+    </linearGradient>
+    <linearGradient id="lineFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c8102e" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#c8102e" stop-opacity="0"/>
+    </linearGradient>
+    <!-- Vignette -->
+    <radialGradient id="vignette" cx="50%" cy="50%" r="80%">
+      <stop offset="55%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.85"/>
+    </radialGradient>
+    <!-- Grid pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(200,16,46,0.08)" stroke-width="1"/>
+    </pattern>
+    <!-- Scanline overlay -->
+    <pattern id="scan" width="3" height="3" patternUnits="userSpaceOnUse">
+      <rect width="3" height="1.2" fill="rgba(255,255,255,0.018)"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="400" fill="url(#bgFlat)"/>
+  <rect width="800" height="400" fill="url(#bgGlow)"/>
+  <rect width="800" height="400" fill="url(#grid)"/>
+
+  <!-- ====== Floating dashboard module 1: KPI strip (top-left) ====== -->
+  <g transform="translate(40, 50)">
+    <rect width="340" height="78" rx="6" fill="url(#card)" stroke="rgba(255,255,255,0.06)"/>
+    <!-- 4 KPIs -->
+    <g font-family="'Inter','SF Pro',sans-serif" fill="white">
+      <text x="18" y="26" font-size="9" fill="rgba(255,255,255,0.42)" letter-spacing="1.2">FOLLOWERS</text>
+      <text x="18" y="52" font-size="22" font-weight="700">14.2K</text>
+      <text x="18" y="68" font-size="9" fill="#22c55e">+47 7d</text>
+
+      <text x="105" y="26" font-size="9" fill="rgba(255,255,255,0.42)" letter-spacing="1.2">STREAMS 28D</text>
+      <text x="105" y="52" font-size="22" font-weight="700" fill="#22c55e">3.8K</text>
+      <text x="105" y="68" font-size="9" fill="#22c55e">+18.4%</text>
+
+      <text x="200" y="26" font-size="9" fill="rgba(255,255,255,0.42)" letter-spacing="1.2">CPR</text>
+      <text x="200" y="52" font-size="22" font-weight="700">$0.34</text>
+      <text x="200" y="68" font-size="9" fill="#22c55e">cost / result</text>
+
+      <text x="265" y="26" font-size="9" fill="rgba(255,255,255,0.42)" letter-spacing="1.2">STREAMS / $</text>
+      <text x="265" y="52" font-size="22" font-weight="700" fill="#22c55e">22.4</text>
+      <text x="265" y="68" font-size="9" fill="#22c55e">efficiency</text>
+    </g>
+  </g>
+
+  <!-- ====== Floating dashboard module 2: timeline chart (bottom-left) ====== -->
+  <g transform="translate(40, 220)">
+    <rect width="340" height="140" rx="6" fill="url(#card)" stroke="rgba(255,255,255,0.06)"/>
+    <text x="16" y="24" font-family="'Inter',sans-serif" font-size="11" font-weight="700" fill="white">Daily Spend &amp; Conversions</text>
+    <text x="16" y="38" font-family="'Inter',sans-serif" font-size="9" fill="rgba(255,255,255,0.42)">Last 30 days</text>
+    <!-- bars -->
+    <g transform="translate(16, 56)">
+      <!-- Pairs of red+white bars, 28 columns -->
+      <g>
+        <rect x="0"   y="40" width="4" height="20" fill="url(#barRed)"/><rect x="5"   y="44" width="4" height="16" fill="url(#barWhite)"/>
+        <rect x="11"  y="36" width="4" height="24" fill="url(#barRed)"/><rect x="16"  y="40" width="4" height="20" fill="url(#barWhite)"/>
+        <rect x="22"  y="42" width="4" height="18" fill="url(#barRed)"/><rect x="27"  y="46" width="4" height="14" fill="url(#barWhite)"/>
+        <rect x="33"  y="34" width="4" height="26" fill="url(#barRed)"/><rect x="38"  y="38" width="4" height="22" fill="url(#barWhite)"/>
+        <rect x="44"  y="30" width="4" height="30" fill="url(#barRed)"/><rect x="49"  y="34" width="4" height="26" fill="url(#barWhite)"/>
+        <rect x="55"  y="34" width="4" height="26" fill="url(#barRed)"/><rect x="60"  y="38" width="4" height="22" fill="url(#barWhite)"/>
+        <rect x="66"  y="32" width="4" height="28" fill="url(#barRed)"/><rect x="71"  y="36" width="4" height="24" fill="url(#barWhite)"/>
+        <rect x="77"  y="26" width="4" height="34" fill="url(#barRed)"/><rect x="82"  y="30" width="4" height="30" fill="url(#barWhite)"/>
+        <rect x="88"  y="22" width="4" height="38" fill="url(#barRed)"/><rect x="93"  y="26" width="4" height="34" fill="url(#barWhite)"/>
+        <rect x="99"  y="28" width="4" height="32" fill="url(#barRed)"/><rect x="104" y="32" width="4" height="28" fill="url(#barWhite)"/>
+        <rect x="110" y="32" width="4" height="28" fill="url(#barRed)"/><rect x="115" y="36" width="4" height="24" fill="url(#barWhite)"/>
+        <rect x="121" y="20" width="4" height="40" fill="url(#barRed)"/><rect x="126" y="24" width="4" height="36" fill="url(#barWhite)"/>
+        <rect x="132" y="16" width="4" height="44" fill="url(#barRed)"/><rect x="137" y="20" width="4" height="40" fill="url(#barWhite)"/>
+        <rect x="143" y="10" width="4" height="50" fill="url(#barRed)"/><rect x="148" y="14" width="4" height="46" fill="url(#barWhite)"/>
+        <rect x="154" y="20" width="4" height="40" fill="url(#barRed)"/><rect x="159" y="24" width="4" height="36" fill="url(#barWhite)"/>
+        <rect x="165" y="24" width="4" height="36" fill="url(#barRed)"/><rect x="170" y="28" width="4" height="32" fill="url(#barWhite)"/>
+        <rect x="176" y="28" width="4" height="32" fill="url(#barRed)"/><rect x="181" y="32" width="4" height="28" fill="url(#barWhite)"/>
+        <rect x="187" y="22" width="4" height="38" fill="url(#barRed)"/><rect x="192" y="26" width="4" height="34" fill="url(#barWhite)"/>
+        <rect x="198" y="18" width="4" height="42" fill="url(#barRed)"/><rect x="203" y="22" width="4" height="38" fill="url(#barWhite)"/>
+        <rect x="209" y="14" width="4" height="46" fill="url(#barRed)"/><rect x="214" y="18" width="4" height="42" fill="url(#barWhite)"/>
+        <rect x="220" y="8"  width="4" height="52" fill="url(#barRed)"/><rect x="225" y="12" width="4" height="48" fill="url(#barWhite)"/>
+        <rect x="231" y="16" width="4" height="44" fill="url(#barRed)"/><rect x="236" y="20" width="4" height="40" fill="url(#barWhite)"/>
+        <rect x="242" y="22" width="4" height="38" fill="url(#barRed)"/><rect x="247" y="26" width="4" height="34" fill="url(#barWhite)"/>
+        <rect x="253" y="14" width="4" height="46" fill="url(#barRed)"/><rect x="258" y="18" width="4" height="42" fill="url(#barWhite)"/>
+        <rect x="264" y="8"  width="4" height="52" fill="url(#barRed)"/><rect x="269" y="12" width="4" height="48" fill="url(#barWhite)"/>
+        <rect x="275" y="4"  width="4" height="56" fill="url(#barRed)"/><rect x="280" y="8"  width="4" height="52" fill="url(#barWhite)"/>
+        <rect x="286" y="14" width="4" height="46" fill="url(#barRed)"/><rect x="291" y="18" width="4" height="42" fill="url(#barWhite)"/>
+        <rect x="297" y="20" width="4" height="40" fill="url(#barRed)"/><rect x="302" y="24" width="4" height="36" fill="url(#barWhite)"/>
+      </g>
+      <!-- baseline -->
+      <line x1="0" y1="62" x2="308" y2="62" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    </g>
+  </g>
+
+  <!-- ====== Floating dashboard module 3: Top tracks bars (right) ====== -->
+  <g transform="translate(440, 50)">
+    <rect width="320" height="158" rx="6" fill="url(#card2)" stroke="rgba(200,16,46,0.18)"/>
+    <text x="18" y="26" font-family="'Inter',sans-serif" font-size="11" font-weight="700" fill="white">Top Songs by Streams</text>
+    <text x="18" y="40" font-family="'Inter',sans-serif" font-size="9" fill="rgba(255,255,255,0.42)">Latest 28 days</text>
+
+    <g font-family="'Inter',sans-serif" font-size="10" fill="rgba(255,255,255,0.85)">
+      <!-- Row 1 -->
+      <text x="18" y="68">Static Bloom</text>
+      <rect x="100" y="60" width="170" height="10" fill="rgba(255,255,255,0.05)" rx="2"/>
+      <rect x="100" y="60" width="170" height="10" fill="url(#barRed)" rx="2"/>
+      <text x="280" y="68" fill="rgba(255,255,255,0.55)" text-anchor="end" font-variant-numeric="tabular-nums" >1,420</text>
+
+      <!-- Row 2 -->
+      <text x="18" y="90">Voltage Drop</text>
+      <rect x="100" y="82" width="170" height="10" fill="rgba(255,255,255,0.05)" rx="2"/>
+      <rect x="100" y="82" width="123" height="10" fill="url(#barRed)" rx="2"/>
+      <text x="280" y="90" fill="rgba(255,255,255,0.55)" text-anchor="end" font-variant-numeric="tabular-nums">1,021</text>
+
+      <!-- Row 3 -->
+      <text x="18" y="112">Nightwave</text>
+      <rect x="100" y="104" width="170" height="10" fill="rgba(255,255,255,0.05)" rx="2"/>
+      <rect x="100" y="104" width="92" height="10" fill="url(#barRed)" rx="2"/>
+      <text x="280" y="112" fill="rgba(255,255,255,0.55)" text-anchor="end" font-variant-numeric="tabular-nums">768</text>
+
+      <!-- Row 4 -->
+      <text x="18" y="134">Shadowburn</text>
+      <rect x="100" y="126" width="170" height="10" fill="rgba(255,255,255,0.05)" rx="2"/>
+      <rect x="100" y="126" width="55" height="10" fill="url(#barRed)" rx="2"/>
+      <text x="280" y="134" fill="rgba(255,255,255,0.55)" text-anchor="end" font-variant-numeric="tabular-nums">412</text>
+    </g>
+  </g>
+
+  <!-- ====== Floating module 4: platform dots (right-bottom) ====== -->
+  <g transform="translate(440, 230)">
+    <rect width="320" height="130" rx="6" fill="url(#card)" stroke="rgba(255,255,255,0.06)"/>
+    <text x="18" y="26" font-family="'Inter',sans-serif" font-size="11" font-weight="700" fill="white">Platforms Connected</text>
+    <text x="18" y="40" font-family="'Inter',sans-serif" font-size="9" fill="rgba(255,255,255,0.42)">10+ unified data sources</text>
+
+    <g transform="translate(18, 56)">
+      <!-- Row 1 -->
+      <g><circle cx="14" cy="14" r="14" fill="#E1306C"/><text x="14" y="18" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="700" fill="white">IG</text></g>
+      <g transform="translate(36,0)"><circle cx="14" cy="14" r="14" fill="#1877F2"/><text x="14" y="18" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="700" fill="white">FB</text></g>
+      <g transform="translate(72,0)"><circle cx="14" cy="14" r="14" fill="#FF0000"/><text x="14" y="18" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="700" fill="white">YT</text></g>
+      <g transform="translate(108,0)"><circle cx="14" cy="14" r="14" fill="#000" stroke="white" stroke-width="1"/><text x="14" y="18" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="700" fill="white">TT</text></g>
+      <g transform="translate(144,0)"><circle cx="14" cy="14" r="14" fill="#000" stroke="white" stroke-width="1"/><text x="14" y="18" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="700" fill="white">X</text></g>
+      <g transform="translate(180,0)"><circle cx="14" cy="14" r="14" fill="#FF5500"/><text x="14" y="18" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="700" fill="white">SC</text></g>
+      <g transform="translate(216,0)"><circle cx="14" cy="14" r="14" fill="#1DB954"/><text x="14" y="18" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="700" fill="white">SP</text></g>
+      <g transform="translate(252,0)"><circle cx="14" cy="14" r="14" fill="#FC3C44"/><text x="14" y="18" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="700" fill="white">AM</text></g>
+
+      <!-- Row 2 -->
+      <g transform="translate(0,40)"><circle cx="14" cy="14" r="14" fill="#1877F2" opacity="0.85"/><text x="14" y="18" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="700" fill="white">META</text></g>
+      <g transform="translate(54,40)"><circle cx="14" cy="14" r="14" fill="#FF6B6B"/><text x="14" y="18" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="700" fill="white">UM</text></g>
+      <g transform="translate(108,40)"><circle cx="14" cy="14" r="14" fill="#7c3aed"/><text x="14" y="18" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="700" fill="white">TD</text></g>
+      <g transform="translate(162,40)"><circle cx="14" cy="14" r="14" fill="#f97316"/><text x="14" y="18" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="700" fill="white">ETSY</text></g>
+      <!-- Live status -->
+      <g transform="translate(220,42)">
+        <circle cx="6" cy="12" r="4" fill="#22c55e"><animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/></circle>
+        <text x="16" y="16" font-family="'JetBrains Mono',monospace" font-size="9" font-weight="700" fill="#22c55e" letter-spacing="1.5">SYNC OK</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Scanline overlay (subtle CRT vibe) -->
+  <rect width="800" height="400" fill="url(#scan)" pointer-events="none"/>
+  <!-- Vignette -->
+  <rect width="800" height="400" fill="url(#vignette)" pointer-events="none"/>
+
+  <!-- Glowing accent dot -->
+  <circle cx="700" cy="40" r="60" fill="#c8102e" opacity="0.04"/>
+
+  <!-- Brand corner mark -->
+  <g transform="translate(28, 372)" font-family="'JetBrains Mono',monospace" fill="rgba(255,255,255,0.45)" font-size="9" letter-spacing="2">
+    <text>GROWTH OS · MULTI-PLATFORM AI · READ-ONLY</text>
+  </g>
+</svg>
