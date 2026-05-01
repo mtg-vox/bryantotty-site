@@ -10,7 +10,7 @@
     <meta name="description" content="Notes and resources for getting started in Ethereum development — tools, courses, and community links.">
     <meta property="og:title" content="Getting Started on Ethereum - Bryan Totty">
     <meta property="og:description" content="Notes and resources for getting started in Ethereum development — tools, courses, and community links.">
-    <meta property="og:image" content="../images/blog/ethereum.png">
+    <meta property="og:image" content="../images/blog/ethereum-hero.svg">
     <meta property="og:type" content="article">
     <link rel="canonical" href="https://bryantotty.com/blog/getting-started-ethereum.html">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
@@ -50,7 +50,17 @@
         <div class="max-w-3xl mx-auto">
             <a href="../blog.html" class="text-white/40 hover:text-glow text-sm mb-8 inline-block transition-colors">&larr; Back to Blog</a>
 
-            <!-- Header -->
+            <!-- Hero with diamond + integrated title -->
+            <figure class="mb-10">
+                <div class="rounded-lg overflow-hidden border border-white/10 bg-black aspect-[2/1]">
+                    <img src="../images/blog/ethereum-hero.svg" alt="Getting Started on Ethereum" class="w-full h-full object-contain" loading="eager">
+                </div>
+            </figure>
+
+            <!-- Mobile-only fallback title (visible only on small screens where the SVG text gets tiny) -->
+            <h1 class="md:hidden text-3xl font-bold tracking-tight mb-3 leading-tight text-center break-words">Getting Started on <span class="text-glow">Ethereum</span></h1>
+
+            <!-- Header meta -->
             <div class="flex flex-wrap items-center justify-center gap-2 mb-5">
                 <span class="text-xs text-white/40 font-['JetBrains_Mono'] tracking-wider">FEBRUARY 12, 2023</span>
                 <span class="text-white/20">·</span>
@@ -58,15 +68,7 @@
                 <span class="text-white/20">·</span>
                 <span class="text-xs text-white/40 font-['JetBrains_Mono']">In Progress</span>
             </div>
-            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-5 leading-[1.1] text-center">Getting Started on Ethereum</h1>
             <p class="text-white/55 text-lg leading-relaxed mb-10 max-w-2xl mx-auto text-center">Scratch notes from the road into blockchain development &mdash; the courses, the community, the install pain, and what to actually study first.</p>
-
-            <!-- Hero image -->
-            <figure class="mb-14">
-                <div class="rounded-lg overflow-hidden border border-white/10 aspect-[16/9]">
-                    <img src="../images/blog/ethereum.png" alt="Ethereum" class="w-full h-full object-cover" loading="eager">
-                </div>
-            </figure>
 
             <!-- Maintenance note -->
             <div class="mb-14 border border-white/10 rounded-lg bg-white/[0.02] p-5 text-white/55 text-sm italic leading-relaxed">

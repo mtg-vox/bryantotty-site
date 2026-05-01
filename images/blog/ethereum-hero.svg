@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="ethTitle">
+  <title id="ethTitle">Getting Started on Ethereum</title>
+  <defs>
+    <radialGradient id="ethBg" cx="50%" cy="35%" r="80%">
+      <stop offset="0%" stop-color="#1a0d2e"/>
+      <stop offset="50%" stop-color="#0a0418"/>
+      <stop offset="100%" stop-color="#020203"/>
+    </radialGradient>
+    <linearGradient id="diamondLight" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a8b6ff"/>
+      <stop offset="100%" stop-color="#7888d8"/>
+    </linearGradient>
+    <linearGradient id="diamondMed" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7888d8"/>
+      <stop offset="100%" stop-color="#454aa1"/>
+    </linearGradient>
+    <linearGradient id="diamondDark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#454aa1"/>
+      <stop offset="100%" stop-color="#1c1f5c"/>
+    </linearGradient>
+    <linearGradient id="diamondEdge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c8102e" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#8b001f" stop-opacity="0.4"/>
+    </linearGradient>
+    <radialGradient id="ambientGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#c8102e" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#c8102e" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="bgGrid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(200,16,46,0.05)" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="80%">
+      <stop offset="55%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.7"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="600" fill="url(#ethBg)"/>
+  <rect width="1200" height="600" fill="url(#bgGrid)"/>
+
+  <!-- Ambient red glow behind diamond -->
+  <circle cx="300" cy="300" r="280" fill="url(#ambientGlow)"/>
+
+  <!-- ============ ETHEREUM DIAMOND ============ -->
+  <!-- Centered around (300, 300), height ~440 -->
+  <g transform="translate(300, 300)">
+    <!-- Outer red glow halo -->
+    <g opacity="0.5">
+      <ellipse cx="0" cy="0" rx="160" ry="220" fill="none" stroke="#c8102e" stroke-width="1" opacity="0.25"/>
+      <ellipse cx="0" cy="0" rx="180" ry="240" fill="none" stroke="#c8102e" stroke-width="0.5" opacity="0.15"/>
+    </g>
+
+    <!-- TOP HALF (above middle band) -->
+    <!-- Left dark face -->
+    <polygon points="0,-220 -130,0 0,-50" fill="url(#diamondMed)"/>
+    <!-- Right light face -->
+    <polygon points="0,-220 130,0 0,-50" fill="url(#diamondLight)"/>
+    <!-- Middle ridge highlight -->
+    <line x1="0" y1="-220" x2="0" y2="-50" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+
+    <!-- MIDDLE BAND (the slim crossover) -->
+    <polygon points="-130,0 0,-50 130,0 0,50" fill="url(#diamondDark)" opacity="0.95"/>
+    <polygon points="-130,0 0,-50 0,50" fill="rgba(0,0,0,0.25)"/>
+
+    <!-- BOTTOM HALF (downward triangle) -->
+    <polygon points="-130,0 0,220 0,50" fill="url(#diamondDark)"/>
+    <polygon points="130,0 0,220 0,50" fill="url(#diamondMed)"/>
+    <line x1="0" y1="50" x2="0" y2="220" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+
+    <!-- Outer edges with subtle red highlight -->
+    <polygon points="0,-220 -130,0 0,50 130,0" fill="none" stroke="url(#diamondEdge)" stroke-width="1" opacity="0.5"/>
+    <polygon points="-130,0 0,220 130,0 0,50" fill="none" stroke="url(#diamondEdge)" stroke-width="1" opacity="0.5"/>
+  </g>
+
+  <!-- ============ TEXT (right side, never crops) ============ -->
+  <g transform="translate(620, 230)" font-family="'Inter', sans-serif" fill="white">
+    <!-- Eyebrow -->
+    <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="16" letter-spacing="6" fill="#c8102e">CRYPTO &middot; FEB 2023</text>
+    <!-- Title -->
+    <text x="0" y="60" font-size="64" font-weight="700" letter-spacing="-1.5">Getting Started</text>
+    <text x="0" y="125" font-size="64" font-weight="700" letter-spacing="-1.5">on <tspan fill="#c8102e">Ethereum</tspan></text>
+    <!-- Subhead -->
+    <text x="0" y="180" font-size="18" fill="rgba(255,255,255,0.55)" font-weight="300">Scratch notes from the road into</text>
+    <text x="0" y="206" font-size="18" fill="rgba(255,255,255,0.55)" font-weight="300">blockchain development.</text>
+    <!-- Decorative bar -->
+    <rect x="0" y="245" width="80" height="3" fill="#c8102e"/>
+    <text x="0" y="280" font-family="'JetBrains Mono', monospace" font-size="13" fill="rgba(255,255,255,0.45)" letter-spacing="2">SOLIDITY &middot; WEB3 &middot; SMART CONTRACTS</text>
+  </g>
+
+  <!-- Vignette -->
+  <rect width="1200" height="600" fill="url(#vignette)" pointer-events="none"/>
+</svg>
