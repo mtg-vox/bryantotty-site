@@ -1,9 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" shape-rendering="geometricPrecision">
-  <!-- Bold red background — your signature glow color, edge to edge -->
   <rect width="64" height="64" rx="12" fill="#c8102e"/>
-  <!-- Thin dark inner stroke to crisp the edge against light browser themes -->
   <rect x="0.5" y="0.5" width="63" height="63" rx="11.5" fill="none" stroke="rgba(0,0,0,0.25)" stroke-width="1"/>
-  <!-- Bold white "B" — Inter Black, optically centered, fills the canvas -->
   <text
     x="50%" y="50%"
     text-anchor="middle"
