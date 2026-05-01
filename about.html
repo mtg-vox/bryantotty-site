@@ -40,12 +40,172 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;700&family=Audiowide&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* ============ ABOUT PAGE — RED BRAND × MIAMI ENERGY ============ */
+        :root {
+            --a-red: #c8102e;
+            --a-pink: #ff2e88;
+            --a-cyan: #00f0ff;
+            --a-purple: #9d4edd;
+        }
+        /* Page-scoped backdrop: red dominant top, miami glow at bottom */
+        .a-bg {
+            position: fixed; inset: 0; z-index: 0; pointer-events: none;
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(200, 16, 46, 0.10), transparent 50%),
+                radial-gradient(ellipse at 15% 75%, rgba(255, 46, 136, 0.07), transparent 50%),
+                radial-gradient(ellipse at 85% 95%, rgba(0, 240, 255, 0.05), transparent 55%);
+        }
+        /* Eyebrow */
+        .a-eyebrow {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
+            padding: 6px 14px; border-radius: 999px;
+            color: rgba(255,255,255,0.7); border: 1px solid var(--a-red);
+            background: rgba(200, 16, 46, 0.08);
+            box-shadow: 0 0 20px rgba(200, 16, 46, 0.12);
+        }
+        .a-eyebrow-dot {
+            width: 6px; height: 6px; border-radius: 50%;
+            background: var(--a-red); box-shadow: 0 0 10px var(--a-red);
+            animation: a-pulse 2s ease-in-out infinite;
+        }
+        @keyframes a-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+        /* Title gradient — red into pink for the dual energy */
+        .a-title {
+            background: linear-gradient(95deg, var(--a-red) 0%, #ff4466 35%, var(--a-pink) 70%, var(--a-cyan) 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: a-gradient 12s ease infinite;
+        }
+        @keyframes a-gradient { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+
+        /* Section eyebrow labels — colored per section persona */
+        .a-label-red    { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--a-red);    margin-bottom: 12px; text-shadow: 0 0 10px rgba(200, 16, 46, 0.45); }
+        .a-label-pink   { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--a-pink);   margin-bottom: 12px; text-shadow: 0 0 10px rgba(255, 46, 136, 0.45); }
+        .a-label-cyan   { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--a-cyan);   margin-bottom: 12px; text-shadow: 0 0 10px rgba(0, 240, 255, 0.4); }
+        .a-label-purple { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--a-purple); margin-bottom: 12px; text-shadow: 0 0 10px rgba(157, 78, 221, 0.45); }
+
+        /* Section H2 — sleek and consistent */
+        .a-h2 { font-size: 28px; font-weight: 700; color: white; margin-bottom: 18px; letter-spacing: -0.01em; line-height: 1.2; }
+
+        /* Tag pills */
+        .a-tag-red    { background: rgba(200, 16, 46, 0.10); color: var(--a-red);    border: 1px solid rgba(200, 16, 46, 0.4); }
+        .a-tag-pink   { background: rgba(255, 46, 136, 0.10); color: var(--a-pink);   border: 1px solid rgba(255, 46, 136, 0.4); }
+        .a-tag-cyan   { background: rgba(0, 240, 255, 0.10); color: var(--a-cyan);   border: 1px solid rgba(0, 240, 255, 0.4); }
+
+        /* Hero portrait frame: red brand glow with a hint of pink underglow */
+        .a-portrait {
+            border-radius: 12px; overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow:
+                0 0 60px rgba(200, 16, 46, 0.20),
+                0 0 120px rgba(255, 46, 136, 0.08);
+        }
+
+        /* Career timeline cards */
+        .a-career-card {
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 8px; padding: 16px;
+            transition: all 0.3s ease;
+        }
+        .a-career-card:hover { border-color: rgba(200, 16, 46, 0.4); background: rgba(200, 16, 46, 0.04); transform: translateY(-2px); }
+        .a-career-card.is-current { border-color: rgba(200, 16, 46, 0.4); background: rgba(200, 16, 46, 0.04); box-shadow: 0 0 30px rgba(200, 16, 46, 0.08); }
+
+        /* Cert + tech pills (existing pattern, unified) */
+        .a-cert-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-family: 'JetBrains Mono', monospace; font-size: 11px;
+            padding: 6px 12px; border-radius: 4px;
+            border: 1px solid rgba(200, 16, 46, 0.3);
+            color: rgba(255,255,255,0.75);
+            background: rgba(200, 16, 46, 0.04);
+        }
+        .a-tech-pill {
+            font-family: 'JetBrains Mono', monospace; font-size: 11px;
+            padding: 4px 10px; border-radius: 4px;
+            border: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.55);
+            background: rgba(255,255,255,0.02);
+        }
+
+        /* Music section card — pink/cyan because it's the most "Miami" */
+        .a-card-music {
+            border: 1px solid rgba(255, 46, 136, 0.25);
+            background: linear-gradient(135deg, rgba(255, 46, 136, 0.04), rgba(157, 78, 221, 0.02));
+            border-left: 3px solid var(--a-pink);
+            border-radius: 12px; padding: 28px;
+            box-shadow: 0 0 50px rgba(255, 46, 136, 0.06), 0 0 100px rgba(0, 240, 255, 0.03);
+            position: relative; overflow: hidden;
+        }
+        /* Decorative palm SVG positioned absolutely inside music card */
+        .a-palm-decor {
+            position: absolute; right: -30px; bottom: -20px; width: 180px;
+            opacity: 0.15; pointer-events: none;
+            filter: drop-shadow(0 0 12px rgba(255, 46, 136, 0.5));
+        }
+
+        /* Crypto/Nomad cards — cyan accent for "freedom / nomad" energy */
+        .a-card-cyan {
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            background: rgba(0, 240, 255, 0.02);
+            border-left: 3px solid var(--a-cyan);
+            border-radius: 12px; padding: 24px;
+        }
+        /* Entrepreneur card — purple */
+        .a-card-purple {
+            border: 1px solid rgba(157, 78, 221, 0.25);
+            background: rgba(157, 78, 221, 0.02);
+            border-left: 3px solid var(--a-purple);
+            border-radius: 12px; padding: 24px;
+        }
+        /* Standard red card — for serious professional sections */
+        .a-card-red {
+            border: 1px solid rgba(200, 16, 46, 0.25);
+            background: rgba(200, 16, 46, 0.02);
+            border-left: 3px solid var(--a-red);
+            border-radius: 12px; padding: 24px;
+        }
+
+        /* In the Press list */
+        .a-press-link {
+            display: block; padding: 14px 18px; border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.06);
+            background: rgba(255,255,255,0.02);
+            color: rgba(255,255,255,0.75);
+            transition: all 0.3s; text-decoration: none;
+        }
+        .a-press-link:hover { border-color: rgba(200, 16, 46, 0.4); background: rgba(200, 16, 46, 0.04); color: white; transform: translateX(4px); }
+
+        /* Education item */
+        .a-edu-item {
+            display: flex; gap: 14px; align-items: flex-start;
+            padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+        .a-edu-item:last-child { border-bottom: none; }
+        .a-edu-icon { color: var(--a-red); margin-top: 6px; flex-shrink: 0; font-size: 8px; }
+
+        /* Section dividers — subtle red to pink fade */
+        .a-divider {
+            height: 1px; margin: 56px 0;
+            background: linear-gradient(90deg, transparent, rgba(200, 16, 46, 0.4), rgba(255, 46, 136, 0.2), transparent);
+        }
+
+        /* Underline link inside paragraphs */
+        .a-link { color: var(--a-red); text-decoration: underline; text-decoration-color: rgba(200, 16, 46, 0.4); text-underline-offset: 4px; transition: all 0.3s; }
+        .a-link:hover { color: var(--a-pink); text-decoration-color: var(--a-pink); text-shadow: 0 0 10px rgba(255, 46, 136, 0.4); }
+    </style>
 </head>
 <body class="bg-dark text-white font-['Inter'] min-h-screen overflow-x-hidden">
-    <!-- Animated grid background -->
-    <div class="grid-bg" aria-hidden="true"></div>
+    <!-- Page-scoped red+miami backdrop replaces the default red grid -->
+    <div class="a-bg" aria-hidden="true"></div>
 
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-50 bg-dark/80 backdrop-blur-xl border-b border-white/5">
@@ -77,206 +237,263 @@
         </div>
     </nav>
 
-    <main class="pt-28 pb-20 px-6">
+    <main class="pt-28 pb-24 px-6 relative">
         <div class="max-w-4xl mx-auto">
-            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-16">ABOUT ME</h1>
 
-            <!-- Intro + Photo -->
-            <section class="reveal flex flex-col md:flex-row gap-10 mb-20 items-start">
-                <div class="flex-1">
-                    <h2 class="text-2xl font-semibold mb-4">Who is Bryan Totty?</h2>
-                    <p class="text-white/70 leading-relaxed">
-                        I've led international business teams, hiked remote mountainsides, performed in front of large audiences, and studied wealth generation and investing deeply. My friends describe me as driven and a supportive mentor. I aim to inspire others to explore beyond their perceived limitations.
-                    </p>
+            <!-- ============ HERO ============ -->
+            <div class="flex justify-center mb-6">
+                <div class="a-eyebrow">
+                    <span class="a-eyebrow-dot"></span>
+                    Cybersecurity · AI · Music · Markets
                 </div>
-                <div class="w-full md:w-96 flex-shrink-0">
-                    <img src="images/about/suite-square.jpg"
-                         alt="Bryan Totty" class="profile-img w-full" loading="lazy">
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-5 leading-[1.05] text-center">
+                <span class="a-title">ABOUT BRYAN</span>
+            </h1>
+            <p class="text-white/55 text-lg leading-relaxed mb-12 max-w-2xl mx-auto text-center">
+                A serious technical career in cloud security and AI &mdash; powered by music, markets, and a relentless drive to build.
+            </p>
+
+            <!-- Hero Portrait -->
+            <figure class="reveal mb-16 max-w-md mx-auto">
+                <div class="a-portrait aspect-square">
+                    <img src="images/about/suite-square.jpg" alt="Bryan Totty in red suit" class="w-full h-full object-cover" loading="eager">
                 </div>
+            </figure>
+
+            <!-- ============ INTRO ============ -->
+            <section class="reveal mb-14">
+                <p class="a-label-red">00 · The Person</p>
+                <h2 class="a-h2">Who is Bryan Totty?</h2>
+                <p class="text-white/70 leading-relaxed text-base">
+                    I've led international business teams, hiked remote mountainsides, performed in front of large audiences, and studied wealth generation and investing deeply. My friends describe me as driven and a supportive mentor. I aim to inspire others to explore beyond their perceived limitations.
+                </p>
             </section>
 
-            <!-- Career -->
-            <section class="reveal mb-16">
-                <h2 class="text-2xl font-semibold mb-4 border-l-2 border-glow/40 pl-4">Career</h2>
-                <p class="text-white/70 leading-relaxed mb-4">
-                    At Microsoft, I lead cloud security programs for Azure Storage, making sure we stay compliant with the big frameworks (NIST 800-53, SOC 2, FedRAMP, GDPR) across 40+ engineering teams. I also build AI-powered workflows that automate the reporting and security analysis that used to take forever.
-                </p>
-                <p class="text-white/70 leading-relaxed mb-4">
-                    Before Microsoft, I was at Meta running enterprise security programs at massive scale. I migrated 30K+ VDI clients for global operations, drove a legal hold program across 100K+ devices, and led a secure USB rollout that touched 10K+ users. Big company, big numbers, fast pace.
-                </p>
-                <p class="text-white/70 leading-relaxed mb-4">
-                    I spent over 10 years at Red Hat, first as a Security Senior Technical Support Engineer leading 7 teams, then as Senior Security TPM overseeing security processes across 16 products with 200+ stakeholders. I led the rollout of a new Incident Response framework, built out the Software Bill of Materials (SBOM) program, onboarded 3 acquired companies into Red Hat's security processes, and spoke at security events across the US.
-                </p>
-                <p class="text-white/70 leading-relaxed">
-                    I started at IBM as a Server Test Engineer, testing prototype server hardware and software in a multi-million-dollar R&D lab. That's where I got my hands dirty with real infrastructure. <a href="https://www.linkedin.com/in/bryantotty/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">LinkedIn</a>.
-                </p>
+            <div class="a-divider"></div>
+
+            <!-- ============ CAREER ============ -->
+            <section class="reveal mb-14">
+                <p class="a-label-red">01 · Career</p>
+                <h2 class="a-h2">14+ years across IBM, Red Hat, Meta, Microsoft.</h2>
+                <div class="text-white/70 leading-relaxed space-y-4 text-base mb-8">
+                    <p>At <strong class="text-white">Microsoft</strong>, I lead cloud security programs for Azure Storage, making sure we stay compliant with the big frameworks (NIST 800-53, SOC 2, FedRAMP, GDPR) across 40+ engineering teams. I also build AI-powered workflows that automate the reporting and security analysis that used to take forever.</p>
+                    <p>Before Microsoft, I was at <strong class="text-white">Meta</strong> running enterprise security programs at massive scale. I migrated 30K+ VDI clients for global operations, drove a legal hold program across 100K+ devices, and led a secure USB rollout that touched 10K+ users. Big company, big numbers, fast pace.</p>
+                    <p>I spent over 10 years at <strong class="text-white">Red Hat</strong>, first as a Security Senior Technical Support Engineer leading 7 teams, then as Senior Security TPM overseeing security processes across 16 products with 200+ stakeholders. I led the rollout of a new Incident Response framework, built out the Software Bill of Materials (SBOM) program, onboarded 3 acquired companies into Red Hat's security processes, and spoke at security events across the US.</p>
+                    <p>I started at <strong class="text-white">IBM</strong> as a Server Test Engineer, testing prototype server hardware and software in a multi-million-dollar R&amp;D lab. That's where I got my hands dirty with real infrastructure. <a href="https://www.linkedin.com/in/bryantotty/" target="_blank" rel="noopener" class="a-link">LinkedIn</a>.</p>
+                </div>
 
                 <!-- Career Timeline -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-                    <div class="career-card">
-                        <span class="text-white/20 font-['JetBrains_Mono'] text-xs">2011 – 2012</span>
-                        <h3 class="text-base font-bold mt-2">IBM</h3>
-                        <p class="text-white/40 text-sm mt-1">Server Test Engineer</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                    <div class="a-career-card">
+                        <span class="text-white/30 font-['JetBrains_Mono'] text-xs tracking-wider">2011 – 2012</span>
+                        <h3 class="text-base font-bold mt-2 text-white">IBM</h3>
+                        <p class="text-white/40 text-xs mt-1">Server Test Engineer</p>
                     </div>
-                    <div class="career-card">
-                        <span class="text-white/20 font-['JetBrains_Mono'] text-xs">2012 – 2022</span>
-                        <h3 class="text-base font-bold mt-2 text-glow/80">Red Hat</h3>
-                        <p class="text-white/40 text-sm mt-1">Sr. Security TPM</p>
+                    <div class="a-career-card">
+                        <span class="text-white/30 font-['JetBrains_Mono'] text-xs tracking-wider">2012 – 2022</span>
+                        <h3 class="text-base font-bold mt-2 text-white">Red Hat</h3>
+                        <p class="text-white/40 text-xs mt-1">Sr. Security TPM</p>
                     </div>
-                    <div class="career-card">
-                        <span class="text-white/20 font-['JetBrains_Mono'] text-xs">2022 – 2024</span>
-                        <h3 class="text-base font-bold mt-2">Meta</h3>
-                        <p class="text-white/40 text-sm mt-1">Security Enterprise TPM</p>
+                    <div class="a-career-card">
+                        <span class="text-white/30 font-['JetBrains_Mono'] text-xs tracking-wider">2022 – 2024</span>
+                        <h3 class="text-base font-bold mt-2 text-white">Meta</h3>
+                        <p class="text-white/40 text-xs mt-1">Security Enterprise TPM</p>
                     </div>
-                    <div class="career-card">
-                        <span class="text-white/20 font-['JetBrains_Mono'] text-xs">2024 – Present</span>
-                        <h3 class="text-base font-bold mt-2 text-glow">Microsoft</h3>
-                        <p class="text-white/40 text-sm mt-1">Security TPM / PM</p>
+                    <div class="a-career-card is-current">
+                        <span class="text-glow font-['JetBrains_Mono'] text-xs tracking-wider">2024 – Present</span>
+                        <h3 class="text-base font-bold mt-2 text-white">Microsoft</h3>
+                        <p class="text-white/40 text-xs mt-1">Security TPM / PM</p>
                     </div>
                 </div>
             </section>
 
-            <!-- AI & Automation -->
-            <section class="reveal mb-16">
-                <h2 class="text-2xl font-semibold mb-4 border-l-2 border-glow/40 pl-4">AI &amp; Automation</h2>
-                <p class="text-white/70 leading-relaxed">
-                    I build AI tools and workflows that make security programs run faster. At Microsoft, that means automating compliance reporting and surfacing security trends across massive datasets. Outside of work, I build custom AI agents for market analysis, real estate research, and personal productivity. If AI can handle it, I'm automating it.
-                </p>
+            <div class="a-divider"></div>
+
+            <!-- ============ AI & AUTOMATION ============ -->
+            <section class="reveal mb-14">
+                <p class="a-label-red">02 · AI &amp; Automation</p>
+                <h2 class="a-h2">If AI can handle it, I'm automating it.</h2>
+                <div class="a-card-red">
+                    <p class="text-white/70 leading-relaxed text-base">
+                        I build AI tools and workflows that make security programs run faster. At Microsoft, that means automating compliance reporting and surfacing security trends across massive datasets. Outside of work, I build custom AI agents for market analysis, real estate research, and personal productivity.
+                    </p>
+                </div>
             </section>
 
-            <!-- Certifications & Tech Stack -->
-            <section class="reveal mb-16">
-                <h2 class="text-2xl font-semibold mb-4 border-l-2 border-glow/40 pl-4">Certifications</h2>
-                <div class="flex flex-wrap gap-3 mb-8">
-                    <span class="cert-badge"><span class="cert-icon">■</span> RHCE - Red Hat Certified Engineer</span>
-                    <span class="cert-badge"><span class="cert-icon">■</span> CCNA - Cisco Certified Network Associate</span>
-                    <span class="cert-badge"><span class="cert-icon">■</span> RHCVA - Red Hat Virtualization Admin</span>
-                    <span class="cert-badge"><span class="cert-icon">■</span> RHCSA - Red Hat Systems Admin</span>
+            <!-- ============ CERTIFICATIONS & TECH STACK ============ -->
+            <section class="reveal mb-14">
+                <p class="a-label-red">03 · Credentials &amp; Stack</p>
+                <h2 class="a-h2">Certifications.</h2>
+                <div class="flex flex-wrap gap-2 mb-8">
+                    <span class="a-cert-badge"><span class="text-glow">■</span> RHCE — Red Hat Certified Engineer</span>
+                    <span class="a-cert-badge"><span class="text-glow">■</span> CCNA — Cisco Certified Network Associate</span>
+                    <span class="a-cert-badge"><span class="text-glow">■</span> RHCVA — Red Hat Virtualization Admin</span>
+                    <span class="a-cert-badge"><span class="text-glow">■</span> RHCSA — Red Hat Systems Admin</span>
                 </div>
 
-                <h3 class="text-sm font-semibold text-white/40 tracking-[0.15em] uppercase mb-3">Tech Stack</h3>
+                <p class="font-['JetBrains_Mono'] text-[11px] tracking-[0.2em] text-glow uppercase mb-3">Tech Stack</p>
                 <div class="flex flex-wrap gap-2">
-                    <span class="tech-pill">Azure</span>
-                    <span class="tech-pill">AWS</span>
-                    <span class="tech-pill">Docker</span>
-                    <span class="tech-pill">Kubernetes</span>
-                    <span class="tech-pill">Python</span>
-                    <span class="tech-pill">PowerShell</span>
-                    <span class="tech-pill">Bash</span>
-                    <span class="tech-pill">KQL</span>
-                    <span class="tech-pill">Linux</span>
-                    <span class="tech-pill">SELinux</span>
-                    <span class="tech-pill">GitHub</span>
-                    <span class="tech-pill">CI/CD</span>
-                    <span class="tech-pill">IAM / RBAC</span>
-                    <span class="tech-pill">SIEM</span>
-                    <span class="tech-pill">OpenSSL / TLS</span>
+                    <span class="a-tech-pill">Azure</span>
+                    <span class="a-tech-pill">AWS</span>
+                    <span class="a-tech-pill">Docker</span>
+                    <span class="a-tech-pill">Kubernetes</span>
+                    <span class="a-tech-pill">Python</span>
+                    <span class="a-tech-pill">PowerShell</span>
+                    <span class="a-tech-pill">Bash</span>
+                    <span class="a-tech-pill">KQL</span>
+                    <span class="a-tech-pill">Linux</span>
+                    <span class="a-tech-pill">SELinux</span>
+                    <span class="a-tech-pill">GitHub</span>
+                    <span class="a-tech-pill">CI/CD</span>
+                    <span class="a-tech-pill">IAM / RBAC</span>
+                    <span class="a-tech-pill">SIEM</span>
+                    <span class="a-tech-pill">OpenSSL / TLS</span>
                 </div>
             </section>
 
-            <!-- Investing & Trading -->
-            <section class="reveal mb-16">
-                <h2 class="text-2xl font-semibold mb-4 border-l-2 border-glow/40 pl-4">Markets &amp; Investing</h2>
-                <p class="text-white/70 leading-relaxed mb-4">
-                    I began studying the traditional stock market and investments pretty intensely around 2015. Knowledge is power in the space, and contrary to conventional belief, the small investors (non multi-billion dollar funds) have a lot more potential for large returns than the bigger players do. I read every possible book I could get on general finance over the course of years and would fall asleep listening to audio books related to financial success to program myself to think about it constantly.
-                </p>
-                <p class="text-white/70 leading-relaxed">
-                    In 2019, I began advanced technical market analysis courses, which I have studied deeply on a daily basis for years to master technical analysis and options trading.
-                </p>
+            <div class="a-divider"></div>
+
+            <!-- ============ MARKETS & INVESTING ============ -->
+            <section class="reveal mb-14">
+                <p class="a-label-red">04 · Markets &amp; Investing</p>
+                <h2 class="a-h2">A decade of disciplined study.</h2>
+                <div class="text-white/70 leading-relaxed space-y-4 text-base">
+                    <p>I began studying the traditional stock market and investments pretty intensely around <strong class="text-white">2015</strong>. Knowledge is power in this space, and contrary to conventional belief, the small investors (non multi-billion dollar funds) have a lot more potential for large returns than the bigger players do. I read every possible book I could get on general finance over the course of years and would fall asleep listening to audio books related to financial success to program myself to think about it constantly.</p>
+                    <p>In <strong class="text-white">2019</strong>, I began advanced technical market analysis courses, which I have studied deeply on a daily basis for years to master technical analysis and options trading.</p>
+                </div>
             </section>
 
-            <!-- Entrepreneur -->
-            <section class="reveal mb-16">
-                <h2 class="text-2xl font-semibold mb-4 border-l-2 border-glow/40 pl-4">Entrepreneur</h2>
-                <p class="text-white/70 leading-relaxed">
-                    My path to becoming an entrepreneur started with my passion for music and evolved out of necessity. In order to market, brand, and get my message out, I had to become one. Later in life, I've taken that passion for business and startups and bundled it into my intense interest in technology and cryptocurrencies. I frequent meetup events and conferences to always keep learning, often where I meet other entrepreneurs whom I partner with. I am an early investor in a few small startups with big potential.
-                </p>
+            <!-- ============ ENTREPRENEUR ============ -->
+            <section class="reveal mb-14">
+                <p class="a-label-purple">05 · Entrepreneur</p>
+                <h2 class="a-h2">Music led to business led to crypto.</h2>
+                <div class="a-card-purple">
+                    <p class="text-white/70 leading-relaxed text-base">
+                        My path to becoming an entrepreneur started with my passion for music and evolved out of necessity. In order to market, brand, and get my message out, I had to become one. Later in life, I've taken that passion for business and startups and bundled it into my intense interest in technology and cryptocurrencies. I frequent meetup events and conferences to always keep learning, often where I meet other entrepreneurs whom I partner with. I am an early investor in a few small startups with big potential.
+                    </p>
+                </div>
             </section>
 
-            <!-- Crypto -->
-            <section class="reveal mb-16">
-                <h2 class="text-2xl font-semibold mb-4 border-l-2 border-glow/40 pl-4">Crypto</h2>
-                <p class="text-white/70 leading-relaxed">
-                    The crypto market is a natural fit for my interests and skillset because I have a long background in technology and a deep study and discipline towards investing, trading, and technical analysis. It also bundles in nicely with a nomad lifestyle when you can take your tokens anywhere and easily transact internationally. It can also serve to prepare in the wake of global currency turbulence as we have seen since the 2020 pandemic. These cycles are not new, but have been accelerated by governments around the world.
-                </p>
+            <!-- ============ CRYPTO ============ -->
+            <section class="reveal mb-14">
+                <p class="a-label-cyan">06 · Crypto</p>
+                <h2 class="a-h2">Tokens travel. So do I.</h2>
+                <div class="a-card-cyan">
+                    <p class="text-white/70 leading-relaxed text-base">
+                        The crypto market is a natural fit for my interests and skillset because I have a long background in technology and a deep study and discipline towards investing, trading, and technical analysis. It also bundles in nicely with a nomad lifestyle when you can take your tokens anywhere and easily transact internationally. It can also serve to prepare in the wake of global currency turbulence as we have seen since the 2020 pandemic. These cycles are not new, but have been accelerated by governments around the world.
+                    </p>
+                </div>
             </section>
 
-            <!-- Nomad -->
-            <section class="reveal mb-16">
-                <h2 class="text-2xl font-semibold mb-4 border-l-2 border-glow/40 pl-4">Nomad</h2>
-                <p class="text-white/70 leading-relaxed mb-4">
-                    Community operator and curator for a high net worth nomad community closely associated with Nomad Capitalist, but not directly affiliated. I can be contacted directly if you would like to join our WhatsApp and Discord groups for the private links.
-                </p>
-                <p class="text-white/70 leading-relaxed">
-                    We share real world business experience focused on freedom, tax efficiency, and international business and investing opportunities. I am also knowledgeable about residencies and citizenships for multiple countries to allow optimal flexibility in freedom and lifestyle.
-                </p>
+            <!-- ============ NOMAD ============ -->
+            <section class="reveal mb-14">
+                <p class="a-label-cyan">07 · Nomad</p>
+                <h2 class="a-h2">Freedom-first community operator.</h2>
+                <div class="text-white/70 leading-relaxed space-y-4 text-base">
+                    <p>Community operator and curator for a high net worth nomad community closely associated with Nomad Capitalist, but not directly affiliated. I can be contacted directly if you would like to join our WhatsApp and Discord groups for the private links.</p>
+                    <p>We share real-world business experience focused on freedom, tax efficiency, and international business and investing opportunities. I am also knowledgeable about residencies and citizenships for multiple countries to allow optimal flexibility in freedom and lifestyle.</p>
+                </div>
             </section>
 
-            <!-- Music -->
-            <section class="reveal mb-16">
-                <h2 class="text-2xl font-semibold mb-4 border-l-2 border-glow/40 pl-4">Music</h2>
-                <p class="text-white/70 leading-relaxed mb-4">
-                        By age 25, I owned a record label, performing live shows, doing radio station interviews, building marketing strategies, and professionally recording myself and clients.
-                </p>
-                <p class="text-white/70 leading-relaxed mb-4">
-                    When I started in music, there were no music streaming platforms, YouTube did not exist, and social media was not a thing. At that time, you had to hustle and network in person at shows and meet owners of venues through weeks, months, and years of dedication. We were on the streets of college campuses handing out fliers and self promoting our bands. I learned how to network and be persistent because the exposure route required getting on a radio station or TV in order to reach fans.
-                </p>
-                <p class="text-white/70 leading-relaxed mb-4">
-                    I have always enjoyed creating in a way that allows me to express myself and impact others. With my solo rap music, I really dug deep into the lyrical techniques and always challenged myself to rap in different styles and try an array of different music from classic hip-hop to trap to rock music. Through my music, I embrace a range of ways to connect people from fun all the way to mysterious and dark music.
-                </p>
-                <p class="text-white/70 leading-relaxed">
-                    As a side project, I recorded and performed two music videos for the enterprise open source software company Red Hat.
-                </p>
+            <div class="a-divider"></div>
+
+            <!-- ============ MUSIC (the Miami energy lives here) ============ -->
+            <section class="reveal mb-14">
+                <p class="a-label-pink">08 · Music</p>
+                <h2 class="a-h2">By 25, I owned a record label.</h2>
+
+                <div class="a-card-music">
+                    <!-- Decorative neon palm -->
+                    <svg class="a-palm-decor" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="aPalmGrad" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#ff2e88"/>
+                                <stop offset="100%" stop-color="#9d4edd"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M50 200 Q48 150 52 100 Q50 60 50 30" stroke="url(#aPalmGrad)" stroke-width="5" fill="none" stroke-linecap="round"/>
+                        <g stroke="url(#aPalmGrad)" stroke-width="2.5" fill="none" stroke-linecap="round">
+                            <path d="M50 30 Q30 15 5 20"/>
+                            <path d="M50 30 Q70 15 95 20"/>
+                            <path d="M50 30 Q25 25 0 50"/>
+                            <path d="M50 30 Q75 25 100 50"/>
+                            <path d="M50 30 Q40 5 30 0"/>
+                            <path d="M50 30 Q60 5 70 0"/>
+                            <path d="M50 30 Q35 35 10 70"/>
+                            <path d="M50 30 Q65 35 90 70"/>
+                        </g>
+                    </svg>
+
+                    <div class="text-white/75 leading-relaxed space-y-4 text-base relative z-10">
+                        <p>By age 25, I owned a record label, performing live shows, doing radio station interviews, building marketing strategies, and professionally recording myself and clients.</p>
+                        <p>When I started in music, there were no streaming platforms, YouTube did not exist, and social media wasn't a thing. You had to <strong class="text-white">hustle and network in person</strong> &mdash; at shows, meeting venue owners through weeks, months, years of dedication. We were on the streets of college campuses handing out fliers and self-promoting our bands. I learned how to network and be persistent because the only exposure route was getting on a radio station or TV.</p>
+                        <p>I have always enjoyed creating in a way that allows me to express myself and impact others. With my solo rap music, I really dug deep into the lyrical techniques and always challenged myself to rap in different styles and try an array of different music &mdash; from classic hip-hop to trap to rock music. Through my music, I embrace a range of ways to connect people: from fun all the way to mysterious and dark music.</p>
+                        <p>As a side project, I recorded and performed two music videos for the enterprise open source software company <strong class="text-white">Red Hat</strong>.</p>
+                    </div>
+                </div>
+
                 <div class="mt-6 flex justify-center md:justify-start">
-                    <a href="https://youtu.be/rwaaFwTluLU" target="_blank" rel="noopener" class="inline-block">
-                        <img src="images/about/website-small.jpg"
-                             alt="Music Video Myrtle Beach" class="rounded-lg max-w-sm w-full hover:opacity-80 transition" loading="lazy">
+                    <a href="https://youtu.be/rwaaFwTluLU" target="_blank" rel="noopener" class="block max-w-sm w-full" style="border-radius: 8px; overflow: hidden; border: 1px solid rgba(255, 46, 136, 0.3); box-shadow: 0 0 30px rgba(255, 46, 136, 0.12);">
+                        <img src="images/about/website-small.jpg" alt="Music Video Myrtle Beach" class="w-full hover:opacity-90 transition" loading="lazy">
                     </a>
                 </div>
             </section>
 
-            <!-- Education -->
-            <section class="reveal mb-16">
-                <h2 class="text-2xl font-semibold mb-4 border-l-2 border-glow/40 pl-4">Education</h2>
-                <div class="space-y-4">
-                    <div class="flex items-start gap-3">
-                        <span class="text-glow/60 mt-1">■</span>
+            <div class="a-divider"></div>
+
+            <!-- ============ EDUCATION ============ -->
+            <section class="reveal mb-14">
+                <p class="a-label-red">09 · Education</p>
+                <h2 class="a-h2">Where I trained.</h2>
+                <div class="a-card-red">
+                    <div class="a-edu-item">
+                        <span class="a-edu-icon">■</span>
                         <div>
-                            <p class="text-white/70 font-semibold">Core Credential of Readiness (CORe)</p>
-                            <p class="text-white/40 text-sm">HBX | Harvard Business School, Cambridge, MA</p>
+                            <p class="text-white font-semibold">Core Credential of Readiness (CORe)</p>
+                            <p class="text-white/40 text-sm mt-1">HBX | Harvard Business School &middot; Cambridge, MA</p>
                         </div>
                     </div>
-                    <div class="flex items-start gap-3">
-                        <span class="text-glow/60 mt-1">■</span>
+                    <div class="a-edu-item">
+                        <span class="a-edu-icon">■</span>
                         <div>
-                            <p class="text-white/70 font-semibold">Bachelor of Science (BS), Cyber Security</p>
-                            <p class="text-white/40 text-sm">East Carolina University, Greenville, NC</p>
+                            <p class="text-white font-semibold">Bachelor of Science (BS), Cyber Security</p>
+                            <p class="text-white/40 text-sm mt-1">East Carolina University &middot; Greenville, NC</p>
                         </div>
                     </div>
-                    <div class="flex items-start gap-3">
-                        <span class="text-glow/60 mt-1">■</span>
+                    <div class="a-edu-item">
+                        <span class="a-edu-icon">■</span>
                         <div>
-                            <p class="text-white/70 font-semibold">Associate of Science (AS), Computer Network Technology</p>
-                            <p class="text-white/40 text-sm">Wake Technical Community College, Raleigh, NC</p>
+                            <p class="text-white font-semibold">Associate of Science (AS), Computer Network Technology</p>
+                            <p class="text-white/40 text-sm mt-1">Wake Technical Community College &middot; Raleigh, NC</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- References -->
-            <section class="reveal mb-16">
-                <h2 class="text-2xl font-semibold mb-4 border-l-2 border-glow/40 pl-4">In The Press</h2>
-                    <p class="text-white/70 leading-relaxed mb-4">A few highlights, more on the way.</p>
-                <ul class="space-y-3">
-                    <li><a href="https://www.thehypemagazine.com/2023/07/lyrical-rapper-b-totty-working-with-infamous-producer-lx-xander/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">Lyrical Rapper B. Totty Working With Infamous Producer LX Xander</a></li>
-                    <li><a href="https://abc11.com/entertainment/red-hat-employee-makes-viral-rap-video-about-raleigh/1185323/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">Red Hat employee makes viral rap video about Raleigh</a></li>
-                    <li><a href="https://www.newsobserver.com/news/business/article57970488.html" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">Red Hatter raps: 'We love Raleigh'</a></li>
-                </ul>
+            <!-- ============ IN THE PRESS ============ -->
+            <section class="reveal mb-14">
+                <p class="a-label-pink">10 · In The Press</p>
+                <h2 class="a-h2">A few highlights. More on the way.</h2>
+                <div class="space-y-3">
+                    <a href="https://www.thehypemagazine.com/2023/07/lyrical-rapper-b-totty-working-with-infamous-producer-lx-xander/" target="_blank" rel="noopener" class="a-press-link">
+                        <span class="font-['JetBrains_Mono'] text-[10px] tracking-[0.2em] text-pink-400 uppercase block mb-1">The Hype Magazine</span>
+                        Lyrical Rapper B. Totty Working With Infamous Producer LX Xander &rarr;
+                    </a>
+                    <a href="https://abc11.com/entertainment/red-hat-employee-makes-viral-rap-video-about-raleigh/1185323/" target="_blank" rel="noopener" class="a-press-link">
+                        <span class="font-['JetBrains_Mono'] text-[10px] tracking-[0.2em] text-pink-400 uppercase block mb-1">ABC 11</span>
+                        Red Hat employee makes viral rap video about Raleigh &rarr;
+                    </a>
+                    <a href="https://www.newsobserver.com/news/business/article57970488.html" target="_blank" rel="noopener" class="a-press-link">
+                        <span class="font-['JetBrains_Mono'] text-[10px] tracking-[0.2em] text-pink-400 uppercase block mb-1">News &amp; Observer</span>
+                        Red Hatter raps: 'We love Raleigh' &rarr;
+                    </a>
+                </div>
             </section>
 
             <!-- CTA -->
             <section class="reveal text-center mt-20 py-12 border-t border-white/10">
-                <p class="text-white/50 text-lg mb-4">Interested in speaking?</p>
+                <p class="text-white/50 text-lg mb-5">Interested in speaking?</p>
                 <a href="contact.html" class="hero-btn-primary">CONTACT ME</a>
             </section>
         </div>
