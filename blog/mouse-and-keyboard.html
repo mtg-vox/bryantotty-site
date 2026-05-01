@@ -15,14 +15,104 @@
     <link rel="canonical" href="https://bryantotty.com/blog/mouse-and-keyboard.html">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config = { theme: { extend: { colors: { dark: '#050505', glow: '#c8102e' } } } }</script>
+    <script>tailwind.config = { theme: { extend: { colors: { dark: '#050505', glow: '#c8102e', mech: { green: '#00ff9f', cyan: '#00d4ff', purple: '#a855f7', amber: '#fbbf24' } } } } }</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
+    <style>
+        /* ============ MECH KEYBOARD RGB PALETTE ============ */
+        :root {
+            --mk-green: #00ff9f;
+            --mk-cyan: #00d4ff;
+            --mk-purple: #a855f7;
+            --mk-amber: #fbbf24;
+        }
+
+        /* RGB underglow background — replaces default red grid */
+        .mk-bg {
+            position: fixed; inset: 0; z-index: 0; pointer-events: none;
+            background:
+                radial-gradient(ellipse at 10% 0%, rgba(0, 255, 159, 0.08), transparent 45%),
+                radial-gradient(ellipse at 90% 0%, rgba(0, 212, 255, 0.07), transparent 45%),
+                radial-gradient(ellipse at 50% 100%, rgba(168, 85, 247, 0.06), transparent 50%);
+        }
+        .mk-grid {
+            position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.4;
+            background-image:
+                linear-gradient(rgba(0, 255, 159, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 212, 255, 0.04) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        /* Eyebrow */
+        .mk-eyebrow {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
+            padding: 6px 14px; border-radius: 999px;
+            color: var(--mk-green); border: 1px solid rgba(0, 255, 159, 0.4);
+            background: rgba(0, 255, 159, 0.06);
+            box-shadow: 0 0 20px rgba(0, 255, 159, 0.1);
+        }
+        .mk-eyebrow-dot {
+            width: 6px; height: 6px; border-radius: 50%;
+            background: var(--mk-green); box-shadow: 0 0 10px var(--mk-green);
+            animation: mk-pulse 2s ease-in-out infinite;
+        }
+        @keyframes mk-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+        /* Section labels in alternating RGB colors */
+        .mk-label-green { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--mk-green); margin-bottom: 12px; text-shadow: 0 0 8px rgba(0, 255, 159, 0.4); }
+        .mk-label-cyan  { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--mk-cyan);  margin-bottom: 12px; text-shadow: 0 0 8px rgba(0, 212, 255, 0.4); }
+        .mk-label-purple { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--mk-purple); margin-bottom: 12px; text-shadow: 0 0 8px rgba(168, 85, 247, 0.4); }
+        .mk-label-amber { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--mk-amber); margin-bottom: 12px; text-shadow: 0 0 8px rgba(251, 191, 36, 0.4); }
+
+        /* Tags */
+        .mk-tag-green { background: rgba(0, 255, 159, 0.1); color: var(--mk-green); border: 1px solid rgba(0, 255, 159, 0.4); }
+        .mk-tag-cyan  { background: rgba(0, 212, 255, 0.1); color: var(--mk-cyan);  border: 1px solid rgba(0, 212, 255, 0.4); }
+
+        /* Cards (mech keycap style) */
+        .mk-card-green  { border: 1px solid rgba(0, 255, 159, 0.3); background: rgba(0, 255, 159, 0.02); border-left: 3px solid var(--mk-green);  border-radius: 8px; padding: 24px; box-shadow: 0 0 30px rgba(0, 255, 159, 0.04); }
+        .mk-card-cyan   { border: 1px solid rgba(0, 212, 255, 0.3); background: rgba(0, 212, 255, 0.02); border-left: 3px solid var(--mk-cyan);   border-radius: 8px; padding: 24px; box-shadow: 0 0 30px rgba(0, 212, 255, 0.04); }
+        .mk-card-purple { border: 1px solid rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.02); border-left: 3px solid var(--mk-purple); border-radius: 8px; padding: 24px; box-shadow: 0 0 30px rgba(168, 85, 247, 0.04); }
+        .mk-card-amber  { border: 1px solid rgba(251, 191, 36, 0.3); background: rgba(251, 191, 36, 0.02); border-left: 3px solid var(--mk-amber); border-radius: 8px; padding: 24px; box-shadow: 0 0 30px rgba(251, 191, 36, 0.04); }
+
+        /* Frame for hero image with RGB underglow */
+        .mk-frame {
+            border-radius: 8px; overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow:
+                0 0 50px rgba(0, 255, 159, 0.12),
+                0 0 100px rgba(0, 212, 255, 0.08),
+                0 0 150px rgba(168, 85, 247, 0.06);
+        }
+
+        /* Brand pill (keycap-style) */
+        .mk-keycap {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px; padding: 6px 14px;
+            border-radius: 6px;
+            border: 1px solid rgba(255,255,255,0.15);
+            color: rgba(255,255,255,0.85);
+            background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+            box-shadow: inset 0 -2px 0 rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.05);
+            margin: 4px;
+        }
+
+        /* Links: subtle green underline that brightens on hover */
+        .mk-link { color: var(--mk-green); text-decoration: underline; text-decoration-color: rgba(0, 255, 159, 0.4); text-underline-offset: 4px; transition: all 0.3s; }
+        .mk-link:hover { color: var(--mk-cyan); text-decoration-color: var(--mk-cyan); text-shadow: 0 0 12px rgba(0, 212, 255, 0.5); }
+
+        /* Footer signature */
+        .mk-signature { color: var(--mk-green); font-family: 'JetBrains Mono', monospace; }
+    </style>
 </head>
 <body class="bg-dark text-white font-['Inter'] min-h-screen">
-    <div class="grid-bg" aria-hidden="true"></div>
+    <!-- Mech RGB backdrop replaces default grid -->
+    <div class="mk-bg" aria-hidden="true"></div>
+    <div class="mk-grid" aria-hidden="true"></div>
     <nav class="fixed top-0 w-full z-50 bg-dark/80 backdrop-blur-xl border-b border-white/5">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="/" class="text-xl font-black tracking-tighter"><span class="text-white">BRYAN</span><span class="text-glow">TOTTY</span></a>
@@ -46,60 +136,125 @@
         </div>
     </nav>
 
-    <main class="pt-28 pb-20 px-6">
-        <div class="max-w-3xl mx-auto">
-            <a href="../blog.html" class="text-white/40 hover:text-glow text-sm mb-6 inline-block transition-colors">&larr; Back to Blog</a>
-            <div class="flex items-center gap-3 mb-4">
-                <span class="text-xs text-white/40 font-['JetBrains_Mono']">February 12, 2023</span>
-                <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-green-500/10 text-green-400">Opinion</span>
+    <main class="pt-28 pb-24 px-6 relative">
+        <div class="max-w-3xl mx-auto relative">
+            <a href="../blog.html" class="text-white/40 hover:text-mech-green text-sm mb-8 inline-block transition-colors">&larr; Back to Blog</a>
+
+            <!-- Hero image (the gaming keyboard from the blog index) -->
+            <figure class="mb-10">
+                <div class="mk-frame aspect-[16/9]">
+                    <img src="../images/blog/gaming-keyboard.jpg" alt="High-end mechanical gaming keyboard with RGB underglow" class="w-full h-full object-cover" loading="eager">
+                </div>
+                <figcaption class="text-white/40 text-xs italic mt-3 text-center font-['JetBrains_Mono'] tracking-wider">RGB underglow · the kind of peripheral that matters more than you think</figcaption>
+            </figure>
+
+            <!-- Header -->
+            <div class="flex justify-center mb-6">
+                <div class="mk-eyebrow">
+                    <span class="mk-eyebrow-dot"></span>
+                    Hardware Opinion · 15+ Years
+                </div>
             </div>
-            <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-8 text-center">Do You Need a New Mouse and Keyboard?</h1>
-
-            <div class="text-white/70 leading-relaxed space-y-6">
-                <p>I highly recommend getting a high quality mouse and keyboard.</p>
-
-                <p>I've spent over 15 years working on computers for a living, and even if you're not a "technical" person like a developer or sysadmin, you will still benefit long term from having a high quality mouse and keyboard.</p>
-
-                <p>This is especially true for those who work off laptops. I don't recommend that you make it a long term habit to type and use the touchpad if you spend more than an hour a day on the laptop. You'll soon find your fingers going numb, and it's inevitable that you'll have terrible posture throughout the day. You can still use your laptop, but it's much more ergonomic to get an external mouse and keyboard and place your screen at an optimal distance.</p>
-
-                <h3 class="text-xl font-semibold text-white/90 pt-4">Wireless or wired?</h3>
-
-                <p>If you're gaming, I always recommend using wired peripherals. It seems that this is still the case even in 2020. Maybe in several years you won't be able to tell any difference, but you certainly can with current technology.</p>
-
-                <p>If you do any type of design work, I'd recommend at least having the option of plugging in and you could switch over to wireless on occasion for days you prefer more freedom of movement. For accuracy, a wired device is still better.</p>
-
-                <p>If you are a professional using a computer all day, this assumes you make some kind of decent living and have a multiple hundred or several thousand dollar computer. Having a 15 year old cheap mouse is just plain silly. If you can afford it, find and buy something high quality! Your fingers, arms, wrists, and sanity will thank you for the rest of your life!</p>
-
-                <h3 class="text-xl font-semibold text-white/90 pt-4">Do you really need high end mice and keyboards if you're not a gamer?</h3>
-
-                <p>No you don't need them, but you will certainly notice that your mouse will respond more seamlessly across the screen, and I think that matters because you'll likely use your computer for thousands or tens of thousands of hours throughout your lifetime... until these types of devices become obsolete.</p>
-
-                <p>I think most people don't realize a poor quality mouse setup inserts a sort of jitter into their mind. The cursor will skip small and inconsistent parts across the screen. Many people think this is just how mice are — it's not the case. I have no proof, but I suspect this is not good for your brain over the long term.</p>
-
-                <p>What you don't need with a "gaming mouse" or "gaming keyboard" is all of the fancy LED color configurations and other features, but you'll still benefit from reduced latency, accuracy, and typically better ergonomics and feel. Don't get me wrong, the lights are cool and can help you see in the dark, but obviously not necessary.</p>
-
-                <h3 class="text-xl font-semibold text-white/90 pt-4">Wireless Tips</h3>
-
-                <p>When using a wireless mouse, it's not recommended to use the bluetooth connection unless for temporary convenience or necessary. Bluetooth is laggy and less accurate.</p>
-
-                <p>Instead, use the 2.4G (or similar) option if your mouse has one. Of course, the best is to plug it in, but that adds back in the clunky cable feel.</p>
-
-                <p>When using a wireless keyboard, the connection speed is usually fast enough that you won't notice much difference, but older wireless keyboards may be slower or become worse over time.</p>
-
-                <h3 class="text-xl font-semibold text-white/90 pt-4">Brands I like</h3>
-
-                <p><a href="https://www.corsair.com/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline font-semibold">Corsair</a> — I have several high end mice from them. They make good long lasting and accurate products.</p>
-
-                <p><a href="https://www.logitech.com/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline font-semibold">Logitech</a> — unlike Corsair which is more targeted at high end gamers, Logitech has the full spectrum from entry level to even some products that I've seen are more expensive than Corsair (~$250 keyboard).</p>
-
-                <p><a href="https://www.apple.com/shop/mac/mac-accessories/mice-keyboards" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline font-semibold">Apple</a> also puts out pretty high quality default products, but in Apple style customization is very limited if at all available.</p>
-
-                <p>Learn the higher quality brands, instead of just relying on an Amazon search, because you can find a lot of junk that just gets pushed to the top sometimes. You also want a reputable brand which has consistent driver updates in case there is any bug, feature, or security issue.</p>
-
-                <p>Go to those manufacturers' websites to find their line of products, which can be easier to make a decision and see the options.</p>
+            <div class="flex flex-wrap items-center justify-center gap-2 mb-5">
+                <span class="text-xs text-white/40 font-['JetBrains_Mono'] tracking-wider">FEBRUARY 12, 2023</span>
+                <span class="text-white/20">·</span>
+                <span class="text-xs font-medium px-2 py-0.5 rounded mk-tag-green font-['JetBrains_Mono'] tracking-wider">OPINION</span>
+                <span class="text-white/20">·</span>
+                <span class="text-xs font-medium px-2 py-0.5 rounded mk-tag-cyan font-['JetBrains_Mono'] tracking-wider">HARDWARE</span>
             </div>
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-5 leading-[1.1] text-center">Do You Need a New <span class="text-mech-green">Mouse</span> &amp; <span class="text-mech-cyan">Keyboard</span>?</h1>
+            <p class="text-white/60 text-lg leading-relaxed mb-12 max-w-2xl mx-auto text-center">Short answer: yes. After 15+ years on computers for a living, here's why the cheap setup is silently costing you &mdash; and what to actually buy.</p>
 
-            <p class="text-white/30 text-sm mt-12 font-['JetBrains_Mono']">Written by Bryan Totty</p>
+            <!-- ======== Section 1: The Case ======== -->
+            <section class="mb-14">
+                <p class="mk-label-green">01 · The Case</p>
+                <h2 class="text-2xl md:text-3xl font-semibold text-white mb-6 leading-snug">Get a high-quality mouse and keyboard.</h2>
+                <div class="text-white/70 leading-relaxed space-y-5 text-base">
+                    <p>I've spent over <strong class="text-white">15 years working on computers for a living</strong>, and even if you're not a "technical" person like a developer or sysadmin, you'll still benefit long-term from a high-quality mouse and keyboard.</p>
+                    <p>This is especially true for those who work off laptops. <strong class="text-white">Don't make it a long-term habit to type and use the touchpad</strong> if you spend more than an hour a day on the laptop. Your fingers will go numb, your posture will collapse, and the daily drag will compound. Use the laptop &mdash; just plug in an external mouse and keyboard and put the screen at an optimal distance.</p>
+                </div>
+            </section>
+
+            <!-- ======== Section 2: Wired vs Wireless ======== -->
+            <section class="mb-14">
+                <p class="mk-label-cyan">02 · Wired vs Wireless</p>
+                <h2 class="text-2xl md:text-3xl font-semibold text-white mb-6 leading-snug">When does the cable matter?</h2>
+
+                <div class="mk-card-cyan mb-5">
+                    <p class="mk-label-cyan" style="margin-bottom: 8px;">GAMING</p>
+                    <p class="text-white/70 text-sm leading-relaxed">Always wired. Even in 2020, you can feel the difference. Maybe in a few more years wireless catches up &mdash; not yet.</p>
+                </div>
+
+                <div class="mk-card-purple mb-5">
+                    <p class="mk-label-purple" style="margin-bottom: 8px;">DESIGN WORK</p>
+                    <p class="text-white/70 text-sm leading-relaxed">Have the option of plugging in. Switch over to wireless on days you want freedom of movement. For accuracy, wired still wins.</p>
+                </div>
+
+                <div class="mk-card-green">
+                    <p class="mk-label-green" style="margin-bottom: 8px;">PROFESSIONAL USE</p>
+                    <p class="text-white/70 text-sm leading-relaxed">If you make a decent living and own a multiple-hundred-to-several-thousand-dollar computer, having a 15-year-old cheap mouse is plain silly. <strong class="text-white">Buy quality.</strong> Your fingers, arms, wrists, and sanity will thank you for the rest of your life.</p>
+                </div>
+            </section>
+
+            <!-- ======== Section 3: Non-gamers ======== -->
+            <section class="mb-14">
+                <p class="mk-label-purple">03 · For Non-Gamers</p>
+                <h2 class="text-2xl md:text-3xl font-semibold text-white mb-6 leading-snug">Do you really need high-end peripherals?</h2>
+                <div class="text-white/70 leading-relaxed space-y-5 text-base">
+                    <p><strong class="text-white">No, you don't <em>need</em> them.</strong> But you'll absolutely notice the difference. Your mouse will glide more seamlessly across the screen, and that matters &mdash; you'll likely use a computer for tens of thousands of hours over your lifetime, until devices like these become obsolete.</p>
+                    <p>Most people don't realize a poor-quality mouse setup inserts a kind of <strong class="text-white">jitter into your mind</strong>. The cursor skips small inconsistent distances. People assume that's just how mice work. It's not. I have no proof, but I suspect it's not great for your brain over the long term.</p>
+                    <p>What you <em>don't</em> need from a "gaming mouse" or "gaming keyboard" is the LED light show. You'll still benefit from <strong class="text-white">reduced latency, higher accuracy, and better ergonomics</strong>. The lights are cool and useful in the dark &mdash; but optional.</p>
+                </div>
+            </section>
+
+            <!-- ======== Section 4: Wireless Tips ======== -->
+            <section class="mb-14">
+                <p class="mk-label-amber">04 · Wireless Tips</p>
+                <h2 class="text-2xl md:text-3xl font-semibold text-white mb-6 leading-snug">If you're going wireless, do it right.</h2>
+
+                <div class="mk-card-amber mb-5">
+                    <p class="mk-label-amber" style="margin-bottom: 8px;">MOUSE</p>
+                    <p class="text-white/70 text-sm leading-relaxed">Skip Bluetooth unless it's a temporary convenience or strictly necessary. Bluetooth is laggy and less accurate. Use the <strong class="text-white">2.4G dongle</strong> if your mouse offers one. Best is wired &mdash; but that brings back the cable feel.</p>
+                </div>
+
+                <div class="mk-card-cyan">
+                    <p class="mk-label-cyan" style="margin-bottom: 8px;">KEYBOARD</p>
+                    <p class="text-white/70 text-sm leading-relaxed">Modern wireless keyboards are usually fast enough that you won't notice much difference, but older ones may lag or degrade over time.</p>
+                </div>
+            </section>
+
+            <!-- ======== Section 5: Brands ======== -->
+            <section class="mb-14">
+                <p class="mk-label-green">05 · Brands I Like</p>
+                <h2 class="text-2xl md:text-3xl font-semibold text-white mb-6 leading-snug">Where to actually shop.</h2>
+
+                <div class="space-y-5">
+                    <div class="mk-card-green">
+                        <a href="https://www.corsair.com/" target="_blank" rel="noopener" class="font-['JetBrains_Mono'] text-base font-bold text-mech-green hover:text-white transition-colors">Corsair &rarr;</a>
+                        <p class="text-white/65 text-sm mt-2 leading-relaxed">I have several high-end mice from them. They make good, long-lasting, accurate products.</p>
+                    </div>
+
+                    <div class="mk-card-cyan">
+                        <a href="https://www.logitech.com/" target="_blank" rel="noopener" class="font-['JetBrains_Mono'] text-base font-bold text-mech-cyan hover:text-white transition-colors">Logitech &rarr;</a>
+                        <p class="text-white/65 text-sm mt-2 leading-relaxed">Unlike Corsair, which targets high-end gamers, Logitech covers the full spectrum &mdash; from entry level to keyboards even pricier than Corsair (~$250).</p>
+                    </div>
+
+                    <div class="mk-card-purple">
+                        <a href="https://www.apple.com/shop/mac/mac-accessories/mice-keyboards" target="_blank" rel="noopener" class="font-['JetBrains_Mono'] text-base font-bold text-mech-purple hover:text-white transition-colors">Apple &rarr;</a>
+                        <p class="text-white/65 text-sm mt-2 leading-relaxed">Quality default products in true Apple style &mdash; with very limited (if any) customization.</p>
+                    </div>
+                </div>
+
+                <div class="mt-8 border-l-2 border-mech-green/40 pl-5">
+                    <p class="text-white/65 text-sm leading-relaxed">Learn the higher-quality brands instead of relying on an Amazon search &mdash; you'll find a lot of junk that gets pushed to the top. Pick a reputable brand with consistent driver updates so bugs, features, and security issues actually get fixed. Go straight to the manufacturer's site to see their full product line and decide from there.</p>
+                </div>
+            </section>
+
+            <!-- Footer signature -->
+            <div class="mt-16 pt-8 border-t border-white/10 flex items-center justify-between flex-wrap gap-4">
+                <p class="text-sm mk-signature">Written by Bryan Totty &middot; Feb 2023</p>
+                <a href="../blog.html" class="text-white/40 hover:text-mech-cyan text-sm transition-colors">More posts &rarr;</a>
+            </div>
         </div>
     </main>
 
