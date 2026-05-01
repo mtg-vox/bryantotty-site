@@ -46,98 +46,136 @@
         </div>
     </nav>
 
-    <main class="pt-28 pb-20 px-6">
+    <main class="pt-28 pb-24 px-6">
         <div class="max-w-3xl mx-auto">
-            <a href="../blog.html" class="text-white/40 hover:text-glow text-sm mb-6 inline-block transition-colors">&larr; Back to Blog</a>
-            <div class="flex items-center gap-3 mb-4">
-                <span class="text-xs text-white/40 font-['JetBrains_Mono']">February 12, 2023</span>
-                <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400">Web Design</span>
+            <a href="../blog.html" class="text-white/40 hover:text-glow text-sm mb-8 inline-block transition-colors">&larr; Back to Blog</a>
+
+            <!-- Header -->
+            <div class="flex flex-wrap items-center gap-2 mb-5">
+                <span class="text-xs text-white/40 font-['JetBrains_Mono'] tracking-wider">FEBRUARY 12, 2023</span>
+                <span class="text-white/20">·</span>
+                <span class="text-xs font-medium px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 font-['JetBrains_Mono'] tracking-wider">WEB DEVELOPMENT</span>
+                <span class="text-white/20">·</span>
+                <span class="text-xs text-white/40 font-['JetBrains_Mono']">8 min read</span>
             </div>
-            <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-8">My Web Development Journey</h1>
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-5 leading-[1.1]">My Web Development Journey</h1>
+            <p class="text-white/55 text-lg leading-relaxed mb-10 max-w-2xl">From writing raw HTML in the early 90s as a kid, to coming back three decades later with a curriculum to build for web3 — without spending a fortune.</p>
 
-            <div class="text-white/70 leading-relaxed space-y-6">
-                <h3 class="text-xl font-semibold text-white/90 pt-4">My Journey</h3>
+            <!-- Hero image -->
+            <figure class="mb-14">
+                <div class="rounded-lg overflow-hidden border border-white/10 aspect-[16/9]">
+                    <img src="../images/blog/webdev.jpeg" alt="Web development workspace" class="w-full h-full object-cover" loading="eager">
+                </div>
+            </figure>
 
-                <p>Originally, I started coding html pre css in the early 90s when I was a kid just trying to explore the Interwebs. Back then, I had very limited resources and just a few books that I could access which required traveling a significant distance to get a hold of. So I just started to learn off of the few html training websites available in the early 90s and experimented with creating the most basic of websites using html only.</p>
+            <!-- Section 1: My Journey -->
+            <section class="mb-14">
+                <p class="font-['JetBrains_Mono'] text-xs tracking-[0.3em] uppercase text-blue-400 mb-3">01 · My Journey</p>
+                <h2 class="text-2xl md:text-3xl font-semibold text-white mb-6 leading-snug">From the early-90s web to web3.</h2>
+                <div class="text-white/65 leading-relaxed space-y-5 text-base">
+                    <p>I started writing HTML in the early 90s &mdash; pre-CSS, just a kid trying to figure out how the Interwebs worked. Resources were thin. The few books that existed required a long drive to get my hands on, so I leaned on whatever HTML training sites the early web had to offer and shipped the most basic pages I could imagine.</p>
+                    <p>Fast-forward to 2022. I'm deep into web3, but my day job leans more toward project and program management than hands-on engineering. I'm not in the trenches the way I was as a Linux engineer.</p>
+                    <p>I have an idea: start a crypto security company. But I can't just jump straight into Solidity for Ethereum &mdash; I need to work backwards. The right starting point matters.</p>
+                    <p>HTML, CSS, and JavaScript are the foundation. From there, blockchain fundamentals and an object-oriented language like C++. Then Solidity on top.</p>
+                    <p>Figuring out <em>where</em> to start was the hardest part. I eventually pulled together a curriculum that would have taken a year or two through traditional channels and cost tens of thousands of dollars. I found a focused stack of high-quality courses for under $250 total &mdash; well worth the investment.</p>
+                </div>
 
-                <p>Fast forward to 2022 and I'm very interested in web3, but my daily job consists more of project and program management so I don't get my hands as dirty on a daily basis as I used to when I was a Linux engineer.</p>
+                <div class="mt-8 border border-white/10 rounded-lg bg-white/[0.02] p-6">
+                    <p class="font-['JetBrains_Mono'] text-[11px] tracking-[0.2em] text-blue-400 uppercase mb-4">My Curriculum</p>
+                    <ul class="space-y-3 text-white/70 text-sm">
+                        <li class="flex gap-3"><span class="text-blue-400/60 font-mono">→</span><a href="https://www.udemy.com/course/the-complete-web-development-bootcamp/" target="_blank" rel="noopener" class="hover:text-glow transition-colors underline decoration-white/20 underline-offset-4">The Complete 2023 Web Development Bootcamp</a></li>
+                        <li class="flex gap-3"><span class="text-blue-400/60 font-mono">→</span><a href="https://www.udemy.com/course/beginning-c-plus-plus-programming/" target="_blank" rel="noopener" class="hover:text-glow transition-colors underline decoration-white/20 underline-offset-4">Beginning C++ Programming &mdash; From Beginner to Beyond</a></li>
+                        <li class="flex gap-3"><span class="text-blue-400/60 font-mono">→</span><a href="https://www.udemy.com/course/blockchain-developer/" target="_blank" rel="noopener" class="hover:text-glow transition-colors underline decoration-white/20 underline-offset-4">Ethereum Blockchain Developer Bootcamp With Solidity (2022)</a></li>
+                        <li class="flex gap-3"><span class="text-blue-400/60 font-mono">→</span><a href="https://www.udemy.com/course/ethereum-and-solidity-the-complete-developers-guide/" target="_blank" rel="noopener" class="hover:text-glow transition-colors underline decoration-white/20 underline-offset-4">Ethereum and Solidity: The Complete Developer's Guide</a></li>
+                        <li class="flex gap-3"><span class="text-blue-400/60 font-mono">→</span><a href="https://www.udemy.com/course/the-complete-javascript-course/" target="_blank" rel="noopener" class="hover:text-glow transition-colors underline decoration-white/20 underline-offset-4">The Complete JavaScript Course 2023: From Zero to Expert!</a></li>
+                    </ul>
+                </div>
+            </section>
 
-                <p>I have this idea where I want to start a crypto security company, but I needed to work backwards instead of just jumping into say solidity for Ethereum.</p>
+            <!-- Section 2: History -->
+            <section class="mb-14">
+                <p class="font-['JetBrains_Mono'] text-xs tracking-[0.3em] uppercase text-blue-400 mb-3">02 · A Brief History</p>
+                <h2 class="text-2xl md:text-3xl font-semibold text-white mb-6 leading-snug">How web development got here.</h2>
+                <div class="text-white/65 leading-relaxed space-y-5 text-base">
+                    <p>The story of web development is inseparable from the story of the internet itself &mdash; the web (short for "World Wide Web") is a massive network of interconnected documents and resources accessed over that internet.</p>
+                    <p>The recognizable shape of the modern internet traces back to the 1960s, when the Advanced Research Projects Agency (ARPA) built ARPANET to connect researchers across universities and research institutions. By the 1970s, the network had expanded beyond research and opened up to commercial use.</p>
+                    <p>In 1989, Tim Berners-Lee &mdash; a computer scientist at CERN &mdash; proposed a new way to organize and access information across the internet. He called it the <strong class="text-white">"World Wide Web"</strong> and built the first browser and server software himself.</p>
+                    <p>Early on, the web was primitive and mostly used for sharing scientific and research material. The 1990s changed that fast. The web exploded outward as people found new uses for it, and the tooling raced to keep up.</p>
+                    <p>In 1994, the first version of <strong class="text-white">JavaScript</strong> dropped, opening the door to interactive, dynamic websites. In 1996, <strong class="text-white">PHP</strong> arrived, making it dramatically easier to build sites that talked to databases.</p>
+                    <p>By the late 90s, the rise of e-commerce and the spread of broadband internet sent demand for web development skills through the roof. That demand never reversed. Web development became a load-bearing pillar of the entire technology industry.</p>
+                    <p>Today the field covers everything from web design and content development to client-side and server-side scripting and network security. It moves fast, and new tools and frameworks show up constantly.</p>
+                </div>
+            </section>
 
-                <p>Html, css, and javascript are a good starting place, and then I'd recommend adding in blockchain fundamentals and object oriented languages like c++ then adding Solidity.</p>
+            <!-- Section 3: How to get started -->
+            <section class="mb-14">
+                <p class="font-['JetBrains_Mono'] text-xs tracking-[0.3em] uppercase text-blue-400 mb-3">03 · Getting Started</p>
+                <h2 class="text-2xl md:text-3xl font-semibold text-white mb-6 leading-snug">Where to begin if you're starting today.</h2>
+                <p class="text-white/65 leading-relaxed text-base mb-8">Web development is the practice of building and maintaining websites. It spans design, content, scripting on both ends, and security. If you want to get started, this is the path I'd suggest:</p>
 
-                <p>Where to start was one of my biggest challenges, but I finally came up with a curriculum which would have taken a year or two traditionally and tens of thousands of dollars, but I found a good selection of high quality courses for under $250. Well worth the investment!</p>
+                <!-- Step 1 -->
+                <div class="border-l-2 border-blue-400/40 pl-6 mb-8">
+                    <h3 class="text-white text-lg font-semibold mb-3"><span class="font-['JetBrains_Mono'] text-blue-400 text-sm mr-2">01</span>Learn the foundations</h3>
+                    <ul class="space-y-2 text-white/65 text-base">
+                        <li><strong class="text-white">HTML</strong> &mdash; the markup language for structuring web pages: headings, paragraphs, lists, links, the works.</li>
+                        <li><strong class="text-white">CSS</strong> &mdash; the style language that controls layout, color, and typography.</li>
+                        <li><strong class="text-white">JavaScript</strong> &mdash; the language that makes pages interactive: dropdowns, modals, real-time behavior.</li>
+                    </ul>
+                </div>
 
-                <ul class="list-disc list-inside space-y-2 text-white/60">
-                    <li><a href="https://www.udemy.com/course/the-complete-web-development-bootcamp/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">The Complete 2023 Web Development Bootcamp</a></li>
-                    <li><a href="https://www.udemy.com/course/beginning-c-plus-plus-programming/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">Beginning C++ Programming - From Beginner to Beyond</a></li>
-                    <li><a href="https://www.udemy.com/course/blockchain-developer/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">Ethereum Blockchain Developer Bootcamp With Solidity (2022)</a></li>
-                    <li><a href="https://www.udemy.com/course/ethereum-and-solidity-the-complete-developers-guide/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">Ethereum and Solidity: The Complete Developer's Guide</a></li>
-                    <li><a href="https://www.udemy.com/course/the-complete-javascript-course/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">The Complete JavaScript Course 2023: From Zero to Expert!</a></li>
-                </ul>
+                <!-- Step 2 -->
+                <div class="border-l-2 border-blue-400/40 pl-6 mb-8">
+                    <h3 class="text-white text-lg font-semibold mb-3"><span class="font-['JetBrains_Mono'] text-blue-400 text-sm mr-2">02</span>Set up a development environment</h3>
+                    <ul class="space-y-2 text-white/65 text-base">
+                        <li><strong class="text-white">Local</strong> &mdash; build and test on your own machine. Visual Studio Code and Sublime Text are both popular.</li>
+                        <li><strong class="text-white">Remote</strong> &mdash; build and test against a server, often via GitHub or GitLab.</li>
+                    </ul>
+                </div>
 
-                <h3 class="text-xl font-semibold text-white/90 pt-8">The History of Web Development</h3>
+                <!-- Step 3 -->
+                <div class="border-l-2 border-blue-400/40 pl-6 mb-8">
+                    <h3 class="text-white text-lg font-semibold mb-3"><span class="font-['JetBrains_Mono'] text-blue-400 text-sm mr-2">03</span>Pick a server-side language</h3>
+                    <ul class="space-y-2 text-white/65 text-base">
+                        <li><strong class="text-white">PHP</strong> &mdash; long-standing, widely used for dynamic sites.</li>
+                        <li><strong class="text-white">Ruby</strong> &mdash; general-purpose, known for clean syntax and flexibility.</li>
+                        <li><strong class="text-white">Python</strong> &mdash; readable, beginner-friendly, and everywhere.</li>
+                    </ul>
+                </div>
 
-                <p>The history of web development is closely tied to the history of the internet, as the web (short for "World Wide Web") is a vast network of interconnected documents and other resources that are accessed via the internet.</p>
+                <!-- Step 4 -->
+                <div class="border-l-2 border-blue-400/40 pl-6 mb-8">
+                    <h3 class="text-white text-lg font-semibold mb-3"><span class="font-['JetBrains_Mono'] text-blue-400 text-sm mr-2">04</span>Adopt a framework</h3>
+                    <p class="text-white/55 text-sm mb-3">Frameworks let you skip reinventing the wheel. Pair one with the language you chose above:</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="font-['JetBrains_Mono'] text-xs px-3 py-1 rounded border border-white/10 text-white/55 bg-white/[0.02]">Django (Python)</span>
+                        <span class="font-['JetBrains_Mono'] text-xs px-3 py-1 rounded border border-white/10 text-white/55 bg-white/[0.02]">Ruby on Rails (Ruby)</span>
+                        <span class="font-['JetBrains_Mono'] text-xs px-3 py-1 rounded border border-white/10 text-white/55 bg-white/[0.02]">Laravel (PHP)</span>
+                        <span class="font-['JetBrains_Mono'] text-xs px-3 py-1 rounded border border-white/10 text-white/55 bg-white/[0.02]">Express.js (JavaScript)</span>
+                    </div>
+                </div>
 
-                <p>The first recognizable form of the modern internet can be traced back to the 1960s, when the Advanced Research Projects Agency (ARPA) developed a network called ARPANET to connect researchers at different universities and research institutions. In the 1970s, the internet began to expand beyond the research community and was opened up to commercial use.</p>
+                <!-- Step 5 -->
+                <div class="border-l-2 border-blue-400/40 pl-6 mb-8">
+                    <h3 class="text-white text-lg font-semibold mb-3"><span class="font-['JetBrains_Mono'] text-blue-400 text-sm mr-2">05</span>Choose a database</h3>
+                    <ul class="space-y-2 text-white/65 text-base">
+                        <li><strong class="text-white">MySQL</strong> &mdash; free, open-source, the workhorse of the early web and still going strong.</li>
+                        <li><strong class="text-white">PostgreSQL</strong> &mdash; free, open-source, object-relational, beloved for its rigor.</li>
+                        <li><strong class="text-white">MongoDB</strong> &mdash; free, open-source, NoSQL, flexible for document-shaped data.</li>
+                    </ul>
+                </div>
 
-                <p>In 1989, Tim Berners-Lee, a computer scientist at CERN (the European Organization for Nuclear Research), proposed a new way of organizing and accessing information on the internet. He called this system the "World Wide Web," and he developed the first web browser and server software to access it.</p>
+                <!-- Step 6 -->
+                <div class="border-l-2 border-blue-400/40 pl-6">
+                    <h3 class="text-white text-lg font-semibold mb-3"><span class="font-['JetBrains_Mono'] text-blue-400 text-sm mr-2">06</span>Learn version control</h3>
+                    <p class="text-white/65 text-base">Version control tracks changes to a file (or set of files) over time. Once you start working on anything real, this is non-negotiable.</p>
+                </div>
+            </section>
 
-                <p>At this point, the web was still a fairly primitive system, and it was primarily used to share scientific and research information. In the 1990s, however, the web began to evolve rapidly as more and more people began to use it for a wide range of purposes.</p>
-
-                <p>During this time, web development tools and technologies also evolved quickly. In 1994, the first version of the JavaScript programming language was released, which allowed developers to create more interactive and dynamic websites. In 1996, the first version of the PHP programming language was released, which made it easier to build dynamic websites that could interact with databases.</p>
-
-                <p>In the late 1990s, the rise of e-commerce websites and the widespread adoption of broadband internet led to a surge in the demand for web development skills. This trend has continued to the present day, and web development has become a vital part of the technology industry.</p>
-
-                <p>Today, web development encompasses a wide range of activities, including web design, web content development, client-side/server-side scripting, and network security configuration. It is a rapidly evolving field, and new technologies and tools are being developed all the time.</p>
-
-                <h3 class="text-xl font-semibold text-white/90 pt-8">How to Get Started In Web Development</h3>
-
-                <p>Web development refers to the process of building and maintaining websites. It encompasses a wide range of activities, including web design, web content development, client-side/server-side scripting, and network security configuration.</p>
-
-                <p>If you are interested in getting started in web development, there are a few steps you can follow:</p>
-
-                <h4 class="text-lg font-semibold text-white/80 pt-2">1. Familiarize yourself with the basics:</h4>
-                <ul class="list-disc list-inside space-y-2 text-white/60">
-                    <li><strong class="text-white/80">HTML:</strong> HTML (HyperText Markup Language) is a standard markup language used to create web pages. It allows you to structure the content of your website, create headings, paragraphs, lists, links, and more.</li>
-                    <li><strong class="text-white/80">CSS:</strong> CSS (Cascading Style Sheets) is a style sheet language used to describe the look and formatting of a document written in HTML. It allows you to control the layout, colors, and fonts of your website.</li>
-                    <li><strong class="text-white/80">JavaScript:</strong> JavaScript is a programming language used to add interactivity to websites. It allows you to create things like drop-down menus, pop-ups, and more.</li>
-                </ul>
-
-                <h4 class="text-lg font-semibold text-white/80 pt-2">2. Choose a development environment:</h4>
-                <ul class="list-disc list-inside space-y-2 text-white/60">
-                    <li><strong class="text-white/80">Local development environment:</strong> A set of tools that allows you to build and test websites on your own computer. Some popular options include Visual Studio Code and Sublime Text.</li>
-                    <li><strong class="text-white/80">Remote development environment:</strong> A set of tools that allows you to build and test websites on a remote server. Some popular options include GitHub and GitLab.</li>
-                </ul>
-
-                <h4 class="text-lg font-semibold text-white/80 pt-2">3. Learn a server-side programming language:</h4>
-                <ul class="list-disc list-inside space-y-2 text-white/60">
-                    <li><strong class="text-white/80">PHP:</strong> A popular server-side programming language used to build dynamic websites.</li>
-                    <li><strong class="text-white/80">Ruby:</strong> A general-purpose programming language known for its simplicity and flexibility.</li>
-                    <li><strong class="text-white/80">Python:</strong> A popular programming language known for its simplicity and readability.</li>
-                </ul>
-
-                <h4 class="text-lg font-semibold text-white/80 pt-2">4. Learn a framework:</h4>
-                <ul class="list-disc list-inside space-y-2 text-white/60">
-                    <li>Django (Python)</li>
-                    <li>Ruby on Rails (Ruby)</li>
-                    <li>Laravel (PHP)</li>
-                    <li>Express.js (JavaScript)</li>
-                </ul>
-
-                <h4 class="text-lg font-semibold text-white/80 pt-2">5. Choose a database:</h4>
-                <ul class="list-disc list-inside space-y-2 text-white/60">
-                    <li><strong class="text-white/80">MySQL:</strong> A free, open-source database management system.</li>
-                    <li><strong class="text-white/80">PostgreSQL:</strong> A free, open-source object-relational database management system.</li>
-                    <li><strong class="text-white/80">MongoDB:</strong> A free, open-source NoSQL database management system.</li>
-                </ul>
-
-                <h4 class="text-lg font-semibold text-white/80 pt-2">6. Learn about version control:</h4>
-                <p>Version control is a system that tracks changes to a file or set of files over time.</p>
+            <!-- Footer signature -->
+            <div class="mt-16 pt-8 border-t border-white/10 flex items-center justify-between flex-wrap gap-4">
+                <p class="text-white/40 text-sm font-['JetBrains_Mono']">Written by Bryan Totty &middot; Feb 2023</p>
+                <a href="../blog.html" class="text-white/40 hover:text-glow text-sm transition-colors">More posts &rarr;</a>
             </div>
-
-            <p class="text-white/30 text-sm mt-12 font-['JetBrains_Mono']">Written by Bryan Totty</p>
         </div>
     </main>
 
