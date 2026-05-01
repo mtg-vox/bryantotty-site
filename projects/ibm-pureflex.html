@@ -17,14 +17,113 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config = { theme: { extend: { colors: { dark: '#050505', glow: '#c8102e' } } } }</script>
+    <script>tailwind.config = { theme: { extend: { colors: { dark: '#050505', glow: '#c8102e', ibm: { blue: '#1F70C1', deep: '#0530AD', green: '#22c55e' } } } } }</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
+    <style>
+        /* ========== IBM PUREFLEX — DATA-CENTER PALETTE ========== */
+        :root {
+            --p-blue: #1F70C1;
+            --p-deep: #0530AD;
+            --p-green: #22c55e;
+        }
+        /* Page-scoped backdrop: cool data-center blue glow over dark */
+        .p-bg {
+            position: fixed; inset: 0; z-index: 0; pointer-events: none;
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(31, 112, 193, 0.10), transparent 50%),
+                radial-gradient(ellipse at 15% 100%, rgba(5, 48, 173, 0.08), transparent 55%),
+                radial-gradient(ellipse at 85% 95%, rgba(34, 197, 94, 0.05), transparent 55%);
+        }
+        .p-grid {
+            position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.35;
+            background-image:
+                linear-gradient(rgba(31, 112, 193, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(31, 112, 193, 0.04) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        .p-eyebrow {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
+            padding: 6px 14px; border-radius: 999px;
+            color: #93c5fd; border: 1px solid rgba(31, 112, 193, 0.4);
+            background: rgba(31, 112, 193, 0.08);
+            box-shadow: 0 0 20px rgba(31, 112, 193, 0.1);
+        }
+        .p-eyebrow-dot {
+            width: 6px; height: 6px; border-radius: 50%;
+            background: var(--p-green); box-shadow: 0 0 10px var(--p-green);
+            animation: p-pulse 2s ease-in-out infinite;
+        }
+        @keyframes p-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+        .p-section-label-blue  { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: #60a5fa; margin-bottom: 12px; text-shadow: 0 0 8px rgba(31, 112, 193, 0.4); }
+        .p-section-label-green { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--p-green); margin-bottom: 12px; text-shadow: 0 0 8px rgba(34, 197, 94, 0.4); }
+
+        .p-h2 { font-size: 28px; font-weight: 700; color: white; margin-bottom: 18px; letter-spacing: -0.01em; line-height: 1.2; }
+
+        .p-tag-blue  { background: rgba(31, 112, 193, 0.12); color: #93c5fd; border: 1px solid rgba(31, 112, 193, 0.4); }
+        .p-tag-green { background: rgba(34, 197, 94, 0.10); color: #86efac; border: 1px solid rgba(34, 197, 94, 0.4); }
+
+        .p-frame {
+            border-radius: 8px; overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow:
+                0 0 50px rgba(31, 112, 193, 0.18),
+                0 0 100px rgba(5, 48, 173, 0.08);
+        }
+
+        .p-card-blue  { border: 1px solid rgba(31, 112, 193, 0.3); background: rgba(31, 112, 193, 0.025); border-left: 3px solid var(--p-blue); border-radius: 8px; padding: 24px; box-shadow: 0 0 30px rgba(31, 112, 193, 0.05); }
+        .p-card-green { border: 1px solid rgba(34, 197, 94, 0.3); background: rgba(34, 197, 94, 0.02); border-left: 3px solid var(--p-green); border-radius: 8px; padding: 24px; box-shadow: 0 0 30px rgba(34, 197, 94, 0.04); }
+
+        /* Responsibility item */
+        .p-resp {
+            display: grid; grid-template-columns: auto 1fr;
+            gap: 14px; padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .p-resp:last-child { border-bottom: none; }
+        .p-resp-num {
+            font-family: 'JetBrains Mono', monospace; font-size: 10px;
+            color: #93c5fd; letter-spacing: 1px;
+            padding-top: 4px; min-width: 26px;
+        }
+        .p-resp-text { color: rgba(255,255,255,0.75); font-size: 14px; line-height: 1.55; }
+
+        /* Stat card */
+        .p-stat {
+            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.02);
+            border-radius: 8px; padding: 18px;
+            text-align: center;
+        }
+        .p-stat-num { font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 700; color: white; line-height: 1; }
+        .p-stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-top: 8px; }
+
+        .p-tech-pill {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px; padding: 4px 10px;
+            border: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.55);
+            border-radius: 4px; margin: 3px;
+            background: rgba(255,255,255,0.02);
+        }
+
+        .p-divider {
+            height: 1px; margin: 56px 0;
+            background: linear-gradient(90deg, transparent, rgba(31, 112, 193, 0.4), transparent);
+        }
+    </style>
 </head>
 <body class="bg-dark text-white font-['Inter'] min-h-screen">
-    <div class="grid-bg" aria-hidden="true"></div>
+    <!-- Page-scoped data-center backdrop replaces default red grid -->
+    <div class="p-bg" aria-hidden="true"></div>
+    <div class="p-grid" aria-hidden="true"></div>
     <nav class="fixed top-0 w-full z-50 bg-dark/80 backdrop-blur-xl border-b border-white/5">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="/" class="text-xl font-black tracking-tighter"><span class="text-white">BRYAN</span><span class="text-glow">TOTTY</span></a>
@@ -48,32 +147,135 @@
         </div>
     </nav>
 
-    <main class="pt-28 pb-20 px-6">
-        <div class="max-w-3xl mx-auto">
-            <a href="../projects.html" class="text-white/40 hover:text-glow text-sm mb-6 inline-block transition-colors">&larr; Back to Projects</a>
-            <div class="mb-4">
-                <span class="text-xs font-medium px-2 py-0.5 rounded bg-green-500/10 text-green-400 font-['JetBrains_Mono'] tracking-wider">HARDWARE</span>
+    <main class="pt-28 pb-24 px-6 relative">
+        <div class="max-w-3xl mx-auto relative">
+            <a href="../projects.html" class="text-white/40 hover:text-ibm-blue text-sm mb-8 inline-block transition-colors">&larr; Back to Projects</a>
+
+            <!-- Header -->
+            <div class="flex justify-center mb-6">
+                <div class="p-eyebrow">
+                    <span class="p-eyebrow-dot"></span>
+                    IBM R&amp;D Lab &middot; 2011 – 2012
+                </div>
             </div>
-            <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-8">IBM PureFlex System</h1>
+            <div class="flex flex-wrap items-center justify-center gap-2 mb-5">
+                <span class="text-xs text-white/40 font-['JetBrains_Mono'] tracking-wider">2011 – 2012</span>
+                <span class="text-white/20">&middot;</span>
+                <span class="text-xs font-medium px-2 py-0.5 rounded p-tag-green font-['JetBrains_Mono'] tracking-wider">HARDWARE</span>
+                <span class="text-white/20">&middot;</span>
+                <span class="text-xs font-medium px-2 py-0.5 rounded p-tag-blue font-['JetBrains_Mono'] tracking-wider">FIRMWARE</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-5 leading-[1.1] text-center">IBM <span class="text-ibm-blue">PureFlex</span> System</h1>
+            <p class="text-white/60 text-lg leading-relaxed mb-12 max-w-2xl mx-auto text-center">Firmware test engineering for prototype blade servers in IBM's multi-million dollar R&amp;D laboratory.</p>
 
-            <img src="../images/projects/ibm-pureflex.jpg" alt="IBM PureFlex System" class="rounded-lg w-full mb-10" loading="lazy">
+            <!-- Hero image -->
+            <figure class="mb-14">
+                <div class="p-frame aspect-[16/9]">
+                    <img src="../images/projects/ibm-pureflex.jpg" alt="IBM PureFlex System chassis with blade servers" class="w-full h-full object-cover" loading="eager">
+                </div>
+                <figcaption class="text-white/40 text-xs italic mt-3 text-center font-['JetBrains_Mono'] tracking-wider">IBM PureFlex chassis &middot; integrated System x &amp; Power blades</figcaption>
+            </figure>
 
-            <div class="text-white/70 leading-relaxed space-y-6">
-                <p>As a Firmware Test Engineer at IBM I tested prototype server hardware and software in a multi-million dollar research and development laboratory.</p>
+            <!-- ======== Section 1: The Role ======== -->
+            <section class="mb-14">
+                <p class="p-section-label-blue">01 &middot; The Role</p>
+                <h2 class="p-h2">Firmware test engineer in IBM's hardware R&amp;D lab.</h2>
+                <p class="text-white/70 leading-relaxed text-base mb-6">
+                    As a Firmware Test Engineer at IBM I tested prototype server hardware and software in a <strong class="text-white">multi-million dollar research and development laboratory</strong>. The work happened on hardware that hadn't shipped yet &mdash; pre-production blade servers, BIOS/UEFI firmware still in flux, and chassis configurations being validated for the first time.
+                </p>
 
-                <h2 class="text-2xl font-semibold text-white/90 border-l-2 border-green-400/30 pl-4 pt-4">What I did</h2>
-                <ul class="list-disc list-inside space-y-2 text-white/60">
-                    <li>Determined BIOS and UEFI bug root cause analysis for blade servers</li>
-                    <li>Functional experience with development to production release cycles and deadlines</li>
-                    <li>Created and executed test suites for new hardware, firmware, and software</li>
-                    <li>Utilized multiple Linux and Windows operating systems to perform server compatibility tests</li>
-                    <li>Tested IBM Power Flex Chassis during developmental stages prior to public release</li>
-                    <li>Verified integration of IBM System x and Power Blades in the IBM Flex Chassis</li>
-                    <li>Documented and collected detailed technical analysis information of server firmware bugs</li>
-                    <li>Determined server firmware functional verification tests and executed those tests</li>
-                    <li>Executed stress and performance tests on server equipment in order to verify hardware safeguard features</li>
-                    <li>Interpreted developmental hardware schematics for detailed reporting of server hardware and software defects</li>
-                </ul>
+                <!-- Stat row -->
+                <div class="grid grid-cols-3 gap-3 mt-8">
+                    <div class="p-stat">
+                        <div class="p-stat-num">$M+</div>
+                        <div class="p-stat-label">R&amp;D lab</div>
+                    </div>
+                    <div class="p-stat">
+                        <div class="p-stat-num">2</div>
+                        <div class="p-stat-label">Server lines tested</div>
+                    </div>
+                    <div class="p-stat">
+                        <div class="p-stat-num">2</div>
+                        <div class="p-stat-label">OS families</div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="p-divider"></div>
+
+            <!-- ======== Section 2: What I Did ======== -->
+            <section class="mb-14">
+                <p class="p-section-label-green">02 &middot; What I Did</p>
+                <h2 class="p-h2">Pre-release validation of server firmware and hardware.</h2>
+
+                <div class="p-card-blue">
+                    <div class="p-resp">
+                        <div class="p-resp-num">01</div>
+                        <div class="p-resp-text">Determined BIOS and UEFI bug root cause analysis for blade servers.</div>
+                    </div>
+                    <div class="p-resp">
+                        <div class="p-resp-num">02</div>
+                        <div class="p-resp-text">Functional experience with development to production release cycles and deadlines.</div>
+                    </div>
+                    <div class="p-resp">
+                        <div class="p-resp-num">03</div>
+                        <div class="p-resp-text">Created and executed test suites for new hardware, firmware, and software.</div>
+                    </div>
+                    <div class="p-resp">
+                        <div class="p-resp-num">04</div>
+                        <div class="p-resp-text">Utilized multiple Linux and Windows operating systems to perform server compatibility tests.</div>
+                    </div>
+                    <div class="p-resp">
+                        <div class="p-resp-num">05</div>
+                        <div class="p-resp-text">Tested IBM Power Flex Chassis during developmental stages prior to public release.</div>
+                    </div>
+                    <div class="p-resp">
+                        <div class="p-resp-num">06</div>
+                        <div class="p-resp-text">Verified integration of IBM System x and Power Blades in the IBM Flex Chassis.</div>
+                    </div>
+                    <div class="p-resp">
+                        <div class="p-resp-num">07</div>
+                        <div class="p-resp-text">Documented and collected detailed technical analysis information of server firmware bugs.</div>
+                    </div>
+                    <div class="p-resp">
+                        <div class="p-resp-num">08</div>
+                        <div class="p-resp-text">Determined server firmware functional verification tests and executed those tests.</div>
+                    </div>
+                    <div class="p-resp">
+                        <div class="p-resp-num">09</div>
+                        <div class="p-resp-text">Executed stress and performance tests on server equipment in order to verify hardware safeguard features.</div>
+                    </div>
+                    <div class="p-resp">
+                        <div class="p-resp-num">10</div>
+                        <div class="p-resp-text">Interpreted developmental hardware schematics for detailed reporting of server hardware and software defects.</div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="p-divider"></div>
+
+            <!-- ======== Section 3: Stack ======== -->
+            <section class="mb-14">
+                <p class="p-section-label-blue">03 &middot; Stack</p>
+                <h2 class="p-h2">What I worked with.</h2>
+                <div class="text-center">
+                    <span class="p-tech-pill">BIOS</span>
+                    <span class="p-tech-pill">UEFI</span>
+                    <span class="p-tech-pill">IBM System x</span>
+                    <span class="p-tech-pill">IBM Power Blades</span>
+                    <span class="p-tech-pill">Power Flex Chassis</span>
+                    <span class="p-tech-pill">Linux</span>
+                    <span class="p-tech-pill">Windows Server</span>
+                    <span class="p-tech-pill">Hardware schematics</span>
+                    <span class="p-tech-pill">Firmware verification</span>
+                    <span class="p-tech-pill">Stress testing</span>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <div class="mt-16 pt-8 border-t border-white/10 flex items-center justify-between flex-wrap gap-4">
+                <p class="text-white/40 text-sm font-['JetBrains_Mono']">IBM &middot; Server R&amp;D &middot; Raleigh, NC</p>
+                <a href="../projects.html" class="text-white/40 hover:text-ibm-blue text-sm transition-colors">More projects &rarr;</a>
             </div>
         </div>
     </main>
