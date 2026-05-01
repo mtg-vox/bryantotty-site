@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=()" />
+    <title>ShadowScan AI - Bryan Totty</title>
+    <meta name="description" content="ShadowScan AI — an AI-powered website risk scanner that translates technical findings into business-impact reports for non-technical owners.">
+    <meta property="og:title" content="ShadowScan AI - Bryan Totty">
+    <meta property="og:description" content="An AI-powered website risk scanner that translates technical findings into business-impact reports for non-technical owners.">
+    <meta property="og:image" content="../images/projects/shadowscan/og-preview.png">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://bryantotty.com/projects/shadowscan-ai.html">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { dark: '#050505', glow: '#c8102e', cyber: '#3b82f6', cyberDeep: '#1d3bb8' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* ShadowScan-specific accents — layered on top of site theme */
+        .ss-eyebrow {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
+            color: #93c5fd;
+            padding: 6px 12px; border: 1px solid rgba(59, 130, 246, 0.25);
+            background: rgba(59, 130, 246, 0.06); border-radius: 999px;
+        }
+        .ss-eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: #3b82f6; box-shadow: 0 0 12px #3b82f6; animation: ss-pulse 2s ease-in-out infinite; }
+        @keyframes ss-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+        .ss-hero-glow {
+            position: absolute; inset: -20% -10% auto auto; width: 60%; height: 80%;
+            background: radial-gradient(ellipse at top right, rgba(59, 130, 246, 0.12), transparent 60%);
+            pointer-events: none; z-index: 0;
+        }
+
+        .ss-stat {
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.015);
+            border-radius: 10px; padding: 18px 20px;
+            transition: all 0.3s ease;
+        }
+        .ss-stat:hover { border-color: rgba(59, 130, 246, 0.35); background: rgba(59, 130, 246, 0.04); }
+        .ss-stat-num { font-family: 'JetBrains Mono', monospace; font-size: 28px; font-weight: 700; color: white; line-height: 1; }
+        .ss-stat-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255, 255, 255, 0.4); margin-top: 8px; }
+
+        /* Mock terminal / report card */
+        .ss-mock {
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: linear-gradient(180deg, rgba(15, 18, 28, 0.95), rgba(8, 10, 16, 0.95));
+            border-radius: 12px; overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), 0 0 60px rgba(59, 130, 246, 0.06);
+        }
+        .ss-mock-bar {
+            display: flex; align-items: center; gap: 8px;
+            padding: 10px 14px; border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .ss-mock-dot { width: 10px; height: 10px; border-radius: 50%; }
+        .ss-mock-url {
+            margin-left: auto; font-family: 'JetBrains Mono', monospace; font-size: 11px;
+            color: rgba(255, 255, 255, 0.4); padding: 3px 10px; border-radius: 4px;
+            background: rgba(255, 255, 255, 0.04);
+        }
+        .ss-mock-body { padding: 22px; font-family: 'JetBrains Mono', monospace; font-size: 12px; line-height: 1.7; }
+
+        .ss-finding {
+            display: grid; grid-template-columns: auto 1fr auto; gap: 14px; align-items: center;
+            padding: 14px 16px; margin-bottom: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.015); border-radius: 8px;
+        }
+        .ss-sev { font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 700; letter-spacing: 0.15em; padding: 4px 9px; border-radius: 4px; }
+        .ss-sev.crit { background: rgba(239, 68, 68, 0.12); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.3); }
+        .ss-sev.high { background: rgba(249, 115, 22, 0.12); color: #fdba74; border: 1px solid rgba(249, 115, 22, 0.3); }
+        .ss-sev.med { background: rgba(234, 179, 8, 0.12); color: #fde047; border: 1px solid rgba(234, 179, 8, 0.3); }
+        .ss-sev.low { background: rgba(59, 130, 246, 0.12); color: #93c5fd; border: 1px solid rgba(59, 130, 246, 0.3); }
+        .ss-finding-title { color: rgba(255, 255, 255, 0.85); font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; }
+        .ss-finding-desc { color: rgba(255, 255, 255, 0.4); font-family: 'Inter', sans-serif; font-size: 12px; margin-top: 2px; }
+        .ss-finding-impact { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: rgba(255, 255, 255, 0.45); text-align: right; }
+
+        .ss-pillar {
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.015);
+            border-radius: 12px; padding: 24px;
+            transition: all 0.3s ease; height: 100%;
+        }
+        .ss-pillar:hover { border-color: rgba(59, 130, 246, 0.3); background: rgba(59, 130, 246, 0.03); transform: translateY(-2px); }
+        .ss-pillar-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #3b82f6; letter-spacing: 0.2em; margin-bottom: 10px; }
+
+        .ss-tech-pill {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px; padding: 4px 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.55);
+            border-radius: 4px; margin: 3px;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .ss-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
+            margin: 64px 0;
+        }
+
+        .ss-section-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
+            color: #3b82f6; margin-bottom: 12px;
+        }
+
+        .ss-h2 {
+            font-size: 32px; font-weight: 700; letter-spacing: -0.02em;
+            color: white; margin-bottom: 24px; line-height: 1.15;
+        }
+
+        .ss-cta-card {
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(29, 59, 184, 0.04));
+            border-radius: 16px; padding: 40px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .ss-h2 { font-size: 24px; }
+            .ss-finding { grid-template-columns: auto 1fr; }
+            .ss-finding-impact { display: none; }
+        }
+    </style>
+</head>
+<body class="bg-dark text-white font-['Inter'] min-h-screen">
+    <div class="grid-bg" aria-hidden="true"></div>
+
+    <nav class="fixed top-0 w-full z-50 bg-dark/80 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-xl font-black tracking-tighter"><span class="text-white">BRYAN</span><span class="text-glow">TOTTY</span></a>
+            <div class="hidden md:flex gap-8 text-xs font-semibold tracking-[0.2em] uppercase">
+                <a href="/" class="text-white/50 hover:text-glow transition-colors">Home</a>
+                <a href="../about.html" class="text-white/50 hover:text-glow transition-colors">About</a>
+                <a href="../blog.html" class="text-white/50 hover:text-glow transition-colors">Blog</a>
+                <a href="../projects.html" class="text-white hover:text-glow transition-colors">Projects</a>
+                <a href="../contact.html" class="text-white/50 hover:text-glow transition-colors">Contact</a>
+            </div>
+            <button id="menu-btn" class="md:hidden text-white" aria-label="Toggle menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-dark/95 backdrop-blur-xl">
+            <div class="flex flex-col px-6 py-4 gap-4 text-xs font-semibold tracking-[0.2em] uppercase">
+                <a href="/" class="text-white/50">Home</a><a href="../about.html" class="text-white/50">About</a>
+                <a href="../blog.html" class="text-white/50">Blog</a><a href="../projects.html" class="text-white">Projects</a>
+                <a href="../contact.html" class="text-white/50">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-28 pb-20 px-6 relative overflow-hidden">
+        <div class="ss-hero-glow" aria-hidden="true"></div>
+
+        <!-- HERO -->
+        <section class="max-w-5xl mx-auto relative">
+            <a href="../projects.html" class="text-white/40 hover:text-glow text-sm mb-8 inline-block transition-colors">&larr; Back to Projects</a>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+                <div>
+                    <div class="ss-eyebrow mb-6">
+                        <span class="ss-eyebrow-dot"></span>
+                        Live Pilot · 2026
+                    </div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-md bg-cyber/15 border border-cyber/30 flex items-center justify-center text-cyber">
+                            <svg width="22" height="22" viewBox="0 0 33 33" fill="currentColor"><path d="M28,0H5C2.24,0,0,2.24,0,5v23c0,2.76,2.24,5,5,5h23c2.76,0,5-2.24,5-5V5c0-2.76-2.24-5-5-5ZM29,17c-6.63,0-12,5.37-12,12h-1c0-6.63-5.37-12-12-12v-1c6.63,0,12-5.37,12-12h1c0,6.63,5.37,12,12,12v1Z"/></svg>
+                        </div>
+                        <span class="font-['JetBrains_Mono'] text-xs tracking-[0.2em] uppercase text-white/40">SHADOWSCAN AI</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-5 leading-[1.05]">
+                        Find website risks <span class="text-cyber">before</span> they cost sales.
+                    </h1>
+                    <p class="text-white/60 text-lg leading-relaxed mb-8">
+                        An AI-powered risk scanner that turns deep technical findings into business-impact reports a non-technical owner can actually act on.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="https://getshadowscan.com/" target="_blank" rel="noopener" class="hero-btn-primary">VIEW LIVE PILOT</a>
+                        <a href="#how-it-works" class="hero-btn-outline">HOW IT WORKS</a>
+                    </div>
+                </div>
+
+                <!-- Hero mock report -->
+                <div class="ss-mock">
+                    <div class="ss-mock-bar">
+                        <span class="ss-mock-dot" style="background:#ef4444;"></span>
+                        <span class="ss-mock-dot" style="background:#eab308;"></span>
+                        <span class="ss-mock-dot" style="background:#22c55e;"></span>
+                        <span class="ss-mock-url">scan.getshadowscan.com/r/4a8f2</span>
+                    </div>
+                    <div class="ss-mock-body">
+                        <div class="text-cyber/70 mb-3">$ shadowscan --target acme-store.com</div>
+                        <div class="text-white/50 mb-1"><span class="text-white/30">[01/12]</span> Resolving DNS &amp; subdomains&hellip; <span class="text-green-400">ok</span></div>
+                        <div class="text-white/50 mb-1"><span class="text-white/30">[04/12]</span> Probing public endpoints&hellip; <span class="text-green-400">ok</span></div>
+                        <div class="text-white/50 mb-1"><span class="text-white/30">[07/12]</span> Fingerprinting CMS &amp; plugins&hellip; <span class="text-green-400">ok</span></div>
+                        <div class="text-white/50 mb-1"><span class="text-white/30">[10/12]</span> AI risk classification&hellip; <span class="text-green-400">ok</span></div>
+                        <div class="text-white/50 mb-3"><span class="text-white/30">[12/12]</span> Generating report&hellip; <span class="text-green-400">ok</span></div>
+                        <div class="text-white/70">› Found <span class="text-orange-300 font-bold">7 risks</span> &nbsp;<span class="text-red-300">2 critical</span> &nbsp;<span class="text-yellow-300">3 high</span> &nbsp;<span class="text-blue-300">2 low</span></div>
+                        <div class="text-white/40 text-[11px] mt-2">Est. revenue at risk: $4,200/mo &nbsp;·&nbsp; SEO impact: medium</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stat band -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+                <div class="ss-stat">
+                    <div class="ss-stat-num">15+</div>
+                    <div class="ss-stat-label">Yrs security XP</div>
+                </div>
+                <div class="ss-stat">
+                    <div class="ss-stat-num">12</div>
+                    <div class="ss-stat-label">Scan checks</div>
+                </div>
+                <div class="ss-stat">
+                    <div class="ss-stat-num">4</div>
+                    <div class="ss-stat-label">Pricing tiers</div>
+                </div>
+                <div class="ss-stat">
+                    <div class="ss-stat-num">$0</div>
+                    <div class="ss-stat-label">Free preview scan</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="ss-divider max-w-5xl mx-auto"></div>
+
+        <!-- PROBLEM -->
+        <section class="max-w-4xl mx-auto">
+            <div class="ss-section-label">01 / The Problem</div>
+            <h2 class="ss-h2">Small business websites get attacked the same way enterprises do — without enterprise defenses.</h2>
+            <p class="text-white/60 leading-relaxed text-lg mb-6">
+                Most small and mid-sized businesses do not know there is a problem until checkout breaks, search rankings drop, or customer trust is already damaged. Pen-tests cost thousands. SaaS scanners spit out CVE lists no business owner can interpret. And the average WordPress site runs 22+ plugins, any one of which can be the vector.
+            </p>
+            <p class="text-white/60 leading-relaxed text-lg">
+                ShadowScan AI was built to close that gap — enterprise-grade external risk visibility, packaged for owners who do not have a security team.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-4 mt-12">
+                <div class="ss-pillar">
+                    <div class="ss-pillar-num">RISK · 01</div>
+                    <h3 class="text-white text-lg font-semibold mb-2">Checkout Hijack</h3>
+                    <p class="text-white/50 text-sm leading-relaxed">A checkout page can look normal while a hidden script silently exfiltrates card details in the background.</p>
+                </div>
+                <div class="ss-pillar">
+                    <div class="ss-pillar-num">RISK · 02</div>
+                    <h3 class="text-white text-lg font-semibold mb-2">SEO Blacklist</h3>
+                    <p class="text-white/50 text-sm leading-relaxed">Attackers plant spam pages through one weak plugin. Rankings collapse. Inbound demand vanishes.</p>
+                </div>
+                <div class="ss-pillar">
+                    <div class="ss-pillar-num">RISK · 03</div>
+                    <h3 class="text-white text-lg font-semibold mb-2">Exposed Files</h3>
+                    <p class="text-white/50 text-sm leading-relaxed">Client backups, admin pages, and private uploads sitting public — indexed and waiting to be found.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="ss-divider max-w-5xl mx-auto"></div>
+
+        <!-- HOW IT WORKS -->
+        <section id="how-it-works" class="max-w-5xl mx-auto">
+            <div class="ss-section-label">02 / The Concept</div>
+            <h2 class="ss-h2">From a domain to a board-ready risk report — in minutes.</h2>
+            <p class="text-white/60 leading-relaxed text-lg mb-12 max-w-3xl">
+                The owner enters a URL. ShadowScan does the deep work in the background — discovery, fingerprinting, configuration analysis, AI-powered risk classification — and returns a prioritized action plan written for humans, not engineers.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-5">
+                <div class="ss-pillar">
+                    <div class="ss-pillar-num">STEP 01</div>
+                    <h3 class="text-white text-xl font-semibold mb-3">Enter the site</h3>
+                    <p class="text-white/55 text-sm leading-relaxed">Owner submits domain + email. No login access. No credit card. Authorization is captured at signup.</p>
+                </div>
+                <div class="ss-pillar">
+                    <div class="ss-pillar-num">STEP 02</div>
+                    <h3 class="text-white text-xl font-semibold mb-3">External recon</h3>
+                    <p class="text-white/55 text-sm leading-relaxed">Safe, non-disruptive checks across DNS, subdomains, exposed paths, software versions, and known CVEs.</p>
+                </div>
+                <div class="ss-pillar">
+                    <div class="ss-pillar-num">STEP 03</div>
+                    <h3 class="text-white text-xl font-semibold mb-3">AI translation layer</h3>
+                    <p class="text-white/55 text-sm leading-relaxed">Each finding is ranked by business impact and rewritten into plain-English fix steps an owner or vendor can execute.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="ss-divider max-w-5xl mx-auto"></div>
+
+        <!-- SAMPLE REPORT -->
+        <section class="max-w-5xl mx-auto">
+            <div class="ss-section-label">03 / The Deliverable</div>
+            <h2 class="ss-h2">A sample finding panel.</h2>
+            <p class="text-white/60 leading-relaxed text-lg mb-10 max-w-3xl">
+                Every issue is severity-ranked, business-contextualized, and paired with a concrete remediation step. No raw CVE dumps. No fear-mongering. Just what to fix first and why it matters.
+            </p>
+
+            <div class="ss-mock">
+                <div class="ss-mock-bar">
+                    <span class="ss-mock-dot" style="background:#ef4444;"></span>
+                    <span class="ss-mock-dot" style="background:#eab308;"></span>
+                    <span class="ss-mock-dot" style="background:#22c55e;"></span>
+                    <span class="ss-mock-url">app.getshadowscan.com / report / r-4a8f2</span>
+                </div>
+                <div style="padding: 26px;">
+                    <div class="ss-finding">
+                        <span class="ss-sev crit">CRIT</span>
+                        <div>
+                            <div class="ss-finding-title">Checkout page loads third-party script from unverified domain</div>
+                            <div class="ss-finding-desc">Possible card-skimmer vector. Verify or remove the script tag at /checkout.</div>
+                        </div>
+                        <div class="ss-finding-impact">$ revenue<br>at risk</div>
+                    </div>
+                    <div class="ss-finding">
+                        <span class="ss-sev crit">CRIT</span>
+                        <div>
+                            <div class="ss-finding-title">Exposed /wp-admin without rate limiting</div>
+                            <div class="ss-finding-desc">Brute-force attempts can run unchecked. Add a WAF rule or IP allow-list.</div>
+                        </div>
+                        <div class="ss-finding-impact">account<br>takeover</div>
+                    </div>
+                    <div class="ss-finding">
+                        <span class="ss-sev high">HIGH</span>
+                        <div>
+                            <div class="ss-finding-title">Outdated CMS plugin with known CVE</div>
+                            <div class="ss-finding-desc">A patched version was released 4 months ago. Update through the admin panel.</div>
+                        </div>
+                        <div class="ss-finding-impact">site<br>compromise</div>
+                    </div>
+                    <div class="ss-finding">
+                        <span class="ss-sev high">HIGH</span>
+                        <div>
+                            <div class="ss-finding-title">Public S3-style bucket lists internal directory contents</div>
+                            <div class="ss-finding-desc">Disable directory listing or move assets behind a CDN.</div>
+                        </div>
+                        <div class="ss-finding-impact">data<br>exposure</div>
+                    </div>
+                    <div class="ss-finding">
+                        <span class="ss-sev med">MED</span>
+                        <div>
+                            <div class="ss-finding-title">Missing security headers (CSP, HSTS, X-Frame-Options)</div>
+                            <div class="ss-finding-desc">Hand the included snippet to your developer or hosting provider.</div>
+                        </div>
+                        <div class="ss-finding-impact">SEO &amp;<br>trust</div>
+                    </div>
+                    <div class="ss-finding" style="margin-bottom: 0;">
+                        <span class="ss-sev low">LOW</span>
+                        <div>
+                            <div class="ss-finding-title">Verbose server banner leaks software version</div>
+                            <div class="ss-finding-desc">Cosmetic risk. Suppress in your web server configuration.</div>
+                        </div>
+                        <div class="ss-finding-impact">low<br>priority</div>
+                    </div>
+                </div>
+            </div>
+            <p class="text-white/30 text-xs italic mt-3 text-center font-['JetBrains_Mono']">Sample output. Demonstration data only.</p>
+        </section>
+
+        <div class="ss-divider max-w-5xl mx-auto"></div>
+
+        <!-- WHAT IT CHECKS -->
+        <section class="max-w-5xl mx-auto">
+            <div class="ss-section-label">04 / Coverage</div>
+            <h2 class="ss-h2">What the scanner looks for.</h2>
+
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                <div>
+                    <ul class="space-y-4">
+                        <li class="flex gap-3">
+                            <span class="text-cyber mt-1">›</span>
+                            <span class="text-white/70"><strong class="text-white">Outdated software &amp; vulnerable plugins</strong> — version fingerprinting cross-referenced against CVE feeds.</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-cyber mt-1">›</span>
+                            <span class="text-white/70"><strong class="text-white">Exposed files &amp; admin areas</strong> — backup files, hidden uploads, login portals indexed publicly.</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-cyber mt-1">›</span>
+                            <span class="text-white/70"><strong class="text-white">Misconfigurations</strong> — directory listing, missing headers, weak TLS, permissive CORS.</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-cyber mt-1">›</span>
+                            <span class="text-white/70"><strong class="text-white">Reputation &amp; SEO compromise</strong> — injected spam, blacklist signals, suspicious redirects.</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-cyber mt-1">›</span>
+                            <span class="text-white/70"><strong class="text-white">Customer-data exposure</strong> — checkout integrity, third-party script provenance, form posting destinations.</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-cyber mt-1">›</span>
+                            <span class="text-white/70"><strong class="text-white">Subdomain discovery</strong> — forgotten dev, staging, and legacy hosts that widen the attack surface.</span>
+                        </li>
+                    </ul>
+                </div>
+                <img src="../images/projects/shadowscan/service-scan.avif" alt="ShadowScan attack surface dashboard concept" class="rounded-lg w-full border border-white/10" loading="lazy">
+            </div>
+        </section>
+
+        <div class="ss-divider max-w-5xl mx-auto"></div>
+
+        <!-- TECH / HOW BUILT -->
+        <section class="max-w-5xl mx-auto">
+            <div class="ss-section-label">05 / Under The Hood</div>
+            <h2 class="ss-h2">Engineering approach.</h2>
+            <p class="text-white/60 leading-relaxed text-lg mb-10 max-w-3xl">
+                The MVP combines a headless scanning engine, a CVE intelligence layer, and an LLM translation pipeline that converts technical findings into business-impact narratives. Everything is read-only and externally observed — no credentials, no code execution, no disruption.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-5 mb-10">
+                <div class="ss-pillar">
+                    <div class="ss-pillar-num">LAYER · 01</div>
+                    <h3 class="text-white text-lg font-semibold mb-2">Recon engine</h3>
+                    <p class="text-white/55 text-sm leading-relaxed">Headless probes for DNS, subdomains, exposed paths, fingerprints, and security headers. Rate-limited &amp; opt-in only.</p>
+                </div>
+                <div class="ss-pillar">
+                    <div class="ss-pillar-num">LAYER · 02</div>
+                    <h3 class="text-white text-lg font-semibold mb-2">Intelligence enrichment</h3>
+                    <p class="text-white/55 text-sm leading-relaxed">Findings cross-referenced with CVE feeds, known-bad indicators, and real-world exploit availability data.</p>
+                </div>
+                <div class="ss-pillar">
+                    <div class="ss-pillar-num">LAYER · 03</div>
+                    <h3 class="text-white text-lg font-semibold mb-2">AI translation</h3>
+                    <p class="text-white/55 text-sm leading-relaxed">Each technical finding is rewritten into a business-impact summary plus a concrete fix step a non-engineer can act on.</p>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <span class="ss-tech-pill">Node.js</span>
+                <span class="ss-tech-pill">Python</span>
+                <span class="ss-tech-pill">Headless browser</span>
+                <span class="ss-tech-pill">CVE API</span>
+                <span class="ss-tech-pill">LLM</span>
+                <span class="ss-tech-pill">Postgres</span>
+                <span class="ss-tech-pill">Vercel</span>
+                <span class="ss-tech-pill">Formspree</span>
+                <span class="ss-tech-pill">Meta Pixel</span>
+            </div>
+        </section>
+
+        <div class="ss-divider max-w-5xl mx-auto"></div>
+
+        <!-- BUSINESS DESIGN -->
+        <section class="max-w-5xl mx-auto">
+            <div class="ss-section-label">06 / Go-to-Market</div>
+            <h2 class="ss-h2">Pricing built for owners — not security teams.</h2>
+            <p class="text-white/60 leading-relaxed text-lg mb-10 max-w-3xl">
+                The funnel is built around a free preview scan that returns a real result. Recurring tiers add monitoring, frequency, and shareable executive reports for businesses that want a permanent safety net.
+            </p>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div class="ss-pillar text-center">
+                    <div class="ss-pillar-num">PREVIEW</div>
+                    <div class="text-white text-3xl font-bold mb-1">$0</div>
+                    <p class="text-white/45 text-xs leading-relaxed">One-time scan + sample report</p>
+                </div>
+                <div class="ss-pillar text-center">
+                    <div class="ss-pillar-num">STARTER</div>
+                    <div class="text-white text-3xl font-bold mb-1">$49<span class="text-base text-white/40">/mo</span></div>
+                    <p class="text-white/45 text-xs leading-relaxed">Monthly scans + shareable reports</p>
+                </div>
+                <div class="ss-pillar text-center" style="border-color: rgba(59, 130, 246, 0.4); background: rgba(59, 130, 246, 0.05);">
+                    <div class="ss-pillar-num" style="color:#60a5fa;">GROWTH ★</div>
+                    <div class="text-white text-3xl font-bold mb-1">$149<span class="text-base text-white/40">/mo</span></div>
+                    <p class="text-white/45 text-xs leading-relaxed">Weekly scans + continuous monitoring</p>
+                </div>
+                <div class="ss-pillar text-center">
+                    <div class="ss-pillar-num">PRO</div>
+                    <div class="text-white text-3xl font-bold mb-1">$399<span class="text-base text-white/40">/mo</span></div>
+                    <p class="text-white/45 text-xs leading-relaxed">Higher-stakes sites + faster support</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="ss-divider max-w-5xl mx-auto"></div>
+
+        <!-- LESSONS / RESULTS -->
+        <section class="max-w-4xl mx-auto">
+            <div class="ss-section-label">07 / What I Learned</div>
+            <h2 class="ss-h2">Building a security product for non-security buyers.</h2>
+
+            <div class="space-y-6 text-white/70 leading-relaxed">
+                <p>
+                    <strong class="text-white">Translation is the product.</strong> The hardest engineering problem was not the scanner — it was the layer that turns a CVE ID into "your checkout page is at risk." Without that, the report is noise.
+                </p>
+                <p>
+                    <strong class="text-white">Trust is earned at the form.</strong> Owners do not enter their domain unless the page makes the safety boundary obvious. The signup explicitly captures authorization and clarifies that the scan is external and non-disruptive.
+                </p>
+                <p>
+                    <strong class="text-white">Free preview drives the funnel.</strong> A real result with real findings — even from a basic scan — converts owners into recurring tiers far better than a feature list ever could.
+                </p>
+                <p>
+                    <strong class="text-white">Compliance posture has to be designed in.</strong> Consent-gated tracking, plain-language terms, and a strict scope-of-scan boundary are not nice-to-haves for a security product — they are the credibility floor.
+                </p>
+            </div>
+        </section>
+
+        <div class="ss-divider max-w-5xl mx-auto"></div>
+
+        <!-- ROADMAP -->
+        <section class="max-w-4xl mx-auto">
+            <div class="ss-section-label">08 / What's Next</div>
+            <h2 class="ss-h2">The roadmap.</h2>
+            <ul class="space-y-3 text-white/65 text-base">
+                <li class="flex gap-3"><span class="text-cyber font-mono text-sm mt-1">→</span><span><strong class="text-white">Continuous monitoring</strong> with weekly diffs and email alerts when new risks appear.</span></li>
+                <li class="flex gap-3"><span class="text-cyber font-mono text-sm mt-1">→</span><span><strong class="text-white">Agency white-label</strong> so web shops can deliver branded ShadowScan reports to their clients.</span></li>
+                <li class="flex gap-3"><span class="text-cyber font-mono text-sm mt-1">→</span><span><strong class="text-white">Compliance overlays</strong> (PCI, HIPAA-relevant signals) for owners in regulated verticals.</span></li>
+                <li class="flex gap-3"><span class="text-cyber font-mono text-sm mt-1">→</span><span><strong class="text-white">One-click remediation</strong> for the most common findings via integrations with Cloudflare, WordPress, and major hosting providers.</span></li>
+                <li class="flex gap-3"><span class="text-cyber font-mono text-sm mt-1">→</span><span><strong class="text-white">Underwriter partnerships</strong> — ShadowScan reports as evidence for cyber-insurance pre-quote screening.</span></li>
+            </ul>
+        </section>
+
+        <div class="ss-divider max-w-5xl mx-auto"></div>
+
+        <!-- CTA -->
+        <section class="max-w-4xl mx-auto">
+            <div class="ss-cta-card">
+                <p class="font-['JetBrains_Mono'] text-xs tracking-[0.25em] uppercase text-cyber mb-3">Pilot is live</p>
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">See what your site exposes.</h2>
+                <p class="text-white/55 max-w-xl mx-auto mb-8">A free preview scan with no credit card. Built and operated by Bryan Totty.</p>
+                <div class="flex flex-wrap gap-3 justify-center">
+                    <a href="https://getshadowscan.com/" target="_blank" rel="noopener" class="hero-btn-primary">VISIT SHADOWSCAN AI</a>
+                    <a href="../contact.html" class="hero-btn-outline">CONTACT BRYAN</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-white/5 py-10 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-white/30 tracking-wider">
+            <span class="font-['JetBrains_Mono']">&copy; 2026 BRYAN TOTTY</span>
+            <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 uppercase">
+                <a href="/" class="hover:text-glow transition-colors">Home</a>
+                <a href="../about.html" class="hover:text-glow transition-colors">About</a>
+                <a href="../blog.html" class="hover:text-glow transition-colors">Blog</a>
+                <a href="../projects.html" class="hover:text-glow transition-colors">Projects</a>
+                <a href="../privacy.html" class="hover:text-glow transition-colors">Privacy</a>
+                <a href="../contact.html" class="hover:text-glow transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../main.js"></script>
+</body>
+</html>
