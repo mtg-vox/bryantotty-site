@@ -1,11 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" shape-rendering="geometricPrecision">
-  <!-- Dark rounded background to match the site palette -->
-  <rect width="64" height="64" rx="10" fill="#050505"/>
-  <!-- Subtle red accent bar at the bottom for brand recognition at very small sizes -->
-  <rect x="0" y="58" width="64" height="6" fill="#c8102e"/>
-  <!-- BT in matching site logo style (Inter Black, ultra-tight tracking) -->
-  <g font-family="Inter, -apple-system, 'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="48" letter-spacing="-2.5">
-    <text x="6"  y="46" fill="#ffffff">B</text>
-    <text x="34" y="46" fill="#c8102e">T</text>
-  </g>
+  <!-- Bold red background — your signature glow color, edge to edge -->
+  <rect width="64" height="64" rx="12" fill="#c8102e"/>
+  <!-- Thin dark inner stroke to crisp the edge against light browser themes -->
+  <rect x="0.5" y="0.5" width="63" height="63" rx="11.5" fill="none" stroke="rgba(0,0,0,0.25)" stroke-width="1"/>
+  <!-- Bold white "B" — Inter Black, optically centered, fills the canvas -->
+  <text
+    x="50%" y="50%"
+    text-anchor="middle"
+    dominant-baseline="central"
+    font-family="Inter, -apple-system, 'Helvetica Neue', Arial, sans-serif"
+    font-weight="900"
+    font-size="56"
+    letter-spacing="-3"
+    fill="#ffffff"
+    style="paint-order: stroke fill;"
+  >B</text>
 </svg>
