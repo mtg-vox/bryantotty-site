@@ -6,11 +6,12 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=()" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io; base-uri 'self'; form-action 'self' https://formspree.io" />
     <title>Getting Started on Ethereum - Bryan Totty</title>
     <meta name="description" content="Notes and resources for getting started in Ethereum development — tools, courses, and community links.">
     <meta property="og:title" content="Getting Started on Ethereum - Bryan Totty">
     <meta property="og:description" content="Notes and resources for getting started in Ethereum development — tools, courses, and community links.">
-    <meta property="og:image" content="https://bryantotty.com/images/blog/getting-started-ethereum/ethereum-hero.svg">
+    <meta property="og:image" content="https://bryantotty.com/images/blog/getting-started-ethereum/ethereum-hero.png">
     <meta property="og:type" content="article">
     <link rel="canonical" href="https://bryantotty.com/blog/getting-started-ethereum.html">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg?v=b-20260430">
@@ -26,7 +27,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Getting Started on Ethereum - Bryan Totty">
     <meta name="twitter:description" content="Notes and resources for getting started in Ethereum development — tools, courses, and community links.">
-    <meta name="twitter:image" content="https://bryantotty.com/images/blog/getting-started-ethereum/ethereum-hero.svg">
+    <meta name="twitter:image" content="https://bryantotty.com/images/blog/getting-started-ethereum/ethereum-hero.png">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":"https://bryantotty.com/blog/getting-started-ethereum.html","headline":"Getting Started on Ethereum","description":"Notes and resources for getting started in Ethereum development — tools, courses, and community links.","image":["https://bryantotty.com/images/blog/getting-started-ethereum/ethereum-hero.svg"],"datePublished":"2023-02-12","dateModified":"2023-02-12","author":{"@type":"Person","name":"Bryan Totty","url":"https://bryantotty.com/about.html"},"publisher":{"@type":"Person","name":"Bryan Totty","url":"https://bryantotty.com/","logo":{"@type":"ImageObject","url":"https://bryantotty.com/favicon.png"}}}</script>
 </head>
 <body class="bg-dark text-white font-['Inter'] min-h-screen">
@@ -61,7 +62,7 @@
             <!-- Hero with diamond + integrated title -->
             <figure class="mb-10">
                 <div class="rounded-lg overflow-hidden border border-white/10 bg-black aspect-[2/1]">
-                    <img src="../images/blog/getting-started-ethereum/ethereum-hero.svg" alt="Getting Started on Ethereum" class="w-full h-full object-contain" loading="eager">
+                    <img src="../images/blog/getting-started-ethereum/ethereum-hero.svg" width="1200" height="600" alt="Getting Started on Ethereum" class="w-full h-full object-contain" loading="eager">
                 </div>
             </figure>
 
@@ -88,7 +89,7 @@
                 <p class="font-['JetBrains_Mono'] text-xs tracking-[0.3em] uppercase text-glow mb-3">01 &middot; The Path</p>
                 <h2 class="text-2xl md:text-3xl font-semibold text-white mb-6 leading-snug">So you want to be a blockchain developer?</h2>
 
-                <p class="text-white/65 leading-relaxed text-base mb-6">A solid starting reference: <a href="https://tr3y.io/articles/crypto/how2bloccchain.html" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline decoration-glow/40 underline-offset-4">tr3y.io / how2bloccchain</a>.</p>
+                <p class="text-white/65 leading-relaxed text-base mb-6">A solid starting reference: <a href="https://tr3y.io/articles/crypto/how2bloccchain.html" target="_blank" rel="noopener noreferrer" class="text-glow hover:text-red-300 underline decoration-glow/40 underline-offset-4">tr3y.io / how2bloccchain</a>.</p>
 
                 <h3 class="text-white text-lg font-semibold mb-3">What blockchain devs commonly work with</h3>
                 <ul class="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-8">
@@ -119,7 +120,7 @@
 
                 <h3 class="text-white text-lg font-semibold mb-3">Crypto Devs community on Discord</h3>
                 <p class="text-white/55 text-sm italic mb-3">Highly recommend joining &mdash; but watch for scams in DMs.</p>
-                <a href="https://discord.gg/AQ96PSkcrV" target="_blank" rel="noopener" class="inline-flex items-center gap-2 font-['JetBrains_Mono'] text-xs px-4 py-2 rounded border border-glow/30 text-glow hover:bg-glow/10 transition-colors">
+                <a href="https://discord.gg/AQ96PSkcrV" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 font-['JetBrains_Mono'] text-xs px-4 py-2 rounded border border-glow/30 text-glow hover:bg-glow/10 transition-colors">
                     Crypto Devs Discord
                     <span aria-hidden="true">&rarr;</span>
                 </a>
@@ -134,12 +135,12 @@
                 <div class="border border-white/10 rounded-lg bg-white/[0.02] p-6">
                     <p class="font-['JetBrains_Mono'] text-[11px] tracking-[0.2em] text-glow uppercase mb-4">Core Fundamentals</p>
                     <ul class="space-y-3 text-white/70 text-sm">
-                        <li class="flex gap-3"><span class="text-glow/60 font-mono">&rarr;</span><a href="https://www.linkedin.com/learning/paths/build-an-ethereum-blockchain-app" target="_blank" rel="noopener" class="hover:text-glow transition-colors underline decoration-white/20 underline-offset-4">Build an Ethereum Blockchain App</a> <span class="text-white/40">&mdash; LinkedIn Learning Path</span></li>
-                        <li class="flex gap-3"><span class="text-glow/60 font-mono">&rarr;</span><a href="https://www.udemy.com/course/ethereum-and-solidity-the-complete-developers-guide/" target="_blank" rel="noopener" class="hover:text-glow transition-colors underline decoration-white/20 underline-offset-4">Ethereum and Solidity: The Complete Developer's Guide</a> <span class="text-white/40">&mdash; Udemy, $21.99</span></li>
-                        <li class="flex gap-3"><span class="text-glow/60 font-mono">&rarr;</span><a href="https://www.udemy.com/course/blockchain-for-business-the-new-industrial-revolution/" target="_blank" rel="noopener" class="hover:text-glow transition-colors underline decoration-white/20 underline-offset-4">Blockchain for Business: The New Industrial Revolution</a> <span class="text-white/40">&mdash; Udemy (non-dev)</span></li>
-                        <li class="flex gap-3"><span class="text-glow/60 font-mono">&rarr;</span><a href="https://www.udemy.com/course/blockchain-developer/" target="_blank" rel="noopener" class="hover:text-glow transition-colors underline decoration-white/20 underline-offset-4">Ethereum Blockchain Developer Bootcamp With Solidity (2022)</a> <span class="text-white/40">&mdash; Udemy</span></li>
-                        <li class="flex gap-3"><span class="text-glow/60 font-mono">&rarr;</span><a href="https://www.coursera.org/courses?query=ethereum" target="_blank" rel="noopener" class="hover:text-glow transition-colors underline decoration-white/20 underline-offset-4">Coursera Ethereum courses</a></li>
-                        <li class="flex gap-3"><span class="text-glow/60 font-mono">&rarr;</span><a href="https://www.udacity.com/course/blockchain-developer-nanodegree--nd1309" target="_blank" rel="noopener" class="hover:text-glow transition-colors underline decoration-white/20 underline-offset-4">Become a Blockchain Developer</a> <span class="text-white/40">&mdash; Udacity, $1,356 (prerequisites required)</span></li>
+                        <li class="flex gap-3"><span class="text-glow/60 font-mono">&rarr;</span><a href="https://www.linkedin.com/learning/paths/build-an-ethereum-blockchain-app" target="_blank" rel="noopener noreferrer" class="hover:text-glow transition-colors underline decoration-white/20 underline-offset-4">Build an Ethereum Blockchain App</a> <span class="text-white/40">&mdash; LinkedIn Learning Path</span></li>
+                        <li class="flex gap-3"><span class="text-glow/60 font-mono">&rarr;</span><a href="https://www.udemy.com/course/ethereum-and-solidity-the-complete-developers-guide/" target="_blank" rel="noopener noreferrer" class="hover:text-glow transition-colors underline decoration-white/20 underline-offset-4">Ethereum and Solidity: The Complete Developer's Guide</a> <span class="text-white/40">&mdash; Udemy, $21.99</span></li>
+                        <li class="flex gap-3"><span class="text-glow/60 font-mono">&rarr;</span><a href="https://www.udemy.com/course/blockchain-for-business-the-new-industrial-revolution/" target="_blank" rel="noopener noreferrer" class="hover:text-glow transition-colors underline decoration-white/20 underline-offset-4">Blockchain for Business: The New Industrial Revolution</a> <span class="text-white/40">&mdash; Udemy (non-dev)</span></li>
+                        <li class="flex gap-3"><span class="text-glow/60 font-mono">&rarr;</span><a href="https://www.udemy.com/course/blockchain-developer/" target="_blank" rel="noopener noreferrer" class="hover:text-glow transition-colors underline decoration-white/20 underline-offset-4">Ethereum Blockchain Developer Bootcamp With Solidity (2022)</a> <span class="text-white/40">&mdash; Udemy</span></li>
+                        <li class="flex gap-3"><span class="text-glow/60 font-mono">&rarr;</span><a href="https://www.coursera.org/courses?query=ethereum" target="_blank" rel="noopener noreferrer" class="hover:text-glow transition-colors underline decoration-white/20 underline-offset-4">Coursera Ethereum courses</a></li>
+                        <li class="flex gap-3"><span class="text-glow/60 font-mono">&rarr;</span><a href="https://www.udacity.com/course/blockchain-developer-nanodegree--nd1309" target="_blank" rel="noopener noreferrer" class="hover:text-glow transition-colors underline decoration-white/20 underline-offset-4">Become a Blockchain Developer</a> <span class="text-white/40">&mdash; Udacity, $1,356 (prerequisites required)</span></li>
                     </ul>
                 </div>
             </section>
@@ -152,10 +153,10 @@
 
                 <div class="border border-white/10 rounded-lg bg-white/[0.02] p-6">
                     <ul class="space-y-3 text-white/70 text-sm">
-                        <li class="flex gap-3"><span class="text-glow/60 font-mono">&rarr;</span><a href="https://bootcamp.cvn.columbia.edu/fintech/" target="_blank" rel="noopener" class="hover:text-glow transition-colors underline decoration-white/20 underline-offset-4">Columbia Engineering FinTech Boot Camp</a> <span class="text-white/40">&mdash; 24 weeks &middot; $12k &middot; technical</span></li>
-                        <li class="flex gap-3"><span class="text-glow/60 font-mono">&rarr;</span><a href="https://oxford.esmelearning.com/products/oxford-blockchain-strategy" target="_blank" rel="noopener" class="hover:text-glow transition-colors underline decoration-white/20 underline-offset-4">Oxford Blockchain Strategy</a> <span class="text-white/40">&mdash; 6 weeks &middot; $3.5k &middot; high-level</span></li>
-                        <li class="flex gap-3"><span class="text-glow/60 font-mono">&rarr;</span><a href="https://bootcamp.rutgers.edu/fintech/" target="_blank" rel="noopener" class="hover:text-glow transition-colors underline decoration-white/20 underline-offset-4">Rutgers FinTech Bootcamp</a> <span class="text-white/40">&mdash; 24 weeks &middot; $13k &middot; technical</span></li>
-                        <li class="flex gap-3"><span class="text-glow/60 font-mono">&rarr;</span><a href="https://bootcamp.berkeley.edu/fintech/" target="_blank" rel="noopener" class="hover:text-glow transition-colors underline decoration-white/20 underline-offset-4">Berkeley FinTech Boot Camp</a></li>
+                        <li class="flex gap-3"><span class="text-glow/60 font-mono">&rarr;</span><a href="https://bootcamp.cvn.columbia.edu/fintech/" target="_blank" rel="noopener noreferrer" class="hover:text-glow transition-colors underline decoration-white/20 underline-offset-4">Columbia Engineering FinTech Boot Camp</a> <span class="text-white/40">&mdash; 24 weeks &middot; $12k &middot; technical</span></li>
+                        <li class="flex gap-3"><span class="text-glow/60 font-mono">&rarr;</span><a href="https://oxford.esmelearning.com/products/oxford-blockchain-strategy" target="_blank" rel="noopener noreferrer" class="hover:text-glow transition-colors underline decoration-white/20 underline-offset-4">Oxford Blockchain Strategy</a> <span class="text-white/40">&mdash; 6 weeks &middot; $3.5k &middot; high-level</span></li>
+                        <li class="flex gap-3"><span class="text-glow/60 font-mono">&rarr;</span><a href="https://bootcamp.rutgers.edu/fintech/" target="_blank" rel="noopener noreferrer" class="hover:text-glow transition-colors underline decoration-white/20 underline-offset-4">Rutgers FinTech Bootcamp</a> <span class="text-white/40">&mdash; 24 weeks &middot; $13k &middot; technical</span></li>
+                        <li class="flex gap-3"><span class="text-glow/60 font-mono">&rarr;</span><a href="https://bootcamp.berkeley.edu/fintech/" target="_blank" rel="noopener noreferrer" class="hover:text-glow transition-colors underline decoration-white/20 underline-offset-4">Berkeley FinTech Boot Camp</a></li>
                     </ul>
                 </div>
             </section>
@@ -165,7 +166,7 @@
                 <p class="font-['JetBrains_Mono'] text-xs tracking-[0.3em] uppercase text-glow mb-3">04 &middot; Solidity</p>
                 <h2 class="text-2xl md:text-3xl font-semibold text-white mb-4 leading-snug">Solidity training.</h2>
                 <ul class="space-y-2 text-white/65 text-base">
-                    <li class="flex gap-3"><span class="text-glow/60 font-mono mt-1">&rarr;</span><a href="https://youtu.be/ipwxYa-F1uY" target="_blank" rel="noopener" class="hover:text-glow transition-colors underline decoration-white/20 underline-offset-4">Solidity Tutorial &mdash; Full Course on Ethereum, Blockchain Development, Smart Contracts, and the EVM</a> <span class="text-white/40">&mdash; 2 hrs, free</span></li>
+                    <li class="flex gap-3"><span class="text-glow/60 font-mono mt-1">&rarr;</span><a href="https://youtu.be/ipwxYa-F1uY" target="_blank" rel="noopener noreferrer" class="hover:text-glow transition-colors underline decoration-white/20 underline-offset-4">Solidity Tutorial &mdash; Full Course on Ethereum, Blockchain Development, Smart Contracts, and the EVM</a> <span class="text-white/40">&mdash; 2 hrs, free</span></li>
                 </ul>
             </section>
 
@@ -175,7 +176,7 @@
                 <h2 class="text-2xl md:text-3xl font-semibold text-white mb-6 leading-snug">A working dev's advice.</h2>
 
                 <blockquote class="border-l-2 border-glow/50 pl-6 text-white/65 italic space-y-4 leading-relaxed">
-                    <p>"You should start with Solidity. Remix is pretty popular. People use Hardhat as well, but I prefer Remix. <a href="https://remix.ethereum.org/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline decoration-glow/40 underline-offset-4 not-italic">remix.ethereum.org</a>"</p>
+                    <p>"You should start with Solidity. Remix is pretty popular. People use Hardhat as well, but I prefer Remix. <a href="https://remix.ethereum.org/" target="_blank" rel="noopener noreferrer" class="text-glow hover:text-red-300 underline decoration-glow/40 underline-offset-4 not-italic">remix.ethereum.org</a>"</p>
                     <p>"Also, if you're going to be doing web3 functions you should get caught up on Linux servers, so you'll know how to deploy the web3 on the backend."</p>
                     <p>"There is a test network for both Polygon and Ethereum, so you can make free contracts with those. Just Google the stuff &mdash; learning material is slim right now since this is so new."</p>
                     <p>"To access web3 and set it up on Linux, you must build an Ethereum node, or go to <span class="not-italic">quicknodes.com</span> and get a membership. The free option has limited calls so you can learn and get started, but if you have the means it's best to run your own node."</p>
@@ -186,13 +187,13 @@
             <section class="mb-14">
                 <p class="font-['JetBrains_Mono'] text-xs tracking-[0.3em] uppercase text-glow mb-3">06 &middot; Setup</p>
                 <h2 class="text-2xl md:text-3xl font-semibold text-white mb-4 leading-snug">Install an Ethereum dev environment.</h2>
-                <p class="text-white/65 leading-relaxed text-base mb-6">Follow along with this <a href="https://www.youtube.com/watch?v=XLahq4qyors&list=PLzGB3STNnvdESHeoaCx37XZ_ZmoMKJ4rn&index=5" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline decoration-glow/40 underline-offset-4">free YouTube tutorial</a>. In my case I installed Fedora in a VM using Parallels on macOS:</p>
+                <p class="text-white/65 leading-relaxed text-base mb-6">Follow along with this <a href="https://www.youtube.com/watch?v=XLahq4qyors&list=PLzGB3STNnvdESHeoaCx37XZ_ZmoMKJ4rn&index=5" target="_blank" rel="noopener noreferrer" class="text-glow hover:text-red-300 underline decoration-glow/40 underline-offset-4">free YouTube tutorial</a>. In my case I installed Fedora in a VM using Parallels on macOS:</p>
 
                 <ul class="space-y-2 text-white/65 text-base mb-8">
                     <li class="flex gap-3"><span class="text-glow/60 font-mono mt-1">&rarr;</span>Install Parallels &mdash; smoothest onboarding.</li>
                     <li class="flex gap-3"><span class="text-glow/60 font-mono mt-1">&rarr;</span>I had major performance issues using VirtualBox, even after installing VBox Tools.</li>
                     <li class="flex gap-3"><span class="text-glow/60 font-mono mt-1">&rarr;</span>Install Fedora from the quick menu.</li>
-                    <li class="flex gap-3"><span class="text-glow/60 font-mono mt-1">&rarr;</span>Install dependencies from <a href="https://www.ethdocs.org/en/latest/ethereum-clients/cpp-ethereum/building-from-source/linux.html" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline decoration-glow/40 underline-offset-4">ethdocs.org</a>.</li>
+                    <li class="flex gap-3"><span class="text-glow/60 font-mono mt-1">&rarr;</span>Install dependencies from <a href="https://www.ethdocs.org/en/latest/ethereum-clients/cpp-ethereum/building-from-source/linux.html" target="_blank" rel="noopener noreferrer" class="text-glow hover:text-red-300 underline decoration-glow/40 underline-offset-4">ethdocs.org</a>.</li>
                 </ul>
 
                 <p class="font-['JetBrains_Mono'] text-[11px] tracking-[0.2em] text-glow uppercase mb-2">Clone &amp; install dependencies</p>
@@ -206,7 +207,7 @@ sudo ln -s /var/lib/snapd/snap /snap
 # Reboot
 sudo snap install truffle --beta</pre></div>
 
-                <p class="text-white/65 leading-relaxed text-base mb-2">Download and run <a href="https://next-stack.github.io/ganache/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline decoration-glow/40 underline-offset-4">Ganache</a>, install Sublime Text, add Ethereum/Solidity syntax highlighting, then:</p>
+                <p class="text-white/65 leading-relaxed text-base mb-2">Download and run <a href="https://next-stack.github.io/ganache/" target="_blank" rel="noopener noreferrer" class="text-glow hover:text-red-300 underline decoration-glow/40 underline-offset-4">Ganache</a>, install Sublime Text, add Ethereum/Solidity syntax highlighting, then:</p>
                 <div class="bg-black/40 border border-white/10 rounded-lg p-4 mb-4 font-['JetBrains_Mono'] text-xs text-white/70 overflow-x-auto"><pre>npm install
 npm install solc
 sudo npm install -g truffle@5.1.39
@@ -225,10 +226,10 @@ truffle version</pre></div>
 
                 <div class="border border-white/10 rounded-lg bg-white/[0.02] p-6 mb-6">
                     <ul class="space-y-3 text-white/70 text-sm">
-                        <li class="flex gap-3"><span class="text-glow/60 font-mono">&rarr;</span><a href="https://solidity-by-example.org/first-app/" target="_blank" rel="noopener" class="hover:text-glow transition-colors underline decoration-white/20 underline-offset-4">Solidity by Example</a></li>
-                        <li class="flex gap-3"><span class="text-glow/60 font-mono">&rarr;</span><a href="https://ethernaut.openzeppelin.com/" target="_blank" rel="noopener" class="hover:text-glow transition-colors underline decoration-white/20 underline-offset-4">Ethernaut (OpenZeppelin)</a></li>
-                        <li class="flex gap-3"><span class="text-glow/60 font-mono">&rarr;</span><a href="https://101blockchains.com/become-ethereum-developer/" target="_blank" rel="noopener" class="hover:text-glow transition-colors underline decoration-white/20 underline-offset-4">101 Blockchains &mdash; Become an Ethereum Developer</a></li>
-                        <li class="flex gap-3"><span class="text-glow/60 font-mono">&rarr;</span><a href="https://ethereum-blockchain-developer.com/" target="_blank" rel="noopener" class="hover:text-glow transition-colors underline decoration-white/20 underline-offset-4">Ethereum Blockchain Developer</a> <span class="text-white/40">&mdash; setting up MetaMask + Remix test env</span></li>
+                        <li class="flex gap-3"><span class="text-glow/60 font-mono">&rarr;</span><a href="https://solidity-by-example.org/first-app/" target="_blank" rel="noopener noreferrer" class="hover:text-glow transition-colors underline decoration-white/20 underline-offset-4">Solidity by Example</a></li>
+                        <li class="flex gap-3"><span class="text-glow/60 font-mono">&rarr;</span><a href="https://ethernaut.openzeppelin.com/" target="_blank" rel="noopener noreferrer" class="hover:text-glow transition-colors underline decoration-white/20 underline-offset-4">Ethernaut (OpenZeppelin)</a></li>
+                        <li class="flex gap-3"><span class="text-glow/60 font-mono">&rarr;</span><a href="https://101blockchains.com/become-ethereum-developer/" target="_blank" rel="noopener noreferrer" class="hover:text-glow transition-colors underline decoration-white/20 underline-offset-4">101 Blockchains &mdash; Become an Ethereum Developer</a></li>
+                        <li class="flex gap-3"><span class="text-glow/60 font-mono">&rarr;</span><a href="https://ethereum-blockchain-developer.com/" target="_blank" rel="noopener noreferrer" class="hover:text-glow transition-colors underline decoration-white/20 underline-offset-4">Ethereum Blockchain Developer</a> <span class="text-white/40">&mdash; setting up MetaMask + Remix test env</span></li>
                     </ul>
                 </div>
 

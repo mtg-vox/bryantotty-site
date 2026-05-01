@@ -6,6 +6,7 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=()" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io; base-uri 'self'; form-action 'self' https://formspree.io" />
     <title>Space-Chat - AI Oil Tanker Tracking Dashboard - Bryan Totty</title>
     <meta name="description" content="AI-powered oil tanker tracking dashboard integrating ChatGPT with geospatial data to uncover illicit trade activity.">
     <meta property="og:title" content="Space-Chat - AI Oil Tanker Tracking Dashboard - Bryan Totty">
@@ -61,9 +62,9 @@
                 <span class="text-xs font-medium px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 font-['JetBrains_Mono'] tracking-wider">TECH</span>
             </div>
             <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Space-Chat</h1>
-            <p class="text-white/40 text-sm mb-8">View our Space Chat <a href="https://drive.google.com/file/d/1lCHVj_Ucjexttehb7u6jttKZHfZRBiHd/view?usp=sharing" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">Presentation</a>.</p>
+            <p class="text-white/40 text-sm mb-8">View our Space Chat <a href="https://drive.google.com/file/d/1lCHVj_Ucjexttehb7u6jttKZHfZRBiHd/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-glow hover:text-red-300 underline">Presentation</a>.</p>
 
-            <img src="../images/projects/space-chat/space-eyes.jpeg" alt="Space-Chat Dashboard" class="rounded-lg w-full mb-10" loading="lazy">
+            <img src="../images/projects/space-chat/space-eyes.jpeg" width="920" height="614" alt="Space-Chat Dashboard" class="rounded-lg w-full mb-10" loading="lazy">
 
             <div class="text-white/70 leading-relaxed space-y-6">
                 <h2 class="text-2xl font-semibold text-white/90 border-l-2 border-blue-400/30 pl-4">Summary</h2>
@@ -73,7 +74,7 @@
 
                 <figure class="my-8">
                     <div class="rounded-lg overflow-hidden border border-white/10">
-                        <img src="../images/projects/space-chat/miami-hack-week-event.jpg" alt="Presenting SpaceChat at Miami Hack Week" class="w-full block" loading="lazy">
+                        <img src="../images/projects/space-chat/miami-hack-week-event.jpg" width="1800" height="1013" alt="Presenting SpaceChat at Miami Hack Week" class="w-full block" loading="lazy">
                     </div>
                     <figcaption class="text-white/40 text-xs italic mt-3 text-center font-['JetBrains_Mono'] tracking-wider">Presenting SpaceChat at Miami Hack Week</figcaption>
                 </figure>
@@ -82,10 +83,10 @@
                 <p>SpaceChat integrates ChatGPT into an online dashboard, allowing users to ask questions about oil tanker locations, illicit activity, and other information to try and uncover illegal oil trade.</p>
                 <p>This allows humans to immediately interact with complex data via natural language so actions can be taken against the owners of these tankers in real time.</p>
 
-                <img src="../images/projects/space-chat/spacechat-heatmap.png" alt="Integration of ChatGPT to interactive heatmap for tankers" class="rounded-lg w-full my-6" loading="lazy">
+                <img src="../images/projects/space-chat/spacechat-heatmap.png" width="1600" height="881" alt="Integration of ChatGPT to interactive heatmap for tankers" class="rounded-lg w-full my-6" loading="lazy">
                 <p class="text-white/40 text-xs italic mb-4">Integration of ChatGPT to interactive heatmap for tankers</p>
 
-                <img src="../images/projects/space-chat/spacechat-dashboard.png" alt="SpaceChat dashboard view" class="rounded-lg w-full my-6" loading="lazy">
+                <img src="../images/projects/space-chat/spacechat-dashboard.png" width="1600" height="1147" alt="SpaceChat dashboard view" class="rounded-lg w-full my-6" loading="lazy">
 
                 <h2 class="text-2xl font-semibold text-white/90 border-l-2 border-blue-400/30 pl-4 pt-6">How we built it</h2>
                 <p>SpaceChat was built by integrating OpenAI's language model ChatGPT into an online webpage dashboard with an up to date embedded vector database. This allows for users to ask natural language questions about oil tanker information and its owners, including location, ship type, and frequency to uncover potential illegal oil trade activity. Additional data sources and functionality were also integrated into the platform to enhance its capabilities.</p>
@@ -98,7 +99,7 @@
                 <p>We are most proud that the tool we built can better help uncover illegal oil and potentially arms transactions by sanctioned countries which causes real economic and other damages.</p>
                 <p>Additionally, we built a machine learning algorithm that after training, was able to highlight ships in red for automatic detection of enemy vessels.</p>
 
-                <img src="../images/projects/space-chat/spacechat-detection.jpg" alt="Automatic detection of enemy vessels using ML" class="rounded-lg w-full my-6" loading="lazy">
+                <img src="../images/projects/space-chat/spacechat-detection.jpg" width="1800" height="1013" alt="Automatic detection of enemy vessels using ML" class="rounded-lg w-full my-6" loading="lazy">
                 <p class="text-white/40 text-xs italic mb-6">Automatic detection of enemy vessels using a Machine Learning model</p>
 
                 <h2 class="text-2xl font-semibold text-white/90 border-l-2 border-blue-400/30 pl-4 pt-6">What we learned</h2>
@@ -122,11 +123,11 @@
                 </ul>
 
                 <div class="flex gap-4 mt-8 pt-6 border-t border-white/10">
-                    <a href="https://www.miamihackweek.com/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline text-sm">Miami Hack Week</a>
-                    <a href="https://space-eyes.com/index.html" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline text-sm">Space-Eyes</a>
+                    <a href="https://www.miamihackweek.com/" target="_blank" rel="noopener noreferrer" class="text-glow hover:text-red-300 underline text-sm">Miami Hack Week</a>
+                    <a href="https://space-eyes.com/index.html" target="_blank" rel="noopener noreferrer" class="text-glow hover:text-red-300 underline text-sm">Space-Eyes</a>
                 </div>
 
-                <img src="../images/projects/space-chat/miami-hack-week.jpg" alt="Miami Hack Week" class="rounded-lg w-full my-6" loading="lazy">
+                <img src="../images/projects/space-chat/miami-hack-week.jpg" width="1608" height="905" alt="Miami Hack Week" class="rounded-lg w-full my-6" loading="lazy">
             </div>
         </div>
     </main>
