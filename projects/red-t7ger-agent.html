@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=()" />
+    <title>Artist Growth OS - Bryan Totty</title>
+    <meta name="description" content="A multi-platform Growth Operating System for independent artists — Meta Ads, smart links, distribution, streaming, social, contracts, and booking unified into one AI-driven command center.">
+    <meta property="og:title" content="Artist Growth OS - Bryan Totty">
+    <meta property="og:description" content="Multi-platform AI command center for independent artists. 10+ platforms unified.">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://bryantotty.com/projects/red-t7ger-agent.html">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { dark: '#050505', glow: '#c8102e', good: '#22c55e', kill: '#ef4444', warn: '#eab308' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        :root {
+            --rt-panel: #0d0d0f;
+            --rt-panel-2: #131316;
+            --rt-border: rgba(255,255,255,0.07);
+            --rt-border-strong: rgba(255,255,255,0.12);
+            --rt-muted: rgba(255,255,255,0.42);
+            --rt-text: rgba(255,255,255,0.88);
+            --rt-good: #22c55e;
+            --rt-kill: #ef4444;
+            --rt-warn: #eab308;
+            --rt-red: #c8102e;
+            --rt-red-dim: rgba(200,16,46,0.5);
+        }
+
+        .rt-eyebrow {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
+            color: rgba(255,255,255,0.7);
+            padding: 6px 12px; border: 1px solid var(--rt-red-dim);
+            background: rgba(200,16,46,0.06); border-radius: 999px;
+        }
+        .rt-eyebrow-dot {
+            width: 6px; height: 6px; border-radius: 50%; background: var(--rt-red);
+            box-shadow: 0 0 12px var(--rt-red);
+            animation: rt-pulse 2s ease-in-out infinite;
+        }
+        @keyframes rt-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+        /* ========== APP CHROME (mock browser frame) ========== */
+        .rt-app {
+            border: 1px solid var(--rt-border-strong);
+            background: linear-gradient(180deg, #0a0a0c, #050507);
+            border-radius: 12px; overflow: hidden;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.6), 0 0 80px rgba(200,16,46,0.04);
+        }
+        .rt-app-bar {
+            display: flex; align-items: center; gap: 8px;
+            padding: 10px 14px; border-bottom: 1px solid var(--rt-border);
+            background: rgba(255,255,255,0.015);
+        }
+        .rt-dot { width: 10px; height: 10px; border-radius: 50%; }
+        .rt-app-title {
+            margin-left: auto; font-family: 'JetBrains Mono', monospace; font-size: 11px;
+            color: var(--rt-muted); padding: 3px 10px; border-radius: 4px;
+            background: rgba(255,255,255,0.04);
+        }
+        .rt-shell { display: grid; grid-template-columns: 200px 1fr; min-height: 620px; }
+        .rt-sidebar {
+            padding: 18px 14px; border-right: 1px solid var(--rt-border);
+            background: #08080a;
+        }
+        .rt-brand { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 16px; letter-spacing: 0.18em; color: white; line-height: 1; }
+        .rt-brand-sub { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.25em; color: var(--rt-red); margin-top: 4px; text-transform: uppercase; }
+        .rt-nav { display: flex; flex-direction: column; margin-top: 22px; gap: 1px; }
+        .rt-nav-item {
+            font-family: 'Inter', sans-serif; font-size: 12px;
+            color: var(--rt-muted); padding: 7px 10px; border-radius: 4px;
+            transition: all 0.2s;
+        }
+        .rt-nav-item.active {
+            background: rgba(200,16,46,0.12); color: white;
+            border-left: 2px solid var(--rt-red);
+        }
+        .rt-main { padding: 20px 22px; overflow: hidden; }
+
+        .rt-page-h { font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 700; letter-spacing: 0.04em; color: white; margin: 0; }
+        .rt-page-sub { font-family: 'Inter', sans-serif; font-size: 11px; color: var(--rt-muted); margin-top: 3px; }
+
+        .rt-badge {
+            font-family: 'JetBrains Mono', monospace; font-size: 9px;
+            letter-spacing: 0.18em; padding: 4px 8px; border-radius: 3px;
+            background: rgba(34,197,94,0.1); color: var(--rt-good);
+            border: 1px solid rgba(34,197,94,0.3); text-transform: uppercase;
+        }
+        .rt-btn {
+            font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600;
+            padding: 6px 14px; border-radius: 4px; display: inline-block;
+        }
+        .rt-btn-primary { background: var(--rt-red); color: white; }
+        .rt-btn-ghost { background: transparent; color: var(--rt-muted); border: 1px solid var(--rt-border-strong); }
+
+        .rt-card {
+            background: var(--rt-panel); border: 1px solid var(--rt-border);
+            border-radius: 6px; padding: 14px;
+        }
+        .rt-kpi-label { font-family: 'Inter', sans-serif; font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--rt-muted); }
+        .rt-kpi-val { font-family: 'Inter', sans-serif; font-size: 22px; font-weight: 700; color: white; margin-top: 3px; line-height: 1; }
+        .rt-kpi-val.good { color: var(--rt-good); }
+        .rt-kpi-val.warn { color: var(--rt-warn); }
+        .rt-kpi-sub { font-family: 'Inter', sans-serif; font-size: 10px; color: var(--rt-muted); margin-top: 4px; }
+        .rt-kpi-sub.good { color: var(--rt-good); }
+        .rt-kpi-sub.warn { color: var(--rt-warn); }
+        .rt-kpi-sub.kill { color: var(--rt-kill); }
+
+        .rt-section-h { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 700; color: white; margin: 0 0 4px; }
+        .rt-section-sub { font-family: 'Inter', sans-serif; font-size: 10px; color: var(--rt-muted); margin-bottom: 8px; }
+
+        /* Bar list */
+        .rt-bar-row { display: flex; align-items: center; gap: 6px; font-family: 'Inter', sans-serif; font-size: 11px; padding: 2px 0; }
+        .rt-bar-label { width: 90px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: rgba(255,255,255,0.85); }
+        .rt-bar-track { flex: 1; height: 12px; background: rgba(255,255,255,0.04); border-radius: 2px; overflow: hidden; }
+        .rt-bar-fill { height: 100%; }
+        .rt-bar-val { width: 56px; text-align: right; color: var(--rt-muted); font-variant-numeric: tabular-nums; }
+
+        /* Platform tile */
+        .rt-platform-tile { background: var(--rt-panel); border: 1px solid var(--rt-border); border-radius: 6px; padding: 10px; }
+        .rt-platform-tile.ig { border-left: 3px solid #E1306C; }
+        .rt-platform-tile.fb { border-left: 3px solid #1877F2; }
+        .rt-platform-tile.yt { border-left: 3px solid #FF0000; }
+        .rt-platform-tile.tt { border-left: 3px solid #ffffff; }
+        .rt-platform-tile.x { border-left: 3px solid #ffffff; }
+        .rt-platform-tile.sc { border-left: 3px solid #FF5500; }
+        .rt-platform-tile.sp { border-left: 3px solid #1DB954; }
+        .rt-platform-tile.am { border-left: 3px solid #FC3C44; }
+        .rt-platform-tile.ytm { border-left: 3px solid #FF0000; }
+        .rt-platform-row { display: flex; align-items: center; gap: 7px; }
+        .rt-platform-icon {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 22px; height: 22px; border-radius: 4px; flex-shrink: 0;
+            font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 700; color: white;
+        }
+        .rt-platform-name { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; color: white; text-transform: capitalize; }
+        .rt-platform-handle { font-family: 'Inter', sans-serif; font-size: 9px; color: var(--rt-muted); margin-top: 1px; }
+        .rt-platform-num { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 700; color: white; line-height: 1; margin-top: 6px; }
+        .rt-platform-num-label { font-family: 'Inter', sans-serif; font-size: 9px; color: var(--rt-muted); margin-top: 2px; }
+        .rt-platform-delta { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 600; }
+        .rt-platform-delta.up { color: var(--rt-good); }
+        .rt-platform-delta.down { color: var(--rt-kill); }
+
+        /* Action card */
+        .rt-action { background: var(--rt-panel); border: 1px solid var(--rt-border); border-radius: 6px; padding: 10px; }
+        .rt-action.warn { border-color: rgba(234,179,8,0.4); background: rgba(234,179,8,0.05); }
+        .rt-action.kill { border-color: rgba(239,68,68,0.4); background: rgba(239,68,68,0.05); }
+        .rt-action-title { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; color: white; }
+        .rt-action-detail { font-family: 'Inter', sans-serif; font-size: 10px; color: var(--rt-muted); margin-top: 3px; line-height: 1.4; }
+
+        /* Ask bar */
+        .rt-ask { display: flex; gap: 6px; align-items: center; background: var(--rt-panel); border: 1px solid var(--rt-border); border-radius: 6px; padding: 8px 10px; font-family: 'Inter', sans-serif; font-size: 11px; color: var(--rt-muted); }
+        .rt-ask-input { flex: 1; }
+        .rt-ask-btn { background: var(--rt-red); color: white; font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; padding: 4px 12px; border-radius: 3px; }
+
+        /* Tables */
+        .rt-table { width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 11px; }
+        .rt-table th { text-align: left; padding: 8px 10px; font-weight: 600; font-size: 10px; color: var(--rt-muted); text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 1px solid var(--rt-border); }
+        .rt-table td { padding: 9px 10px; vertical-align: middle; border-bottom: 1px solid rgba(255,255,255,0.03); color: rgba(255,255,255,0.85); }
+        .rt-table tr:last-child td { border-bottom: none; }
+        .rt-table .num { text-align: right; font-variant-numeric: tabular-nums; }
+        .rt-pill { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 700; letter-spacing: 0.08em; padding: 3px 8px; border-radius: 3px; text-transform: uppercase; }
+        .rt-pill.green { background: rgba(34,197,94,0.12); color: #86efac; border: 1px solid rgba(34,197,94,0.3); }
+        .rt-pill.amber { background: rgba(234,179,8,0.12); color: #fde047; border: 1px solid rgba(234,179,8,0.3); }
+        .rt-pill.red { background: rgba(239,68,68,0.12); color: #fca5a5; border: 1px solid rgba(239,68,68,0.3); }
+        .rt-pill.blue { background: rgba(59,130,246,0.12); color: #93c5fd; border: 1px solid rgba(59,130,246,0.3); }
+        .rt-pill.gray { background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.55); border: 1px solid rgba(255,255,255,0.1); }
+
+        /* Filter chips */
+        .rt-chip-row { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; padding: 8px 12px; }
+        .rt-chip { font-family: 'Inter', sans-serif; font-size: 10px; padding: 3px 10px; border-radius: 3px; border: 1px solid var(--rt-border); color: var(--rt-muted); background: var(--rt-panel); }
+        .rt-chip.active { background: var(--rt-red); color: white; border-color: var(--rt-red); }
+
+        .rt-good { color: var(--rt-good) !important; }
+        .rt-kill-c { color: var(--rt-kill) !important; }
+        .rt-warn-c { color: var(--rt-warn) !important; }
+
+        /* Page chrome */
+        .rt-section-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--rt-red); margin-bottom: 12px; }
+        .rt-h2 { font-size: 32px; font-weight: 700; letter-spacing: -0.02em; color: white; margin-bottom: 24px; line-height: 1.15; }
+        .rt-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--rt-red-dim), transparent); margin: 64px 0; }
+        .rt-pillar { border: 1px solid var(--rt-border); background: rgba(255,255,255,0.015); border-radius: 12px; padding: 24px; transition: all 0.3s ease; height: 100%; }
+        .rt-pillar:hover { border-color: var(--rt-red-dim); background: rgba(200,16,46,0.03); transform: translateY(-2px); }
+        .rt-pillar-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--rt-red); letter-spacing: 0.2em; margin-bottom: 10px; }
+        .rt-stat { border: 1px solid var(--rt-border); background: rgba(255,255,255,0.015); border-radius: 10px; padding: 18px 20px; transition: all 0.3s ease; }
+        .rt-stat:hover { border-color: var(--rt-red-dim); background: rgba(200,16,46,0.03); }
+        .rt-stat-num { font-family: 'JetBrains Mono', monospace; font-size: 28px; font-weight: 700; color: white; line-height: 1; }
+        .rt-stat-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rt-muted); margin-top: 8px; }
+        .rt-tech-pill { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 4px 10px; border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.55); border-radius: 4px; margin: 3px; background: rgba(255,255,255,0.02); }
+
+        .rt-caption { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--rt-muted); text-align: center; margin-top: 12px; letter-spacing: 0.1em; text-transform: uppercase; }
+
+        /* Mock chart bars (timeline) */
+        .rt-chart { display: flex; align-items: flex-end; gap: 4px; height: 140px; padding: 8px 4px; background: linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px) 0 0/100% 25%; border-bottom: 1px solid var(--rt-border); border-left: 1px solid var(--rt-border); }
+        .rt-chart-col { flex: 1 1 0; display: flex; align-items: flex-end; justify-content: center; gap: 2px; height: 100%; min-width: 12px; }
+        .rt-chart-bar { flex: 1; max-width: 10px; border-radius: 2px 2px 0 0; }
+        .rt-chart-bar.spend { background: #3b82f6; }
+        .rt-chart-bar.conv { background: #22c55e; }
+        .rt-chart-axis { display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--rt-muted); padding: 4px 4px 0; }
+
+        /* Heatmap (cadence) */
+        .rt-heat { display: grid; grid-template-columns: 30px repeat(12, 1fr); gap: 2px; }
+        .rt-heat-cell { aspect-ratio: 1.4 / 1; border-radius: 2px; background: rgba(255,255,255,0.03); }
+        .rt-heat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--rt-muted); display: flex; align-items: center; }
+
+        @media (max-width: 900px) {
+            .rt-h2 { font-size: 24px; }
+            .rt-shell { grid-template-columns: 1fr; }
+            .rt-sidebar { display: none; }
+            .rt-main { padding: 14px; }
+        }
+        @media (max-width: 700px) {
+            .rt-table th:nth-child(n+5), .rt-table td:nth-child(n+5) { display: none; }
+        }
+    </style>
+</head>
+<body class="bg-dark text-white font-['Inter'] min-h-screen">
+    <div class="grid-bg" aria-hidden="true"></div>
+
+    <nav class="fixed top-0 w-full z-50 bg-dark/80 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-xl font-black tracking-tighter"><span class="text-white">BRYAN</span><span class="text-glow">TOTTY</span></a>
+            <div class="hidden md:flex gap-8 text-xs font-semibold tracking-[0.2em] uppercase">
+                <a href="/" class="text-white/50 hover:text-glow transition-colors">Home</a>
+                <a href="../about.html" class="text-white/50 hover:text-glow transition-colors">About</a>
+                <a href="../blog.html" class="text-white/50 hover:text-glow transition-colors">Blog</a>
+                <a href="../projects.html" class="text-white hover:text-glow transition-colors">Projects</a>
+                <a href="../contact.html" class="text-white/50 hover:text-glow transition-colors">Contact</a>
+            </div>
+            <button id="menu-btn" class="md:hidden text-white" aria-label="Toggle menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-dark/95 backdrop-blur-xl">
+            <div class="flex flex-col px-6 py-4 gap-4 text-xs font-semibold tracking-[0.2em] uppercase">
+                <a href="/" class="text-white/50">Home</a><a href="../about.html" class="text-white/50">About</a>
+                <a href="../blog.html" class="text-white/50">Blog</a><a href="../projects.html" class="text-white">Projects</a>
+                <a href="../contact.html" class="text-white/50">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-28 pb-20 px-6 relative overflow-hidden">
+
+        <!-- ======================== HERO (stacked) ======================== -->
+        <section class="max-w-5xl mx-auto relative">
+            <a href="../projects.html" class="text-white/40 hover:text-glow text-sm mb-8 inline-block transition-colors">&larr; Back to Projects</a>
+
+            <div class="text-center mb-14">
+                <div class="rt-eyebrow mb-6 mx-auto">
+                    <span class="rt-eyebrow-dot"></span>
+                    AI Agent · 2025 – 2026
+                </div>
+                <div class="font-['JetBrains_Mono'] text-xs tracking-[0.25em] uppercase text-glow mb-4">ARTIST GROWTH OS</div>
+                <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.05] max-w-4xl mx-auto">
+                    A multi-platform <span class="text-glow">command center</span><br/>for independent artists.
+                </h1>
+                <p class="text-white/60 text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
+                    10+ platforms. One agent. Meta Ads, smart links, distribution, streaming, social, contracts, and booking — unified into a single AI-driven dashboard that tells the artist exactly what to do next.
+                </p>
+                <div class="flex flex-wrap gap-3 justify-center">
+                    <a href="#dashboard" class="hero-btn-primary">SEE THE PRODUCT</a>
+                    <a href="#engineering" class="hero-btn-outline">ENGINEERING DEEP DIVES</a>
+                </div>
+            </div>
+
+            <!-- Stat band -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div class="rt-stat">
+                    <div class="rt-stat-num">10+</div>
+                    <div class="rt-stat-label">Platforms unified</div>
+                </div>
+                <div class="rt-stat">
+                    <div class="rt-stat-num">12</div>
+                    <div class="rt-stat-label">Dashboard views</div>
+                </div>
+                <div class="rt-stat">
+                    <div class="rt-stat-num">2</div>
+                    <div class="rt-stat-label">Undocumented APIs reverse-engineered</div>
+                </div>
+                <div class="rt-stat">
+                    <div class="rt-stat-num">100%</div>
+                    <div class="rt-stat-label">Local · read-only safety mode</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="rt-divider max-w-6xl mx-auto"></div>
+
+        <!-- ======================== DASHBOARD (FULL WIDTH) ======================== -->
+        <section id="dashboard" class="max-w-7xl mx-auto">
+            <div class="rt-section-label text-center">01 / Command Center</div>
+            <h2 class="rt-h2 text-center max-w-3xl mx-auto">A single screen that answers: <em class="text-white/50 font-normal">"how am I doing today?"</em></h2>
+
+            <div class="rt-app">
+                <div class="rt-app-bar">
+                    <span class="rt-dot" style="background:#ef4444;"></span>
+                    <span class="rt-dot" style="background:#eab308;"></span>
+                    <span class="rt-dot" style="background:#22c55e;"></span>
+                    <span class="rt-app-title">growth-os.local · dashboard</span>
+                </div>
+                <div class="rt-shell">
+                    <aside class="rt-sidebar">
+                        <div class="rt-brand">NOX V0LTAGE</div>
+                        <div class="rt-brand-sub">GROWTH OS</div>
+                        <nav class="rt-nav">
+                            <div class="rt-nav-item active">Dashboard</div>
+                            <div class="rt-nav-item">Songs</div>
+                            <div class="rt-nav-item">Catalog</div>
+                            <div class="rt-nav-item">Contracts</div>
+                            <div class="rt-nav-item">Booking</div>
+                            <div class="rt-nav-item">Contacts</div>
+                            <div class="rt-nav-item">Social</div>
+                            <div class="rt-nav-item">Meta Insights</div>
+                            <div class="rt-nav-item">Smart Links</div>
+                            <div class="rt-nav-item">Streaming Insights</div>
+                            <div class="rt-nav-item">UnitedMasters</div>
+                            <div class="rt-nav-item">Merch</div>
+                        </nav>
+                    </aside>
+                    <main class="rt-main">
+                        <!-- Header -->
+                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:14px; gap:10px; flex-wrap:wrap;">
+                            <div>
+                                <h1 class="rt-page-h" style="font-size:22px; letter-spacing:0.18em;">NOX V0LTAGE</h1>
+                                <p class="rt-page-sub">Growth Operating System — today's command center</p>
+                            </div>
+                            <div style="display:flex; gap:6px; align-items:center;">
+                                <span class="rt-badge">READ-ONLY</span>
+                                <span class="rt-btn rt-btn-primary">Sync All</span>
+                                <span class="rt-btn rt-btn-ghost">Refresh</span>
+                            </div>
+                        </div>
+
+                        <!-- KPI strip -->
+                        <div class="rt-card" style="display:grid; grid-template-columns:repeat(6,1fr); gap:18px; margin-bottom:14px;">
+                            <div><div class="rt-kpi-label">Followers</div><div class="rt-kpi-val">14.2K</div><div class="rt-kpi-sub">8 platforms</div></div>
+                            <div><div class="rt-kpi-label">Streams 28d</div><div class="rt-kpi-val good">3.8K</div><div class="rt-kpi-sub">Spotify+Apple</div></div>
+                            <div><div class="rt-kpi-label">Ad Spend 7d</div><div class="rt-kpi-val">$84.20</div><div class="rt-kpi-sub">241 results</div></div>
+                            <div><div class="rt-kpi-label">Avg CPR 7d</div><div class="rt-kpi-val">$0.34</div><div class="rt-kpi-sub good">cost per result</div></div>
+                            <div><div class="rt-kpi-label">Streams / $</div><div class="rt-kpi-val good">22.4</div><div class="rt-kpi-sub good">efficiency</div></div>
+                            <div><div class="rt-kpi-label">Live Camps</div><div class="rt-kpi-val">1</div><div class="rt-kpi-sub">running now</div></div>
+                        </div>
+
+                        <!-- Ask bar -->
+                        <div class="rt-ask" style="margin-bottom:14px;">
+                            <span class="rt-ask-input">Ask anything… e.g. Which campaign should I scale this week?</span>
+                            <span class="rt-ask-btn">Ask</span>
+                        </div>
+
+                        <!-- Today's Focus -->
+                        <div style="margin-bottom:14px;">
+                            <h3 class="rt-section-h">Today's Focus</h3>
+                            <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+                                <div class="rt-action warn">
+                                    <div class="rt-action-title">Scale "Static Bloom" — CPR dropped to $0.27</div>
+                                    <div class="rt-action-detail">Pixel learning is stable. Bump daily budget +30% within 24h.</div>
+                                </div>
+                                <div class="rt-action kill">
+                                    <div class="rt-action-title">Pause "Echo Chamber" — CPR climbing past $1.80</div>
+                                    <div class="rt-action-detail">Creative fatigue likely. Refresh thumbnail or rotate hook.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Audience -->
+                        <div style="margin-bottom:14px;">
+                            <h3 class="rt-section-h">Audience <span style="color:var(--rt-muted); font-weight:400;">14.2K total followers</span></h3>
+                            <div style="display:grid; grid-template-columns:repeat(8,1fr); gap:6px;">
+                                <div class="rt-platform-tile ig"><div class="rt-platform-row"><span class="rt-platform-icon" style="background:#E1306C;">IG</span></div><div class="rt-platform-num">5.2K</div><div class="rt-platform-num-label">followers</div><div class="rt-platform-delta up">+47</div></div>
+                                <div class="rt-platform-tile fb"><div class="rt-platform-row"><span class="rt-platform-icon" style="background:#1877F2;">FB</span></div><div class="rt-platform-num">6.4K</div><div class="rt-platform-num-label">followers</div><div class="rt-platform-delta up">+82</div></div>
+                                <div class="rt-platform-tile yt"><div class="rt-platform-row"><span class="rt-platform-icon" style="background:#FF0000;">YT</span></div><div class="rt-platform-num">428</div><div class="rt-platform-num-label">subs</div><div class="rt-platform-delta up">+12</div></div>
+                                <div class="rt-platform-tile tt"><div class="rt-platform-row"><span class="rt-platform-icon" style="background:#000;border:1px solid #fff;">TT</span></div><div class="rt-platform-num">347</div><div class="rt-platform-num-label">followers</div><div class="rt-platform-delta up">+9</div></div>
+                                <div class="rt-platform-tile x"><div class="rt-platform-row"><span class="rt-platform-icon" style="background:#000;border:1px solid #fff;">X</span></div><div class="rt-platform-num">186</div><div class="rt-platform-num-label">followers</div><div class="rt-platform-delta up">+3</div></div>
+                                <div class="rt-platform-tile sc"><div class="rt-platform-row"><span class="rt-platform-icon" style="background:#FF5500;">SC</span></div><div class="rt-platform-num">512</div><div class="rt-platform-num-label">followers</div><div class="rt-platform-delta up">+6</div></div>
+                                <div class="rt-platform-tile sp"><div class="rt-platform-row"><span class="rt-platform-icon" style="background:#1DB954;">SP</span></div><div class="rt-platform-num">894</div><div class="rt-platform-num-label">followers</div><div class="rt-platform-delta up">+24</div></div>
+                                <div class="rt-platform-tile am"><div class="rt-platform-row"><span class="rt-platform-icon" style="background:#FC3C44;">AM</span></div><div class="rt-platform-num">221</div><div class="rt-platform-num-label">listeners</div><div class="rt-platform-delta up">+11</div></div>
+                            </div>
+                        </div>
+
+                        <!-- Performance Snapshot -->
+                        <div>
+                            <h3 class="rt-section-h">Performance Snapshot</h3>
+                            <div class="rt-section-sub">where momentum is right now</div>
+                            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px;">
+                                <div class="rt-card" style="padding:12px;">
+                                    <div class="rt-section-h">Top Songs by Streams</div>
+                                    <div class="rt-section-sub">UnitedMasters latest</div>
+                                    <div class="rt-bar-row"><span class="rt-bar-label">Static Bloom</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:100%; background:#22c55e;"></div></div><span class="rt-bar-val">1,420</span></div>
+                                    <div class="rt-bar-row"><span class="rt-bar-label">Voltage Drop</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:72%; background:#22c55e;"></div></div><span class="rt-bar-val">1,021</span></div>
+                                    <div class="rt-bar-row"><span class="rt-bar-label">Nightwave</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:54%; background:#22c55e;"></div></div><span class="rt-bar-val">768</span></div>
+                                    <div class="rt-bar-row"><span class="rt-bar-label">Echo Chamber</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:32%; background:#22c55e;"></div></div><span class="rt-bar-val">453</span></div>
+                                </div>
+                                <div class="rt-card" style="padding:12px;">
+                                    <div class="rt-section-h">Best Ad Creatives</div>
+                                    <div class="rt-section-sub">lowest CPR · last 7d</div>
+                                    <div class="rt-bar-row"><span class="rt-bar-label">Static-V3-15s</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:100%; background:#3b82f6;"></div></div><span class="rt-bar-val">$0.27</span></div>
+                                    <div class="rt-bar-row"><span class="rt-bar-label">Voltage-Hook2</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:78%; background:#3b82f6;"></div></div><span class="rt-bar-val">$0.34</span></div>
+                                    <div class="rt-bar-row"><span class="rt-bar-label">Nightwave-Reel</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:55%; background:#3b82f6;"></div></div><span class="rt-bar-val">$0.49</span></div>
+                                    <div class="rt-bar-row"><span class="rt-bar-label">Echo-V1-Story</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:18%; background:#ef4444;"></div></div><span class="rt-bar-val">$1.82</span></div>
+                                </div>
+                                <div class="rt-card" style="padding:12px;">
+                                    <div class="rt-section-h">Top Growing Platforms</div>
+                                    <div class="rt-section-sub">follower delta · 7d</div>
+                                    <div class="rt-bar-row"><span class="rt-bar-label">Facebook</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:100%; background:#a78bfa;"></div></div><span class="rt-bar-val">+82</span></div>
+                                    <div class="rt-bar-row"><span class="rt-bar-label">Instagram</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:57%; background:#a78bfa;"></div></div><span class="rt-bar-val">+47</span></div>
+                                    <div class="rt-bar-row"><span class="rt-bar-label">Spotify</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:29%; background:#a78bfa;"></div></div><span class="rt-bar-val">+24</span></div>
+                                    <div class="rt-bar-row"><span class="rt-bar-label">YouTube</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:15%; background:#a78bfa;"></div></div><span class="rt-bar-val">+12</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+            <p class="rt-caption">Demo data · real artist data is anonymized</p>
+        </section>
+
+        <div class="rt-divider max-w-6xl mx-auto"></div>
+
+        <!-- ======================== SONGS PAGE ======================== -->
+        <section class="max-w-7xl mx-auto">
+            <div class="rt-section-label text-center">02 / Songs</div>
+            <h2 class="rt-h2 text-center max-w-3xl mx-auto">Cross-source rollup per track — ad spend → smart link → streams.</h2>
+
+            <div class="rt-app">
+                <div class="rt-app-bar">
+                    <span class="rt-dot" style="background:#ef4444;"></span>
+                    <span class="rt-dot" style="background:#eab308;"></span>
+                    <span class="rt-dot" style="background:#22c55e;"></span>
+                    <span class="rt-app-title">growth-os.local · songs</span>
+                </div>
+                <div class="rt-main" style="padding:22px;">
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:14px;">
+                        <div>
+                            <h1 class="rt-page-h">Songs</h1>
+                            <p class="rt-page-sub">Cross-source rollup per track — Meta ads → ToneDen → streaming</p>
+                        </div>
+                        <span class="rt-badge">SYNC OK · 2m AGO</span>
+                    </div>
+
+                    <!-- Totals strip -->
+                    <div class="rt-card" style="display:flex; gap:32px; padding:14px 18px; margin-bottom:10px; flex-wrap:wrap;">
+                        <div><div class="rt-kpi-label">Tracks</div><div class="rt-kpi-val" style="font-size:18px;">7 of 12</div></div>
+                        <div><div class="rt-kpi-label">Meta Spend</div><div class="rt-kpi-val" style="font-size:18px;">$1,284.50</div></div>
+                        <div><div class="rt-kpi-label">Meta Conv.</div><div class="rt-kpi-val" style="font-size:18px;">3,842</div></div>
+                        <div><div class="rt-kpi-label">ToneDen Visits</div><div class="rt-kpi-val" style="font-size:18px;">8,917</div></div>
+                        <div><div class="rt-kpi-label">UM Streams</div><div class="rt-kpi-val" style="font-size:18px;">7,728</div></div>
+                        <div><div class="rt-kpi-label">Streams / $</div><div class="rt-kpi-val good" style="font-size:18px;">6.0</div></div>
+                    </div>
+
+                    <!-- Filter chips -->
+                    <div class="rt-card" style="padding:0; margin-bottom:10px;">
+                        <div class="rt-chip-row">
+                            <span class="rt-btn rt-btn-primary" style="padding:4px 12px;">Auto-Resolve</span>
+                            <span class="rt-btn rt-btn-ghost" style="padding:4px 12px;">Export CSV</span>
+                            <span style="width:1px; height:20px; background:rgba(255,255,255,0.1); margin:0 6px;"></span>
+                            <span style="font-family:'Inter';font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:var(--rt-muted);">Date:</span>
+                            <span class="rt-chip">All time</span>
+                            <span class="rt-chip active">2026</span>
+                            <span class="rt-chip">2025</span>
+                            <span class="rt-chip">Last 90d</span>
+                            <span class="rt-chip">Last 30d</span>
+                            <span style="width:1px; height:20px; background:rgba(255,255,255,0.1); margin:0 6px;"></span>
+                            <span style="font-family:'Inter';font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:var(--rt-muted);">Show:</span>
+                            <span class="rt-chip active">Has Any Data</span>
+                            <span class="rt-chip">Has Spend</span>
+                            <span class="rt-chip">Has Streams</span>
+                        </div>
+                    </div>
+
+                    <!-- Songs table -->
+                    <div class="rt-card" style="padding:0; overflow-x:auto;">
+                        <table class="rt-table">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Status</th>
+                                    <th class="num">Meta Spend</th>
+                                    <th class="num">Meta CPR</th>
+                                    <th class="num">TD Visits</th>
+                                    <th class="num">TD CTR</th>
+                                    <th class="num">UM Streams</th>
+                                    <th class="num">Streams / $</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>Static Bloom</strong></td><td><span class="rt-pill green">Active</span></td><td class="num">$420.00</td><td class="num rt-good">$0.27</td><td class="num">2,140</td><td class="num rt-good">62%</td><td class="num">1,420</td><td class="num rt-good">3.4</td></tr>
+                                <tr><td><strong>Voltage Drop</strong></td><td><span class="rt-pill green">Active</span></td><td class="num">$305.50</td><td class="num rt-good">$0.34</td><td class="num">1,820</td><td class="num rt-good">58%</td><td class="num">1,021</td><td class="num rt-good">3.3</td></tr>
+                                <tr><td><strong>Nightwave</strong></td><td><span class="rt-pill amber">Completed</span></td><td class="num">$214.00</td><td class="num">$0.49</td><td class="num">1,460</td><td class="num">48%</td><td class="num">768</td><td class="num">3.6</td></tr>
+                                <tr><td><strong>Echo Chamber</strong></td><td><span class="rt-pill red">Pause Soon</span></td><td class="num">$182.00</td><td class="num rt-kill-c">$1.82</td><td class="num">680</td><td class="num rt-kill-c">22%</td><td class="num">453</td><td class="num rt-kill-c">2.5</td></tr>
+                                <tr><td><strong>Shadowburn</strong></td><td><span class="rt-pill amber">Completed</span></td><td class="num">$118.00</td><td class="num">$0.61</td><td class="num">920</td><td class="num">44%</td><td class="num">412</td><td class="num">3.5</td></tr>
+                                <tr><td><strong>Pulse Hostage</strong></td><td><span class="rt-pill amber">Completed</span></td><td class="num">$45.00</td><td class="num">$0.71</td><td class="num">540</td><td class="num">39%</td><td class="num">198</td><td class="num">4.4</td></tr>
+                                <tr><td><strong>Iron Halo</strong></td><td><span class="rt-pill gray">Draft</span></td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <p class="rt-caption">Color-coded benchmarks · green = winning · red = pause</p>
+        </section>
+
+        <div class="rt-divider max-w-6xl mx-auto"></div>
+
+        <!-- ======================== META INSIGHTS PAGE ======================== -->
+        <section class="max-w-7xl mx-auto">
+            <div class="rt-section-label text-center">03 / Meta Insights</div>
+            <h2 class="rt-h2 text-center max-w-3xl mx-auto">Deep ad performance: spend, audience, geography, placements.</h2>
+
+            <div class="rt-app">
+                <div class="rt-app-bar">
+                    <span class="rt-dot" style="background:#ef4444;"></span>
+                    <span class="rt-dot" style="background:#eab308;"></span>
+                    <span class="rt-dot" style="background:#22c55e;"></span>
+                    <span class="rt-app-title">growth-os.local · insights</span>
+                </div>
+                <div class="rt-main" style="padding:22px;">
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:14px;">
+                        <div>
+                            <h1 class="rt-page-h">Meta Ads — Deep Insights</h1>
+                            <p class="rt-page-sub">Comprehensive Meta data: spend, conversions, audience, geography, placements, per-ad performance</p>
+                        </div>
+                        <span class="rt-badge">META · CONNECTED</span>
+                    </div>
+
+                    <!-- KPI strip -->
+                    <div class="rt-card" style="display:grid; grid-template-columns:repeat(8,1fr); gap:18px; margin-bottom:14px;">
+                        <div><div class="rt-kpi-label">Spend</div><div class="rt-kpi-val">$1,284.50</div></div>
+                        <div><div class="rt-kpi-label">Impressions</div><div class="rt-kpi-val">218,940</div></div>
+                        <div><div class="rt-kpi-label">Reach</div><div class="rt-kpi-val">94,210</div></div>
+                        <div><div class="rt-kpi-label">Clicks</div><div class="rt-kpi-val">7,184</div></div>
+                        <div><div class="rt-kpi-label">Conversions</div><div class="rt-kpi-val">3,842</div></div>
+                        <div><div class="rt-kpi-label">CPR</div><div class="rt-kpi-val good">$0.334</div></div>
+                        <div><div class="rt-kpi-label">CPM</div><div class="rt-kpi-val">$5.87</div></div>
+                        <div><div class="rt-kpi-label">CTR</div><div class="rt-kpi-val">3.28%</div></div>
+                    </div>
+
+                    <!-- Daily timeline -->
+                    <div class="rt-card" style="margin-bottom:14px; padding:14px;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                            <div>
+                                <div class="rt-section-h">Daily Spend &amp; Conversions</div>
+                                <div class="rt-section-sub">Last 30 days</div>
+                            </div>
+                            <div style="display:flex; gap:14px; font-family:'Inter'; font-size:11px; color:var(--rt-muted);">
+                                <span><span style="display:inline-block;width:10px;height:10px;background:#3b82f6;margin-right:6px;border-radius:2px;vertical-align:middle;"></span>Spend</span>
+                                <span><span style="display:inline-block;width:10px;height:10px;background:#22c55e;margin-right:6px;border-radius:2px;vertical-align:middle;"></span>Conversions</span>
+                            </div>
+                        </div>
+                        <div class="rt-chart">
+                            <!-- 30 days of bars -->
+                            <div class="rt-chart-col"><div class="rt-chart-bar spend" style="height:42%"></div><div class="rt-chart-bar conv" style="height:38%"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar spend" style="height:50%"></div><div class="rt-chart-bar conv" style="height:45%"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar spend" style="height:38%"></div><div class="rt-chart-bar conv" style="height:34%"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar spend" style="height:55%"></div><div class="rt-chart-bar conv" style="height:51%"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar spend" style="height:62%"></div><div class="rt-chart-bar conv" style="height:58%"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar spend" style="height:48%"></div><div class="rt-chart-bar conv" style="height:44%"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar spend" style="height:52%"></div><div class="rt-chart-bar conv" style="height:50%"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar spend" style="height:68%"></div><div class="rt-chart-bar conv" style="height:65%"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar spend" style="height:74%"></div><div class="rt-chart-bar conv" style="height:71%"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar spend" style="height:60%"></div><div class="rt-chart-bar conv" style="height:55%"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar spend" style="height:55%"></div><div class="rt-chart-bar conv" style="height:52%"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar spend" style="height:78%"></div><div class="rt-chart-bar conv" style="height:75%"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar spend" style="height:82%"></div><div class="rt-chart-bar conv" style="height:78%"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar spend" style="height:90%"></div><div class="rt-chart-bar conv" style="height:88%"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar spend" style="height:72%"></div><div class="rt-chart-bar conv" style="height:68%"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar spend" style="height:65%"></div><div class="rt-chart-bar conv" style="height:62%"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar spend" style="height:58%"></div><div class="rt-chart-bar conv" style="height:54%"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar spend" style="height:70%"></div><div class="rt-chart-bar conv" style="height:67%"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar spend" style="height:76%"></div><div class="rt-chart-bar conv" style="height:72%"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar spend" style="height:88%"></div><div class="rt-chart-bar conv" style="height:84%"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar spend" style="height:95%"></div><div class="rt-chart-bar conv" style="height:92%"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar spend" style="height:80%"></div><div class="rt-chart-bar conv" style="height:78%"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar spend" style="height:72%"></div><div class="rt-chart-bar conv" style="height:70%"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar spend" style="height:85%"></div><div class="rt-chart-bar conv" style="height:82%"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar spend" style="height:92%"></div><div class="rt-chart-bar conv" style="height:90%"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar spend" style="height:100%"></div><div class="rt-chart-bar conv" style="height:96%"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar spend" style="height:88%"></div><div class="rt-chart-bar conv" style="height:84%"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar spend" style="height:75%"></div><div class="rt-chart-bar conv" style="height:72%"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar spend" style="height:82%"></div><div class="rt-chart-bar conv" style="height:79%"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar spend" style="height:94%"></div><div class="rt-chart-bar conv" style="height:91%"></div></div>
+                        </div>
+                        <div class="rt-chart-axis"><span>04-01</span><span>04-08</span><span>04-15</span><span>04-22</span><span>04-30</span></div>
+                    </div>
+
+                    <!-- 3-col breakdowns -->
+                    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px;">
+                        <div class="rt-card" style="padding:12px;">
+                            <div class="rt-section-h">Top Countries</div>
+                            <div class="rt-section-sub">by spend</div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">United States</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:100%; background:#3b82f6;"></div></div><span class="rt-bar-val">$612</span></div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">Germany</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:42%; background:#3b82f6;"></div></div><span class="rt-bar-val">$258</span></div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">United Kingdom</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:36%; background:#3b82f6;"></div></div><span class="rt-bar-val">$220</span></div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">Japan</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:21%; background:#3b82f6;"></div></div><span class="rt-bar-val">$128</span></div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">Canada</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:11%; background:#3b82f6;"></div></div><span class="rt-bar-val">$66</span></div>
+                        </div>
+                        <div class="rt-card" style="padding:12px;">
+                            <div class="rt-section-h">Age × Gender</div>
+                            <div class="rt-section-sub">CPR heatmap</div>
+                            <div style="display:grid; grid-template-columns:60px repeat(3,1fr); gap:3px; font-size:9px; font-family:'JetBrains Mono';">
+                                <div></div><div style="text-align:center; color:var(--rt-muted);">M</div><div style="text-align:center; color:var(--rt-muted);">F</div><div style="text-align:center; color:var(--rt-muted);">U</div>
+                                <div style="color:var(--rt-muted);">18-24</div><div style="background:rgba(34,197,94,0.5); padding:6px; text-align:center; color:white; border-radius:2px;">$0.31</div><div style="background:rgba(34,197,94,0.7); padding:6px; text-align:center; color:white; border-radius:2px;">$0.22</div><div style="background:rgba(255,255,255,0.05); padding:6px; text-align:center; color:var(--rt-muted); border-radius:2px;">—</div>
+                                <div style="color:var(--rt-muted);">25-34</div><div style="background:rgba(234,179,8,0.5); padding:6px; text-align:center; color:white; border-radius:2px;">$0.58</div><div style="background:rgba(34,197,94,0.5); padding:6px; text-align:center; color:white; border-radius:2px;">$0.34</div><div style="background:rgba(255,255,255,0.05); padding:6px; text-align:center; color:var(--rt-muted); border-radius:2px;">—</div>
+                                <div style="color:var(--rt-muted);">35-44</div><div style="background:rgba(34,197,94,0.6); padding:6px; text-align:center; color:white; border-radius:2px;">$0.28</div><div style="background:rgba(34,197,94,0.4); padding:6px; text-align:center; color:white; border-radius:2px;">$0.41</div><div style="background:rgba(255,255,255,0.05); padding:6px; text-align:center; color:var(--rt-muted); border-radius:2px;">—</div>
+                                <div style="color:var(--rt-muted);">45-54</div><div style="background:rgba(34,197,94,0.7); padding:6px; text-align:center; color:white; border-radius:2px;">$0.24</div><div style="background:rgba(34,197,94,0.5); padding:6px; text-align:center; color:white; border-radius:2px;">$0.36</div><div style="background:rgba(255,255,255,0.05); padding:6px; text-align:center; color:var(--rt-muted); border-radius:2px;">—</div>
+                                <div style="color:var(--rt-muted);">55-64</div><div style="background:rgba(239,68,68,0.4); padding:6px; text-align:center; color:white; border-radius:2px;">$0.92</div><div style="background:rgba(234,179,8,0.4); padding:6px; text-align:center; color:white; border-radius:2px;">$0.61</div><div style="background:rgba(255,255,255,0.05); padding:6px; text-align:center; color:var(--rt-muted); border-radius:2px;">—</div>
+                            </div>
+                        </div>
+                        <div class="rt-card" style="padding:12px;">
+                            <div class="rt-section-h">Placements</div>
+                            <div class="rt-section-sub">by spend</div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">IG Reels</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:100%; background:#3b82f6;"></div></div><span class="rt-bar-val">$420</span></div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">IG Feed</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:78%; background:#3b82f6;"></div></div><span class="rt-bar-val">$328</span></div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">FB Feed</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:54%; background:#3b82f6;"></div></div><span class="rt-bar-val">$226</span></div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">IG Stories</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:38%; background:#3b82f6;"></div></div><span class="rt-bar-val">$160</span></div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">FB Reels</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:36%; background:#3b82f6;"></div></div><span class="rt-bar-val">$150</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="rt-caption">Connected to Meta Marketing API · campaign-level resolution</p>
+        </section>
+
+        <div class="rt-divider max-w-6xl mx-auto"></div>
+
+        <!-- ======================== SMART LINKS (TONEDEN) ======================== -->
+        <section class="max-w-7xl mx-auto">
+            <div class="rt-section-label text-center">04 / Smart Links</div>
+            <h2 class="rt-h2 text-center max-w-3xl mx-auto">Track who lands, where they came from, and where they click through.</h2>
+            <p class="text-white/50 text-center text-sm max-w-2xl mx-auto -mt-4 mb-10 italic">
+                Built for ToneDen, but the same architecture supports Linkfire, Linktree, Hypeddit, Feature.fm, and any smart-link provider with an exposed API or session-cookie dashboard.
+            </p>
+
+            <div class="rt-app">
+                <div class="rt-app-bar">
+                    <span class="rt-dot" style="background:#ef4444;"></span>
+                    <span class="rt-dot" style="background:#eab308;"></span>
+                    <span class="rt-dot" style="background:#22c55e;"></span>
+                    <span class="rt-app-title">growth-os.local · smart-links</span>
+                </div>
+                <div class="rt-main" style="padding:22px;">
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:14px;">
+                        <div>
+                            <h1 class="rt-page-h">Smart Links</h1>
+                            <p class="rt-page-sub">Track who lands on your smart links, where they come from, and which platform they click through to</p>
+                        </div>
+                        <span class="rt-badge">SYNCED · 8m AGO</span>
+                    </div>
+
+                    <!-- Score grid -->
+                    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:14px;">
+                        <div class="rt-card" style="text-align:center; padding:16px;">
+                            <div class="rt-kpi-val">9</div>
+                            <div class="rt-kpi-label" style="margin-top:6px;">Smart Links</div>
+                        </div>
+                        <div class="rt-card" style="text-align:center; padding:16px;">
+                            <div class="rt-kpi-val">18,882</div>
+                            <div class="rt-kpi-label" style="margin-top:6px;">Page Views</div>
+                        </div>
+                        <div class="rt-card" style="text-align:center; padding:16px;">
+                            <div class="rt-kpi-val">7,728</div>
+                            <div class="rt-kpi-label" style="margin-top:6px;">Clickthroughs</div>
+                        </div>
+                        <div class="rt-card" style="text-align:center; padding:16px;">
+                            <div class="rt-kpi-val good">40.9%</div>
+                            <div class="rt-kpi-label" style="margin-top:6px;">CTR</div>
+                        </div>
+                    </div>
+
+                    <!-- Outbound clicks by platform -->
+                    <div class="rt-card" style="margin-bottom:14px; padding:14px;">
+                        <div class="rt-section-h">Outbound Clicks by Platform</div>
+                        <div class="rt-section-sub">where people clicked from your smart links</div>
+                        <div style="display:grid; grid-template-columns:repeat(6,1fr); gap:8px;">
+                            <div class="rt-platform-tile sp" style="text-align:center;">
+                                <span class="rt-platform-icon" style="background:#1DB954;margin:0 auto;">SP</span>
+                                <div class="rt-platform-num">3,842</div>
+                                <div class="rt-platform-num-label">Spotify</div>
+                            </div>
+                            <div class="rt-platform-tile am" style="text-align:center;">
+                                <span class="rt-platform-icon" style="background:#FC3C44;margin:0 auto;">AM</span>
+                                <div class="rt-platform-num">1,920</div>
+                                <div class="rt-platform-num-label">Apple Music</div>
+                            </div>
+                            <div class="rt-platform-tile ytm" style="text-align:center;">
+                                <span class="rt-platform-icon" style="background:#FF0000;margin:0 auto;">YTM</span>
+                                <div class="rt-platform-num">848</div>
+                                <div class="rt-platform-num-label">YouTube Music</div>
+                            </div>
+                            <div class="rt-platform-tile sc" style="text-align:center;">
+                                <span class="rt-platform-icon" style="background:#FF5500;margin:0 auto;">SC</span>
+                                <div class="rt-platform-num">512</div>
+                                <div class="rt-platform-num-label">SoundCloud</div>
+                            </div>
+                            <div class="rt-platform-tile" style="border-left:3px solid #00A8E1; text-align:center;">
+                                <span class="rt-platform-icon" style="background:#00A8E1;margin:0 auto;">AZ</span>
+                                <div class="rt-platform-num">386</div>
+                                <div class="rt-platform-num-label">Amazon</div>
+                            </div>
+                            <div class="rt-platform-tile" style="border-left:3px solid #000; text-align:center;">
+                                <span class="rt-platform-icon" style="background:#000;border:1px solid #fff;margin:0 auto;">TI</span>
+                                <div class="rt-platform-num">220</div>
+                                <div class="rt-platform-num-label">Tidal</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Smart links table -->
+                    <div class="rt-card" style="padding:0; overflow-x:auto;">
+                        <table class="rt-table">
+                            <thead>
+                                <tr>
+                                    <th>Smart Link</th>
+                                    <th>Type</th>
+                                    <th>Status</th>
+                                    <th class="num">Page Views</th>
+                                    <th class="num">Clickthroughs</th>
+                                    <th class="num">CTR</th>
+                                    <th>Top Country</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>Static Bloom</strong></td><td>Single</td><td><span class="rt-pill green">Active</span></td><td class="num">2,140</td><td class="num">1,420</td><td class="num rt-good">66.4%</td><td>US</td></tr>
+                                <tr><td><strong>Voltage Drop</strong></td><td>Single</td><td><span class="rt-pill green">Active</span></td><td class="num">1,820</td><td class="num">1,021</td><td class="num rt-good">56.1%</td><td>DE</td></tr>
+                                <tr><td><strong>Nightwave</strong></td><td>Single</td><td><span class="rt-pill amber">Completed</span></td><td class="num">1,460</td><td class="num">768</td><td class="num">52.6%</td><td>UK</td></tr>
+                                <tr><td><strong>Echo Chamber</strong></td><td>Single</td><td><span class="rt-pill red">Pause Soon</span></td><td class="num">680</td><td class="num">453</td><td class="num">66.6%</td><td>US</td></tr>
+                                <tr><td><strong>Voltage Drop Tour Bundle</strong></td><td>Playlist</td><td><span class="rt-pill amber">Completed</span></td><td class="num">9,513</td><td class="num">3,842</td><td class="num">40.4%</td><td>BR</td></tr>
+                                <tr><td><strong>NOX V0LTAGE Link-in-Bio</strong></td><td>Bio Link</td><td><span class="rt-pill blue">Ongoing</span></td><td class="num">2,820</td><td class="num">198</td><td class="num">7.0%</td><td>US</td></tr>
+                                <tr><td><strong>Tour Tee Pre-Order</strong></td><td>Merch</td><td><span class="rt-pill amber">Completed</span></td><td class="num">449</td><td class="num">26</td><td class="num">5.8%</td><td>US</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <p class="rt-caption">Tap-through ≠ stream — confirmed plays come from distribution sync</p>
+        </section>
+
+        <div class="rt-divider max-w-6xl mx-auto"></div>
+
+        <!-- ======================== STREAMING INSIGHTS ======================== -->
+        <section class="max-w-7xl mx-auto">
+            <div class="rt-section-label text-center">05 / Streaming Insights</div>
+            <h2 class="rt-h2 text-center max-w-3xl mx-auto">First-party data direct from Spotify &amp; Apple Music for Artists.</h2>
+
+            <div class="rt-app">
+                <div class="rt-app-bar">
+                    <span class="rt-dot" style="background:#ef4444;"></span>
+                    <span class="rt-dot" style="background:#eab308;"></span>
+                    <span class="rt-dot" style="background:#22c55e;"></span>
+                    <span class="rt-app-title">growth-os.local · streaming-insights</span>
+                </div>
+                <div class="rt-main" style="padding:22px;">
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:14px;">
+                        <div>
+                            <h1 class="rt-page-h">Streaming Insights</h1>
+                            <p class="rt-page-sub">First-party data direct from Spotify for Artists and Apple Music for Artists</p>
+                        </div>
+                        <span class="rt-badge">SPOTIFY · APPLE OK</span>
+                    </div>
+
+                    <!-- Platform tabs -->
+                    <div style="display:flex; gap:8px; margin-bottom:14px; flex-wrap:wrap; align-items:center;">
+                        <span class="rt-btn rt-btn-primary" style="display:inline-flex; gap:6px; align-items:center;"><span class="rt-platform-icon" style="background:#1DB954;width:16px;height:16px;font-size:8px;">SP</span>Spotify</span>
+                        <span class="rt-btn rt-btn-ghost" style="display:inline-flex; gap:6px; align-items:center;"><span class="rt-platform-icon" style="background:#FC3C44;width:16px;height:16px;font-size:8px;">AM</span>Apple Music</span>
+                        <span class="rt-btn rt-btn-ghost" style="display:inline-flex; gap:6px; align-items:center;"><span class="rt-platform-icon" style="background:#FF0000;width:16px;height:16px;font-size:8px;">YTM</span>YouTube Music</span>
+                        <span style="margin-left:auto; display:flex; gap:4px;">
+                            <span class="rt-chip">7d</span>
+                            <span class="rt-chip active">28d</span>
+                            <span class="rt-chip">90d</span>
+                            <span class="rt-chip">1y</span>
+                            <span class="rt-chip">Lifetime</span>
+                        </span>
+                    </div>
+
+                    <!-- KPI strip -->
+                    <div class="rt-card" style="display:grid; grid-template-columns:repeat(5,1fr); gap:18px; margin-bottom:14px;">
+                        <div><div class="rt-kpi-label">Streams 28d</div><div class="rt-kpi-val">2,840</div><div class="rt-kpi-sub good">+18.4% vs prev</div></div>
+                        <div><div class="rt-kpi-label">Listeners 28d</div><div class="rt-kpi-val">1,624</div><div class="rt-kpi-sub good">+12.1% vs prev</div></div>
+                        <div><div class="rt-kpi-label">Followers</div><div class="rt-kpi-val">894</div><div class="rt-kpi-sub good">+24 last 7d</div></div>
+                        <div><div class="rt-kpi-label">Saves</div><div class="rt-kpi-val">412</div><div class="rt-kpi-sub good">+22.0%</div></div>
+                        <div><div class="rt-kpi-label">Playlist Adds</div><div class="rt-kpi-val">38</div><div class="rt-kpi-sub good">+9 this week</div></div>
+                    </div>
+
+                    <!-- Daily streams chart -->
+                    <div class="rt-card" style="margin-bottom:14px; padding:14px;">
+                        <div class="rt-section-h">Daily Streams</div>
+                        <div class="rt-section-sub">last 28 days</div>
+                        <div class="rt-chart">
+                            <div class="rt-chart-col"><div class="rt-chart-bar" style="height:32%; background:#1DB954;"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar" style="height:38%; background:#1DB954;"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar" style="height:34%; background:#1DB954;"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar" style="height:42%; background:#1DB954;"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar" style="height:48%; background:#1DB954;"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar" style="height:52%; background:#1DB954;"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar" style="height:46%; background:#1DB954;"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar" style="height:54%; background:#1DB954;"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar" style="height:62%; background:#1DB954;"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar" style="height:58%; background:#1DB954;"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar" style="height:64%; background:#1DB954;"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar" style="height:72%; background:#1DB954;"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar" style="height:68%; background:#1DB954;"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar" style="height:74%; background:#1DB954;"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar" style="height:80%; background:#1DB954;"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar" style="height:78%; background:#1DB954;"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar" style="height:82%; background:#1DB954;"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar" style="height:88%; background:#1DB954;"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar" style="height:84%; background:#1DB954;"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar" style="height:90%; background:#1DB954;"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar" style="height:86%; background:#1DB954;"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar" style="height:92%; background:#1DB954;"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar" style="height:96%; background:#1DB954;"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar" style="height:94%; background:#1DB954;"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar" style="height:88%; background:#1DB954;"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar" style="height:92%; background:#1DB954;"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar" style="height:98%; background:#1DB954;"></div></div>
+                            <div class="rt-chart-col"><div class="rt-chart-bar" style="height:100%; background:#1DB954;"></div></div>
+                        </div>
+                    </div>
+
+                    <!-- 3-col breakdowns -->
+                    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px;">
+                        <div class="rt-card" style="padding:12px;">
+                            <div class="rt-section-h">Top Tracks</div>
+                            <div class="rt-section-sub">streams · 28d</div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">Static Bloom</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:100%; background:#1DB954;"></div></div><span class="rt-bar-val">1,084</span></div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">Voltage Drop</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:74%; background:#1DB954;"></div></div><span class="rt-bar-val">802</span></div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">Nightwave</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:48%; background:#1DB954;"></div></div><span class="rt-bar-val">521</span></div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">Shadowburn</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:32%; background:#1DB954;"></div></div><span class="rt-bar-val">348</span></div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">Echo Chamber</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:24%; background:#1DB954;"></div></div><span class="rt-bar-val">258</span></div>
+                        </div>
+                        <div class="rt-card" style="padding:12px;">
+                            <div class="rt-section-h">Top Cities</div>
+                            <div class="rt-section-sub">listeners · 28d</div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">Berlin, DE</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:100%; background:#a78bfa;"></div></div><span class="rt-bar-val">186</span></div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">London, UK</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:78%; background:#a78bfa;"></div></div><span class="rt-bar-val">144</span></div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">Los Angeles, US</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:64%; background:#a78bfa;"></div></div><span class="rt-bar-val">118</span></div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">São Paulo, BR</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:52%; background:#a78bfa;"></div></div><span class="rt-bar-val">96</span></div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">Tokyo, JP</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:42%; background:#a78bfa;"></div></div><span class="rt-bar-val">78</span></div>
+                        </div>
+                        <div class="rt-card" style="padding:12px;">
+                            <div class="rt-section-h">Source of Streams</div>
+                            <div class="rt-section-sub">28d</div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">Algorithmic</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:62%; background:#22c55e;"></div></div><span class="rt-bar-val">62%</span></div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">Listener Library</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:18%; background:#22c55e;"></div></div><span class="rt-bar-val">18%</span></div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">Editorial</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:11%; background:#22c55e;"></div></div><span class="rt-bar-val">11%</span></div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">Other Listener Pls</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:7%; background:#22c55e;"></div></div><span class="rt-bar-val">7%</span></div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">Artist Profile</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:2%; background:#22c55e;"></div></div><span class="rt-bar-val">2%</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="rt-caption">Captured via headless browser · session persists for weeks</p>
+        </section>
+
+        <div class="rt-divider max-w-6xl mx-auto"></div>
+
+        <!-- ======================== SOCIAL ======================== -->
+        <section class="max-w-7xl mx-auto">
+            <div class="rt-section-label text-center">06 / Social</div>
+            <h2 class="rt-h2 text-center max-w-3xl mx-auto">Cross-platform post analytics — what's earning attention.</h2>
+
+            <div class="rt-app">
+                <div class="rt-app-bar">
+                    <span class="rt-dot" style="background:#ef4444;"></span>
+                    <span class="rt-dot" style="background:#eab308;"></span>
+                    <span class="rt-dot" style="background:#22c55e;"></span>
+                    <span class="rt-app-title">growth-os.local · social</span>
+                </div>
+                <div class="rt-main" style="padding:22px;">
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:14px;">
+                        <div>
+                            <h1 class="rt-page-h">Social</h1>
+                            <p class="rt-page-sub">Cross-platform post analytics: see what's earning attention and where to focus</p>
+                        </div>
+                        <div style="display:flex; gap:6px;">
+                            <span class="rt-chip">7d</span>
+                            <span class="rt-chip active">28d</span>
+                            <span class="rt-chip">90d</span>
+                            <span class="rt-chip">1y</span>
+                        </div>
+                    </div>
+
+                    <!-- Tab bar -->
+                    <div style="display:flex; gap:6px; margin-bottom:14px; border-bottom:1px solid var(--rt-border); padding-bottom:6px;">
+                        <span class="rt-btn rt-btn-primary">Overview</span>
+                        <span class="rt-btn rt-btn-ghost">Instagram</span>
+                        <span class="rt-btn rt-btn-ghost">YouTube</span>
+                        <span class="rt-btn rt-btn-ghost">Facebook</span>
+                        <span class="rt-btn rt-btn-ghost">What's Working</span>
+                    </div>
+
+                    <!-- KPI strip -->
+                    <div class="rt-card" style="display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-bottom:14px;">
+                        <div><div class="rt-kpi-label">Posts published</div><div class="rt-kpi-val good">42</div><div class="rt-kpi-sub">across last 28 days</div></div>
+                        <div><div class="rt-kpi-label">Total reach</div><div class="rt-kpi-val">128.4K</div><div class="rt-kpi-sub">IG + FB</div></div>
+                        <div><div class="rt-kpi-label">Total engagement</div><div class="rt-kpi-val">9,820</div><div class="rt-kpi-sub">likes+comments+shares</div></div>
+                        <div><div class="rt-kpi-label">YouTube views</div><div class="rt-kpi-val">14.2K</div><div class="rt-kpi-sub">videos in window</div></div>
+                    </div>
+
+                    <!-- 3 platform cards -->
+                    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:14px;">
+                        <div class="rt-card" style="border-left:3px solid #E1306C; padding:14px;">
+                            <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
+                                <span class="rt-platform-icon" style="background:#E1306C;">IG</span>
+                                <strong style="color:white; font-size:13px;">Instagram</strong>
+                            </div>
+                            <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+                                <div><div class="rt-kpi-label">Posts</div><div class="rt-kpi-val" style="font-size:16px;">22</div></div>
+                                <div><div class="rt-kpi-label">Reach</div><div class="rt-kpi-val" style="font-size:16px;">82.1K</div></div>
+                                <div><div class="rt-kpi-label">Likes</div><div class="rt-kpi-val" style="font-size:16px;">5,840</div></div>
+                                <div><div class="rt-kpi-label">Comments</div><div class="rt-kpi-val" style="font-size:16px;">412</div></div>
+                                <div><div class="rt-kpi-label">Saves</div><div class="rt-kpi-val" style="font-size:16px;">238</div></div>
+                                <div><div class="rt-kpi-label">Avg ER</div><div class="rt-kpi-val good" style="font-size:16px;">7.84%</div></div>
+                            </div>
+                        </div>
+                        <div class="rt-card" style="border-left:3px solid #FF0000; padding:14px;">
+                            <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
+                                <span class="rt-platform-icon" style="background:#FF0000;">YT</span>
+                                <strong style="color:white; font-size:13px;">YouTube</strong>
+                            </div>
+                            <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+                                <div><div class="rt-kpi-label">Videos</div><div class="rt-kpi-val" style="font-size:16px;">8</div></div>
+                                <div><div class="rt-kpi-label">Views</div><div class="rt-kpi-val" style="font-size:16px;">14.2K</div></div>
+                                <div><div class="rt-kpi-label">Likes</div><div class="rt-kpi-val" style="font-size:16px;">1,124</div></div>
+                                <div><div class="rt-kpi-label">Comments</div><div class="rt-kpi-val" style="font-size:16px;">86</div></div>
+                                <div><div class="rt-kpi-label">Shorts</div><div class="rt-kpi-val" style="font-size:16px;">6</div></div>
+                                <div><div class="rt-kpi-label">Long-form</div><div class="rt-kpi-val" style="font-size:16px;">2</div></div>
+                            </div>
+                        </div>
+                        <div class="rt-card" style="border-left:3px solid #1877F2; padding:14px;">
+                            <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
+                                <span class="rt-platform-icon" style="background:#1877F2;">FB</span>
+                                <strong style="color:white; font-size:13px;">Facebook</strong>
+                            </div>
+                            <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+                                <div><div class="rt-kpi-label">Posts</div><div class="rt-kpi-val" style="font-size:16px;">12</div></div>
+                                <div><div class="rt-kpi-label">Reach</div><div class="rt-kpi-val" style="font-size:16px;">46.3K</div></div>
+                                <div><div class="rt-kpi-label">Reactions</div><div class="rt-kpi-val" style="font-size:16px;">2,418</div></div>
+                                <div><div class="rt-kpi-label">Comments</div><div class="rt-kpi-val" style="font-size:16px;">184</div></div>
+                                <div><div class="rt-kpi-label">Shares</div><div class="rt-kpi-val" style="font-size:16px;">312</div></div>
+                                <div><div class="rt-kpi-label">Avg ER</div><div class="rt-kpi-val" style="font-size:16px;">5.62%</div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cadence heatmap -->
+                    <div class="rt-card" style="padding:14px;">
+                        <div class="rt-section-h">Best Posting Times</div>
+                        <div class="rt-section-sub">Instagram engagement rate by day × hour</div>
+                        <div class="rt-heat" style="margin-top:10px;">
+                            <div class="rt-heat-label">MON</div>
+                            <div class="rt-heat-cell"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.15);"></div><div class="rt-heat-cell"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.25);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.4);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.55);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.75);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.65);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.45);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.3);"></div><div class="rt-heat-cell"></div><div class="rt-heat-cell"></div>
+                            <div class="rt-heat-label">TUE</div>
+                            <div class="rt-heat-cell"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.2);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.3);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.4);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.55);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.7);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.85);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.7);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.5);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.3);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.2);"></div><div class="rt-heat-cell"></div>
+                            <div class="rt-heat-label">WED</div>
+                            <div class="rt-heat-cell"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.25);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.4);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.5);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.65);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.8);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.95);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.8);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.55);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.35);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.2);"></div><div class="rt-heat-cell"></div>
+                            <div class="rt-heat-label">THU</div>
+                            <div class="rt-heat-cell"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.2);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.35);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.45);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.55);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.7);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.8);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.65);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.45);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.3);"></div><div class="rt-heat-cell"></div><div class="rt-heat-cell"></div>
+                            <div class="rt-heat-label">FRI</div>
+                            <div class="rt-heat-cell"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.3);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.45);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.6);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.75);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.9);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,1);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.85);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.65);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.45);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.3);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.2);"></div>
+                            <div class="rt-heat-label">SAT</div>
+                            <div class="rt-heat-cell" style="background:rgba(200,16,46,0.15);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.35);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.5);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.65);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.8);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.95);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.95);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.8);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.6);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.4);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.25);"></div><div class="rt-heat-cell"></div>
+                            <div class="rt-heat-label">SUN</div>
+                            <div class="rt-heat-cell"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.25);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.4);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.55);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.7);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.8);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.7);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.55);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.35);"></div><div class="rt-heat-cell" style="background:rgba(200,16,46,0.2);"></div><div class="rt-heat-cell"></div><div class="rt-heat-cell"></div>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; margin-top:6px; font-family:'JetBrains Mono'; font-size:9px; color:var(--rt-muted); padding-left:34px;">
+                            <span>6a</span><span>9a</span><span>12p</span><span>3p</span><span>6p</span><span>9p</span><span>12a</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="rt-caption">Engagement-rate heatmap surfaces optimal posting windows</p>
+        </section>
+
+        <div class="rt-divider max-w-6xl mx-auto"></div>
+
+        <!-- ======================== BOOKING ======================== -->
+        <section class="max-w-7xl mx-auto">
+            <div class="rt-section-label text-center">07 / Booking</div>
+            <h2 class="rt-h2 text-center max-w-3xl mx-auto">Find venues. Draft outreach. Track the show pipeline.</h2>
+
+            <div class="rt-app">
+                <div class="rt-app-bar">
+                    <span class="rt-dot" style="background:#ef4444;"></span>
+                    <span class="rt-dot" style="background:#eab308;"></span>
+                    <span class="rt-dot" style="background:#22c55e;"></span>
+                    <span class="rt-app-title">growth-os.local · booking</span>
+                </div>
+                <div class="rt-main" style="padding:22px;">
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:14px;">
+                        <div>
+                            <h1 class="rt-page-h">Booking</h1>
+                            <p class="rt-page-sub">Find venues, talent buyers, promoters. Draft personalized outreach. Track pipeline.</p>
+                        </div>
+                        <span class="rt-pill gray" style="font-size:10px;">DRAFTS ONLY · GMAIL SEND LOCKED</span>
+                    </div>
+
+                    <!-- KPI strip -->
+                    <div class="rt-card" style="display:grid; grid-template-columns:repeat(6,1fr); gap:18px; margin-bottom:14px;">
+                        <div><div class="rt-kpi-label">Venues Tracked</div><div class="rt-kpi-val">84</div><div class="rt-kpi-sub">12 markets</div></div>
+                        <div><div class="rt-kpi-label">Verified</div><div class="rt-kpi-val good">42</div><div class="rt-kpi-sub good">contact confirmed</div></div>
+                        <div><div class="rt-kpi-label">Targeted</div><div class="rt-kpi-val">18</div><div class="rt-kpi-sub">queued for pitch</div></div>
+                        <div><div class="rt-kpi-label">Pitched</div><div class="rt-kpi-val warn">11</div><div class="rt-kpi-sub warn">awaiting reply</div></div>
+                        <div><div class="rt-kpi-label">Booked</div><div class="rt-kpi-val good">4</div><div class="rt-kpi-sub good">deals closed</div></div>
+                        <div><div class="rt-kpi-label">Confirmed Shows</div><div class="rt-kpi-val">3</div><div class="rt-kpi-sub">2 played</div></div>
+                    </div>
+
+                    <!-- Pipeline + Markets -->
+                    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-bottom:14px;">
+                        <div class="rt-card" style="padding:12px;">
+                            <div class="rt-section-h">Venue Pipeline</div>
+                            <div class="rt-section-sub">deal stage funnel</div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">Researching</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:100%; background:#94a3b8;"></div></div><span class="rt-bar-val">23</span></div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">Verified</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:78%; background:#22c55e;"></div></div><span class="rt-bar-val">18</span></div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">Targeted</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:78%; background:#3b82f6;"></div></div><span class="rt-bar-val">18</span></div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">Pitched</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:48%; background:#eab308;"></div></div><span class="rt-bar-val">11</span></div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">Booked</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:18%; background:#22c55e;"></div></div><span class="rt-bar-val">4</span></div>
+                        </div>
+                        <div class="rt-card" style="padding:12px;">
+                            <div class="rt-section-h">Top Markets</div>
+                            <div class="rt-section-sub">by fit score</div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">Miami, FL</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:100%; background:#a78bfa;"></div></div><span class="rt-bar-val">94</span></div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">Orlando, FL</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:88%; background:#a78bfa;"></div></div><span class="rt-bar-val">82</span></div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">Atlanta, GA</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:80%; background:#a78bfa;"></div></div><span class="rt-bar-val">76</span></div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">Tampa, FL</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:74%; background:#a78bfa;"></div></div><span class="rt-bar-val">71</span></div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">Nashville, TN</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:68%; background:#a78bfa;"></div></div><span class="rt-bar-val">65</span></div>
+                        </div>
+                        <div class="rt-card" style="padding:12px;">
+                            <div class="rt-section-h">Outreach Status</div>
+                            <div class="rt-section-sub">draft → sent → replied</div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">Draft</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:38%; background:#94a3b8;"></div></div><span class="rt-bar-val">7</span></div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">Queued</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:54%; background:#3b82f6;"></div></div><span class="rt-bar-val">10</span></div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">Sent</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:100%; background:#22c55e;"></div></div><span class="rt-bar-val">19</span></div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">Replied</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:34%; background:#22c55e;"></div></div><span class="rt-bar-val">6</span></div>
+                            <div class="rt-bar-row"><span class="rt-bar-label">Bounced</span><div class="rt-bar-track"><div class="rt-bar-fill" style="width:6%; background:#ef4444;"></div></div><span class="rt-bar-val">1</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Venues table -->
+                    <div class="rt-card" style="padding:0; overflow-x:auto;">
+                        <table class="rt-table">
+                            <thead>
+                                <tr>
+                                    <th>Venue</th>
+                                    <th>City</th>
+                                    <th class="num">Capacity</th>
+                                    <th>Pay Model</th>
+                                    <th class="num">Fit</th>
+                                    <th>Status</th>
+                                    <th>Last Contact</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>The Hollow Atrium</strong></td><td>Miami, FL</td><td class="num">320</td><td>Door split 70/30</td><td class="num rt-good">94</td><td><span class="rt-pill green">Booked</span></td><td>Apr 14</td></tr>
+                                <tr><td><strong>Brickwall Underground</strong></td><td>Miami, FL</td><td class="num">180</td><td>$400 guarantee</td><td class="num rt-good">88</td><td><span class="rt-pill amber">Pitched</span></td><td>Apr 22</td></tr>
+                                <tr><td><strong>Ravenscar Hall</strong></td><td>Orlando, FL</td><td class="num">450</td><td>Door split 80/20</td><td class="num rt-good">86</td><td><span class="rt-pill amber">Pitched</span></td><td>Apr 19</td></tr>
+                                <tr><td><strong>Neon Pit</strong></td><td>Tampa, FL</td><td class="num">220</td><td>Backline + door</td><td class="num rt-good">82</td><td><span class="rt-pill blue">Targeted</span></td><td>—</td></tr>
+                                <tr><td><strong>The Fillmore Tropic</strong></td><td>Atlanta, GA</td><td class="num">800</td><td>Guarantee + walkup</td><td class="num">78</td><td><span class="rt-pill blue">Targeted</span></td><td>—</td></tr>
+                                <tr><td><strong>Static Cathedral Lounge</strong></td><td>Nashville, TN</td><td class="num">140</td><td>Door split 60/40</td><td class="num">71</td><td><span class="rt-pill green">Verified</span></td><td>Apr 8</td></tr>
+                                <tr><td><strong>The Bell &amp; Hammer</strong></td><td>Charleston, SC</td><td class="num">95</td><td>Door + tip jar</td><td class="num">62</td><td><span class="rt-pill gray">Researching</span></td><td>—</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <p class="rt-caption">Email send is locked by default · drafts always copy-paste ready</p>
+        </section>
+
+        <div class="rt-divider max-w-6xl mx-auto"></div>
+
+        <!-- ======================== CONTRACTS ======================== -->
+        <section class="max-w-7xl mx-auto">
+            <div class="rt-section-label text-center">08 / Contracts</div>
+            <h2 class="rt-h2 text-center max-w-3xl mx-auto">Every paper agreement that affects revenue or rights.</h2>
+
+            <div class="rt-app">
+                <div class="rt-app-bar">
+                    <span class="rt-dot" style="background:#ef4444;"></span>
+                    <span class="rt-dot" style="background:#eab308;"></span>
+                    <span class="rt-dot" style="background:#22c55e;"></span>
+                    <span class="rt-app-title">growth-os.local · contracts</span>
+                </div>
+                <div class="rt-main" style="padding:22px;">
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:14px;">
+                        <div>
+                            <h1 class="rt-page-h">Contract Vault</h1>
+                            <p class="rt-page-sub">Every paper agreement that affects your revenue or rights — split sheets, sync licenses, distribution, sponsorships, features</p>
+                        </div>
+                        <div style="display:flex; gap:6px;">
+                            <span class="rt-btn rt-btn-ghost">AI Summarize</span>
+                            <span class="rt-btn rt-btn-primary">+ New Contract</span>
+                        </div>
+                    </div>
+
+                    <!-- KPI strip -->
+                    <div class="rt-card" style="display:grid; grid-template-columns:repeat(5,1fr); gap:18px; margin-bottom:14px;">
+                        <div><div class="rt-kpi-label">Active Contracts</div><div class="rt-kpi-val">9</div></div>
+                        <div><div class="rt-kpi-label">Expiring 60d</div><div class="rt-kpi-val warn">2</div></div>
+                        <div><div class="rt-kpi-label">Overdue Obligations</div><div class="rt-kpi-val" style="color:var(--rt-kill);">1</div></div>
+                        <div><div class="rt-kpi-label">Upcoming 60d</div><div class="rt-kpi-val">4</div></div>
+                        <div><div class="rt-kpi-label">Need AI Summary</div><div class="rt-kpi-val">2</div></div>
+                    </div>
+
+                    <!-- Expiring banner -->
+                    <div class="rt-card" style="border-color:#eab308; background:rgba(234,179,8,0.05); margin-bottom:14px; padding:12px 14px;">
+                        <strong style="color:#fde047; font-size:12px;">Expiring within 60 days:</strong>
+                        <ul style="margin:6px 0 0 18px; padding:0; font-size:11px; color:var(--rt-text);">
+                            <li><span class="rt-good">Voltage Drop</span> — Sync License with <em>Oceanic Sync Agency</em> · expires 2026-06-12</li>
+                            <li><span class="rt-good">Static Bloom</span> — Co-Write Split with <em>R. Halloway</em> (option pickup) · 2026-06-28</li>
+                        </ul>
+                    </div>
+
+                    <!-- Contracts table -->
+                    <div class="rt-card" style="padding:0; overflow-x:auto;">
+                        <table class="rt-table">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Type</th>
+                                    <th>Counterparty</th>
+                                    <th>Song</th>
+                                    <th>Term</th>
+                                    <th class="num">My Share</th>
+                                    <th>Status</th>
+                                    <th class="num">Obligations</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>Static Bloom — Distribution</strong></td><td>Distribution</td><td>Black Mirror Records LLC</td><td>Static Bloom</td><td>2025-09-04 → ∞</td><td class="num">82%</td><td><span class="rt-pill green">Active</span></td><td class="num">—</td></tr>
+                                <tr><td><strong>Voltage Drop — Sync License</strong></td><td>Sync</td><td>Oceanic Sync Agency</td><td>Voltage Drop</td><td>2025-06-12 → 2026-06-12</td><td class="num">50%</td><td><span class="rt-pill amber">Renewing</span></td><td class="num warn">1</td></tr>
+                                <tr><td><strong>Static Bloom — Co-Write Split</strong></td><td>Split Sheet</td><td>R. Halloway</td><td>Static Bloom</td><td>2025-08-01 → 2026-06-28</td><td class="num">60%</td><td><span class="rt-pill green">Signed</span></td><td class="num">—</td></tr>
+                                <tr><td><strong>Nightwave — Featured Vocal</strong></td><td>Feature</td><td>Riff Rocket Pubs Ltd</td><td>Nightwave</td><td>2025-11-20 → ∞</td><td class="num">25%</td><td><span class="rt-pill green">Signed</span></td><td class="num">—</td></tr>
+                                <tr><td><strong>Tour Tee — Merch Royalty</strong></td><td>Merch</td><td>Velvet Vault Productions</td><td>—</td><td>2026-01-05 → 2027-01-05</td><td class="num">35%</td><td><span class="rt-pill green">Active</span></td><td class="num warn">1</td></tr>
+                                <tr><td><strong>Echo Chamber — Producer Split</strong></td><td>Split Sheet</td><td>K. Rivas</td><td>Echo Chamber</td><td>2025-04-18 → ∞</td><td class="num">70%</td><td><span class="rt-pill green">Signed</span></td><td class="num">—</td></tr>
+                                <tr><td><strong>Sponsorship Pilot — Apparel</strong></td><td>Sponsorship</td><td>Ironclad Apparel Co.</td><td>—</td><td>2026-03-01 → 2026-09-01</td><td class="num">100%</td><td><span class="rt-pill amber">Draft</span></td><td class="num">—</td></tr>
+                                <tr><td><strong>Pulse Hostage — Brief</strong></td><td>Sync</td><td>Atrium Music Group</td><td>Pulse Hostage</td><td>—</td><td class="num">50%</td><td><span class="rt-pill gray">Draft</span></td><td class="num">—</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Red flags card -->
+                    <div class="rt-card" style="margin-top:14px; padding:14px; border-color:rgba(239,68,68,0.4); background:rgba(239,68,68,0.04);">
+                        <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+                            <strong style="color:#fca5a5; font-size:12px;">AI Red-Flag Scan</strong>
+                            <span class="rt-pill red" style="font-size:9px;">3 Concerns</span>
+                            <span style="margin-left:auto; font-size:10px; color:var(--rt-muted); font-family:'JetBrains Mono';">not legal advice</span>
+                        </div>
+                        <div style="font-size:11px; color:var(--rt-text); line-height:1.6;">
+                            <div style="margin-bottom:8px; padding-left:10px; border-left:2px solid #ef4444;">
+                                <span class="rt-pill red" style="font-size:8px;">HIGH</span>
+                                <strong style="margin-left:6px;">Voltage Drop Sync License</strong> — auto-renew clause defaults to 5-year term unless cancelled 90 days prior.
+                                <span class="rt-good" style="display:block; margin-top:4px;">→ Add calendar reminder for 2026-03-12</span>
+                            </div>
+                            <div style="margin-bottom:8px; padding-left:10px; border-left:2px solid #eab308;">
+                                <span class="rt-pill amber" style="font-size:8px;">MED</span>
+                                <strong style="margin-left:6px;">Sponsorship Pilot — Apparel</strong> — exclusivity clause covers all apparel categories, not just tees.
+                                <span class="rt-good" style="display:block; margin-top:4px;">→ Negotiate to limit to T-shirts and hoodies only</span>
+                            </div>
+                            <div style="padding-left:10px; border-left:2px solid #94a3b8;">
+                                <span class="rt-pill gray" style="font-size:8px;">LOW</span>
+                                <strong style="margin-left:6px;">Tour Tee Merch Royalty</strong> — quarterly statement obligation has no late-payment penalty.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="rt-caption">AI summary &amp; red-flag scan · first-pass triage only</p>
+        </section>
+
+        <div class="rt-divider max-w-6xl mx-auto"></div>
+
+        <!-- ======================== MERCH (mention only) ======================== -->
+        <section class="max-w-4xl mx-auto">
+            <div class="rt-section-label text-center">09 / Plus</div>
+            <h2 class="rt-h2 text-center">Merch · UnitedMasters · Catalog · Contacts.</h2>
+            <p class="text-white/60 text-center text-lg leading-relaxed max-w-3xl mx-auto">
+                The Growth OS also includes a <strong class="text-white">Merch</strong> view that auto-syncs an Etsy or Shopify storefront via RSS and ties merch revenue back to the campaign that drove it. A <strong class="text-white">UnitedMasters</strong> view tracks distribution-level streams and royalties as the canonical source of truth. <strong class="text-white">Catalog</strong> rolls every release into a per-track P&amp;L. And the <strong class="text-white">Contacts</strong> tab is a private CRM for DJs, curators, journalists, and venue buyers — kept locally and never committed to git.
+            </p>
+        </section>
+
+        <div class="rt-divider max-w-6xl mx-auto"></div>
+
+        <!-- ======================== ENGINEERING DEEP DIVES ======================== -->
+        <section id="engineering" class="max-w-4xl mx-auto">
+            <div class="rt-section-label">10 / Engineering Deep Dives</div>
+            <h2 class="rt-h2">The hard parts — and how I solved them.</h2>
+
+            <div class="space-y-8 text-white/70 leading-relaxed">
+                <div class="rt-pillar">
+                    <div class="rt-pillar-num">PROBLEM · 01</div>
+                    <h3 class="text-white text-xl font-semibold mb-3">Smart-link analytics with no public API.</h3>
+                    <p class="text-white/65 mb-3">
+                        ToneDen, Linkfire, and most smart-link providers offer no documented integration path. Without their data, the funnel from ad spend → clickthrough → stream is broken.
+                    </p>
+                    <p class="text-white/55">
+                        <strong class="text-white">Solution:</strong> Reverse-engineered the dashboard XHRs, found an undocumented internal REST endpoint, and built a Playwright persistent context that authenticates once and runs headless syncs in ~30 seconds across every link — clickthroughs, geo splits, referrers, and per-platform breakdowns.
+                    </p>
+                </div>
+
+                <div class="rt-pillar">
+                    <div class="rt-pillar-num">PROBLEM · 02</div>
+                    <h3 class="text-white text-xl font-semibold mb-3">Apple Music for Artists invalidates sessions.</h3>
+                    <p class="text-white/65 mb-3">
+                        Apple's IDMS detected Playwright's bundled Chromium as <code class="font-['JetBrains_Mono'] text-xs bg-white/5 px-1.5 py-0.5 rounded text-white/80">HeadlessChrome</code> and invalidated the device-trust cookie on every relaunch — forcing a manual re-login on every sync.
+                    </p>
+                    <p class="text-white/55">
+                        <strong class="text-white">Solution:</strong> User-agent and client-hints spoofing — overriding <code class="font-['JetBrains_Mono'] text-xs bg-white/5 px-1.5 py-0.5 rounded text-white/80">userAgent</code>, <code class="font-['JetBrains_Mono'] text-xs bg-white/5 px-1.5 py-0.5 rounded text-white/80">sec-ch-ua</code>, and <code class="font-['JetBrains_Mono'] text-xs bg-white/5 px-1.5 py-0.5 rounded text-white/80">sec-ch-ua-platform</code> — to match a real macOS Chrome 131. After wiping the stale session profile and re-logging once, the device-trust cookie now persists for weeks.
+                    </p>
+                </div>
+
+                <div class="rt-pillar">
+                    <div class="rt-pillar-num">PROBLEM · 03</div>
+                    <h3 class="text-white text-xl font-semibold mb-3">PII can never leave the laptop.</h3>
+                    <p class="text-white/65 mb-3">
+                        The agent stores industry contacts, outreach history, and private analytics. The repo lives in git for cross-machine sync — but PII can't be committed.
+                    </p>
+                    <p class="text-white/55">
+                        <strong class="text-white">Solution:</strong> A two-tier export model. <code class="font-['JetBrains_Mono'] text-xs bg-white/5 px-1.5 py-0.5 rounded text-white/80">db:export</code> writes a public seed that excludes credentials AND PII tables. A second command, <code class="font-['JetBrains_Mono'] text-xs bg-white/5 px-1.5 py-0.5 rounded text-white/80">db:export:private</code>, writes the PII-only bundle which is gitignored and transferred manually via encrypted channel.
+                    </p>
+                </div>
+
+                <div class="rt-pillar">
+                    <div class="rt-pillar-num">PROBLEM · 04</div>
+                    <h3 class="text-white text-xl font-semibold mb-3">Read-only by default — even when authorized to write.</h3>
+                    <p class="text-white/65 mb-3">
+                        The agent has the credentials to post to Instagram, send DMs, edit ad campaigns, and reply to comments. That's also exactly how AI agents go wrong.
+                    </p>
+                    <p class="text-white/55">
+                        <strong class="text-white">Solution:</strong> Two safety locks — <code class="font-['JetBrains_Mono'] text-xs bg-white/5 px-1.5 py-0.5 rounded text-white/80">EXTERNAL_WRITE_MODE=locked</code> and <code class="font-['JetBrains_Mono'] text-xs bg-white/5 px-1.5 py-0.5 rounded text-white/80">MESSAGING_MODE=locked</code>. The agent can read everything but cannot write or message anything until both are explicitly unlocked. The <span class="rt-badge" style="font-size:8px; padding:2px 6px;">READ-ONLY</span> badge in the dashboard header makes this state visible at a glance.
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <span class="rt-tech-pill">Node.js</span>
+                <span class="rt-tech-pill">React</span>
+                <span class="rt-tech-pill">TypeScript</span>
+                <span class="rt-tech-pill">SQLite (better-sqlite3)</span>
+                <span class="rt-tech-pill">Playwright</span>
+                <span class="rt-tech-pill">Vite</span>
+                <span class="rt-tech-pill">Meta Marketing API</span>
+                <span class="rt-tech-pill">Instagram Graph API</span>
+                <span class="rt-tech-pill">YouTube Data API</span>
+                <span class="rt-tech-pill">OpenAI API</span>
+            </div>
+        </section>
+
+        <div class="rt-divider max-w-6xl mx-auto"></div>
+
+        <!-- ======================== LESSONS ======================== -->
+        <section class="max-w-4xl mx-auto">
+            <div class="rt-section-label">11 / What I Learned</div>
+            <h2 class="rt-h2">Building an AI agent an artist actually trusts.</h2>
+
+            <div class="space-y-6 text-white/70 leading-relaxed">
+                <p><strong class="text-white">The interface is the product.</strong> A perfect data pipeline is worthless if the artist can't answer "what do I do today?" in 10 seconds. Every dashboard view is a one-question answer. Detail lives one click deeper.</p>
+                <p><strong class="text-white">Comparable metrics matter more than complete metrics.</strong> Meta calls a "result" anything from a link click to a pixel event. ToneDen counts service-button clicks. UnitedMasters reports streams. Without a normalization layer, no comparison is honest.</p>
+                <p><strong class="text-white">Read-only by default earns the right to write later.</strong> Once the agent has proven it never destroys data, never sends an embarrassing DM, and never burns ad budget by accident, the unlock comes naturally. Locked-by-default is the credibility floor for any AI agent that touches a real business.</p>
+                <p><strong class="text-white">Reverse-engineering is a first-class engineering skill.</strong> Two of the most valuable data sources have no documented integration path. Knowing how to safely sniff XHRs, persist a session, and spoof a browser fingerprint unlocked features that no off-the-shelf tool offers.</p>
+            </div>
+        </section>
+
+        <div class="rt-divider max-w-6xl mx-auto"></div>
+
+        <!-- ======================== CTA ======================== -->
+        <section class="max-w-4xl mx-auto">
+            <div style="border:1px solid var(--rt-red-dim); background: linear-gradient(135deg, rgba(200,16,46,0.08), rgba(0,0,0,0.04)); border-radius:16px; padding:40px; text-align:center;">
+                <p class="font-['JetBrains_Mono'] text-xs tracking-[0.25em] uppercase text-glow mb-3">Private build · 2026</p>
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">Want to talk shop?</h2>
+                <p class="text-white/55 max-w-xl mx-auto mb-8">Building AI agents for media businesses, multi-platform automation, or artist-tech infrastructure? I'd love to compare notes.</p>
+                <div class="flex flex-wrap gap-3 justify-center">
+                    <a href="../contact.html" class="hero-btn-primary">CONTACT BRYAN</a>
+                    <a href="../projects.html" class="hero-btn-outline">MORE PROJECTS</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-white/5 py-10 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-white/30 tracking-wider">
+            <span class="font-['JetBrains_Mono']">&copy; 2026 BRYAN TOTTY</span>
+            <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 uppercase">
+                <a href="/" class="hover:text-glow transition-colors">Home</a>
+                <a href="../about.html" class="hover:text-glow transition-colors">About</a>
+                <a href="../blog.html" class="hover:text-glow transition-colors">Blog</a>
+                <a href="../projects.html" class="hover:text-glow transition-colors">Projects</a>
+                <a href="../privacy.html" class="hover:text-glow transition-colors">Privacy</a>
+                <a href="../contact.html" class="hover:text-glow transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../main.js"></script>
+</body>
+</html>
