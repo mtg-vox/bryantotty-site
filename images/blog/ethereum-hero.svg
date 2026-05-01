@@ -76,7 +76,7 @@
   <!-- ============ TEXT (right side, never crops) ============ -->
   <g transform="translate(620, 230)" font-family="'Inter', sans-serif" fill="white">
     <!-- Eyebrow -->
-    <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="16" letter-spacing="6" fill="#c8102e">CRYPTO &middot; FEB 2023</text>
+    <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="16" letter-spacing="6" fill="#c8102e">CRYPTO · FEB 2023</text>
     <!-- Title -->
     <text x="0" y="60" font-size="64" font-weight="700" letter-spacing="-1.5">Getting Started</text>
     <text x="0" y="125" font-size="64" font-weight="700" letter-spacing="-1.5">on <tspan fill="#c8102e">Ethereum</tspan></text>
@@ -85,7 +85,7 @@
     <text x="0" y="206" font-size="18" fill="rgba(255,255,255,0.55)" font-weight="300">blockchain development.</text>
     <!-- Decorative bar -->
     <rect x="0" y="245" width="80" height="3" fill="#c8102e"/>
-    <text x="0" y="280" font-family="'JetBrains Mono', monospace" font-size="13" fill="rgba(255,255,255,0.45)" letter-spacing="2">SOLIDITY &middot; WEB3 &middot; SMART CONTRACTS</text>
+    <text x="0" y="280" font-family="'JetBrains Mono', monospace" font-size="13" fill="rgba(255,255,255,0.45)" letter-spacing="2">SOLIDITY · WEB3 · SMART CONTRACTS</text>
   </g>
 
   <!-- Vignette -->
