@@ -17,33 +17,33 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config = { theme: { extend: { colors: { dark: '#050505', glow: '#c8102e', mech: { green: '#00ff9f', cyan: '#00d4ff', purple: '#a855f7', amber: '#fbbf24' } } } } }</script>
+    <script>tailwind.config = { theme: { extend: { colors: { dark: '#050505', glow: '#c8102e', mech: { red: '#ff2040', blue: '#3b82f6', deep: '#1e3a8a', amber: '#fbbf24' } } } } }</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
     <style>
-        /* ============ MECH KEYBOARD RGB PALETTE ============ */
+        /* ============ MECH KEYBOARD RED + BLUE PALETTE (matches hero image) ============ */
         :root {
-            --mk-green: #00ff9f;
-            --mk-cyan: #00d4ff;
-            --mk-purple: #a855f7;
+            --mk-red: #ff2040;
+            --mk-blue: #3b82f6;
+            --mk-deep: #1e3a8a;
             --mk-amber: #fbbf24;
         }
 
-        /* RGB underglow background — replaces default red grid */
+        /* Backlit-keyboard underglow background — replaces default red grid */
         .mk-bg {
             position: fixed; inset: 0; z-index: 0; pointer-events: none;
             background:
-                radial-gradient(ellipse at 10% 0%, rgba(0, 255, 159, 0.08), transparent 45%),
-                radial-gradient(ellipse at 90% 0%, rgba(0, 212, 255, 0.07), transparent 45%),
-                radial-gradient(ellipse at 50% 100%, rgba(168, 85, 247, 0.06), transparent 50%);
+                radial-gradient(ellipse at 15% 20%, rgba(255, 32, 64, 0.10), transparent 50%),
+                radial-gradient(ellipse at 85% 20%, rgba(59, 130, 246, 0.10), transparent 50%),
+                radial-gradient(ellipse at 50% 100%, rgba(30, 58, 138, 0.08), transparent 55%);
         }
         .mk-grid {
-            position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.4;
+            position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.35;
             background-image:
-                linear-gradient(rgba(0, 255, 159, 0.04) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 212, 255, 0.04) 1px, transparent 1px);
+                linear-gradient(rgba(255, 32, 64, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59, 130, 246, 0.04) 1px, transparent 1px);
             background-size: 60px 60px;
         }
 
@@ -53,41 +53,41 @@
             font-family: 'JetBrains Mono', monospace;
             font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
             padding: 6px 14px; border-radius: 999px;
-            color: var(--mk-green); border: 1px solid rgba(0, 255, 159, 0.4);
-            background: rgba(0, 255, 159, 0.06);
-            box-shadow: 0 0 20px rgba(0, 255, 159, 0.1);
+            color: var(--mk-red); border: 1px solid rgba(255, 32, 64, 0.4);
+            background: rgba(255, 32, 64, 0.06);
+            box-shadow: 0 0 20px rgba(255, 32, 64, 0.1);
         }
         .mk-eyebrow-dot {
             width: 6px; height: 6px; border-radius: 50%;
-            background: var(--mk-green); box-shadow: 0 0 10px var(--mk-green);
+            background: var(--mk-red); box-shadow: 0 0 10px var(--mk-red);
             animation: mk-pulse 2s ease-in-out infinite;
         }
         @keyframes mk-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
 
-        /* Section labels in alternating RGB colors */
-        .mk-label-green { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--mk-green); margin-bottom: 12px; text-shadow: 0 0 8px rgba(0, 255, 159, 0.4); }
-        .mk-label-cyan  { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--mk-cyan);  margin-bottom: 12px; text-shadow: 0 0 8px rgba(0, 212, 255, 0.4); }
-        .mk-label-purple { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--mk-purple); margin-bottom: 12px; text-shadow: 0 0 8px rgba(168, 85, 247, 0.4); }
+        /* Section labels in alternating red/blue */
+        .mk-label-red   { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--mk-red);   margin-bottom: 12px; text-shadow: 0 0 8px rgba(255, 32, 64, 0.4); }
+        .mk-label-blue  { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--mk-blue);  margin-bottom: 12px; text-shadow: 0 0 8px rgba(59, 130, 246, 0.4); }
+        .mk-label-deep  { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: #93c5fd;        margin-bottom: 12px; text-shadow: 0 0 8px rgba(30, 58, 138, 0.5); }
         .mk-label-amber { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--mk-amber); margin-bottom: 12px; text-shadow: 0 0 8px rgba(251, 191, 36, 0.4); }
 
         /* Tags */
-        .mk-tag-green { background: rgba(0, 255, 159, 0.1); color: var(--mk-green); border: 1px solid rgba(0, 255, 159, 0.4); }
-        .mk-tag-cyan  { background: rgba(0, 212, 255, 0.1); color: var(--mk-cyan);  border: 1px solid rgba(0, 212, 255, 0.4); }
+        .mk-tag-red  { background: rgba(255, 32, 64, 0.1); color: var(--mk-red);  border: 1px solid rgba(255, 32, 64, 0.4); }
+        .mk-tag-blue { background: rgba(59, 130, 246, 0.1); color: var(--mk-blue); border: 1px solid rgba(59, 130, 246, 0.4); }
 
         /* Cards (mech keycap style) */
-        .mk-card-green  { border: 1px solid rgba(0, 255, 159, 0.3); background: rgba(0, 255, 159, 0.02); border-left: 3px solid var(--mk-green);  border-radius: 8px; padding: 24px; box-shadow: 0 0 30px rgba(0, 255, 159, 0.04); }
-        .mk-card-cyan   { border: 1px solid rgba(0, 212, 255, 0.3); background: rgba(0, 212, 255, 0.02); border-left: 3px solid var(--mk-cyan);   border-radius: 8px; padding: 24px; box-shadow: 0 0 30px rgba(0, 212, 255, 0.04); }
-        .mk-card-purple { border: 1px solid rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.02); border-left: 3px solid var(--mk-purple); border-radius: 8px; padding: 24px; box-shadow: 0 0 30px rgba(168, 85, 247, 0.04); }
-        .mk-card-amber  { border: 1px solid rgba(251, 191, 36, 0.3); background: rgba(251, 191, 36, 0.02); border-left: 3px solid var(--mk-amber); border-radius: 8px; padding: 24px; box-shadow: 0 0 30px rgba(251, 191, 36, 0.04); }
+        .mk-card-red   { border: 1px solid rgba(255, 32, 64, 0.3);  background: rgba(255, 32, 64, 0.025); border-left: 3px solid var(--mk-red);   border-radius: 8px; padding: 24px; box-shadow: 0 0 30px rgba(255, 32, 64, 0.05); }
+        .mk-card-blue  { border: 1px solid rgba(59, 130, 246, 0.3); background: rgba(59, 130, 246, 0.025); border-left: 3px solid var(--mk-blue); border-radius: 8px; padding: 24px; box-shadow: 0 0 30px rgba(59, 130, 246, 0.05); }
+        .mk-card-deep  { border: 1px solid rgba(30, 58, 138, 0.45); background: rgba(30, 58, 138, 0.04); border-left: 3px solid #60a5fa; border-radius: 8px; padding: 24px; box-shadow: 0 0 30px rgba(30, 58, 138, 0.05); }
+        .mk-card-amber { border: 1px solid rgba(251, 191, 36, 0.3); background: rgba(251, 191, 36, 0.02); border-left: 3px solid var(--mk-amber); border-radius: 8px; padding: 24px; box-shadow: 0 0 30px rgba(251, 191, 36, 0.04); }
 
-        /* Frame for hero image with RGB underglow */
+        /* Frame for hero image with red+blue underglow (matches the keyboard's bicolor backlight) */
         .mk-frame {
             border-radius: 8px; overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.12);
             box-shadow:
-                0 0 50px rgba(0, 255, 159, 0.12),
-                0 0 100px rgba(0, 212, 255, 0.08),
-                0 0 150px rgba(168, 85, 247, 0.06);
+                0 0 50px rgba(255, 32, 64, 0.18),
+                0 0 100px rgba(59, 130, 246, 0.12),
+                0 0 150px rgba(30, 58, 138, 0.08);
         }
 
         /* Brand pill (keycap-style) */
@@ -103,12 +103,12 @@
             margin: 4px;
         }
 
-        /* Links: subtle green underline that brightens on hover */
-        .mk-link { color: var(--mk-green); text-decoration: underline; text-decoration-color: rgba(0, 255, 159, 0.4); text-underline-offset: 4px; transition: all 0.3s; }
-        .mk-link:hover { color: var(--mk-cyan); text-decoration-color: var(--mk-cyan); text-shadow: 0 0 12px rgba(0, 212, 255, 0.5); }
+        /* Links */
+        .mk-link { color: var(--mk-red); text-decoration: underline; text-decoration-color: rgba(255, 32, 64, 0.4); text-underline-offset: 4px; transition: all 0.3s; }
+        .mk-link:hover { color: var(--mk-blue); text-decoration-color: var(--mk-blue); text-shadow: 0 0 12px rgba(59, 130, 246, 0.5); }
 
         /* Footer signature */
-        .mk-signature { color: var(--mk-green); font-family: 'JetBrains Mono', monospace; }
+        .mk-signature { color: var(--mk-red); font-family: 'JetBrains Mono', monospace; }
     </style>
 </head>
 <body class="bg-dark text-white font-['Inter'] min-h-screen">
@@ -140,15 +140,7 @@
 
     <main class="pt-28 pb-24 px-6 relative">
         <div class="max-w-3xl mx-auto relative">
-            <a href="../blog.html" class="text-white/40 hover:text-mech-green text-sm mb-8 inline-block transition-colors">&larr; Back to Blog</a>
-
-            <!-- Hero image (the gaming keyboard from the blog index) -->
-            <figure class="mb-10">
-                <div class="mk-frame aspect-[16/9]">
-                    <img src="../images/blog/gaming-keyboard.jpg" alt="High-end mechanical gaming keyboard with RGB underglow" class="w-full h-full object-cover" loading="eager">
-                </div>
-                <figcaption class="text-white/40 text-xs italic mt-3 text-center font-['JetBrains_Mono'] tracking-wider">RGB underglow · the kind of peripheral that matters more than you think</figcaption>
-            </figure>
+            <a href="../blog.html" class="text-white/40 hover:text-mech-red text-sm mb-8 inline-block transition-colors">&larr; Back to Blog</a>
 
             <!-- Header -->
             <div class="flex justify-center mb-6">
@@ -160,16 +152,24 @@
             <div class="flex flex-wrap items-center justify-center gap-2 mb-5">
                 <span class="text-xs text-white/40 font-['JetBrains_Mono'] tracking-wider">FEBRUARY 12, 2023</span>
                 <span class="text-white/20">·</span>
-                <span class="text-xs font-medium px-2 py-0.5 rounded mk-tag-green font-['JetBrains_Mono'] tracking-wider">OPINION</span>
+                <span class="text-xs font-medium px-2 py-0.5 rounded mk-tag-red font-['JetBrains_Mono'] tracking-wider">OPINION</span>
                 <span class="text-white/20">·</span>
-                <span class="text-xs font-medium px-2 py-0.5 rounded mk-tag-cyan font-['JetBrains_Mono'] tracking-wider">HARDWARE</span>
+                <span class="text-xs font-medium px-2 py-0.5 rounded mk-tag-blue font-['JetBrains_Mono'] tracking-wider">HARDWARE</span>
             </div>
-            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-5 leading-[1.1] text-center">Do You Need a New <span class="text-mech-green">Mouse</span> &amp; <span class="text-mech-cyan">Keyboard</span>?</h1>
-            <p class="text-white/60 text-lg leading-relaxed mb-12 max-w-2xl mx-auto text-center">Short answer: yes. After 15+ years on computers for a living, here's why the cheap setup is silently costing you &mdash; and what to actually buy.</p>
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-5 leading-[1.1] text-center">Do You Need a New <span class="text-mech-red">Mouse</span> &amp; <span class="text-mech-blue">Keyboard</span>?</h1>
+            <p class="text-white/60 text-lg leading-relaxed mb-10 max-w-2xl mx-auto text-center">Short answer: yes. After 15+ years on computers for a living, here's why the cheap setup is silently costing you &mdash; and what to actually buy.</p>
+
+            <!-- Hero image (the gaming keyboard from the blog index) -->
+            <figure class="mb-14">
+                <div class="mk-frame aspect-[16/9]">
+                    <img src="../images/blog/gaming-keyboard.jpg" alt="High-end mechanical gaming keyboard with red and blue backlight" class="w-full h-full object-cover" loading="eager">
+                </div>
+                <figcaption class="text-white/40 text-xs italic mt-3 text-center font-['JetBrains_Mono'] tracking-wider">Backlit mechanical keys · the kind of peripheral that matters more than you think</figcaption>
+            </figure>
 
             <!-- ======== Section 1: The Case ======== -->
             <section class="mb-14">
-                <p class="mk-label-green">01 · The Case</p>
+                <p class="mk-label-red">01 · The Case</p>
                 <h2 class="text-2xl md:text-3xl font-semibold text-white mb-6 leading-snug">Get a high-quality mouse and keyboard.</h2>
                 <div class="text-white/70 leading-relaxed space-y-5 text-base">
                     <p>I've spent over <strong class="text-white">15 years working on computers for a living</strong>, and even if you're not a "technical" person like a developer or sysadmin, you'll still benefit long-term from a high-quality mouse and keyboard.</p>
@@ -179,28 +179,28 @@
 
             <!-- ======== Section 2: Wired vs Wireless ======== -->
             <section class="mb-14">
-                <p class="mk-label-cyan">02 · Wired vs Wireless</p>
+                <p class="mk-label-blue">02 · Wired vs Wireless</p>
                 <h2 class="text-2xl md:text-3xl font-semibold text-white mb-6 leading-snug">When does the cable matter?</h2>
 
-                <div class="mk-card-cyan mb-5">
-                    <p class="mk-label-cyan" style="margin-bottom: 8px;">GAMING</p>
+                <div class="mk-card-blue mb-5">
+                    <p class="mk-label-blue" style="margin-bottom: 8px;">GAMING</p>
                     <p class="text-white/70 text-sm leading-relaxed">Always wired. Even in 2020, you can feel the difference. Maybe in a few more years wireless catches up &mdash; not yet.</p>
                 </div>
 
-                <div class="mk-card-purple mb-5">
-                    <p class="mk-label-purple" style="margin-bottom: 8px;">DESIGN WORK</p>
+                <div class="mk-card-deep mb-5">
+                    <p class="mk-label-deep" style="margin-bottom: 8px;">DESIGN WORK</p>
                     <p class="text-white/70 text-sm leading-relaxed">Have the option of plugging in. Switch over to wireless on days you want freedom of movement. For accuracy, wired still wins.</p>
                 </div>
 
-                <div class="mk-card-green">
-                    <p class="mk-label-green" style="margin-bottom: 8px;">PROFESSIONAL USE</p>
+                <div class="mk-card-red">
+                    <p class="mk-label-red" style="margin-bottom: 8px;">PROFESSIONAL USE</p>
                     <p class="text-white/70 text-sm leading-relaxed">If you make a decent living and own a multiple-hundred-to-several-thousand-dollar computer, having a 15-year-old cheap mouse is plain silly. <strong class="text-white">Buy quality.</strong> Your fingers, arms, wrists, and sanity will thank you for the rest of your life.</p>
                 </div>
             </section>
 
             <!-- ======== Section 3: Non-gamers ======== -->
             <section class="mb-14">
-                <p class="mk-label-purple">03 · For Non-Gamers</p>
+                <p class="mk-label-deep">03 · For Non-Gamers</p>
                 <h2 class="text-2xl md:text-3xl font-semibold text-white mb-6 leading-snug">Do you really need high-end peripherals?</h2>
                 <div class="text-white/70 leading-relaxed space-y-5 text-base">
                     <p><strong class="text-white">No, you don't <em>need</em> them.</strong> But you'll absolutely notice the difference. Your mouse will glide more seamlessly across the screen, and that matters &mdash; you'll likely use a computer for tens of thousands of hours over your lifetime, until devices like these become obsolete.</p>
@@ -219,30 +219,30 @@
                     <p class="text-white/70 text-sm leading-relaxed">Skip Bluetooth unless it's a temporary convenience or strictly necessary. Bluetooth is laggy and less accurate. Use the <strong class="text-white">2.4G dongle</strong> if your mouse offers one. Best is wired &mdash; but that brings back the cable feel.</p>
                 </div>
 
-                <div class="mk-card-cyan">
-                    <p class="mk-label-cyan" style="margin-bottom: 8px;">KEYBOARD</p>
+                <div class="mk-card-blue">
+                    <p class="mk-label-blue" style="margin-bottom: 8px;">KEYBOARD</p>
                     <p class="text-white/70 text-sm leading-relaxed">Modern wireless keyboards are usually fast enough that you won't notice much difference, but older ones may lag or degrade over time.</p>
                 </div>
             </section>
 
             <!-- ======== Section 5: Brands ======== -->
             <section class="mb-14">
-                <p class="mk-label-green">05 · Brands I Like</p>
+                <p class="mk-label-red">05 · Brands I Like</p>
                 <h2 class="text-2xl md:text-3xl font-semibold text-white mb-6 leading-snug">Where to actually shop.</h2>
 
                 <div class="space-y-5">
-                    <div class="mk-card-green">
-                        <a href="https://www.corsair.com/" target="_blank" rel="noopener" class="font-['JetBrains_Mono'] text-base font-bold text-mech-green hover:text-white transition-colors">Corsair &rarr;</a>
+                    <div class="mk-card-red">
+                        <a href="https://www.corsair.com/" target="_blank" rel="noopener" class="font-['JetBrains_Mono'] text-base font-bold text-mech-red hover:text-white transition-colors">Corsair &rarr;</a>
                         <p class="text-white/65 text-sm mt-2 leading-relaxed">I have several high-end mice from them. They make good, long-lasting, accurate products.</p>
                     </div>
 
-                    <div class="mk-card-cyan">
-                        <a href="https://www.logitech.com/" target="_blank" rel="noopener" class="font-['JetBrains_Mono'] text-base font-bold text-mech-cyan hover:text-white transition-colors">Logitech &rarr;</a>
+                    <div class="mk-card-blue">
+                        <a href="https://www.logitech.com/" target="_blank" rel="noopener" class="font-['JetBrains_Mono'] text-base font-bold text-mech-blue hover:text-white transition-colors">Logitech &rarr;</a>
                         <p class="text-white/65 text-sm mt-2 leading-relaxed">Unlike Corsair, which targets high-end gamers, Logitech covers the full spectrum &mdash; from entry level to keyboards even pricier than Corsair (~$250).</p>
                     </div>
 
-                    <div class="mk-card-purple">
-                        <a href="https://www.apple.com/shop/mac/mac-accessories/mice-keyboards" target="_blank" rel="noopener" class="font-['JetBrains_Mono'] text-base font-bold text-mech-purple hover:text-white transition-colors">Apple &rarr;</a>
+                    <div class="mk-card-deep">
+                        <a href="https://www.apple.com/shop/mac/mac-accessories/mice-keyboards" target="_blank" rel="noopener" class="font-['JetBrains_Mono'] text-base font-bold text-mech-deep hover:text-white transition-colors">Apple &rarr;</a>
                         <p class="text-white/65 text-sm mt-2 leading-relaxed">Quality default products in true Apple style &mdash; with very limited (if any) customization.</p>
                     </div>
                 </div>
@@ -255,7 +255,7 @@
             <!-- Footer signature -->
             <div class="mt-16 pt-8 border-t border-white/10 flex items-center justify-between flex-wrap gap-4">
                 <p class="text-sm mk-signature">Written by Bryan Totty &middot; Feb 2023</p>
-                <a href="../blog.html" class="text-white/40 hover:text-mech-cyan text-sm transition-colors">More posts &rarr;</a>
+                <a href="../blog.html" class="text-white/40 hover:text-mech-blue text-sm transition-colors">More posts &rarr;</a>
             </div>
         </div>
     </main>
