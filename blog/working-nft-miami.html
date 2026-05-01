@@ -15,14 +15,110 @@
     <link rel="canonical" href="https://bryantotty.com/blog/working-nft-miami.html">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config = { theme: { extend: { colors: { dark: '#050505', glow: '#c8102e' } } } }</script>
+    <script>tailwind.config = { theme: { extend: { colors: { dark: '#050505', glow: '#c8102e', miami: { pink: '#ff2e88', cyan: '#00f0ff', purple: '#9d4edd', sunset: '#ff6b35' } } } } }</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;700&family=Audiowide&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
+    <style>
+        /* ============ MIAMI VICE PALETTE ============ */
+        :root {
+            --m-pink: #ff2e88;
+            --m-cyan: #00f0ff;
+            --m-purple: #9d4edd;
+            --m-sunset: #ff6b35;
+        }
+
+        /* Miami sunset sky background — overrides default grid for this page only */
+        .miami-sky {
+            position: fixed; inset: 0; z-index: 0; pointer-events: none;
+            background:
+                radial-gradient(ellipse at 20% 0%, rgba(255, 46, 136, 0.18), transparent 50%),
+                radial-gradient(ellipse at 80% 0%, rgba(0, 240, 255, 0.10), transparent 55%),
+                radial-gradient(ellipse at 50% 100%, rgba(157, 78, 221, 0.18), transparent 60%);
+        }
+        .miami-grid {
+            position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.5;
+            background-image:
+                linear-gradient(rgba(255, 46, 136, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 240, 255, 0.05) 1px, transparent 1px);
+            background-size: 60px 60px;
+            animation: m-drift 30s linear infinite;
+        }
+        @keyframes m-drift { to { background-position: 60px 60px; } }
+
+        /* Neon eyebrow */
+        .m-eyebrow {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
+            padding: 6px 14px; border-radius: 999px;
+            color: var(--m-cyan); border: 1px solid rgba(0, 240, 255, 0.4);
+            background: rgba(0, 240, 255, 0.06);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.1);
+        }
+        .m-eyebrow-dot {
+            width: 6px; height: 6px; border-radius: 50%;
+            background: var(--m-pink); box-shadow: 0 0 10px var(--m-pink);
+            animation: m-pulse 2s ease-in-out infinite;
+        }
+        @keyframes m-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+        /* Section eyebrows in alternating Miami colors */
+        .m-section-label-pink { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--m-pink); margin-bottom: 12px; text-shadow: 0 0 8px rgba(255, 46, 136, 0.4); }
+        .m-section-label-cyan { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--m-cyan); margin-bottom: 12px; text-shadow: 0 0 8px rgba(0, 240, 255, 0.4); }
+        .m-section-label-purple { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--m-purple); margin-bottom: 12px; text-shadow: 0 0 8px rgba(157, 78, 221, 0.4); }
+        .m-section-label-sunset { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--m-sunset); margin-bottom: 12px; text-shadow: 0 0 8px rgba(255, 107, 53, 0.4); }
+
+        /* Title with neon gradient */
+        .m-title {
+            background: linear-gradient(95deg, var(--m-pink) 0%, var(--m-cyan) 50%, var(--m-purple) 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: m-gradient 8s ease infinite;
+            font-family: 'Audiowide', 'Inter', sans-serif;
+            letter-spacing: 0.02em;
+        }
+        @keyframes m-gradient { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+
+        /* Neon CTA tag */
+        .m-tag-pink { background: rgba(255, 46, 136, 0.1); color: var(--m-pink); border: 1px solid rgba(255, 46, 136, 0.4); }
+        .m-tag-cyan { background: rgba(0, 240, 255, 0.1); color: var(--m-cyan); border: 1px solid rgba(0, 240, 255, 0.4); }
+
+        /* Frame cards with neon left border */
+        .m-card-pink { border: 1px solid rgba(255, 46, 136, 0.3); background: rgba(255, 46, 136, 0.025); border-left: 3px solid var(--m-pink); border-radius: 8px; padding: 24px; box-shadow: 0 0 30px rgba(255, 46, 136, 0.05); }
+        .m-card-cyan { border: 1px solid rgba(0, 240, 255, 0.3); background: rgba(0, 240, 255, 0.025); border-left: 3px solid var(--m-cyan); border-radius: 8px; padding: 24px; box-shadow: 0 0 30px rgba(0, 240, 255, 0.05); }
+
+        .m-link { color: var(--m-pink); text-decoration: underline; text-decoration-color: rgba(255, 46, 136, 0.4); text-underline-offset: 4px; transition: all 0.3s; }
+        .m-link:hover { color: var(--m-cyan); text-decoration-color: var(--m-cyan); text-shadow: 0 0 12px rgba(0, 240, 255, 0.5); }
+
+        /* Use case pill */
+        .m-use-case {
+            font-family: 'JetBrains Mono', monospace; font-size: 11px;
+            padding: 5px 12px; border-radius: 4px;
+            border: 1px solid rgba(255, 46, 136, 0.4);
+            color: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 46, 136, 0.08);
+        }
+
+        /* Image polaroid frame with neon glow */
+        .m-frame { border-radius: 8px; overflow: hidden; border: 1px solid rgba(255, 46, 136, 0.4); box-shadow: 0 0 40px rgba(255, 46, 136, 0.15), 0 0 80px rgba(0, 240, 255, 0.05); }
+        .m-frame-cyan { border-radius: 8px; overflow: hidden; border: 1px solid rgba(0, 240, 255, 0.4); box-shadow: 0 0 40px rgba(0, 240, 255, 0.15), 0 0 80px rgba(157, 78, 221, 0.05); }
+
+        /* Palm tree decorations - position absolutely behind sections */
+        .m-palm { position: absolute; pointer-events: none; opacity: 0.55; filter: drop-shadow(0 0 14px rgba(255, 46, 136, 0.6)); }
+        .m-palm-cyan { filter: drop-shadow(0 0 14px rgba(0, 240, 255, 0.6)); }
+
+        /* Footer signature */
+        .m-signature { color: var(--m-cyan); font-family: 'JetBrains Mono', monospace; }
+    </style>
 </head>
 <body class="bg-dark text-white font-['Inter'] min-h-screen">
-    <div class="grid-bg" aria-hidden="true"></div>
+    <!-- Miami sunset backdrop replaces the default grid for this page -->
+    <div class="miami-sky" aria-hidden="true"></div>
+    <div class="miami-grid" aria-hidden="true"></div>
     <nav class="fixed top-0 w-full z-50 bg-dark/80 backdrop-blur-xl border-b border-white/5">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="/" class="text-xl font-black tracking-tighter"><span class="text-white">BRYAN</span><span class="text-glow">TOTTY</span></a>
@@ -46,44 +142,167 @@
         </div>
     </nav>
 
-    <main class="pt-28 pb-20 px-6">
-        <div class="max-w-3xl mx-auto">
-            <a href="../blog.html" class="text-white/40 hover:text-glow text-sm mb-6 inline-block transition-colors">&larr; Back to Blog</a>
-            <div class="flex items-center gap-3 mb-4">
-                <span class="text-xs text-white/40 font-['JetBrains_Mono']">February 12, 2023</span>
-                <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-purple-500/10 text-purple-400">Crypto</span>
+    <main class="pt-28 pb-24 px-6 relative">
+
+        <!-- Decorative palm trees (electric / neon) -->
+        <svg class="m-palm hidden md:block" style="top: 180px; left: -40px; width: 130px;" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <!-- trunk -->
+            <path d="M50 200 Q48 150 52 100 Q50 60 50 30" stroke="url(#palmGradPink)" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <path d="M50 200 Q48 150 52 100 Q50 60 50 30" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-dasharray="4 8"/>
+            <!-- fronds (radiating) -->
+            <g stroke="url(#palmGradPink)" stroke-width="2.5" fill="none" stroke-linecap="round">
+                <path d="M50 30 Q30 15 5 20"/>
+                <path d="M50 30 Q70 15 95 20"/>
+                <path d="M50 30 Q25 25 0 50"/>
+                <path d="M50 30 Q75 25 100 50"/>
+                <path d="M50 30 Q40 5 30 0"/>
+                <path d="M50 30 Q60 5 70 0"/>
+                <path d="M50 30 Q35 35 10 70"/>
+                <path d="M50 30 Q65 35 90 70"/>
+            </g>
+            <defs>
+                <linearGradient id="palmGradPink" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#ff2e88"/>
+                    <stop offset="100%" stop-color="#9d4edd"/>
+                </linearGradient>
+            </defs>
+        </svg>
+
+        <svg class="m-palm m-palm-cyan hidden md:block" style="top: 240px; right: -50px; width: 150px; transform: scaleX(-1);" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M50 200 Q48 150 52 100 Q50 60 50 30" stroke="url(#palmGradCyan)" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <path d="M50 200 Q48 150 52 100 Q50 60 50 30" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-dasharray="4 8"/>
+            <g stroke="url(#palmGradCyan)" stroke-width="2.5" fill="none" stroke-linecap="round">
+                <path d="M50 30 Q30 15 5 20"/>
+                <path d="M50 30 Q70 15 95 20"/>
+                <path d="M50 30 Q25 25 0 50"/>
+                <path d="M50 30 Q75 25 100 50"/>
+                <path d="M50 30 Q40 5 30 0"/>
+                <path d="M50 30 Q60 5 70 0"/>
+                <path d="M50 30 Q35 35 10 70"/>
+                <path d="M50 30 Q65 35 90 70"/>
+            </g>
+            <defs>
+                <linearGradient id="palmGradCyan" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#00f0ff"/>
+                    <stop offset="100%" stop-color="#9d4edd"/>
+                </linearGradient>
+            </defs>
+        </svg>
+
+        <div class="max-w-3xl mx-auto relative">
+            <a href="../blog.html" class="text-white/40 hover:text-miami-cyan text-sm mb-8 inline-block transition-colors">&larr; Back to Blog</a>
+
+            <!-- Header -->
+            <div class="flex justify-center mb-6">
+                <div class="m-eyebrow">
+                    <span class="m-eyebrow-dot"></span>
+                    Miami &middot; February 2023
+                </div>
             </div>
-            <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-8 text-center">Working Miami NFT Week</h1>
+            <div class="flex flex-wrap items-center justify-center gap-2 mb-5">
+                <span class="text-xs text-white/40 font-['JetBrains_Mono'] tracking-wider">FEBRUARY 12, 2023</span>
+                <span class="text-white/20">&middot;</span>
+                <span class="text-xs font-medium px-2 py-0.5 rounded m-tag-pink font-['JetBrains_Mono'] tracking-wider">CRYPTO</span>
+                <span class="text-white/20">&middot;</span>
+                <span class="text-xs font-medium px-2 py-0.5 rounded m-tag-cyan font-['JetBrains_Mono'] tracking-wider">EVENT</span>
+            </div>
+            <h1 class="m-title text-4xl md:text-6xl font-bold tracking-tight mb-5 leading-[1.05] text-center">Working Miami NFT Week</h1>
+            <p class="text-white/60 text-lg leading-relaxed mb-12 max-w-2xl mx-auto text-center">A behind-the-scenes look at the first-ever Miami NFT Week &mdash; thousands of attendees, neon-lit Wynwood, and the start of a wild tech week run.</p>
 
-            <div class="text-white/70 leading-relaxed space-y-6">
-                <p>I had the honor to work the first ever Miami NFT Week event in Miami, FL 2022. During this experience I made contacts internal to the event and with many of the attendees and speakers.</p>
+            <!-- Hero image -->
+            <figure class="mb-14">
+                <div class="m-frame aspect-[16/9]">
+                    <img src="../images/blog/miami-nft-week-logo.jpg" alt="Miami NFT Week" class="w-full h-full object-cover" loading="eager">
+                </div>
+                <figcaption class="text-white/40 text-xs italic mt-3 text-center font-['JetBrains_Mono'] tracking-wider">Miami NFT Week &middot; Mana Wynwood</figcaption>
+            </figure>
 
-                <p>There were thousands of people who attended the event at the Mana Wynwood convention center this year. The event officially kicked off tech week in Miami and started the huge amount of other events that were about to come after. Some include Bitcoin and Shitcoin.</p>
+            <!-- ======== Section 1: The Event ======== -->
+            <section class="mb-16">
+                <p class="m-section-label-pink">01 &middot; The Event</p>
+                <h2 class="text-2xl md:text-3xl font-semibold text-white mb-6 leading-snug">First-ever Miami NFT Week.</h2>
+                <div class="text-white/70 leading-relaxed space-y-5 text-base">
+                    <p>I had the honor of working the first-ever <strong class="text-white">Miami NFT Week</strong> in Miami, FL, 2022. During the run I made contacts internal to the event and connected with many of the attendees and speakers.</p>
+                    <p>Thousands of people poured into the <strong class="text-white">Mana Wynwood convention center</strong>. The event officially kicked off tech week in Miami and set the tone for the wave of conferences that followed &mdash; Bitcoin, Shitcoin, the whole circuit.</p>
+                </div>
+            </section>
 
-                <p>The event was very artistic and fitting for the Wynwood, Miami art district. You could see vans driving by with fullscreen flashing advertisements of NFT projects and beautiful artwork throughout the entire event.</p>
+            <!-- ======== Section 2: The Wynwood Vibe ======== -->
+            <section class="mb-16">
+                <p class="m-section-label-cyan">02 &middot; The Vibe</p>
+                <h2 class="text-2xl md:text-3xl font-semibold text-white mb-6 leading-snug">Wynwood, in true Miami color.</h2>
+                <div class="text-white/70 leading-relaxed space-y-5 text-base mb-8">
+                    <p>The whole event leaned into the artistic identity of the <strong class="text-white">Wynwood arts district</strong>. Vans rolled by with full-screen flashing displays of NFT projects. The walls of the venue felt like an extension of the neighborhood &mdash; murals, canvases, and digital art everywhere you looked.</p>
+                </div>
 
-                <img src="../images/blog/miami-nft-week-logo.jpg" alt="Miami NFT Week" class="rounded-lg w-full my-8" loading="lazy">
+                <figure class="mb-8">
+                    <div class="m-frame-cyan aspect-[16/9]">
+                        <img src="../images/blog/miami-nft-week-setup.jpg" alt="Miami NFT Week main stage" class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <figcaption class="text-white/40 text-xs italic mt-3 text-center font-['JetBrains_Mono'] tracking-wider">Main stage lit up in Miami color</figcaption>
+                </figure>
 
-                <p>The future of the NFT space is vast. The conference mostly focused on the art perspective and image use cases for NFTs, but there are numerous other use cases that will be built out over time. For example, we are starting to see NFTs moving into real estate utilizing their proof of ownership capabilities. We have also seen use cases that use the NFTs for access to events and function as tickets, but the improvement over a traditional ticket is that you can add on features in the future and have a stronger relationship interaction with your end customer.</p>
+                <p class="text-white/70 leading-relaxed text-base">The main stage was lit up with multiple projectors and professional video and audio equipment &mdash; in true Miami style and color scheme.</p>
+            </section>
 
-                <img src="../images/blog/miami-nft-week-setup.jpg" alt="Miami NFT Week Main Stage" class="rounded-lg w-full my-8" loading="lazy">
+            <!-- ======== Section 3: Future of NFTs ======== -->
+            <section class="mb-16">
+                <p class="m-section-label-purple">03 &middot; What's Next</p>
+                <h2 class="text-2xl md:text-3xl font-semibold text-white mb-6 leading-snug">The future of NFTs is wider than the art.</h2>
+                <p class="text-white/70 leading-relaxed text-base mb-6">The conference mostly framed NFTs through the lens of art and image use cases, but that's just the surface. Other use cases are already emerging:</p>
 
-                <p>The main stage setup was lit up with multiple projectors and professional video and audio equipment in true Miami style and color scheme.</p>
+                <div class="m-card-pink mb-6">
+                    <p class="m-section-label-pink" style="margin-bottom: 8px;">REAL ESTATE</p>
+                    <p class="text-white/70 text-sm leading-relaxed">NFTs are moving into property, leveraging their proof-of-ownership capabilities to streamline title and transfer.</p>
+                </div>
 
-                <p>NFTs are also being used for Decentralized Autonomous Organizations (DAOs) in ways that may reward or track contribution or membership. The resounding focus that I heard to make these NFT projects successful was around building initial community. It was brought up several times that it is often better to focus on building your community first before you put on a technological solution without thinking through the long term consequences.</p>
+                <div class="m-card-cyan mb-6">
+                    <p class="m-section-label-cyan" style="margin-bottom: 8px;">EVENT TICKETING</p>
+                    <p class="text-white/70 text-sm leading-relaxed">NFTs as tickets &mdash; with the upgrade that you can layer on features over time and maintain a stronger relationship with the end customer long after the event is over.</p>
+                </div>
 
-                <img src="../images/blog/miami-nft-week-venue.jpg" alt="Miami NFT Week setting up main stage" class="rounded-lg w-full my-8" loading="lazy">
+                <div class="m-card-pink mb-6">
+                    <p class="m-section-label-purple" style="margin-bottom: 8px;">DAOs &amp; COMMUNITY</p>
+                    <p class="text-white/70 text-sm leading-relaxed">NFTs are being used inside Decentralized Autonomous Organizations to reward or track contribution and membership. The recurring lesson from the stage: <em class="text-white">build community first, then layer in the technology</em>. Don't ship a tech solution without thinking through long-term consequences.</p>
+                </div>
 
-                <p>The staff was onsite to setup every detail before the event started and help with anything during the event.</p>
+                <div class="m-card-cyan">
+                    <p class="m-section-label-sunset" style="margin-bottom: 8px;">MUSICIANS</p>
+                    <p class="text-white/70 text-sm leading-relaxed">A strong potential use case &mdash; artists getting direct contact with their fans and cutting out the middleman. The musician decides what logic gets programmed into the smart contract: early access to content, unreleased material, event VIP access, anything they want to offer.</p>
+                </div>
+            </section>
 
-                <p>Musicians also have another potential strong use case for NFTs so that artists can get more direct contact with their fans and work to increase their revenue streams by cutting out the middle man. The musicians can decide on what logic they want programmed into their NFT smart contract and provide early access to content, access to unreleased content, event VIP access, or anything else they'd wish to provide to their fans.</p>
+            <!-- Venue image -->
+            <figure class="mb-16">
+                <div class="m-frame aspect-[16/9]">
+                    <img src="../images/blog/miami-nft-week-venue.jpg" alt="Setting up the Miami NFT Week main stage" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <figcaption class="text-white/40 text-xs italic mt-3 text-center font-['JetBrains_Mono'] tracking-wider">Staff setting up the main stage</figcaption>
+            </figure>
 
-                <p>I spent time working the VIP tent where French Montana and Wyclef Jean held a special meet and greet for the Degen VIP ticket holders.</p>
+            <!-- ======== Section 4: The Day Job ======== -->
+            <section class="mb-16">
+                <p class="m-section-label-sunset">04 &middot; On The Floor</p>
+                <h2 class="text-2xl md:text-3xl font-semibold text-white mb-6 leading-snug">Working the Degen VIP tent.</h2>
+                <div class="text-white/70 leading-relaxed space-y-5 text-base">
+                    <p>The staff was on-site to set up every detail before the event opened and handle anything that came up during the run.</p>
+                    <p>I spent my time working the <strong class="text-white">VIP tent</strong> &mdash; where <strong class="text-white">French Montana</strong> and <strong class="text-white">Wyclef Jean</strong> held a special meet-and-greet for Degen VIP ticket holders.</p>
+                </div>
+            </section>
 
-                <p><a href="https://miaminftweek.com/" target="_blank" rel="noopener" class="text-glow hover:text-red-300 underline">miaminftweek.com</a></p>
+            <!-- CTA / Link out -->
+            <div class="mb-16 text-center">
+                <a href="https://miaminftweek.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-3 font-['JetBrains_Mono'] text-xs px-6 py-3 rounded-lg border border-miami-pink/40 text-miami-pink hover:bg-miami-pink/10 hover:text-white transition-all" style="box-shadow: 0 0 30px rgba(255, 46, 136, 0.15);">
+                    miaminftweek.com
+                    <span aria-hidden="true">&rarr;</span>
+                </a>
             </div>
 
-            <p class="text-white/30 text-sm mt-12 font-['JetBrains_Mono']">Written by Bryan Totty</p>
+            <!-- Footer signature -->
+            <div class="mt-16 pt-8 border-t border-white/10 flex items-center justify-between flex-wrap gap-4">
+                <p class="text-sm m-signature">Written by Bryan Totty &middot; Feb 2023</p>
+                <a href="../blog.html" class="text-white/40 hover:text-miami-cyan text-sm transition-colors">More posts &rarr;</a>
+            </div>
         </div>
     </main>
 
