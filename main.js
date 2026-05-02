@@ -127,9 +127,9 @@ if (merchGrid) {
                             : '')
                     +   '</div>'
                     +   '<div class="merch-meta">'
+                    +     (price ? '<span class="merch-price">' + price + '</span>' : '')
                     +     '<strong>' + title + '</strong>'
-                    +     (price ? '<span>' + price + '</span>' : '')
-                    +     '<em>Buy on Etsy →</em>'
+                    +     '<span class="merch-link">Shop on Etsy &#8599;</span>'
                     +   '</div>'
                     + '</a>';
             }).join('');
@@ -143,7 +143,7 @@ if (merchGrid) {
                         year: 'numeric', month: 'short', day: 'numeric'
                     });
                 } catch (_e) { /* fall back to ISO */ }
-                merchSyncedAt.textContent = '> Storefront synced ' + when;
+                merchSyncedAt.textContent = 'Synced ' + when;
             }
         })
         .catch(function (err) {
@@ -151,8 +151,9 @@ if (merchGrid) {
             const fallback = ''
                 + '<a class="merch-card" href="https://www.etsy.com/shop/RedTigerUnlimited" target="_blank" rel="noopener noreferrer">'
                 +   '<div class="merch-meta">'
-                +     '<strong>Visit the Red Tiger Unlimited storefront on Etsy →</strong>'
-                +     '<em>Live products</em>'
+                +     '<span class="merch-price">Live products</span>'
+                +     '<strong>Visit the Red Tiger Unlimited storefront on Etsy</strong>'
+                +     '<span class="merch-link">Shop on Etsy &#8599;</span>'
                 +   '</div>'
                 + '</a>';
             merchGrid.innerHTML = fallback;

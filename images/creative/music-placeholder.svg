@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" role="img" aria-label="Music section placeholder">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#1a0a0e"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.55">
+      <stop offset="0%" stop-color="#c8102e" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#c8102e" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#c8102e" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="600" fill="url(#g)"/>
+  <rect width="1200" height="600" fill="url(#grid)"/>
+  <rect width="1200" height="600" fill="url(#glow)"/>
+  <g font-family="JetBrains Mono, monospace" fill="#c8102e" fill-opacity="0.25">
+    <text x="60" y="80" font-size="14" letter-spacing="6">&gt; MUSIC</text>
+    <text x="60" y="540" font-size="11" letter-spacing="4">TOTTY MUSIC LLC // RED T7GER // B. TOTTY</text>
+  </g>
+  <g transform="translate(600 300)" font-family="Inter, sans-serif" text-anchor="middle">
+    <text font-size="64" font-weight="900" fill="#ffffff" letter-spacing="-2">CATALOG IMAGE</text>
+    <text y="50" font-size="14" font-weight="500" fill="#ffffff" fill-opacity="0.5" letter-spacing="3">PLACEHOLDER · REPLACE WITH REAL ARTWORK</text>
+  </g>
+</svg>
