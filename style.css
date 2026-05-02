@@ -1,5 +1,5 @@
 /* ========================================
-   BRYAN TOTTY — Hybrid Duality Theme
+   BRYAN TOTTY: Hybrid Duality Theme
    Clean tech surface + dark artistic edge
    ======================================== */
 
@@ -437,7 +437,7 @@ main, section, footer, nav {
 }
 
 /* ============================================================
-   CREATIVE STUDIO — Shared design tokens (used by Creative + About pages)
+   CREATIVE STUDIO: Shared design tokens (used by Creative + About pages)
    Lifted from per-page styles in about.html for consistency.
    Premium dark + Miami-accent layered palette for expressive sections.
    ============================================================ */
@@ -513,7 +513,7 @@ main, section, footer, nav {
 .studio-link:hover { color: var(--c-pink); text-decoration-color: var(--c-pink); text-shadow: 0 0 10px rgba(255, 46, 136, 0.4); }
 
 /* ============================================================
-   MERCH / SHOP CARDS — Creative shop section, Etsy product grid
+   MERCH / SHOP CARDS: Creative shop section, Etsy product grid
    Pattern lifted from redt7ger.com for consistency.
    Order inside card: price (small, dim) -> title (bold) -> amber CTA link
    ============================================================ */
@@ -635,7 +635,7 @@ main, section, footer, nav {
 }
 
 /* ============================================================
-   NAV — tighter spacing now that we have 7 nav items
+   NAV: tighter spacing now that we have 7 nav items
    ============================================================ */
 @media (min-width: 768px) {
     nav .md\:flex.gap-8 {
@@ -644,7 +644,7 @@ main, section, footer, nav {
 }
 
 /* ============================================================
-   SPEAKING — topic chips and rate card style
+   SPEAKING: topic chips and rate card style
    ============================================================ */
 .topic-chip {
     display: inline-flex; align-items: center; gap: 6px;
