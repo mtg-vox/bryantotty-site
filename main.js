@@ -27,13 +27,13 @@ if (contactForm) {
     const inquirySelect = document.getElementById('inquiry_type');
     const subjectField = document.getElementById('_subject');
     const SUBJECTS = {
-        general:    'bryantotty.com — General inquiry',
-        speaking:   'bryantotty.com — Speaking inquiry',
-        services:   'bryantotty.com — Music marketing / artist services',
-        collab:     'bryantotty.com — Creative collaboration',
-        business:   'bryantotty.com — Business / advisory',
-        press:      'bryantotty.com — Press / media',
-        recruiting: 'bryantotty.com — Recruiting / hiring'
+        general:    'bryantotty.com general inquiry',
+        speaking:   'bryantotty.com speaking inquiry',
+        services:   'bryantotty.com music marketing / artist services',
+        collab:     'bryantotty.com creative collaboration',
+        business:   'bryantotty.com business / advisory',
+        press:      'bryantotty.com press / media',
+        recruiting: 'bryantotty.com recruiting / hiring'
     };
     function syncSubject() {
         if (!subjectField || !inquirySelect) return;
@@ -120,7 +120,7 @@ if (merchGrid) {
                 const img = escape(item.localImage || '');
                 const price = item.price ? escape(item.price) : '';
                 return ''
-                    + '<a class="merch-card" href="' + href + '" target="_blank" rel="noopener noreferrer" aria-label="' + title + ' — open on Etsy">'
+                    + '<a class="merch-card" href="' + href + '" target="_blank" rel="noopener noreferrer" aria-label="' + title + ', open on Etsy">'
                     +   '<div class="merch-art">'
                     +     (img
                             ? '<img class="merch-img" src="' + img + '" alt="' + title + '" loading="lazy" width="800" height="800">'
