@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="800" viewBox="0 0 1600 800" role="img" aria-labelledby="title desc">
+  <title id="title">Red Tiger creative studio catalog image</title>
+  <desc id="desc">A dark red and black creative studio scene with apparel forms, album art panels, brand marks, a design table, and subtle Miami night lights.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#050304"/>
+      <stop offset="0.45" stop-color="#160508"/>
+      <stop offset="1" stop-color="#030505"/>
+    </linearGradient>
+    <radialGradient id="redAtmosphere" cx="50%" cy="45%" r="68%">
+      <stop offset="0" stop-color="#d71926" stop-opacity="0.48"/>
+      <stop offset="0.4" stop-color="#6f0710" stop-opacity="0.36"/>
+      <stop offset="0.84" stop-color="#050304" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="deskGlow" cx="54%" cy="79%" r="50%">
+      <stop offset="0" stop-color="#ff2432" stop-opacity="0.34"/>
+      <stop offset="0.42" stop-color="#7c0710" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#141010"/>
+      <stop offset="0.55" stop-color="#080707"/>
+      <stop offset="1" stop-color="#23070a"/>
+    </linearGradient>
+    <linearGradient id="cloth" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#171414"/>
+      <stop offset="0.55" stop-color="#070707"/>
+      <stop offset="1" stop-color="#2a070b"/>
+    </linearGradient>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2b1d1d"/>
+      <stop offset="1" stop-color="#0b0909"/>
+    </linearGradient>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="deepBlur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M80 0H0V80" fill="none" stroke="#fff" stroke-opacity="0.025" stroke-width="1"/>
+    </pattern>
+    <clipPath id="crop"><rect width="1600" height="800" rx="26"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#crop)">
+    <rect width="1600" height="800" fill="url(#bg)"/>
+    <rect width="1600" height="800" fill="url(#redAtmosphere)"/>
+    <rect width="1600" height="800" fill="url(#grid)"/>
+
+    <!-- studio window and Miami night outside -->
+    <g opacity="0.92">
+      <rect x="80" y="82" width="1440" height="320" rx="18" fill="#060606" stroke="#2f0b10" stroke-width="2"/>
+      <rect x="108" y="108" width="1384" height="268" rx="12" fill="#080607"/>
+      <g opacity="0.78">
+        <rect x="160" y="178" width="82" height="198" fill="#0c0809"/>
+        <rect x="270" y="132" width="126" height="244" fill="#090808"/>
+        <rect x="438" y="166" width="104" height="210" fill="#0d0809"/>
+        <rect x="598" y="116" width="86" height="260" fill="#07090a"/>
+        <rect x="940" y="146" width="108" height="230" fill="#0a0708"/>
+        <rect x="1112" y="108" width="134" height="268" fill="#0c0809"/>
+        <rect x="1298" y="156" width="86" height="220" fill="#090909"/>
+      </g>
+      <g filter="url(#softGlow)" opacity="0.82">
+        <path d="M116 326H540" stroke="#d71926" stroke-width="7"/>
+        <path d="M1014 318H1490" stroke="#d71926" stroke-width="7"/>
+        <path d="M250 120V374" stroke="#a80b14" stroke-width="5"/>
+        <path d="M1180 96V374" stroke="#c30f19" stroke-width="5"/>
+        <path d="M714 146H854" stroke="#00a8b5" stroke-width="3" stroke-opacity="0.22"/>
+        <path d="M1340 214H1428" stroke="#00a8b5" stroke-width="3" stroke-opacity="0.17"/>
+      </g>
+      <g fill="#ff3946" opacity="0.45">
+        <rect x="304" y="170" width="22" height="3"/><rect x="342" y="224" width="16" height="3"/><rect x="462" y="212" width="18" height="3"/>
+        <rect x="630" y="162" width="22" height="3"/><rect x="985" y="204" width="16" height="3"/><rect x="1138" y="154" width="24" height="3"/>
+        <rect x="1204" y="242" width="18" height="3"/><rect x="1324" y="196" width="21" height="3"/>
+      </g>
+      <g stroke="#050404" stroke-width="8" stroke-linecap="round" opacity="0.9">
+        <path d="M196 376C194 300 204 240 230 170"/>
+        <path d="M230 170C184 156 154 132 124 94"/><path d="M230 170C190 184 154 190 110 188"/><path d="M230 170C264 148 288 112 306 72"/>
+        <path d="M1366 376C1368 294 1352 236 1322 168"/>
+        <path d="M1322 168C1280 156 1244 130 1218 88"/><path d="M1322 168C1278 186 1238 192 1196 186"/><path d="M1322 168C1365 144 1392 106 1414 64"/>
+      </g>
+    </g>
+
+    <!-- red haze over work area -->
+    <rect y="360" width="1600" height="440" fill="url(#deskGlow)"/>
+    <g filter="url(#deepBlur)" opacity="0.62">
+      <ellipse cx="830" cy="670" rx="610" ry="90" fill="#cb101d"/>
+      <ellipse cx="560" cy="602" rx="280" ry="42" fill="#ff2432" opacity="0.34"/>
+      <ellipse cx="1070" cy="614" rx="290" ry="38" fill="#ff2432" opacity="0.24"/>
+    </g>
+
+    <!-- left apparel form -->
+    <g transform="translate(0 0)" filter="url(#softGlow)">
+      <ellipse cx="332" cy="334" rx="62" ry="38" fill="#090909" stroke="#3c0a10" stroke-width="4"/>
+      <path d="M286 363C262 410 244 492 236 621H432C424 494 406 410 382 363C358 381 313 381 286 363Z" fill="url(#cloth)" stroke="#2f0a0e" stroke-width="5"/>
+      <path d="M302 382C314 404 344 405 362 382" fill="none" stroke="#d71926" stroke-width="6" stroke-linecap="round" opacity="0.8"/>
+      <path d="M267 454H401" stroke="#ef1f2d" stroke-width="5" opacity="0.46"/>
+      <path d="M280 503C316 526 364 525 400 500" stroke="#5f060d" stroke-width="10" opacity="0.7"/>
+      <path d="M330 334V300" stroke="#2e0d10" stroke-width="8"/>
+      <circle cx="330" cy="288" r="20" fill="#111" stroke="#441015" stroke-width="3"/>
+    </g>
+
+    <!-- central catalog wall panels -->
+    <g transform="translate(0 0)">
+      <rect x="494" y="420" width="186" height="186" rx="14" fill="url(#panel)" stroke="#3b0d12" stroke-width="3"/>
+      <rect x="710" y="390" width="216" height="216" rx="16" fill="url(#panel)" stroke="#4b0d13" stroke-width="3"/>
+      <rect x="956" y="420" width="186" height="186" rx="14" fill="url(#panel)" stroke="#3b0d12" stroke-width="3"/>
+      <g filter="url(#softGlow)">
+        <path d="M520 560L648 458" stroke="#d71926" stroke-width="10" opacity="0.68"/>
+        <path d="M552 588L664 500" stroke="#7d0810" stroke-width="10" opacity="0.8"/>
+        <path d="M744 558L856 428" stroke="#e01c2a" stroke-width="12" opacity="0.72"/>
+        <path d="M790 588L900 468" stroke="#72070e" stroke-width="12" opacity="0.85"/>
+        <path d="M982 552L1112 462" stroke="#d71926" stroke-width="10" opacity="0.66"/>
+        <path d="M1008 586L1126 506" stroke="#7d0810" stroke-width="10" opacity="0.8"/>
+      </g>
+      <g fill="#ffffff" opacity="0.18">
+        <rect x="528" y="446" width="74" height="4"/><rect x="528" y="466" width="112" height="3"/>
+        <rect x="744" y="420" width="90" height="4"/><rect x="744" y="442" width="134" height="3"/>
+        <rect x="982" y="446" width="74" height="4"/><rect x="982" y="466" width="112" height="3"/>
+      </g>
+    </g>
+
+    <!-- right garment rack and cap/tee hints -->
+    <g filter="url(#softGlow)">
+      <path d="M1194 344H1398" stroke="#3a0c10" stroke-width="9" stroke-linecap="round"/>
+      <path d="M1222 344V638" stroke="#170f10" stroke-width="8"/>
+      <path d="M1370 344V638" stroke="#170f10" stroke-width="8"/>
+      <path d="M1234 384C1252 414 1276 430 1302 430C1328 430 1352 414 1370 384C1390 443 1400 526 1399 630H1205C1206 526 1214 443 1234 384Z" fill="url(#cloth)" stroke="#2f0a0e" stroke-width="5"/>
+      <path d="M1238 472H1370" stroke="#e11b29" stroke-width="6" opacity="0.48"/>
+      <path d="M1272 412C1288 431 1320 431 1338 412" fill="none" stroke="#c91521" stroke-width="5" stroke-linecap="round" opacity="0.72"/>
+      <path d="M1280 330C1306 306 1350 312 1372 342C1334 345 1302 343 1280 330Z" fill="#0d0d0d" stroke="#421016" stroke-width="4"/>
+    </g>
+
+    <!-- desk surface, patterns, laptop, tools -->
+    <g>
+      <path d="M92 648C452 590 1086 590 1508 648L1600 800H0Z" fill="#050505" opacity="0.9"/>
+      <path d="M150 666C500 620 1088 620 1450 666" stroke="#661018" stroke-width="2" opacity="0.7"/>
+      <g transform="rotate(-7 544 680)">
+        <rect x="428" y="628" width="260" height="92" rx="10" fill="url(#paper)" stroke="#4c1317" stroke-width="2"/>
+        <path d="M454 676C506 644 580 644 654 680" fill="none" stroke="#d71926" stroke-width="3" opacity="0.65"/>
+        <path d="M476 704H650" stroke="#fff" stroke-opacity="0.16" stroke-width="2"/>
+        <path d="M486 650L628 714" stroke="#fff" stroke-opacity="0.1" stroke-width="2"/>
+      </g>
+      <g transform="rotate(5 1026 678)">
+        <rect x="910" y="632" width="270" height="100" rx="10" fill="#090909" stroke="#451116" stroke-width="2"/>
+        <rect x="938" y="652" width="214" height="52" rx="4" fill="#160508"/>
+        <path d="M966 692C1008 666 1048 682 1082 662C1108 648 1131 652 1146 666" fill="none" stroke="#ff2634" stroke-width="4" opacity="0.7"/>
+        <path d="M968 670H1106" stroke="#00a8b5" stroke-opacity="0.15" stroke-width="3"/>
+      </g>
+      <g stroke="#e01c2a" stroke-width="4" stroke-linecap="round" opacity="0.52">
+        <path d="M755 700L846 646"/>
+        <path d="M781 720L878 662"/>
+        <path d="M126 732H320"/>
+        <path d="M1220 720H1460"/>
+      </g>
+    </g>
+
+    <!-- abstract red tiger mark, integrated not literal -->
+    <g transform="translate(704 568)" filter="url(#softGlow)" opacity="0.88">
+      <path d="M0 82C48 30 112 6 194 12C166 34 145 62 132 98C94 74 50 68 0 82Z" fill="#d71926"/>
+      <path d="M74 92C104 52 144 32 194 12" stroke="#050505" stroke-width="16" stroke-linecap="round" opacity="0.72"/>
+      <path d="M118 106C152 78 196 61 250 58" stroke="#050505" stroke-width="14" stroke-linecap="round" opacity="0.7"/>
+      <path d="M22 108C69 98 108 103 140 124" stroke="#050505" stroke-width="13" stroke-linecap="round" opacity="0.72"/>
+    </g>
+
+    <!-- final vignette -->
+    <radialGradient id="vignette" cx="50%" cy="50%" r="76%">
+      <stop offset="0.52" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.72"/>
+    </radialGradient>
+    <rect width="1600" height="800" fill="url(#vignette)"/>
+    <rect x="1" y="1" width="1598" height="798" rx="25" fill="none" stroke="#321014" stroke-width="2" opacity="0.82"/>
+  </g>
+</svg>

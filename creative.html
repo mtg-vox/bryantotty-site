@@ -133,17 +133,17 @@
                     <p class="font-['JetBrains_Mono'] text-[10px] tracking-[0.25em] text-white/50 uppercase mb-1">03</p>
                     <p class="text-white font-semibold text-sm">Fashion</p>
                 </a>
-                <a href="#design" class="studio-card-cyan text-center hover:translate-y-[-2px] transition-transform">
+                <a href="#shop" class="studio-card-red text-center hover:translate-y-[-2px] transition-transform">
                     <p class="font-['JetBrains_Mono'] text-[10px] tracking-[0.25em] text-white/50 uppercase mb-1">04</p>
+                    <p class="text-white font-semibold text-sm">Shop</p>
+                </a>
+                <a href="#design" class="studio-card-cyan text-center hover:translate-y-[-2px] transition-transform">
+                    <p class="font-['JetBrains_Mono'] text-[10px] tracking-[0.25em] text-white/50 uppercase mb-1">05</p>
                     <p class="text-white font-semibold text-sm">Design &amp; Art</p>
                 </a>
                 <a href="#brand" class="studio-card-purple text-center hover:translate-y-[-2px] transition-transform">
-                    <p class="font-['JetBrains_Mono'] text-[10px] tracking-[0.25em] text-white/50 uppercase mb-1">05</p>
-                    <p class="text-white font-semibold text-sm">Brand World</p>
-                </a>
-                <a href="#shop" class="studio-card-red text-center hover:translate-y-[-2px] transition-transform">
                     <p class="font-['JetBrains_Mono'] text-[10px] tracking-[0.25em] text-white/50 uppercase mb-1">06</p>
-                    <p class="text-white font-semibold text-sm">Shop</p>
+                    <p class="text-white font-semibold text-sm">Brand World</p>
                 </a>
             </div>
 
@@ -152,9 +152,8 @@
                 <p class="studio-label-red">01 · Music</p>
                 <h2 class="studio-h2">Two artist eras. One independent label.</h2>
 
-                <!-- TODO: bryan to replace with real catalog photo / album art mosaic / press shot -->
                 <figure class="mb-8 overflow-hidden rounded-xl border border-white/5">
-                    <img src="images/creative/music-placeholder.svg" alt="Catalog hero placeholder" width="1200" height="600" loading="lazy" class="w-full h-auto block">
+                    <img src="images/creative/red-tiger-creative-catalog.svg" alt="Red Tiger creative studio catalog artwork" width="1600" height="800" loading="lazy" class="w-full h-auto block">
                 </figure>
 
                 <p class="text-white/65 leading-relaxed mb-8 max-w-3xl">
@@ -316,9 +315,52 @@
 
             <div class="studio-divider"></div>
 
-            <!-- ============ 04 · DESIGN & ART ============ -->
+            <!-- ============ 04 · SHOP ============ -->
+            <section id="shop" class="reveal mb-14">
+                <p class="studio-label-gold">04 · Shop</p>
+                <h2 class="studio-h2">Fashion and brand design, available to wear.</h2>
+                <p class="text-white/65 leading-relaxed mb-8 max-w-3xl">
+                    This storefront is the live product layer of my fashion and brand design work. Apparel, prints, and limited drops from Red Tiger Unlimited are published on Etsy and surfaced here as they go live.
+                </p>
+
+                <!-- Merch grid: rendered from /merch.generated.json at build time -->
+                <div id="merch-grid" class="merch-grid" data-shop-empty="No items currently available. Check back soon. New drops coming.">
+                    <!-- Items injected by main.js from merch.generated.json -->
+                    <noscript>
+                        <a class="merch-card" href="https://www.etsy.com/shop/RedTigerUnlimited" target="_blank" rel="noopener noreferrer">
+                            <div class="merch-meta">
+                                <span class="merch-price">Live products</span>
+                                <strong>Visit the Red Tiger Unlimited storefront on Etsy</strong>
+                                <span class="merch-link">Shop on Etsy ↗</span>
+                            </div>
+                        </a>
+                    </noscript>
+                </div>
+
+                <div class="text-center mt-10">
+                    <a href="https://www.etsy.com/shop/RedTigerUnlimited" target="_blank" rel="noopener noreferrer" class="merch-shop-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+                            <line x1="3" y1="6" x2="21" y2="6"/>
+                            <path d="M16 10a4 4 0 01-8 0"/>
+                        </svg>
+                        Shop full Etsy store
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <line x1="7" y1="17" x2="17" y2="7"/>
+                            <polyline points="7 7 17 7 17 17"/>
+                        </svg>
+                    </a>
+                    <p class="text-white/30 text-xs mt-4 font-['JetBrains_Mono'] tracking-wider" id="merch-synced-at">
+                        <!-- syncedAt timestamp injected by main.js -->
+                    </p>
+                </div>
+            </section>
+
+            <div class="studio-divider"></div>
+
+            <!-- ============ 05 · DESIGN & ART ============ -->
             <section id="design" class="reveal mb-14">
-                <p class="studio-label-cyan">04 · Design &amp; Art</p>
+                <p class="studio-label-cyan">05 · Design &amp; Art</p>
                 <h2 class="studio-h2">Visual work. Album art. Identity systems.</h2>
 
                 <!-- TODO: bryan to replace with real grid of album covers / posters / logos -->
@@ -363,9 +405,9 @@
 
             <div class="studio-divider"></div>
 
-            <!-- ============ 05 · BRAND WORLD ============ -->
+            <!-- ============ 06 · BRAND WORLD ============ -->
             <section id="brand" class="reveal mb-14">
-                <p class="studio-label-purple">05 · Brand World</p>
+                <p class="studio-label-purple">06 · Brand World</p>
                 <h2 class="studio-h2">Identity systems, not single pieces.</h2>
                 <p class="text-white/65 leading-relaxed mb-6 max-w-3xl">
                     The strategic side of the creative work. Building entire brand worlds rather than single deliverables. Music, apparel, design, and storytelling come together as integrated identities with their own visual language, voice, and audience.
@@ -396,49 +438,6 @@
                             New creative ventures, collaborations, and brand experiments. Reserved space for what comes next.
                         </p>
                     </article>
-                </div>
-            </section>
-
-            <div class="studio-divider"></div>
-
-            <!-- ============ 06 · SHOP ============ -->
-            <section id="shop" class="reveal mb-14">
-                <p class="studio-label-gold">06 · Shop</p>
-                <h2 class="studio-h2">Wear the brand. Carry the mark.</h2>
-                <p class="text-white/65 leading-relaxed mb-8 max-w-3xl">
-                    Apparel, prints, and limited drops from the official Red Tiger Unlimited shop on Etsy. New items appear here automatically as they go live.
-                </p>
-
-                <!-- Merch grid: rendered from /merch.generated.json at build time -->
-                <div id="merch-grid" class="merch-grid" data-shop-empty="No items currently available. Check back soon. New drops coming.">
-                    <!-- Items injected by main.js from merch.generated.json -->
-                    <noscript>
-                        <a class="merch-card" href="https://www.etsy.com/shop/RedTigerUnlimited" target="_blank" rel="noopener noreferrer">
-                            <div class="merch-meta">
-                                <span class="merch-price">Live products</span>
-                                <strong>Visit the Red Tiger Unlimited storefront on Etsy</strong>
-                                <span class="merch-link">Shop on Etsy ↗</span>
-                            </div>
-                        </a>
-                    </noscript>
-                </div>
-
-                <div class="text-center mt-10">
-                    <a href="https://www.etsy.com/shop/RedTigerUnlimited" target="_blank" rel="noopener noreferrer" class="merch-shop-btn">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
-                            <line x1="3" y1="6" x2="21" y2="6"/>
-                            <path d="M16 10a4 4 0 01-8 0"/>
-                        </svg>
-                        Shop full Etsy store
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <line x1="7" y1="17" x2="17" y2="7"/>
-                            <polyline points="7 7 17 7 17 17"/>
-                        </svg>
-                    </a>
-                    <p class="text-white/30 text-xs mt-4 font-['JetBrains_Mono'] tracking-wider" id="merch-synced-at">
-                        <!-- syncedAt timestamp injected by main.js -->
-                    </p>
                 </div>
             </section>
 
