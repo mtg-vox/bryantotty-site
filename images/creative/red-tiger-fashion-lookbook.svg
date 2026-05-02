@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="800" viewBox="0 0 1600 800" role="img" aria-labelledby="title desc">
+  <title id="title">Red Tiger streetwear lookbook hero</title>
+  <desc id="desc">A dark editorial streetwear composition featuring a black Red Tiger t-shirt, folded apparel, and black and red brand styling for a fashion lookbook.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#030203"/>
+      <stop offset="0.42" stop-color="#190508"/>
+      <stop offset="1" stop-color="#020405"/>
+    </linearGradient>
+    <radialGradient id="coreRed" cx="52%" cy="48%" r="64%">
+      <stop offset="0" stop-color="#d71926" stop-opacity="0.42"/>
+      <stop offset="0.44" stop-color="#6f0710" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="floorGlow" cx="52%" cy="82%" r="58%">
+      <stop offset="0" stop-color="#ff2634" stop-opacity="0.5"/>
+      <stop offset="0.42" stop-color="#7e0710" stop-opacity="0.26"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="fabric" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#171515"/>
+      <stop offset="0.5" stop-color="#060606"/>
+      <stop offset="1" stop-color="#24070a"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#171515"/>
+      <stop offset="0.6" stop-color="#070707"/>
+      <stop offset="1" stop-color="#1f070a"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/>
+      <stop offset="0.3" stop-color="#ffffff" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-45%" y="-45%" width="190%" height="190%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="blur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M80 0H0V80" fill="none" stroke="#fff" stroke-opacity="0.024" stroke-width="1"/>
+    </pattern>
+    <clipPath id="crop"><rect width="1600" height="800" rx="26"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#crop)">
+    <rect width="1600" height="800" fill="url(#bg)"/>
+    <rect width="1600" height="800" fill="url(#coreRed)"/>
+    <rect width="1600" height="800" fill="url(#grid)"/>
+
+    <!-- editorial backdrop -->
+    <rect x="120" y="82" width="1360" height="420" rx="18" fill="#060505" opacity="0.62"/>
+    <rect x="176" y="112" width="1248" height="360" rx="12" fill="none" stroke="#2d0b10" stroke-width="2" opacity="0.8"/>
+    <g stroke="#d71926" stroke-width="3" opacity="0.22">
+      <path d="M212 112V470"/><path d="M476 112V470"/><path d="M740 112V470"/><path d="M1004 112V470"/><path d="M1268 112V470"/>
+      <path d="M176 470H1424"/>
+    </g>
+
+    <!-- side editorial panels -->
+    <g filter="url(#glow)">
+      <rect x="220" y="146" width="236" height="292" rx="14" fill="url(#panel)" stroke="#3d1016" stroke-width="4"/>
+      <path d="M248 172H430L286 420H230Z" fill="url(#glass)"/>
+      <g stroke-linecap="round" opacity="0.55">
+        <path d="M258 210H420" stroke="#d71926" stroke-width="3"/>
+        <path d="M258 246H382" stroke="#ff2634" stroke-width="3"/>
+        <path d="M258 282H410" stroke="#d71926" stroke-width="3"/>
+        <path d="M258 318H364" stroke="#ff2634" stroke-width="3"/>
+      </g>
+
+      <rect x="1144" y="146" width="236" height="292" rx="14" fill="url(#panel)" stroke="#3d1016" stroke-width="4"/>
+      <path d="M1172 172H1354L1210 420H1154Z" fill="url(#glass)"/>
+      <g stroke-linecap="round" opacity="0.55">
+        <path d="M1182 210H1344" stroke="#d71926" stroke-width="3"/>
+        <path d="M1182 246H1306" stroke="#ff2634" stroke-width="3"/>
+        <path d="M1182 282H1334" stroke="#d71926" stroke-width="3"/>
+        <path d="M1182 318H1288" stroke="#ff2634" stroke-width="3"/>
+      </g>
+    </g>
+
+    <!-- central hanging tee hero -->
+    <g filter="url(#glow)">
+      <!-- hanger and neck -->
+      <path d="M800 120C770 120 748 104 748 82C748 62 766 46 788 46C810 46 828 62 828 82" fill="none" stroke="#5b5b5b" stroke-width="8" stroke-linecap="round"/>
+      <path d="M748 120H852" stroke="#5b5b5b" stroke-width="6" stroke-linecap="round"/>
+
+      <!-- tee body -->
+      <path d="M602 192L688 156H912L998 192L960 266L922 246V542C922 582 892 616 852 616H748C708 616 678 582 678 542V246L640 266Z" fill="url(#fabric)" stroke="#52141a" stroke-width="6"/>
+      <path d="M728 156C740 184 860 184 872 156" fill="none" stroke="#2a2a2a" stroke-width="9" stroke-linecap="round"/>
+      <path d="M702 276C750 300 850 300 898 276" fill="none" stroke="#ffffff" stroke-opacity="0.06" stroke-width="11" stroke-linecap="round"/>
+      <path d="M678 360C734 392 866 392 922 360" fill="none" stroke="#ffffff" stroke-opacity="0.04" stroke-width="10" stroke-linecap="round"/>
+
+      <!-- red tiger mark -->
+      <g transform="translate(672 316) scale(0.92)">
+        <path d="M34 82C96 34 178 6 282 14C246 36 218 70 202 116C150 88 92 78 34 82Z" fill="#ff2634"/>
+        <path d="M108 94C150 52 206 28 282 14" stroke="#090909" stroke-width="16" stroke-linecap="round" opacity="0.78"/>
+        <path d="M168 114C208 82 260 64 328 62" stroke="#090909" stroke-width="14" stroke-linecap="round" opacity="0.76"/>
+        <path d="M58 112C116 100 164 108 206 134" stroke="#090909" stroke-width="14" stroke-linecap="round" opacity="0.78"/>
+        <path d="M318 62C360 70 394 90 420 122" stroke="#ff2634" stroke-width="18" stroke-linecap="round" fill="none"/>
+      </g>
+      <g transform="translate(690 468) scale(0.88)">
+        <path d="M76 158H440" stroke="#ff2634" stroke-width="20" stroke-linecap="round"/>
+        <path d="M102 194H392" stroke="#ff2634" stroke-width="16" stroke-linecap="round" opacity="0.92"/>
+      </g>
+    </g>
+
+    <!-- folded apparel at bottom for merchandising context -->
+    <g filter="url(#glow)">
+      <path d="M368 616H652L614 700H330Z" fill="url(#fabric)" stroke="#3f1015" stroke-width="4"/>
+      <path d="M948 616H1232L1270 700H986Z" fill="url(#fabric)" stroke="#3f1015" stroke-width="4"/>
+      <path d="M418 642H620" stroke="#d71926" stroke-width="3" opacity="0.42"/>
+      <path d="M980 642H1182" stroke="#d71926" stroke-width="3" opacity="0.42"/>
+    </g>
+
+    <rect y="498" width="1600" height="302" fill="url(#floorGlow)"/>
+    <g filter="url(#blur)" opacity="0.68">
+      <ellipse cx="800" cy="744" rx="630" ry="82" fill="#d71926"/>
+      <ellipse cx="800" cy="742" rx="385" ry="48" fill="#020202" opacity="0.8"/>
+    </g>
+    <g stroke-linecap="round" opacity="0.54">
+      <path d="M230 710C470 664 1130 664 1370 710" stroke="#d71926" stroke-width="4"/>
+      <path d="M370 748C580 710 1004 710 1230 746" stroke="#7a0710" stroke-width="7"/>
+    </g>
+
+    <radialGradient id="vignette" cx="50%" cy="50%" r="78%">
+      <stop offset="0.68" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.62"/>
+    </radialGradient>
+    <rect width="1600" height="800" fill="url(#vignette)"/>
+    <rect x="1" y="1" width="1598" height="798" rx="25" fill="none" stroke="#321014" stroke-width="2" opacity="0.85"/>
+  </g>
+</svg>
