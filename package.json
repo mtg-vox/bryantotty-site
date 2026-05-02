@@ -1,0 +1,13 @@
+{
+  "name": "bryantotty-site",
+  "version": "1.0.0",
+  "description": "Personal website for Bryan Totty — bryantotty.com. Static HTML + Tailwind CDN + a small Etsy merch sync.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "merch:sync": "node scripts/sync-etsy-merch.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
