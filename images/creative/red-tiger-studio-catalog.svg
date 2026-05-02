@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="800" viewBox="0 0 1600 800" role="img" aria-labelledby="title desc">
+  <title id="title">Red Tiger digital recording studio catalog image</title>
+  <desc id="desc">A black and red digital recording studio with an ultrawide workstation, speakers, mixing desk, waveform display, and Red T7ger hoodie.</desc>
+  <defs>
+    <linearGradient id="room" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#020202"/>
+      <stop offset="0.45" stop-color="#150507"/>
+      <stop offset="1" stop-color="#030404"/>
+    </linearGradient>
+    <radialGradient id="redCore" cx="50%" cy="50%" r="58%">
+      <stop offset="0" stop-color="#d71926" stop-opacity="0.44"/>
+      <stop offset="0.46" stop-color="#6f0710" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="floorGlow" cx="50%" cy="82%" r="58%">
+      <stop offset="0" stop-color="#ff2634" stop-opacity="0.48"/>
+      <stop offset="0.42" stop-color="#850810" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#151515"/>
+      <stop offset="0.5" stop-color="#050505"/>
+      <stop offset="1" stop-color="#24070a"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.18"/>
+      <stop offset="0.32" stop-color="#ffffff" stop-opacity="0.04"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="desk" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#111"/>
+      <stop offset="1" stop-color="#030303"/>
+    </linearGradient>
+    <linearGradient id="hoodie" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#171515"/>
+      <stop offset="0.55" stop-color="#060606"/>
+      <stop offset="1" stop-color="#25070b"/>
+    </linearGradient>
+    <filter id="glow" x="-45%" y="-45%" width="190%" height="190%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softBlur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M80 0H0V80" fill="none" stroke="#fff" stroke-opacity="0.024" stroke-width="1"/>
+    </pattern>
+    <clipPath id="crop"><rect width="1600" height="800" rx="26"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#crop)">
+    <rect width="1600" height="800" fill="url(#room)"/>
+    <rect width="1600" height="800" fill="url(#redCore)"/>
+    <rect width="1600" height="800" fill="url(#grid)"/>
+
+    <!-- back wall, acoustic panels, subtle digital depth -->
+    <rect x="120" y="56" width="1360" height="504" rx="20" fill="#050505" opacity="0.62"/>
+    <rect x="168" y="96" width="1264" height="406" rx="12" fill="none" stroke="#2e0b10" stroke-width="2" opacity="0.72"/>
+    <g opacity="0.16" fill="#ffffff">
+      <rect x="215" y="118" width="30" height="350" rx="14"/>
+      <rect x="300" y="118" width="30" height="350" rx="14"/>
+      <rect x="385" y="118" width="30" height="350" rx="14"/>
+      <rect x="1185" y="118" width="30" height="350" rx="14"/>
+      <rect x="1270" y="118" width="30" height="350" rx="14"/>
+      <rect x="1355" y="118" width="30" height="350" rx="14"/>
+    </g>
+    <g stroke="#d71926" stroke-width="3" opacity="0.23">
+      <path d="M190 98V502"/><path d="M462 98V502"/><path d="M1138 98V502"/><path d="M1410 98V502"/>
+      <path d="M190 502H1410"/>
+    </g>
+
+    <!-- ultrawide digital audio workstation screen -->
+    <g filter="url(#glow)">
+      <rect x="430" y="116" width="740" height="304" rx="24" fill="#040404" stroke="#56141b" stroke-width="7"/>
+      <rect x="462" y="148" width="676" height="240" rx="14" fill="url(#screen)" stroke="#2f0b10" stroke-width="3"/>
+      <path d="M462 150H1138L548 386H468Z" fill="url(#glass)"/>
+      <g stroke-linecap="round">
+        <path d="M500 188H1098" stroke="#d71926" stroke-width="4" opacity="0.42"/>
+        <path d="M500 230H980" stroke="#ff2634" stroke-width="3" opacity="0.34"/>
+        <path d="M500 272H1068" stroke="#d71926" stroke-width="3" opacity="0.36"/>
+        <path d="M500 314H1010" stroke="#ff2634" stroke-width="3" opacity="0.3"/>
++        <path d="M540 344C590 298 650 384 700 330C755 272 835 390 900 326C954 274 1014 350 1060 318" stroke="#ff2634" stroke-width="6" opacity="0.68" fill="none"/>
+        <path d="M570 210C626 190 664 248 714 222C774 190 816 250 874 218C928 188 972 230 1028 208" stroke="#00a8b5" stroke-width="3" opacity="0.16" fill="none"/>
+      </g>
+      <g fill="#d71926" opacity="0.48">
+        <rect x="520" y="362" width="80" height="8" rx="4"/>
+        <rect x="620" y="362" width="42" height="8" rx="4"/>
+        <rect x="682" y="362" width="110" height="8" rx="4"/>
+        <rect x="812" y="362" width="64" height="8" rx="4"/>
+        <rect x="898" y="362" width="142" height="8" rx="4"/>
+      </g>
+    </g>
+
+    <!-- speakers and studio gear, balanced around the screen -->
+    <g filter="url(#glow)">
+      <rect x="250" y="288" width="176" height="214" rx="16" fill="#090909" stroke="#3c1116" stroke-width="5"/>
+      <circle cx="338" cy="386" r="60" fill="#050505" stroke="#292929" stroke-width="12"/>
+      <circle cx="338" cy="386" r="28" fill="#111" stroke="#d71926" stroke-opacity="0.4" stroke-width="4"/>
+      <circle cx="338" cy="322" r="18" fill="#101010" stroke="#00a8b5" stroke-opacity="0.16" stroke-width="4"/>
+      <rect x="1174" y="288" width="176" height="214" rx="16" fill="#090909" stroke="#3c1116" stroke-width="5"/>
+      <circle cx="1262" cy="386" r="60" fill="#050505" stroke="#292929" stroke-width="12"/>
+      <circle cx="1262" cy="386" r="28" fill="#111" stroke="#d71926" stroke-opacity="0.4" stroke-width="4"/>
+      <circle cx="1262" cy="322" r="18" fill="#101010" stroke="#00a8b5" stroke-opacity="0.16" stroke-width="4"/>
+      <path d="M426 428C530 476 654 500 800 500C946 500 1070 476 1174 428" stroke="#d71926" stroke-width="3" opacity="0.34" fill="none"/>
+    </g>
+
+    <!-- command desk and recording controls -->
+    <rect y="482" width="1600" height="318" fill="url(#floorGlow)"/>
+    <g filter="url(#glow)">
+      <path d="M190 524H1410C1460 524 1498 558 1515 612L1570 800H30L85 612C102 558 140 524 190 524Z" fill="url(#desk)" stroke="#3f1116" stroke-width="5"/>
+      <path d="M245 558H1355" stroke="#d71926" stroke-width="4" opacity="0.3"/>
+      <g fill="#d71926" opacity="0.75">
+        <circle cx="430" cy="608" r="9"/><circle cx="468" cy="608" r="9"/><circle cx="506" cy="608" r="9"/><circle cx="544" cy="608" r="9"/>
+        <circle cx="1056" cy="608" r="9"/><circle cx="1094" cy="608" r="9"/><circle cx="1132" cy="608" r="9"/><circle cx="1170" cy="608" r="9"/>
+      </g>
+      <g stroke="#ffffff" stroke-opacity="0.12" stroke-width="3" stroke-linecap="round">
+        <path d="M318 655H640"/><path d="M960 655H1282"/>
+        <path d="M390 696H575"/><path d="M1025 696H1210"/>
+      </g>
+      <g stroke="#00a8b5" stroke-width="3" opacity="0.14" stroke-linecap="round">
+        <path d="M700 606H900"/><path d="M735 644H865"/>
+      </g>
+    </g>
+
+    <!-- foreground hoodie and Red T7ger mark -->
+    <g filter="url(#glow)">
+      <path d="M500 588C546 526 648 498 800 498C952 498 1054 526 1100 588C1142 646 1158 726 1172 800H428C442 726 458 646 500 588Z" fill="url(#hoodie)" stroke="#57141a" stroke-width="6"/>
+      <path d="M548 600C622 632 716 644 800 644C884 644 978 632 1052 600" fill="none" stroke="#ffffff" stroke-opacity="0.07" stroke-width="14" stroke-linecap="round"/>
+      <path d="M550 800C532 706 540 630 570 568" stroke="#000" stroke-opacity="0.43" stroke-width="30"/>
+      <path d="M1050 800C1068 706 1060 630 1030 568" stroke="#000" stroke-opacity="0.43" stroke-width="30"/>
+      <path d="M558 586C646 548 730 536 800 536C870 536 954 548 1042 586" stroke="#ff2634" stroke-width="4" opacity="0.52" fill="none"/>
+      <g transform="translate(550 588) scale(1.06)">
+        <path d="M34 82C96 34 178 6 282 14C246 36 218 70 202 116C150 88 92 78 34 82Z" fill="#ff2634"/>
+        <path d="M108 94C150 52 206 28 282 14" stroke="#090909" stroke-width="16" stroke-linecap="round" opacity="0.78"/>
+        <path d="M168 114C208 82 260 64 328 62" stroke="#090909" stroke-width="14" stroke-linecap="round" opacity="0.76"/>
+        <path d="M58 112C116 100 164 108 206 134" stroke="#090909" stroke-width="14" stroke-linecap="round" opacity="0.78"/>
+        <path d="M318 62C360 70 394 90 420 122" stroke="#ff2634" stroke-width="18" stroke-linecap="round" fill="none"/>
+        <path d="M76 158H440" stroke="#ff2634" stroke-width="20" stroke-linecap="round"/>
+        <path d="M102 194H392" stroke="#ff2634" stroke-width="16" stroke-linecap="round" opacity="0.92"/>
+      </g>
+    </g>
+
+    <g filter="url(#softBlur)" opacity="0.7">
+      <ellipse cx="800" cy="744" rx="630" ry="82" fill="#d71926"/>
+      <ellipse cx="800" cy="742" rx="385" ry="48" fill="#020202" opacity="0.8"/>
+    </g>
+    <g stroke-linecap="round" opacity="0.54">
+      <path d="M230 710C470 664 1130 664 1370 710" stroke="#d71926" stroke-width="4"/>
+      <path d="M370 748C580 710 1004 710 1230 746" stroke="#7a0710" stroke-width="7"/>
+      <path d="M610 530H990" stroke="#ff2634" stroke-width="2" opacity="0.42"/>
+    </g>
+
+    <radialGradient id="vignette" cx="50%" cy="50%" r="78%">
+      <stop offset="0.68" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.62"/>
+    </radialGradient>
+    <rect width="1600" height="800" fill="url(#vignette)"/>
+    <rect x="1" y="1" width="1598" height="798" rx="25" fill="none" stroke="#321014" stroke-width="2" opacity="0.85"/>
+  </g>
+</svg>
