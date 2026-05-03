@@ -5,9 +5,14 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "merch:sync": "node scripts/sync-etsy-merch.mjs"
+    "merch:sync": "node scripts/sync-etsy-merch.mjs",
+    "build:css": "tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css --minify",
+    "watch:css": "tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css --watch"
   },
   "engines": {
     "node": ">=18"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
   }
 }
