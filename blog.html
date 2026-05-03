@@ -25,26 +25,29 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=b-20260430">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=b-20260430">
     <link rel="stylesheet" href="/dist/tailwind.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Blog","url":"https://bryantotty.com/blog.html","name":"Bryan Totty: Blog","author":{"@type":"Person","name":"Bryan Totty"}}</script>
 </head>
-<body class="bg-dark text-white font-['Inter'] min-h-screen">
-    <div class="grid-bg" aria-hidden="true"></div>
+<body class="bg-dark text-white font-['Inter'] min-h-screen overflow-x-hidden">
+    <div class="studio-bg" aria-hidden="true"></div>
 
+    <!-- Navigation -->
     <nav class="fixed top-0 w-full z-50 bg-dark/80 backdrop-blur-xl border-b border-white/5">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/" class="text-xl font-black tracking-tighter"><span class="text-white">BRYAN</span><span class="text-glow">TOTTY</span></a>
+            <a href="/" class="text-xl font-black tracking-tighter">
+                <span class="text-white">BRYAN</span><span class="text-glow">TOTTY</span>
+            </a>
             <div class="hidden md:flex gap-8 text-xs font-semibold tracking-[0.2em] uppercase">
-                <a href="/" class="text-white/50 hover:text-glow transition-colors">Home</a>
-                <a href="about.html" class="text-white/50 hover:text-glow transition-colors">About</a>
-                <a href="projects.html" class="text-white/50 hover:text-glow transition-colors">Projects</a>
-                <a href="creative.html" class="text-white/50 hover:text-glow transition-colors">Creative</a>
-                <a href="speaking.html" class="text-white/50 hover:text-glow transition-colors">Speaking</a>
-                <a href="blog.html" class="text-white hover:text-glow transition-colors">Blog</a>
-                <a href="contact.html" class="text-white/50 hover:text-glow transition-colors">Contact</a>
+                <a href="/" class="text-white/50 hover:text-glow transition-colors duration-300">Home</a>
+                <a href="about.html" class="text-white/50 hover:text-glow transition-colors duration-300">About</a>
+                <a href="projects.html" class="text-white/50 hover:text-glow transition-colors duration-300">Projects</a>
+                <a href="creative.html" class="text-white/50 hover:text-glow transition-colors duration-300">Creative</a>
+                <a href="speaking.html" class="text-white/50 hover:text-glow transition-colors duration-300">Speaking</a>
+                <a href="blog.html" class="text-white hover:text-glow transition-colors duration-300">Blog</a>
+                <a href="contact.html" class="text-white/50 hover:text-glow transition-colors duration-300">Contact</a>
             </div>
             <button id="menu-btn" class="md:hidden text-white" aria-label="Toggle menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -54,109 +57,153 @@
         </div>
         <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-dark/95 backdrop-blur-xl">
             <div class="flex flex-col px-6 py-4 gap-4 text-xs font-semibold tracking-[0.2em] uppercase">
-                <a href="/" class="text-white/50">Home</a><a href="about.html" class="text-white/50">About</a>
-                <a href="projects.html" class="text-white/50">Projects</a><a href="creative.html" class="text-white/50">Creative</a>
-                <a href="speaking.html" class="text-white/50">Speaking</a><a href="blog.html" class="text-white">Blog</a>
-                <a href="contact.html" class="text-white/50">Contact</a>
+                <a href="/" class="text-white/50 hover:text-glow transition">Home</a>
+                <a href="about.html" class="text-white/50 hover:text-glow transition">About</a>
+                <a href="projects.html" class="text-white/50 hover:text-glow transition">Projects</a>
+                <a href="creative.html" class="text-white/50 hover:text-glow transition">Creative</a>
+                <a href="speaking.html" class="text-white/50 hover:text-glow transition">Speaking</a>
+                <a href="blog.html" class="text-white hover:text-glow transition">Blog</a>
+                <a href="contact.html" class="text-white/50 hover:text-glow transition">Contact</a>
             </div>
         </div>
     </nav>
 
-    <main class="pt-28 pb-20 px-6">
+    <main class="pt-28 pb-24 px-6 relative">
         <div class="max-w-4xl mx-auto">
-            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">MY BLOG</h1>
-            <p class="text-white/40 font-['JetBrains_Mono'] text-xs tracking-[0.2em] uppercase mb-16">&gt; Thoughts on tech, crypto, business &amp; more</p>
 
-            <div class="space-y-8">
-                <!-- Web Development Journey -->
-                <a href="blog/web-development-journey.html" class="card block rounded-lg border border-white/10 hover:border-glow/30 bg-white/[0.02] overflow-hidden md:flex group">
-                    <div class="md:w-64 h-48 md:h-auto flex-shrink-0 overflow-hidden">
-                        <img src="images/blog/web-development-journey/webdev.jpeg" width="564" height="560" alt="Web Development" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex flex-wrap items-center gap-2 mb-2">
-                            <span class="text-xs text-white/40 font-['JetBrains_Mono']">February 12, 2023</span>
-                            <span class="text-xs font-medium px-2 py-0.5 rounded bg-blue-500/10 text-blue-400">Web Design</span>
-                        </div>
-                        <h2 class="text-xl font-bold mb-2 group-hover:text-glow transition-colors">My Web Development Journey</h2>
-                        <p class="text-white/40 text-sm leading-relaxed">In this blog, I'm going to document some of my web development journey.</p>
-                        <span class="text-xs text-white/20 mt-3 block font-['JetBrains_Mono']">Written by Bryan Totty</span>
-                    </div>
-                </a>
-
-                <!-- Working Miami NFT Week -->
-                <a href="blog/working-nft-miami.html" class="card block rounded-lg border border-white/10 hover:border-glow/30 bg-white/[0.02] overflow-hidden md:flex group">
-                    <div class="md:w-64 h-48 md:h-auto flex-shrink-0 overflow-hidden">
-                        <img src="images/blog/working-nft-miami/miami-nft-week-logo-2.jpg" width="2016" height="982" alt="Miami NFT Week" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex flex-wrap items-center gap-2 mb-2">
-                            <span class="text-xs text-white/40 font-['JetBrains_Mono']">February 12, 2023</span>
-                            <span class="text-xs font-medium px-2 py-0.5 rounded bg-purple-500/10 text-purple-400">Crypto</span>
-                        </div>
-                        <h2 class="text-xl font-bold mb-2 group-hover:text-glow transition-colors">Working Miami NFT Week</h2>
-                        <p class="text-white/40 text-sm leading-relaxed">I had the honor to work the first ever Miami NFT Week event in Miami, FL 2022. During this experience I made contacts internal to the event and with many of the attendees and speakers.</p>
-                        <span class="text-xs text-white/20 mt-3 block font-['JetBrains_Mono']">Written by Bryan Totty</span>
-                    </div>
-                </a>
-
-                <!-- Getting Started on Ethereum -->
-                <a href="blog/getting-started-ethereum.html" class="card block rounded-lg border border-white/10 hover:border-glow/30 bg-white/[0.02] overflow-hidden md:flex group">
-                    <div class="md:w-64 h-48 md:h-auto flex-shrink-0 overflow-hidden">
-                        <img src="images/blog/getting-started-ethereum/ethereum.png" width="1158" height="346" alt="Ethereum" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex flex-wrap items-center gap-2 mb-2">
-                            <span class="text-xs text-white/40 font-['JetBrains_Mono']">February 12, 2023</span>
-                            <span class="text-xs font-medium px-2 py-0.5 rounded bg-purple-500/10 text-purple-400">Crypto</span>
-                        </div>
-                        <h2 class="text-xl font-bold mb-2 group-hover:text-glow transition-colors">Getting Started on Ethereum</h2>
-                        <p class="text-white/40 text-sm leading-relaxed">An in progress worksheet on some notes for my journey of getting started in Ethereum development.</p>
-                        <span class="text-xs text-white/20 mt-3 block font-['JetBrains_Mono']">Written by Bryan Totty</span>
-                    </div>
-                </a>
-
-                <!-- Mouse and Keyboard -->
-                <a href="blog/mouse-and-keyboard.html" class="card block rounded-lg border border-white/10 hover:border-glow/30 bg-white/[0.02] overflow-hidden md:flex group">
-                    <div class="md:w-64 h-48 md:h-auto flex-shrink-0 overflow-hidden">
-                        <img src="images/blog/mouse-and-keyboard/gaming-keyboard.jpg" width="910" height="607" alt="Gaming Keyboard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex flex-wrap items-center gap-2 mb-2">
-                            <span class="text-xs text-white/40 font-['JetBrains_Mono']">February 12, 2023</span>
-                            <span class="text-xs font-medium px-2 py-0.5 rounded bg-green-500/10 text-green-400">Opinion</span>
-                        </div>
-                        <h2 class="text-xl font-bold mb-2 group-hover:text-glow transition-colors">Do You Need a New Mouse and Keyboard?</h2>
-                        <p class="text-white/40 text-sm leading-relaxed">Do you need a new mouse and keyboard?</p>
-                        <span class="text-xs text-white/20 mt-3 block font-['JetBrains_Mono']">Written by Bryan Totty</span>
-                    </div>
-                </a>
-
-                <!-- Harvard HBX CORe -->
-                <a href="blog/harvard-hbx-core.html" class="card block rounded-lg border border-white/10 hover:border-glow/30 bg-white/[0.02] overflow-hidden md:flex group">
-                    <div class="md:w-64 h-48 md:h-auto flex-shrink-0 overflow-hidden">
-                        <img src="images/blog/harvard-hbx-core/hbx-hero.svg" width="1200" height="675" alt="Harvard HBX CORe: Business Analytics, Economics for Managers, Financial Accounting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex flex-wrap items-center gap-2 mb-2">
-                            <span class="text-xs text-white/40 font-['JetBrains_Mono']">February 12, 2023</span>
-                            <span class="text-xs font-medium px-2 py-0.5 rounded bg-yellow-500/10 text-yellow-400">Business</span>
-                        </div>
-                        <h2 class="text-xl font-bold mb-2 group-hover:text-glow transition-colors">How Difficult is Harvard's HBX CORe Program?</h2>
-                        <p class="text-white/40 text-sm leading-relaxed">An honest review of HBS Online's Credential of Readiness covering Business Analytics, Economics for Managers, and Financial Accounting. What it costs in time and how to actually pass.</p>
-                        <span class="text-xs text-white/20 mt-3 block font-['JetBrains_Mono']">Written by Bryan Totty</span>
-                    </div>
-                </a>
+            <!-- ============ HERO ============ -->
+            <div class="flex justify-center mb-6">
+                <div class="studio-eyebrow">
+                    <span class="studio-eyebrow-dot"></span>
+                    Field notes &middot; long-form &middot; lessons learned
+                </div>
             </div>
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-5 leading-[1.05] text-center">
+                <span class="studio-title">BLOG</span>
+            </h1>
+            <p class="text-white/55 text-lg leading-relaxed mb-10 max-w-2xl mx-auto text-center">
+                Notes from the road across <strong class="text-white">tech</strong>, <strong class="text-white">crypto</strong>, <strong class="text-white">business</strong>, and the gear and habits that hold it all together.
+            </p>
+
+            <!-- ============ TECH & WEB ============ -->
+            <section class="reveal mb-14">
+                <p class="studio-label-cyan">01 · Tech &amp; Web</p>
+                <h2 class="studio-h2">Building, breaking, learning.</h2>
+                <div class="space-y-5">
+                    <a href="blog/web-development-journey.html" class="card block rounded-lg border border-white/10 hover:border-glow/30 bg-white/[0.02] overflow-hidden md:flex group transition-colors">
+                        <div class="md:w-64 h-48 md:h-auto flex-shrink-0 overflow-hidden">
+                            <img src="images/blog/web-development-journey/webdev.jpeg" width="564" height="560" alt="Web Development" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex flex-wrap items-center gap-2 mb-2">
+                                <span class="text-xs text-white/40 font-['JetBrains_Mono']">February 12, 2023</span>
+                                <span class="text-xs font-medium px-2 py-0.5 rounded bg-blue-500/10 text-blue-400">Web Design</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 group-hover:text-glow transition-colors">My Web Development Journey</h3>
+                            <p class="text-white/50 text-sm leading-relaxed">In this blog, I'm going to document some of my web development journey.</p>
+                            <span class="text-xs text-white/25 mt-3 block font-['JetBrains_Mono']">Written by Bryan Totty</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <div class="studio-divider"></div>
+
+            <!-- ============ CRYPTO ============ -->
+            <section class="reveal mb-14">
+                <p class="studio-label-purple">02 · Crypto</p>
+                <h2 class="studio-h2">From the front lines of Web3.</h2>
+                <div class="space-y-5">
+                    <a href="blog/working-nft-miami.html" class="card block rounded-lg border border-white/10 hover:border-glow/30 bg-white/[0.02] overflow-hidden md:flex group transition-colors">
+                        <div class="md:w-64 h-48 md:h-auto flex-shrink-0 overflow-hidden">
+                            <img src="images/blog/working-nft-miami/miami-nft-week-logo-2.jpg" width="2016" height="982" alt="Miami NFT Week" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex flex-wrap items-center gap-2 mb-2">
+                                <span class="text-xs text-white/40 font-['JetBrains_Mono']">February 12, 2023</span>
+                                <span class="text-xs font-medium px-2 py-0.5 rounded bg-purple-500/10 text-purple-400">Crypto</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 group-hover:text-glow transition-colors">Working Miami NFT Week</h3>
+                            <p class="text-white/50 text-sm leading-relaxed">I had the honor to work the first ever Miami NFT Week event in Miami, FL 2022. During this experience I made contacts internal to the event and with many of the attendees and speakers.</p>
+                            <span class="text-xs text-white/25 mt-3 block font-['JetBrains_Mono']">Written by Bryan Totty</span>
+                        </div>
+                    </a>
+
+                    <a href="blog/getting-started-ethereum.html" class="card block rounded-lg border border-white/10 hover:border-glow/30 bg-white/[0.02] overflow-hidden md:flex group transition-colors">
+                        <div class="md:w-64 h-48 md:h-auto flex-shrink-0 overflow-hidden">
+                            <img src="images/blog/getting-started-ethereum/ethereum.png" width="1158" height="346" alt="Ethereum" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex flex-wrap items-center gap-2 mb-2">
+                                <span class="text-xs text-white/40 font-['JetBrains_Mono']">February 12, 2023</span>
+                                <span class="text-xs font-medium px-2 py-0.5 rounded bg-purple-500/10 text-purple-400">Crypto</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 group-hover:text-glow transition-colors">Getting Started on Ethereum</h3>
+                            <p class="text-white/50 text-sm leading-relaxed">An in progress worksheet on some notes for my journey of getting started in Ethereum development.</p>
+                            <span class="text-xs text-white/25 mt-3 block font-['JetBrains_Mono']">Written by Bryan Totty</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <div class="studio-divider"></div>
+
+            <!-- ============ BUSINESS ============ -->
+            <section class="reveal mb-14">
+                <p class="studio-label-pink">03 · Business</p>
+                <h2 class="studio-h2">Receipts from the classroom.</h2>
+                <div class="space-y-5">
+                    <a href="blog/harvard-hbx-core.html" class="card block rounded-lg border border-white/10 hover:border-glow/30 bg-white/[0.02] overflow-hidden md:flex group transition-colors">
+                        <div class="md:w-64 h-48 md:h-auto flex-shrink-0 overflow-hidden">
+                            <img src="images/blog/harvard-hbx-core/hbx-hero.svg" width="1200" height="675" alt="Harvard HBX CORe: Business Analytics, Economics for Managers, Financial Accounting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex flex-wrap items-center gap-2 mb-2">
+                                <span class="text-xs text-white/40 font-['JetBrains_Mono']">February 12, 2023</span>
+                                <span class="text-xs font-medium px-2 py-0.5 rounded bg-yellow-500/10 text-yellow-400">Business</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 group-hover:text-glow transition-colors">How Difficult is Harvard's HBX CORe Program?</h3>
+                            <p class="text-white/50 text-sm leading-relaxed">An honest review of HBS Online's Credential of Readiness covering Business Analytics, Economics for Managers, and Financial Accounting. What it costs in time and how to actually pass.</p>
+                            <span class="text-xs text-white/25 mt-3 block font-['JetBrains_Mono']">Written by Bryan Totty</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <div class="studio-divider"></div>
+
+            <!-- ============ GEAR & OPINION ============ -->
+            <section class="reveal mb-14">
+                <p class="studio-label-red">04 · Gear &amp; Opinion</p>
+                <h2 class="studio-h2">Tools, takes, and small obsessions.</h2>
+                <div class="space-y-5">
+                    <a href="blog/mouse-and-keyboard.html" class="card block rounded-lg border border-white/10 hover:border-glow/30 bg-white/[0.02] overflow-hidden md:flex group transition-colors">
+                        <div class="md:w-64 h-48 md:h-auto flex-shrink-0 overflow-hidden">
+                            <img src="images/blog/mouse-and-keyboard/gaming-keyboard.jpg" width="910" height="607" alt="Gaming Keyboard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex flex-wrap items-center gap-2 mb-2">
+                                <span class="text-xs text-white/40 font-['JetBrains_Mono']">February 12, 2023</span>
+                                <span class="text-xs font-medium px-2 py-0.5 rounded bg-green-500/10 text-green-400">Opinion</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 group-hover:text-glow transition-colors">Do You Need a New Mouse and Keyboard?</h3>
+                            <p class="text-white/50 text-sm leading-relaxed">Do you need a new mouse and keyboard?</p>
+                            <span class="text-xs text-white/25 mt-3 block font-['JetBrains_Mono']">Written by Bryan Totty</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
 
             <!-- CTA -->
-            <section class="text-center mt-20 py-12 border-t border-white/5">
-                <p class="text-white/50 text-lg mb-4">Want to talk about anything you read here?</p>
+            <section class="reveal text-center mt-20 py-12 border-t border-white/10">
+                <p class="text-white/60 text-lg mb-2">Want to talk about anything you read here?</p>
+                <p class="text-white/40 text-sm mb-6 font-['JetBrains_Mono'] tracking-wider">Mention <span class="text-glow">BLOG</span> in your message.</p>
                 <a href="contact.html" class="hero-btn-primary">GET IN TOUCH</a>
             </section>
         </div>
     </main>
 
+    <!-- Footer -->
     <footer class="border-t border-white/5 py-10 px-6">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-white/30 tracking-wider">
             <span class="font-['JetBrains_Mono']">&copy; 2026 BRYAN TOTTY</span>
