@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="800" viewBox="0 0 1600 800" role="img" aria-labelledby="title desc">
-  <title id="title">Red Tiger creative studio catalog image</title>
+  <title id="title">RED T7GER creative studio catalog image</title>
   <desc id="desc">A dark red and black creative studio scene with apparel forms, album art panels, brand marks, a design table, and subtle Miami night lights.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
@@ -160,7 +160,7 @@
       </g>
     </g>
 
-    <!-- abstract red tiger mark, integrated not literal -->
+    <!-- abstract RED T7GER mark, integrated not literal -->
     <g transform="translate(704 568)" filter="url(#softGlow)" opacity="0.88">
       <path d="M0 82C48 30 112 6 194 12C166 34 145 62 132 98C94 74 50 68 0 82Z" fill="#d71926"/>
       <path d="M74 92C104 52 144 32 194 12" stroke="#050505" stroke-width="16" stroke-linecap="round" opacity="0.72"/>

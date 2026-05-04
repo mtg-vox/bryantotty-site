@@ -152,7 +152,7 @@ if (merchGrid) {
                 + '<a class="merch-card" href="https://www.etsy.com/shop/RedTigerUnlimited" target="_blank" rel="noopener noreferrer">'
                 +   '<div class="merch-meta">'
                 +     '<span class="merch-price">Live products</span>'
-                +     '<strong>Visit the Red Tiger Unlimited storefront on Etsy</strong>'
+                +     '<strong>Visit the RED T7GER Unlimited storefront on Etsy</strong>'
                 +     '<span class="merch-link">Shop on Etsy &#8599;</span>'
                 +   '</div>'
                 + '</a>';

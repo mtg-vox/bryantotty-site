@@ -512,6 +512,139 @@ main, section, footer, nav {
 .studio-link { color: var(--c-red); text-decoration: underline; text-decoration-color: rgba(200, 16, 46, 0.4); text-underline-offset: 4px; transition: all 0.3s; }
 .studio-link:hover { color: var(--c-pink); text-decoration-color: var(--c-pink); text-shadow: 0 0 10px rgba(255, 46, 136, 0.4); }
 
+/* Fashion lookbook feature */
+.fashion-feature {
+    display: grid;
+    grid-template-columns: minmax(260px, 380px) minmax(0, 1fr);
+    gap: 24px;
+    align-items: center;
+    margin-bottom: 24px;
+}
+.fashion-feature-art,
+.fashion-supporting-art {
+    overflow: hidden;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.4);
+}
+.fashion-feature-art {
+    max-width: 390px;
+    border: 1px solid rgba(255, 46, 136, 0.25);
+}
+.fashion-feature-art img {
+    display: block;
+    width: 100%;
+    max-height: 540px;
+    object-fit: cover;
+    object-position: top center;
+}
+.fashion-feature-art figcaption,
+.fashion-supporting-art figcaption {
+    padding: 12px 16px;
+    color: rgba(255, 255, 255, 0.48);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+.fashion-feature-copy {
+    padding: 24px !important;
+}
+.fashion-feature-copy h3 {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 12px;
+}
+.fashion-feature-copy p:not(:first-child) {
+    max-width: 620px;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+.fashion-tag-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    max-width: 520px;
+}
+.fashion-tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 34px;
+    padding: 8px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.02);
+    color: rgba(255, 255, 255, 0.52);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-align: center;
+    text-transform: uppercase;
+}
+.fashion-supporting-art {
+    margin: 0 0 32px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.fashion-supporting-art img {
+    display: block;
+    width: 100%;
+    max-height: 320px;
+    object-fit: cover;
+}
+.fashion-intro {
+    max-width: 48rem;
+    margin-bottom: 24px;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 16px;
+    line-height: 1.7;
+}
+.fashion-brand-card h3 {
+    line-height: 1.15;
+}
+
+@media (max-width: 767px) {
+    .fashion-feature {
+        display: block;
+    }
+    .fashion-feature-art {
+        max-width: 330px;
+        margin: 0 auto 18px;
+    }
+    .fashion-feature-art img {
+        max-height: 500px;
+    }
+    .fashion-feature-copy {
+        padding: 20px !important;
+    }
+    .fashion-feature-copy h3 {
+        font-size: 20px;
+    }
+    .fashion-tag-row {
+        grid-template-columns: 1fr;
+    }
+    .fashion-supporting-art img {
+        max-height: 220px;
+    }
+    .fashion-intro {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    .fashion-brand-card {
+        padding: 20px !important;
+    }
+    .fashion-brand-card h3 {
+        font-size: 22px;
+    }
+    .fashion-brand-card p,
+    .fashion-brand-card li {
+        font-size: 13px;
+    }
+}
+
 /* ============================================================
    MERCH / SHOP CARDS: Creative shop section, Etsy product grid
    Pattern lifted from redt7ger.com for consistency.
