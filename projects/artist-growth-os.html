@@ -17,11 +17,11 @@
     <link rel="icon" type="image/svg+xml" href="../favicon.svg?v=b-20260430">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png?v=b-20260430">
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png?v=b-20260430">
-    <link rel="stylesheet" href="/dist/tailwind.css">
+    <link rel="stylesheet" href="../dist/tailwind.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style.css?v=20260509a">
     <style>
         :root {
             --rt-panel: #0d0d0f;
@@ -40,10 +40,10 @@
         .rt-eyebrow {
             display: inline-flex; align-items: center; gap: 8px;
             font-family: 'JetBrains Mono', monospace;
-            font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
-            color: rgba(255,255,255,0.7);
-            padding: 6px 12px; border: 1px solid var(--rt-red-dim);
-            background: rgba(200,16,46,0.06); border-radius: 999px;
+            font-size: 12px; letter-spacing: 0.28em; text-transform: uppercase;
+            color: rgba(255,255,255,0.78);
+            padding: 10px 18px; border: 1px solid var(--rt-red-dim);
+            background: rgba(200,16,46,0.08); border-radius: 999px;
         }
         .rt-eyebrow-dot {
             width: 6px; height: 6px; border-radius: 50%; background: var(--rt-red);
@@ -188,7 +188,8 @@
         .rt-warn-c { color: var(--rt-warn) !important; }
 
         /* Page chrome */
-        .rt-section-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--rt-red); margin-bottom: 12px; }
+        .rt-hero-kicker { font-family: 'JetBrains Mono', monospace; font-size: 14px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--rt-red); margin-bottom: 18px; }
+        .rt-section-label { display: flex; align-items: center; justify-content: center; width: fit-content; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.82); margin: 0 auto 16px; padding: 9px 14px; border: 1px solid var(--rt-red-dim); border-radius: 999px; background: rgba(200,16,46,0.08); box-shadow: 0 0 20px rgba(200,16,46,0.08); text-align: center; }
         .rt-h2 { font-size: 32px; font-weight: 700; letter-spacing: -0.02em; color: white; margin-bottom: 24px; line-height: 1.15; }
         .rt-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--rt-red-dim), transparent); margin: 64px 0; }
         .rt-pillar { border: 1px solid var(--rt-border); background: rgba(255,255,255,0.015); border-radius: 12px; padding: 24px; transition: all 0.3s ease; height: 100%; }
@@ -199,8 +200,31 @@
         .rt-stat-num { font-family: 'JetBrains Mono', monospace; font-size: 28px; font-weight: 700; color: white; line-height: 1; }
         .rt-stat-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rt-muted); margin-top: 8px; }
         .rt-tech-pill { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 4px 10px; border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.55); border-radius: 4px; margin: 3px; background: rgba(255,255,255,0.02); }
+        .rt-jump-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 0 0 18px; }
+        .rt-jump-card { display: block; text-align: center; border: 1px solid var(--rt-border); background: rgba(255,255,255,0.018); border-radius: 12px; padding: 15px 10px; text-decoration: none; transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease; }
+        .rt-jump-card:hover { border-color: var(--rt-red-dim); background: rgba(200,16,46,0.06); transform: translateY(-2px); }
+        .rt-jump-num { display: block; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.24em; color: rgba(255,255,255,0.48); margin-bottom: 5px; }
+        .rt-jump-title { display: block; color: white; font-weight: 700; font-size: 13px; line-height: 1.2; }
+        .rt-merch-showcase { display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); gap: 18px; align-items: stretch; margin-top: 30px; }
+        .rt-merch-image-card { position: relative; overflow: hidden; border: 1px solid var(--rt-border-strong); border-radius: 12px; background: #08080a; min-height: 320px; }
+        .rt-merch-image-card img { width: 100%; height: 100%; min-height: 320px; object-fit: cover; display: block; filter: blur(1.2px) saturate(0.7) contrast(0.92); transform: scale(1.025); opacity: 0.88; }
+        .rt-merch-image-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.72) 100%); pointer-events: none; }
+        .rt-merch-sample-badge { position: absolute; top: 14px; left: 14px; z-index: 1; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.82); border: 1px solid rgba(255,255,255,0.16); background: rgba(0,0,0,0.55); border-radius: 999px; padding: 7px 10px; backdrop-filter: blur(8px); }
+        .rt-merch-redactions { position: absolute; left: 16px; right: 16px; bottom: 16px; z-index: 1; display: grid; gap: 8px; }
+        .rt-merch-redactions span { display: block; height: 10px; border-radius: 999px; background: rgba(255,255,255,0.18); }
+        .rt-merch-redactions span:nth-child(1) { width: 72%; }
+        .rt-merch-redactions span:nth-child(2) { width: 46%; }
+        .rt-merch-redactions span:nth-child(3) { width: 58%; background: rgba(200,16,46,0.28); }
+        .rt-merch-panel { border: 1px solid var(--rt-border); border-radius: 12px; background: rgba(255,255,255,0.018); padding: 18px; display: flex; flex-direction: column; justify-content: center; }
+        .rt-merch-panel h3 { color: white; font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+        .rt-merch-panel p { color: rgba(255,255,255,0.58); font-size: 14px; line-height: 1.65; margin-bottom: 16px; }
+        .rt-merch-metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+        .rt-merch-metric { border: 1px solid var(--rt-border); border-radius: 8px; background: rgba(0,0,0,0.22); padding: 12px 10px; }
+        .rt-merch-metric strong { display: block; color: white; font-size: 18px; line-height: 1; margin-bottom: 6px; }
+        .rt-merch-metric span { display: block; font-family: 'JetBrains Mono', monospace; font-size: 9px; line-height: 1.35; letter-spacing: 0.08em; text-transform: uppercase; color: var(--rt-muted); }
 
         .rt-caption { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--rt-muted); text-align: center; margin-top: 12px; letter-spacing: 0.1em; text-transform: uppercase; }
+        section[id] { scroll-margin-top: 120px; }
 
         /* Mock chart bars (timeline) */
         .rt-chart { display: flex; align-items: flex-end; gap: 4px; height: 140px; padding: 8px 4px; background: linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px) 0 0/100% 25%; border-bottom: 1px solid var(--rt-border); border-left: 1px solid var(--rt-border); }
@@ -216,13 +240,24 @@
         .rt-heat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--rt-muted); display: flex; align-items: center; }
 
         @media (max-width: 900px) {
+            .rt-eyebrow { font-size: 10px; letter-spacing: 0.18em; padding: 8px 12px; }
+            .rt-hero-kicker { font-size: 13px; letter-spacing: 0.2em; }
+            .rt-section-label { font-size: 10px; letter-spacing: 0.16em; padding: 8px 12px; }
             .rt-h2 { font-size: 24px; }
             .rt-shell { grid-template-columns: 1fr; }
             .rt-sidebar { display: none; }
             .rt-main { padding: 14px; }
         }
+        @media (min-width: 768px) {
+            .rt-jump-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+        }
+        @media (min-width: 1100px) {
+            .rt-jump-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+        }
         @media (max-width: 700px) {
             .rt-table th:nth-child(n+5), .rt-table td:nth-child(n+5) { display: none; }
+            .rt-merch-showcase { grid-template-columns: 1fr; }
+            .rt-merch-metrics { grid-template-columns: 1fr; }
         }
     </style>
     <meta property="og:url" content="https://bryantotty.com/projects/artist-growth-os.html">
@@ -275,18 +310,32 @@
                     <span class="rt-eyebrow-dot"></span>
                     World's First AI Artist Agent
                 </div>
-                <div class="font-['JetBrains_Mono'] text-xs tracking-[0.25em] uppercase text-glow mb-4">ARTIST GROWTH OS</div>
+                <div class="rt-hero-kicker">ARTIST GROWTH OS</div>
                 <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.05] max-w-4xl mx-auto">
-                    A multi-platform <span class="text-glow">command center</span><br/>for independent artists.
+                    A <span class="text-glow">command center</span><br/>for independent artists.
                 </h1>
                 <p class="text-white/60 text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
-                    10+ platforms. One agent. Meta Ads, smart links, distribution, streaming, social, contracts, and booking: unified into a single AI-driven dashboard that tells the artist exactly what to do next.
+                    10+ platforms. One agent. Campaigns, streams, social, merch, booking, and contracts: unified into one place to see what deserves attention next.
                 </p>
                 <div class="flex flex-wrap gap-3 justify-center">
                     <a href="#dashboard" class="hero-btn-primary">SEE THE PRODUCT</a>
-                    <a href="#engineering" class="hero-btn-outline">ENGINEERING DEEP DIVES</a>
+                    <a href="#engineering" class="hero-btn-outline">SEE THE SYSTEM</a>
                 </div>
             </div>
+
+            <nav class="rt-jump-grid" aria-label="Artist Growth OS sections">
+                <a href="#dashboard" class="rt-jump-card"><span class="rt-jump-num">01</span><span class="rt-jump-title">Command Center</span></a>
+                <a href="#songs" class="rt-jump-card"><span class="rt-jump-num">02</span><span class="rt-jump-title">Songs</span></a>
+                <a href="#meta-insights" class="rt-jump-card"><span class="rt-jump-num">03</span><span class="rt-jump-title">Meta Insights</span></a>
+                <a href="#smart-links" class="rt-jump-card"><span class="rt-jump-num">04</span><span class="rt-jump-title">Smart Links</span></a>
+                <a href="#streaming-insights" class="rt-jump-card"><span class="rt-jump-num">05</span><span class="rt-jump-title">Streaming</span></a>
+                <a href="#social" class="rt-jump-card"><span class="rt-jump-num">06</span><span class="rt-jump-title">Social</span></a>
+                <a href="#booking" class="rt-jump-card"><span class="rt-jump-num">07</span><span class="rt-jump-title">Booking</span></a>
+                <a href="#contracts" class="rt-jump-card"><span class="rt-jump-num">08</span><span class="rt-jump-title">Contracts</span></a>
+                <a href="#merch" class="rt-jump-card"><span class="rt-jump-num">09</span><span class="rt-jump-title">Merch</span></a>
+                <a href="#engineering" class="rt-jump-card"><span class="rt-jump-num">10</span><span class="rt-jump-title">System Design</span></a>
+                <a href="#lessons" class="rt-jump-card"><span class="rt-jump-num">11</span><span class="rt-jump-title">Lessons</span></a>
+            </nav>
 
             <!-- Stat band -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -299,8 +348,8 @@
                     <div class="rt-stat-label">Dashboard views</div>
                 </div>
                 <div class="rt-stat">
-                    <div class="rt-stat-num">2</div>
-                    <div class="rt-stat-label">Undocumented APIs reverse-engineered</div>
+                    <div class="rt-stat-num">4</div>
+                    <div class="rt-stat-label">Growth pillars connected</div>
                 </div>
                 <div class="rt-stat">
                     <div class="rt-stat-num">100%</div>
@@ -314,7 +363,7 @@
         <!-- ======================== DASHBOARD (FULL WIDTH) ======================== -->
         <section id="dashboard" class="max-w-7xl mx-auto">
             <div class="rt-section-label text-center">01 / Command Center</div>
-            <h2 class="rt-h2 text-center max-w-3xl mx-auto">A single screen that answers: <em class="text-white/50 font-normal">"how am I doing today?"</em></h2>
+            <h2 class="rt-h2 text-center max-w-3xl mx-auto">One dashboard for growth, revenue, releases, and next moves.</h2>
 
             <div class="rt-app">
                 <div class="rt-app-bar">
@@ -442,7 +491,7 @@
         <div class="rt-divider max-w-6xl mx-auto"></div>
 
         <!-- ======================== SONGS PAGE ======================== -->
-        <section class="max-w-7xl mx-auto">
+        <section id="songs" class="max-w-7xl mx-auto">
             <div class="rt-section-label text-center">02 / Songs</div>
             <h2 class="rt-h2 text-center max-w-3xl mx-auto">Cross-source rollup per track: ad spend → smart link → streams.</h2>
 
@@ -526,7 +575,7 @@
         <div class="rt-divider max-w-6xl mx-auto"></div>
 
         <!-- ======================== META INSIGHTS PAGE ======================== -->
-        <section class="max-w-7xl mx-auto">
+        <section id="meta-insights" class="max-w-7xl mx-auto">
             <div class="rt-section-label text-center">03 / Meta Insights</div>
             <h2 class="rt-h2 text-center max-w-3xl mx-auto">Deep ad performance: spend, audience, geography, placements.</h2>
 
@@ -641,13 +690,13 @@
                     </div>
                 </div>
             </div>
-            <p class="rt-caption">Connected to Meta Marketing API · campaign-level resolution</p>
+            <p class="rt-caption">Campaign-level performance · audience, spend, and conversion signals</p>
         </section>
 
         <div class="rt-divider max-w-6xl mx-auto"></div>
 
         <!-- ======================== SMART LINKS (TONEDEN) ======================== -->
-        <section class="max-w-7xl mx-auto">
+        <section id="smart-links" class="max-w-7xl mx-auto">
             <div class="rt-section-label text-center">04 / Smart Links</div>
             <h2 class="rt-h2 text-center max-w-3xl mx-auto">Track who lands, where they came from, and where they click through.</h2>
             <p class="text-white/50 text-center text-sm max-w-2xl mx-auto -mt-4 mb-10 italic">
@@ -761,7 +810,7 @@
         <div class="rt-divider max-w-6xl mx-auto"></div>
 
         <!-- ======================== STREAMING INSIGHTS ======================== -->
-        <section class="max-w-7xl mx-auto">
+        <section id="streaming-insights" class="max-w-7xl mx-auto">
             <div class="rt-section-label text-center">05 / Streaming Insights</div>
             <h2 class="rt-h2 text-center max-w-3xl mx-auto">First-party data direct from Spotify &amp; Apple Music for Artists.</h2>
 
@@ -878,7 +927,7 @@
         <div class="rt-divider max-w-6xl mx-auto"></div>
 
         <!-- ======================== SOCIAL ======================== -->
-        <section class="max-w-7xl mx-auto">
+        <section id="social" class="max-w-7xl mx-auto">
             <div class="rt-section-label text-center">06 / Social</div>
             <h2 class="rt-h2 text-center max-w-3xl mx-auto">Cross-platform post analytics: what's earning attention.</h2>
 
@@ -998,7 +1047,7 @@
         <div class="rt-divider max-w-6xl mx-auto"></div>
 
         <!-- ======================== BOOKING ======================== -->
-        <section class="max-w-7xl mx-auto">
+        <section id="booking" class="max-w-7xl mx-auto">
             <div class="rt-section-label text-center">07 / Booking</div>
             <h2 class="rt-h2 text-center max-w-3xl mx-auto">Find venues. Draft outreach. Track the show pipeline.</h2>
 
@@ -1086,13 +1135,12 @@
                     </div>
                 </div>
             </div>
-            <p class="rt-caption">Email send is locked by default · drafts always copy-paste ready</p>
         </section>
 
         <div class="rt-divider max-w-6xl mx-auto"></div>
 
         <!-- ======================== CONTRACTS ======================== -->
-        <section class="max-w-7xl mx-auto">
+        <section id="contracts" class="max-w-7xl mx-auto">
             <div class="rt-section-label text-center">08 / Contracts</div>
             <h2 class="rt-h2 text-center max-w-3xl mx-auto">Every paper agreement that affects revenue or rights.</h2>
 
@@ -1192,86 +1240,96 @@
 
         <div class="rt-divider max-w-6xl mx-auto"></div>
 
-        <!-- ======================== MERCH (mention only) ======================== -->
-        <section class="max-w-4xl mx-auto">
-            <div class="rt-section-label text-center">09 / Plus</div>
-            <h2 class="rt-h2 text-center">Merch · UnitedMasters · Catalog · Contacts.</h2>
+        <!-- ======================== MERCH ======================== -->
+        <section id="merch" class="max-w-4xl mx-auto">
+            <div class="rt-section-label text-center">09 / Merch</div>
+            <h2 class="rt-h2 text-center">Track merch as part of the artist growth engine.</h2>
             <p class="text-white/60 text-center text-lg leading-relaxed max-w-3xl mx-auto">
-                The Growth OS also includes a <strong class="text-white">Merch</strong> view that auto-syncs an Etsy or Shopify storefront via RSS and ties merch revenue back to the campaign that drove it. A <strong class="text-white">UnitedMasters</strong> view tracks distribution-level streams and royalties as the canonical source of truth. <strong class="text-white">Catalog</strong> rolls every release into a per-track P&amp;L. And the <strong class="text-white">Contacts</strong> tab is a private CRM for DJs, curators, journalists, and venue buyers: kept locally and never committed to git.
+                The Growth OS includes a dedicated <strong class="text-white">Merch</strong> view for storefront products, campaign-driven traffic, and sales signals. It helps connect shirts, drops, bundles, and limited-run offers back to the releases, ads, and audience moments that created demand.
             </p>
+            <div class="rt-merch-showcase">
+                <figure class="rt-merch-image-card" aria-label="Obfuscated sample merch preview">
+                    <img src="../images/merch/etsy-4481607659.jpg" alt="Obfuscated sample merch product preview" loading="lazy" decoding="async">
+                    <figcaption class="rt-merch-sample-badge">Sample merch preview</figcaption>
+                    <div class="rt-merch-redactions" aria-hidden="true">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </figure>
+                <div class="rt-merch-panel">
+                    <h3>Product demand, not just product listings.</h3>
+                    <p>
+                        The merch view is designed to show which products are getting attention, where the traffic came from, and whether a campaign is creating enough buyer intent to justify the next drop.
+                    </p>
+                    <div class="rt-merch-metrics">
+                        <div class="rt-merch-metric"><strong>1.4k</strong><span>sample ad views</span></div>
+                        <div class="rt-merch-metric"><strong>0.71%</strong><span>sample click rate</span></div>
+                        <div class="rt-merch-metric"><strong>$0.46</strong><span>sample CPC</span></div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <div class="rt-divider max-w-6xl mx-auto"></div>
 
-        <!-- ======================== ENGINEERING DEEP DIVES ======================== -->
+        <!-- ======================== SYSTEM VALUE ======================== -->
         <section id="engineering" class="max-w-4xl mx-auto">
-            <div class="rt-section-label">10 / Engineering Deep Dives</div>
-            <h2 class="rt-h2">The hard parts: and how I solved them.</h2>
+            <div class="rt-section-label">10 / System Design</div>
+            <h2 class="rt-h2">Built for the messy reality of artist growth.</h2>
 
             <div class="space-y-8 text-white/70 leading-relaxed">
                 <div class="rt-pillar">
-                    <div class="rt-pillar-num">PROBLEM · 01</div>
-                    <h3 class="text-white text-xl font-semibold mb-3">Smart-link analytics with no public API.</h3>
+                    <div class="rt-pillar-num">PILLAR · 01</div>
+                    <h3 class="text-white text-xl font-semibold mb-3">One operating view for the whole artist business.</h3>
                     <p class="text-white/65 mb-3">
-                        ToneDen, Linkfire, and most smart-link providers offer no documented integration path. Without their data, the funnel from ad spend → clickthrough → stream is broken.
+                        Independent artists do not run one business. They run ads, streaming, merch, contracts, social, releases, bookings, and relationships at the same time.
                     </p>
                     <p class="text-white/55">
-                        <strong class="text-white">Solution:</strong> Reverse-engineered the dashboard XHRs, found an undocumented internal REST endpoint, and built a Playwright persistent context that authenticates once and runs headless syncs in ~30 seconds across every link: clickthroughs, geo splits, referrers, and per-platform breakdowns.
+                        <strong class="text-white">What the OS does:</strong> Pulls those moving pieces into one command center so the artist can see the state of the business without bouncing between dashboards, exports, notes, and spreadsheets.
                     </p>
                 </div>
 
                 <div class="rt-pillar">
-                    <div class="rt-pillar-num">PROBLEM · 02</div>
-                    <h3 class="text-white text-xl font-semibold mb-3">Apple Music for Artists invalidates sessions.</h3>
+                    <div class="rt-pillar-num">PILLAR · 02</div>
+                    <h3 class="text-white text-xl font-semibold mb-3">Campaign clarity from spend to fan action.</h3>
                     <p class="text-white/65 mb-3">
-                        Apple's IDMS detected Playwright's bundled Chromium as <code class="font-['JetBrains_Mono'] text-xs bg-white/5 px-1.5 py-0.5 rounded text-white/80">HeadlessChrome</code> and invalidated the device-trust cookie on every relaunch: forcing a manual re-login on every sync.
+                        Music marketing gets blurry fast. A campaign can look good in one platform and weak everywhere else, especially when every tool defines success differently.
                     </p>
                     <p class="text-white/55">
-                        <strong class="text-white">Solution:</strong> User-agent and client-hints spoofing: overriding <code class="font-['JetBrains_Mono'] text-xs bg-white/5 px-1.5 py-0.5 rounded text-white/80">userAgent</code>, <code class="font-['JetBrains_Mono'] text-xs bg-white/5 px-1.5 py-0.5 rounded text-white/80">sec-ch-ua</code>, and <code class="font-['JetBrains_Mono'] text-xs bg-white/5 px-1.5 py-0.5 rounded text-white/80">sec-ch-ua-platform</code>: to match a real macOS Chrome 131. After wiping the stale session profile and re-logging once, the device-trust cookie now persists for weeks.
+                        <strong class="text-white">What the OS does:</strong> Connects promotion activity to downstream listener, revenue, and audience signals so decisions are based on movement that matters, not isolated vanity metrics.
                     </p>
                 </div>
 
                 <div class="rt-pillar">
-                    <div class="rt-pillar-num">PROBLEM · 03</div>
-                    <h3 class="text-white text-xl font-semibold mb-3">PII can never leave the laptop.</h3>
+                    <div class="rt-pillar-num">PILLAR · 03</div>
+                    <h3 class="text-white text-xl font-semibold mb-3">Release decisions without spreadsheet fog.</h3>
                     <p class="text-white/65 mb-3">
-                        The agent stores industry contacts, outreach history, and private analytics. The repo lives in git for cross-machine sync: but PII can't be committed.
+                        Every release creates a pile of questions: which song is pulling attention, where the audience is forming, what creative needs work, and what move should happen next.
                     </p>
                     <p class="text-white/55">
-                        <strong class="text-white">Solution:</strong> A two-tier export model. <code class="font-['JetBrains_Mono'] text-xs bg-white/5 px-1.5 py-0.5 rounded text-white/80">db:export</code> writes a public seed that excludes credentials AND PII tables. A second command, <code class="font-['JetBrains_Mono'] text-xs bg-white/5 px-1.5 py-0.5 rounded text-white/80">db:export:private</code>, writes the PII-only bundle which is gitignored and transferred manually via encrypted channel.
+                        <strong class="text-white">What the OS does:</strong> Turns release, catalog, and campaign data into a practical decision layer: what is working, what is slipping, and where attention should go today.
                     </p>
                 </div>
 
                 <div class="rt-pillar">
-                    <div class="rt-pillar-num">PROBLEM · 04</div>
-                    <h3 class="text-white text-xl font-semibold mb-3">Read-only by default: even when authorized to write.</h3>
+                    <div class="rt-pillar-num">PILLAR · 04</div>
+                    <h3 class="text-white text-xl font-semibold mb-3">Private by design, cautious by default.</h3>
                     <p class="text-white/65 mb-3">
-                        The agent has the credentials to post to Instagram, send DMs, edit ad campaigns, and reply to comments. That's also exactly how AI agents go wrong.
+                        Artist businesses contain sensitive material: contacts, contracts, campaign performance, audience signals, unreleased plans, and money decisions.
                     </p>
                     <p class="text-white/55">
-                        <strong class="text-white">Solution:</strong> Two safety locks: <code class="font-['JetBrains_Mono'] text-xs bg-white/5 px-1.5 py-0.5 rounded text-white/80">EXTERNAL_WRITE_MODE=locked</code> and <code class="font-['JetBrains_Mono'] text-xs bg-white/5 px-1.5 py-0.5 rounded text-white/80">MESSAGING_MODE=locked</code>. The agent can read everything but cannot write or message anything until both are explicitly unlocked. The <span class="rt-badge" style="font-size:8px; padding:2px 6px;">READ-ONLY</span> badge in the dashboard header makes this state visible at a glance.
+                        <strong class="text-white">What the OS does:</strong> Treats privacy and human approval as product features. The system is designed to surface recommendations, protect sensitive data, and keep high-impact actions controlled.
                     </p>
                 </div>
             </div>
 
-            <div class="text-center mt-12">
-                <span class="rt-tech-pill">Node.js</span>
-                <span class="rt-tech-pill">React</span>
-                <span class="rt-tech-pill">TypeScript</span>
-                <span class="rt-tech-pill">SQLite (better-sqlite3)</span>
-                <span class="rt-tech-pill">Playwright</span>
-                <span class="rt-tech-pill">Vite</span>
-                <span class="rt-tech-pill">Meta Marketing API</span>
-                <span class="rt-tech-pill">Instagram Graph API</span>
-                <span class="rt-tech-pill">YouTube Data API</span>
-                <span class="rt-tech-pill">OpenAI API</span>
-            </div>
         </section>
 
         <div class="rt-divider max-w-6xl mx-auto"></div>
 
         <!-- ======================== LESSONS ======================== -->
-        <section class="max-w-4xl mx-auto">
+        <section id="lessons" class="max-w-4xl mx-auto">
             <div class="rt-section-label">11 / What I Learned</div>
             <h2 class="rt-h2">Building an AI agent an artist actually trusts.</h2>
 
@@ -1279,7 +1337,7 @@
                 <p><strong class="text-white">The interface is the product.</strong> A perfect data pipeline is worthless if the artist can't answer "what do I do today?" in 10 seconds. Every dashboard view is a one-question answer. Detail lives one click deeper.</p>
                 <p><strong class="text-white">Comparable metrics matter more than complete metrics.</strong> Meta calls a "result" anything from a link click to a pixel event. ToneDen counts service-button clicks. UnitedMasters reports streams. Without a normalization layer, no comparison is honest.</p>
                 <p><strong class="text-white">Read-only by default earns the right to write later.</strong> Once the agent has proven it never destroys data, never sends an embarrassing DM, and never burns ad budget by accident, the unlock comes naturally. Locked-by-default is the credibility floor for any AI agent that touches a real business.</p>
-                <p><strong class="text-white">Reverse-engineering is a first-class engineering skill.</strong> Two of the most valuable data sources have no documented integration path. Knowing how to safely sniff XHRs, persist a session, and spoof a browser fingerprint unlocked features that no off-the-shelf tool offers.</p>
+                <p><strong class="text-white">The best artist tool is boring in the right places.</strong> It should make the next move obvious, protect sensitive data, and let the artist stay focused on creative and business decisions instead of platform admin.</p>
             </div>
         </section>
 

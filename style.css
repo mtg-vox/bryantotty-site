@@ -486,14 +486,146 @@ main, section, footer, nav {
 }
 @keyframes studio-gradient { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
 
-/* Per-section persona labels */
-.studio-label-red    { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--c-red);    margin-bottom: 12px; text-shadow: 0 0 10px rgba(200, 16, 46, 0.45); }
-.studio-label-pink   { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--c-pink);   margin-bottom: 12px; text-shadow: 0 0 10px rgba(255, 46, 136, 0.45); }
-.studio-label-cyan   { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--c-cyan);   margin-bottom: 12px; text-shadow: 0 0 10px rgba(0, 240, 255, 0.4); }
-.studio-label-purple { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--c-purple); margin-bottom: 12px; text-shadow: 0 0 10px rgba(157, 78, 221, 0.45); }
-.studio-label-gold   { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--c-gold);   margin-bottom: 12px; text-shadow: 0 0 10px rgba(247, 201, 72, 0.40); }
+/* ============================================================
+   UNIFIED SECTION LABEL BADGE (site-wide)
+   Canonical pattern: centered pill, JetBrains Mono, brand-tinted
+   Used by: .site-section-label (global), .studio-label-* (creative/blog/speaking/projects),
+            .m-section-label-* (miami nft), .p-section-label-* (ibm), .ss-section-label (shadowscan),
+            .rt-section-label (artist-growth-os — defined inline, same shape)
+   ============================================================ */
+.site-section-label,
+.studio-label-red,
+.studio-label-pink,
+.studio-label-cyan,
+.studio-label-purple,
+.studio-label-gold,
+.m-section-label-pink,
+.m-section-label-cyan,
+.m-section-label-purple,
+.m-section-label-sunset,
+.p-section-label-blue,
+.p-section-label-green,
+.ss-section-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0 auto 16px;
+    padding: 9px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.04);
+    text-align: center;
+    text-shadow: none;
+    line-height: 1.2;
+}
 
-.studio-h2 { font-size: 28px; font-weight: 700; color: white; margin-bottom: 18px; letter-spacing: -0.01em; line-height: 1.2; }
+/* Color variants — brand-tinted border + soft fill (text stays white for legibility) */
+.studio-label-red,
+.p-section-label-blue {
+    border-color: rgba(200, 16, 46, 0.5);
+    background: rgba(200, 16, 46, 0.08);
+    box-shadow: 0 0 20px rgba(200, 16, 46, 0.08);
+}
+.studio-label-pink,
+.m-section-label-pink {
+    border-color: rgba(255, 46, 136, 0.5);
+    background: rgba(255, 46, 136, 0.08);
+    box-shadow: 0 0 20px rgba(255, 46, 136, 0.08);
+}
+.studio-label-cyan,
+.m-section-label-cyan {
+    border-color: rgba(0, 240, 255, 0.45);
+    background: rgba(0, 240, 255, 0.06);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.06);
+}
+.studio-label-purple,
+.m-section-label-purple {
+    border-color: rgba(157, 78, 221, 0.5);
+    background: rgba(157, 78, 221, 0.08);
+    box-shadow: 0 0 20px rgba(157, 78, 221, 0.08);
+}
+.studio-label-gold {
+    border-color: rgba(247, 201, 72, 0.5);
+    background: rgba(247, 201, 72, 0.08);
+    box-shadow: 0 0 20px rgba(247, 201, 72, 0.08);
+}
+.m-section-label-sunset {
+    border-color: rgba(255, 107, 53, 0.5);
+    background: rgba(255, 107, 53, 0.08);
+    box-shadow: 0 0 20px rgba(255, 107, 53, 0.08);
+}
+.p-section-label-green {
+    border-color: rgba(34, 197, 94, 0.5);
+    background: rgba(34, 197, 94, 0.08);
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.08);
+}
+.ss-section-label {
+    border-color: rgba(59, 130, 246, 0.5);
+    background: rgba(59, 130, 246, 0.08);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.08);
+}
+
+/* Mobile sizing — applied to all section badges */
+@media (max-width: 767px) {
+    .site-section-label,
+    .studio-label-red,
+    .studio-label-pink,
+    .studio-label-cyan,
+    .studio-label-purple,
+    .studio-label-gold,
+    .m-section-label-pink,
+    .m-section-label-cyan,
+    .m-section-label-purple,
+    .m-section-label-sunset,
+    .p-section-label-blue,
+    .p-section-label-green,
+    .ss-section-label {
+        font-size: 10px;
+        letter-spacing: 0.16em;
+        padding: 8px 12px;
+    }
+}
+
+.studio-mini-label {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    margin-bottom: 12px;
+    padding: 6px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.035);
+    color: rgba(255, 255, 255, 0.68);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+.studio-mini-label.red { border-color: rgba(200, 16, 46, 0.35); color: rgba(255, 160, 176, 0.88); background: rgba(200, 16, 46, 0.055); }
+.studio-mini-label.pink { border-color: rgba(255, 46, 136, 0.35); color: rgba(255, 180, 220, 0.9); background: rgba(255, 46, 136, 0.055); }
+.studio-mini-label.gold { border-color: rgba(247, 201, 72, 0.35); color: rgba(255, 226, 139, 0.9); background: rgba(247, 201, 72, 0.055); }
+.studio-mini-label.cyan { border-color: rgba(0, 240, 255, 0.32); color: rgba(160, 248, 255, 0.9); background: rgba(0, 240, 255, 0.045); }
+.studio-jump-num {
+    display: block;
+    margin-bottom: 6px;
+    color: rgba(255, 255, 255, 0.58);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.studio-h2 { font-size: 32px; font-weight: 700; color: white; margin-bottom: 24px; letter-spacing: -0.02em; line-height: 1.15; }
 
 /* Section cards with persona accents (used to color code sub-pillars) */
 .studio-card-red    { border: 1px solid rgba(200, 16, 46, 0.25);  background: rgba(200, 16, 46, 0.02);  border-left: 3px solid var(--c-red);    border-radius: 12px; padding: 24px; }
@@ -515,10 +647,12 @@ main, section, footer, nav {
 /* Fashion lookbook feature */
 .fashion-feature {
     display: grid;
-    grid-template-columns: minmax(260px, 380px) minmax(0, 1fr);
-    gap: 24px;
-    align-items: center;
-    margin-bottom: 24px;
+    grid-template-columns: minmax(420px, 0.95fr) minmax(420px, 1.05fr);
+    gap: 28px;
+    align-items: stretch;
+    width: min(1180px, calc(100vw - 48px));
+    margin: 4px 50% 30px;
+    transform: translateX(-50%);
 }
 .fashion-feature-art,
 .fashion-supporting-art {
@@ -527,13 +661,13 @@ main, section, footer, nav {
     background: rgba(0, 0, 0, 0.4);
 }
 .fashion-feature-art {
-    max-width: 390px;
     border: 1px solid rgba(255, 46, 136, 0.25);
+    box-shadow: 0 24px 80px rgba(255, 46, 136, 0.08);
 }
 .fashion-feature-art img {
     display: block;
     width: 100%;
-    max-height: 540px;
+    height: clamp(560px, 58vw, 680px);
     object-fit: cover;
     object-position: top center;
 }
@@ -547,34 +681,40 @@ main, section, footer, nav {
     text-transform: uppercase;
 }
 .fashion-feature-copy {
-    padding: 24px !important;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    min-height: calc(clamp(560px, 58vw, 680px) + 44px);
+    padding: 34px 30px !important;
 }
 .fashion-feature-copy h3 {
     color: white;
-    font-size: 24px;
+    font-size: clamp(28px, 2.6vw, 38px);
     font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 12px;
+    line-height: 1.08;
+    margin-bottom: 18px;
 }
 .fashion-feature-copy p:not(:first-child) {
-    max-width: 620px;
+    max-width: 680px;
     color: rgba(255, 255, 255, 0.65);
-    font-size: 14px;
-    line-height: 1.7;
-    margin-bottom: 18px;
+    font-size: 16px;
+    line-height: 1.72;
+    margin-bottom: 24px;
 }
 .fashion-tag-row {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 8px;
-    max-width: 520px;
+    gap: 10px;
+    max-width: 620px;
 }
 .fashion-tag {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 34px;
-    padding: 8px 10px;
+    padding: 10px 12px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 6px;
     background: rgba(255, 255, 255, 0.02);
@@ -605,19 +745,96 @@ main, section, footer, nav {
 .fashion-brand-card h3 {
     line-height: 1.15;
 }
+.fashion-categories {
+    border: 1px solid rgba(255, 46, 136, 0.16);
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.18);
+    padding: 18px;
+    color: rgba(255, 255, 255, 0.74);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+    letter-spacing: 0;
+}
+.fashion-categories-title {
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+.fashion-categories ul {
+    display: grid;
+    gap: 6px;
+}
+.fashion-categories li {
+    color: rgba(255, 255, 255, 0.72);
+}
+.fashion-categories li::before {
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    margin: 0 8px 2px 0;
+    border-radius: 999px;
+    background: var(--c-pink);
+    box-shadow: 0 0 10px rgba(255, 46, 136, 0.5);
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+    .fashion-feature {
+        grid-template-columns: minmax(360px, 0.95fr) minmax(320px, 1fr);
+        width: 100%;
+        margin: 4px 0 30px;
+        transform: none;
+    }
+    .fashion-feature-art img {
+        height: 560px;
+    }
+    .fashion-feature-copy {
+        min-height: 602px;
+        padding: 28px 24px !important;
+    }
+    .fashion-feature-copy h3 {
+        font-size: 28px;
+    }
+    .fashion-feature-copy p:not(:first-child) {
+        font-size: 15px;
+    }
+}
 
 @media (max-width: 767px) {
+    .studio-label-red,
+    .studio-label-pink,
+    .studio-label-cyan,
+    .studio-label-purple,
+    .studio-label-gold {
+        font-size: 10px;
+        letter-spacing: 0.16em;
+        padding: 8px 12px;
+    }
+    .studio-h2 {
+        font-size: 24px;
+    }
     .fashion-feature {
         display: block;
+        width: 100%;
+        margin: 0 0 24px;
+        transform: none;
     }
     .fashion-feature-art {
         max-width: 330px;
         margin: 0 auto 18px;
     }
     .fashion-feature-art img {
+        height: auto;
         max-height: 500px;
     }
     .fashion-feature-copy {
+        display: block;
+        min-height: 0;
         padding: 20px !important;
     }
     .fashion-feature-copy h3 {
