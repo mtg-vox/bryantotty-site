@@ -1,3 +1,3 @@
 # bryantotty.com
 
-Source for [bryantotty.com](https://bryantotty.com) — personal website for Bryant Totty.
+Source for [bryantotty.com](https://bryantotty.com) — personal website for Bryan Totty.
