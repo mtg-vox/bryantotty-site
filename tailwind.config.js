@@ -27,6 +27,21 @@ export default {
                 // Used by projects/shadowscan-ai.html
                 cyber: '#3b82f6',
                 cyberDeep: '#1d3bb8',
+                // Used by blog posts (migrated from per-page Tailwind CDN configs)
+                crimson: '#a41034',
+                gold: '#d4af6a',
+                mech: {
+                    red: '#ff2040',
+                    blue: '#3b82f6',
+                    deep: '#1e3a8a',
+                    amber: '#fbbf24',
+                },
+                miami: {
+                    pink: '#ff2e88',
+                    cyan: '#00f0ff',
+                    purple: '#9d4edd',
+                    sunset: '#ff6b35',
+                },
             },
         },
     },

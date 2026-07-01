@@ -116,7 +116,8 @@ if (merchGrid) {
 
             const cards = items.map(function (item) {
                 const title = escape(item.title || 'Untitled');
-                const href = escape(item.href || '#');
+                const rawHref = String(item.href || '#');
+                const href = escape(/^https?:\/\//i.test(rawHref) ? rawHref : '#');
                 const img = escape(item.localImage || '');
                 const price = item.price ? escape(item.price) : '';
                 return ''

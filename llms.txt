@@ -23,14 +23,17 @@ Available for keynotes, panels, and podcasts on two tracks:
 - Lifestyle / coaching: self-mastery, social dynamics, creative entrepreneurship
 - Past talk: Red Hat Customer Convergence, Raleigh NC (systemd as a feature)
 
+## Consulting & Advisory
+Bryan is open to consulting and advisory engagements focused on AI-powered cloud security: security automation, AI security agents, vulnerability management, least privilege, secret scanning, and compliance automation (SOC 2, GDPR, FedRAMP, NIST 800-53). Best first contact is the website contact page or LinkedIn.
+
 ## Creative Studio
-- Music: independent recording artist as RED T7GER (current rap-rock and EDM crossover) and B. Totty (legacy hip hop). Distributed via UnitedMasters. Site: redt7ger.com
+- Music: independent recording artist as RED T7GER (current rap-rock and EDM crossover) and B. Totty (legacy hip hop). Vocalist first, plus music production, mixing and mastering, and multiple instruments. Distributed via UnitedMasters. Site: redt7ger.com
 - Fashion / Apparel: Red Tiger Unlimited brand. Etsy shop: etsy.com/shop/RedTigerUnlimited
-- Design: album covers, posters, brand systems, web design
+- Design: album covers, single artwork, posters, logos, and full brand identity systems. Expert in Adobe Photoshop.
 - Brand: dark rap-rock visual identity built around the red tiger mark
 
 ## Expertise
-Cloud Security Engineering, Security Automation, AI Agents (Claude Opus, ChatGPT), Vulnerability Management, Compliance Automation, Least Privilege Enforcement, Secret Scanning, Cybersecurity, Market Analysis, Music Production, Branding & Design, Public Speaking
+Cloud Security Engineering, Security Automation, AI Development, AI Agents (Claude Opus, ChatGPT), Vulnerability Management, Compliance Automation, Least Privilege Enforcement, Secret Scanning, Cybersecurity, Market Analysis, Vocal Performance, Music Production, Mixing & Mastering, Album Cover Design, Photoshop, Brand Identity Design, Public Speaking
 
 ## Technical Skills
 Azure, AWS, Docker, Kubernetes, Python, PowerShell, Bash, KQL, Linux, SELinux, GitHub, CI/CD, IAM/RBAC, SIEM, OpenSSL/TLS
@@ -57,4 +60,5 @@ Azure, AWS, Docker, Kubernetes, Python, PowerShell, Bash, KQL, Linux, SELinux, G
 
 ## Contact
 - LinkedIn: https://www.linkedin.com/in/bryantotty/
+- GitHub: https://github.com/mtg-vox/
 - Website: https://bryantotty.com/contact.html

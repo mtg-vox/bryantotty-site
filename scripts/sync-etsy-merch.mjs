@@ -98,6 +98,12 @@ async function main() {
 
     for (const item of items) {
         if (!item.image) continue;
+        let imgHost = '';
+        try { imgHost = new URL(item.image).hostname; } catch { imgHost = ''; }
+        if (!/(^|\.)etsystatic\.com$/i.test(imgHost)) {
+            console.warn(`[merch:sync]   skip ${item.id}: image host not allowed (${imgHost || 'invalid URL'})`);
+            continue;
+        }
         const local = `etsy-${item.id}.jpg`;
         const dest = path.join(MERCH_DIR, local);
         try {
