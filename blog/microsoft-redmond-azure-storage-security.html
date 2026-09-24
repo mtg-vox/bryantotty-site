@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=()" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io; base-uri 'self'; form-action 'self' https://formspree.io" />
+    <title>A Week in Redmond with Azure Storage Security - Bryan Totty</title>
+    <meta name="description" content="A week at Microsoft's Redmond campus with the Azure Storage security team, talking AI security, automation, emerging threats, and security metrics for cloud infrastructure at scale.">
+    <meta name="author" content="Bryan Totty">
+    <link rel="canonical" href="https://bryantotty.com/blog/microsoft-redmond-azure-storage-security.html">
+    <meta property="og:title" content="A Week in Redmond with Azure Storage Security">
+    <meta property="og:description" content="AI security, automation, emerging threats, and security metrics for cloud infrastructure at scale: notes from Microsoft's Redmond campus.">
+    <meta property="og:image" content="https://bryantotty.com/images/blog/microsoft-redmond/og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://bryantotty.com/blog/microsoft-redmond-azure-storage-security.html">
+    <meta property="og:site_name" content="Bryan Totty">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="A Week in Redmond with Azure Storage Security">
+    <meta name="twitter:description" content="AI security, automation, emerging threats, and security metrics for cloud infrastructure at scale: notes from Microsoft's Redmond campus.">
+    <meta name="twitter:image" content="https://bryantotty.com/images/blog/microsoft-redmond/og.jpg">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg?v=b-20260430">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png?v=b-20260430">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png?v=b-20260430">
+    <link rel="stylesheet" href="/dist/tailwind.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css?v=20260509a">
+    <link rel="preload" as="image" href="../images/blog/microsoft-redmond/hero-solo-1600.webp" imagesrcset="../images/blog/microsoft-redmond/hero-solo-960.webp 960w, ../images/blog/microsoft-redmond/hero-solo-1600.webp 1600w" imagesizes="(min-width: 768px) 768px, 100vw" type="image/webp">
+    <style>
+        :root { --az-blue: #0078d4; --az-cyan: #50e6ff; --ms-red: #f25022; --ms-green: #7fba00; --ms-yellow: #ffb900; }
+        .az-sky { position: fixed; inset: 0; z-index: 0; pointer-events: none;
+            background: radial-gradient(ellipse at 15% 0%, rgba(0,120,212,0.20), transparent 55%),
+                        radial-gradient(ellipse at 85% 10%, rgba(80,230,255,0.10), transparent 55%),
+                        radial-gradient(ellipse at 50% 100%, rgba(127,186,0,0.08), transparent 60%); }
+        .az-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono', monospace;
+            font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; padding: 6px 14px; border-radius: 999px;
+            color: var(--az-cyan); border: 1px solid rgba(80,230,255,0.4); background: rgba(80,230,255,0.06); }
+        .az-squares { display: inline-grid; grid-template-columns: 5px 5px; gap: 1px; }
+        .az-squares i { width: 5px; height: 5px; display: block; }
+        .az-title { background: linear-gradient(95deg, #fff 0%, var(--az-cyan) 55%, var(--az-blue) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .az-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--az-cyan); margin-bottom: 12px; }
+        .az-frame { border-radius: 8px; overflow: hidden; border: 1px solid rgba(80,230,255,0.3); box-shadow: 0 0 40px rgba(0,120,212,0.15); background: #0b0f14; }
+        .az-frame img { display: block; width: 100%; height: auto; }
+        .az-card { border: 1px solid rgba(80,230,255,0.25); border-left: 3px solid var(--az-blue); background: rgba(0,120,212,0.04); border-radius: 8px; padding: 20px 22px; }
+        .az-card h3 { color: #fff; font-weight: 600; margin-bottom: 6px; }
+        .az-link { color: var(--az-cyan); text-decoration: underline; text-decoration-color: rgba(80,230,255,0.4); text-underline-offset: 4px; }
+        .az-link:hover { color: #fff; }
+        figcaption { color: rgba(255,255,255,0.45); font-size: 12px; font-style: italic; margin-top: 12px; text-align: center; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.05em; }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":"https://bryantotty.com/blog/microsoft-redmond-azure-storage-security.html","headline":"A Week in Redmond with Azure Storage Security","description":"A week at Microsoft's Redmond campus with the Azure Storage security team, talking AI security, automation, emerging threats, and security metrics for cloud infrastructure at scale.","image":["https://bryantotty.com/images/blog/microsoft-redmond/og.jpg","https://bryantotty.com/images/blog/microsoft-redmond/hero-solo-1600.jpg"],"datePublished":"2026-09-23","dateModified":"2026-09-23","contentLocation":{"@type":"Place","name":"Microsoft Redmond Campus","address":{"@type":"PostalAddress","addressLocality":"Redmond","addressRegion":"WA","addressCountry":"US"}},"about":["Cloud Security","AI Security","Azure Storage","Security Automation"],"author":{"@type":"Person","@id":"https://bryantotty.com/#person","name":"Bryan Totty","url":"https://bryantotty.com/about.html"},"publisher":{"@type":"Person","name":"Bryan Totty","url":"https://bryantotty.com/"}}</script>
+</head>
+<body class="bg-dark text-white font-['Inter'] min-h-screen">
+    <div class="az-sky" aria-hidden="true"></div>
+    <nav class="fixed top-0 w-full z-50 bg-dark/80 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-xl font-black tracking-tighter"><span class="text-white">BRYAN</span><span class="text-glow">TOTTY</span></a>
+            <div class="hidden md:flex gap-8 text-xs font-semibold tracking-[0.2em] uppercase">
+                <a href="/" class="text-white/50 hover:text-glow transition-colors">Home</a>
+                <a href="../about.html" class="text-white/50 hover:text-glow transition-colors">About</a>
+                <a href="../projects.html" class="text-white/50 hover:text-glow transition-colors">Projects</a>
+                <a href="../creative.html" class="text-white/50 hover:text-glow transition-colors">Creative</a>
+                <a href="../speaking.html" class="text-white/50 hover:text-glow transition-colors">Speaking</a>
+                <a href="../blog.html" class="text-white hover:text-glow transition-colors">Blog</a>
+                <a href="../contact.html" class="text-white/50 hover:text-glow transition-colors">Contact</a>
+            </div>
+            <button id="menu-btn" class="md:hidden text-white" aria-label="Toggle menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-dark/95 backdrop-blur-xl">
+            <div class="flex flex-col px-6 py-4 gap-4 text-xs font-semibold tracking-[0.2em] uppercase">
+                <a href="/" class="text-white/50">Home</a>
+                <a href="../about.html" class="text-white/50">About</a>
+                <a href="../projects.html" class="text-white/50">Projects</a>
+                <a href="../creative.html" class="text-white/50">Creative</a>
+                <a href="../speaking.html" class="text-white/50">Speaking</a>
+                <a href="../blog.html" class="text-white">Blog</a>
+                <a href="../contact.html" class="text-white/50">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-28 pb-24 px-6 relative">
+        <article class="max-w-3xl mx-auto relative">
+            <a href="../blog.html" class="text-white/40 hover:text-glow text-sm mb-8 inline-block transition-colors">&larr; Back to Blog</a>
+
+            <div class="flex justify-center mb-6">
+                <div class="az-eyebrow">
+                    <span class="az-squares" aria-hidden="true"><i style="background:var(--ms-red)"></i><i style="background:var(--ms-green)"></i><i style="background:var(--az-blue)"></i><i style="background:var(--ms-yellow)"></i></span>
+                    Redmond, WA &middot; September 2026
+                </div>
+            </div>
+            <div class="flex flex-wrap items-center justify-center gap-2 mb-5">
+                <time datetime="2026-09-23" class="text-xs text-white/40 font-['JetBrains_Mono'] tracking-wider">SEPTEMBER 23, 2026</time>
+                <span class="text-white/20">&middot;</span>
+                <span class="text-xs font-medium px-2 py-0.5 rounded bg-blue-500/10 text-blue-300 font-['JetBrains_Mono'] tracking-wider">CLOUD SECURITY</span>
+                <span class="text-white/20">&middot;</span>
+                <span class="text-xs font-medium px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 font-['JetBrains_Mono'] tracking-wider">AI</span>
+            </div>
+            <h1 class="az-title text-4xl md:text-6xl font-bold tracking-tight mb-5 leading-[1.05] text-center">A Week in Redmond with Azure Storage Security</h1>
+            <p class="text-white/60 text-lg leading-relaxed mb-12 max-w-2xl mx-auto text-center">Face time with the team that protects one of the largest storage platforms on the planet, and a few days exploring the campus where it all gets built.</p>
+
+            <figure class="mb-14">
+                <div class="az-frame">
+                    <picture>
+                        <source type="image/webp" srcset="../images/blog/microsoft-redmond/hero-solo-960.webp 960w, ../images/blog/microsoft-redmond/hero-solo-1600.webp 1600w" sizes="(min-width: 768px) 768px, 100vw">
+                        <img src="../images/blog/microsoft-redmond/hero-solo-1600.jpg" srcset="../images/blog/microsoft-redmond/hero-solo-960.jpg 960w, ../images/blog/microsoft-redmond/hero-solo-1600.jpg 1600w" sizes="(min-width: 768px) 768px, 100vw" width="1600" height="974" alt="Bryan Totty in a red polo with arms outstretched behind the Microsoft logo sign on the Redmond campus" loading="eager" fetchpriority="high" decoding="async">
+                    </picture>
+                </div>
+                <figcaption>Made it. Microsoft sign at the Redmond campus plaza.</figcaption>
+            </figure>
+
+            <section class="mb-14">
+                <p class="az-label">01 &middot; Why Redmond</p>
+                <h2 class="text-2xl md:text-3xl font-semibold text-white mb-6 leading-snug">Putting faces to the work.</h2>
+                <div class="text-white/70 leading-relaxed space-y-5 text-base">
+                    <p>Last week I flew from Miami to Redmond, Washington to spend time in person with Microsoft's <strong class="text-white">Azure Storage security team</strong>. A lot of security work happens across time zones in chat threads, tickets, and dashboards. Being in the same room for a week changes the conversation. You go deeper, faster, and you leave with a shared picture of where things need to go.</p>
+                    <p>Azure Storage sits underneath a huge share of what runs in the cloud, so the stakes are high. Microsoft's public guidance covers the fundamentals, like <a class="az-link" href="https://learn.microsoft.com/en-us/azure/storage/common/storage-service-encryption" target="_blank" rel="noopener noreferrer">encryption at rest by default</a> and a detailed set of <a class="az-link" href="https://learn.microsoft.com/en-us/azure/storage/blobs/security-recommendations" target="_blank" rel="noopener noreferrer">security recommendations for Blob storage</a>. Our time together was about what comes next.</p>
+                </div>
+            </section>
+
+            <figure class="mb-14">
+                <div class="az-frame">
+                    <picture>
+                        <source type="image/webp" srcset="../images/blog/microsoft-redmond/team-sign-960.webp 960w, ../images/blog/microsoft-redmond/team-sign-1600.webp 1600w" sizes="(min-width: 768px) 768px, 100vw">
+                        <img src="../images/blog/microsoft-redmond/team-sign-1600.jpg" srcset="../images/blog/microsoft-redmond/team-sign-960.jpg 960w, ../images/blog/microsoft-redmond/team-sign-1600.jpg 1600w" sizes="(min-width: 768px) 768px, 100vw" width="1600" height="894" alt="Bryan Totty with members of the Azure Storage security team in front of the Microsoft sign under the timber canopy" loading="lazy" decoding="async">
+                    </picture>
+                </div>
+                <figcaption>The crew at the Microsoft sign</figcaption>
+            </figure>
+
+            <section class="mb-14">
+                <p class="az-label">02 &middot; What We Worked On</p>
+                <h2 class="text-2xl md:text-3xl font-semibold text-white mb-6 leading-snug">AI, automation, and the threats that come with them.</h2>
+                <p class="text-white/70 leading-relaxed text-base mb-8">Without getting into anything internal, the discussions ran along four tracks:</p>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="az-card"><h3>AI's impact on cloud security</h3><p class="text-white/65 text-sm leading-relaxed">How AI changes the security picture for infrastructure at massive scale, as both a new attack surface and a powerful defensive tool.</p></div>
+                    <div class="az-card"><h3>Defending AI and automation</h3><p class="text-white/65 text-sm leading-relaxed">How to deploy AI agents and automation safely: with least privilege, strong guardrails, and humans in the loop where it counts.</p></div>
+                    <div class="az-card"><h3>Emerging threats</h3><p class="text-white/65 text-sm leading-relaxed">What attackers are trying now, and how quickly defenses need to adapt when the tools on both sides keep getting faster.</p></div>
+                    <div class="az-card"><h3>Security metrics</h3><p class="text-white/65 text-sm leading-relaxed">How we measure and track risk across cloud environments so progress is visible, comparable, and actionable.</p></div>
+                </div>
+                <p class="text-white/70 leading-relaxed text-base mt-8">That lines up with the direction of Microsoft's <a class="az-link" href="https://www.microsoft.com/en-us/trust-center/security/secure-future-initiative" target="_blank" rel="noopener noreferrer">Secure Future Initiative</a>, and it's close to my own day-to-day: building AI-driven tooling that turns security work at scale into something automated, measurable, and fast.</p>
+            </section>
+
+            <figure class="mb-14">
+                <div class="az-frame">
+                    <picture>
+                        <source type="image/webp" srcset="../images/blog/microsoft-redmond/team-lounge-960.webp 960w, ../images/blog/microsoft-redmond/team-lounge-1600.webp 1600w" sizes="(min-width: 768px) 768px, 100vw">
+                        <img src="../images/blog/microsoft-redmond/team-lounge-1600.jpg" srcset="../images/blog/microsoft-redmond/team-lounge-960.jpg 960w, ../images/blog/microsoft-redmond/team-lounge-1600.jpg 1600w" sizes="(min-width: 768px) 768px, 100vw" width="1600" height="1103" alt="Team members relaxing in red and gray Adirondack chairs in a courtyard between glass buildings on the Microsoft campus" loading="lazy" decoding="async">
+                    </picture>
+                </div>
+                <figcaption>Between sessions in one of the campus courtyards</figcaption>
+            </figure>
+
+            <section class="mb-14">
+                <p class="az-label">03 &middot; Exploring Campus</p>
+                <h2 class="text-2xl md:text-3xl font-semibold text-white mb-6 leading-snug">Timber, glass, and green space.</h2>
+                <div class="text-white/70 leading-relaxed space-y-5 text-base">
+                    <p>Between sessions I explored the Redmond campus. The newer parts feel more like a well-designed park than a corporate office park: a huge timber-and-glass canopy over the plaza, courtyards full of plants, and Adirondack chairs where teams can take a meeting outside. It's the kind of space that makes it easy to step away from a whiteboard and keep the conversation going.</p>
+                    <p>I also got into Seattle on my first night to see the waterfront before the work week kicked off.</p>
+                </div>
+            </section>
+
+            <figure class="mb-14 max-w-md mx-auto">
+                <div class="az-frame">
+                    <picture>
+                        <source type="image/webp" srcset="../images/blog/microsoft-redmond/seattle-night-720.webp 720w, ../images/blog/microsoft-redmond/seattle-night-1080.webp 1080w" sizes="(min-width: 768px) 480px, 100vw">
+                        <img src="../images/blog/microsoft-redmond/seattle-night-1080.jpg" srcset="../images/blog/microsoft-redmond/seattle-night-720.jpg 720w, ../images/blog/microsoft-redmond/seattle-night-1080.jpg 1080w" sizes="(min-width: 768px) 480px, 100vw" width="1080" height="1918" alt="Bryan Totty at night beside the illuminated SEATTLE letters" loading="lazy" decoding="async">
+                    </picture>
+                </div>
+                <figcaption>First night in Seattle</figcaption>
+            </figure>
+
+            <section class="mb-14">
+                <p class="az-label">04 &middot; Takeaway</p>
+                <h2 class="text-2xl md:text-3xl font-semibold text-white mb-6 leading-snug">Security still runs on people.</h2>
+                <div class="text-white/70 leading-relaxed space-y-5 text-base">
+                    <p>AI and automation are changing how we defend cloud infrastructure, and this week made that concrete. The biggest lesson, though, was simple: the best security outcomes still come from people who trust each other and work toward the same goal. I came home with a clearer roadmap, new ideas to build, and a team I'm glad to work alongside.</p>
+                </div>
+            </section>
+
+            <div class="mt-16 pt-8 border-t border-white/10 flex items-center justify-between flex-wrap gap-4">
+                <p class="text-sm text-cyan-300 font-['JetBrains_Mono']">Written by Bryan Totty &middot; Sep 2026</p>
+                <a href="../blog.html" class="text-white/40 hover:text-glow text-sm transition-colors">More posts &rarr;</a>
+            </div>
+            <p class="text-white/30 text-xs mt-6 leading-relaxed">Views are my own and do not represent Microsoft.</p>
+        </article>
+    </main>
+
+    <footer class="border-t border-white/5 py-10 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-white/30 tracking-wider">
+            <span class="font-['JetBrains_Mono']">&copy; 2026 BRYAN TOTTY</span>
+            <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 uppercase"><a href="/" class="hover:text-glow transition-colors">Home</a><a href="../about.html" class="hover:text-glow transition-colors">About</a><a href="../projects.html" class="hover:text-glow transition-colors">Projects</a><a href="../creative.html" class="hover:text-glow transition-colors">Creative</a><a href="../speaking.html" class="hover:text-glow transition-colors">Speaking</a><a href="../blog.html" class="hover:text-glow transition-colors">Blog</a><a href="../privacy.html" class="hover:text-glow transition-colors">Privacy</a><a href="../contact.html" class="hover:text-glow transition-colors">Contact</a></div>
+        </div>
+    </footer>
+    <script src="../main.js"></script>
+</body>
+</html>
