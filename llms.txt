@@ -1,5 +1,7 @@
 # Bryan Totty - bryantotty.com
 
+> Personal website of Bryan Totty: Cloud Security Engineer at Microsoft (Azure), AI security automation builder, speaker, trader, and independent recording artist (RED T7GER). The full text of every page is at https://bryantotty.com/llms-full.txt
+
 ## About
 Bryan Totty is a Cloud Security Engineer at Microsoft, building AI-powered security automation across Azure cloud infrastructure. He focuses on compliance audits (SOC 2, GDPR, FedRAMP, NIST 800-53), least privilege enforcement, exposed secret detection, and vulnerability management at scale. He has 14+ years of cybersecurity experience across IBM, Red Hat, Meta, and Microsoft. Outside of security, Bryan is an independent recording artist (RED T7GER, formerly B. Totty), fashion and brand designer (Red Tiger Unlimited), trader, and public speaker.
 
@@ -49,16 +51,37 @@ Azure, AWS, Docker, Kubernetes, Python, PowerShell, Bash, KQL, Linux, SELinux, G
 - BS Cyber Security, East Carolina University
 - AS Computer Network Technology, Wake Technical Community College
 
-## Key Pages
-- Home: https://bryantotty.com/
-- About: https://bryantotty.com/about.html
-- Projects: https://bryantotty.com/projects.html
-- Creative: https://bryantotty.com/creative.html
-- Speaking: https://bryantotty.com/speaking.html
-- Blog: https://bryantotty.com/blog.html
-- Contact: https://bryantotty.com/contact.html
-
 ## Contact
 - LinkedIn: https://www.linkedin.com/in/bryantotty/
 - GitHub: https://github.com/mtg-vox/
 - Website: https://bryantotty.com/contact.html
+
+## Key Pages
+- [Home](https://bryantotty.com/): Bryan Totty is a Cloud Security Engineer at Microsoft building AI security automation for Azure: compliance, least privilege, and vulnerability management.
+- [About](https://bryantotty.com/about.html): Bryan Totty: Microsoft Security Engineer building AI security automation for Azure, with 14+ years across IBM, Red Hat, and Meta. Trader, artist, HBS alum.
+- [Projects](https://bryantotty.com/projects.html): Bryan Totty's projects spanning AI security automation, AI-powered dashboards, Solana NFT development, IBM hardware R&D, and more.
+- [Creative Studio](https://bryantotty.com/creative.html): Explore Bryan Totty's Creative Studio: Totty Music LLC, RED T7GER, artist marketing services, RED T7GER Unlimited apparel, album art, and brand identity systems.
+- [Speaking](https://bryantotty.com/speaking.html): Bryan Totty speaks on cloud security, AI, creative entrepreneurship, self-mastery, and modern social dynamics. Available for keynotes, panels, podcasts, and workshops.
+- [Blog](https://bryantotty.com/blog.html): Bryan Totty's blog covering cloud security, cryptocurrency, web development, Harvard Business School, and tech industry insights.
+- [Contact](https://bryantotty.com/contact.html): Get in touch with Bryan Totty. Security Engineer at Microsoft, AI builder, investor, and musician. Available for cloud and AI security consulting and advisory.
+- [Privacy Policy](https://bryantotty.com/privacy.html): Privacy policy and terms of use for bryantotty.com. No cookies, no tracking, no analytics.
+
+## Blog Posts
+- [A Week in Redmond with Azure Storage Security](https://bryantotty.com/blog/microsoft-redmond-azure-storage-security.html) (2026-09-23): A week at Microsoft's Redmond campus with the Azure Storage security team on AI security, automation, emerging threats, and cloud security metrics.
+- [Getting Started on Ethereum](https://bryantotty.com/blog/getting-started-ethereum.html) (2023-02-12): Notes and resources for getting started in Ethereum development: tools, courses, and community links.
+- [How Difficult is Harvard's HBX CORe Program?](https://bryantotty.com/blog/harvard-hbx-core.html) (2023-02-12): Honest review of Harvard's HBX CORe (Business Analytics, Economics, Financial Accounting). What it costs in time and how to actually pass.
+- [Do You Need a New Mouse and Keyboard?](https://bryantotty.com/blog/mouse-and-keyboard.html) (2023-02-12): Thoughts on whether you need a new mouse and keyboard for productivity and gaming.
+- [My Web Development Journey](https://bryantotty.com/blog/web-development-journey.html) (2023-02-12): Documenting my web development journey: from early experiments to building modern websites.
+- [Working at Miami NFT Week](https://bryantotty.com/blog/working-nft-miami.html) (2023-02-12): Working the first ever Miami NFT Week event in Miami, FL 2022: contacts, experiences, and takeaways.
+
+## Projects
+- [Artist Growth OS - AI Command Center for Musicians](https://bryantotty.com/projects/artist-growth-os.html): Multi-platform Growth OS for independent artists. Meta Ads, smart links, distribution, streaming, social, and booking unified in one AI agent.
+- [IBM PureFlex System](https://bryantotty.com/projects/ibm-pureflex.html): IBM PureFlex System: hardware research and development work on IBM's integrated infrastructure platform.
+- [NFT Project on Solana](https://bryantotty.com/projects/nft-solana.html): Miami Hack Week 2022: customizable NFT minting platform on the Solana blockchain with creator-defined templates.
+- [ShadowScan AI - Website Risk Scanner](https://bryantotty.com/projects/shadowscan-ai.html): ShadowScan AI: an AI-powered website risk scanner that translates technical findings into business-impact reports for non-technical owners.
+- [Space-Chat - AI Oil Tanker Tracking Dashboard](https://bryantotty.com/projects/space-chat.html): AI-powered oil tanker tracking dashboard integrating ChatGPT with geospatial data to uncover illicit trade activity.
+
+## Optional
+- [Full site text for LLMs](https://bryantotty.com/llms-full.txt): every page's content as plain text
+- [Sitemap](https://bryantotty.com/sitemap.xml)
+- [RSS feed](https://bryantotty.com/feed.xml)

@@ -1,0 +1,55 @@
+# Bryan Totty - bryantotty.com
+
+## About
+Bryan Totty is a Cloud Security Engineer at Microsoft, building AI-powered security automation across Azure cloud infrastructure. He focuses on compliance audits (SOC 2, GDPR, FedRAMP, NIST 800-53), least privilege enforcement, exposed secret detection, and vulnerability management at scale. He has 14+ years of cybersecurity experience across IBM, Red Hat, Meta, and Microsoft. Outside of security, Bryan is an independent recording artist (RED T7GER, formerly B. Totty), fashion and brand designer (Red Tiger Unlimited), trader, and public speaker.
+
+## Current Focus (Microsoft, 2024-Present)
+- Transitioning into Security Engineer role focused on automation for cloud infrastructure
+- Building AI agents using Anthropic Claude Opus and OpenAI's latest models
+- Agents scan combinations of infrastructure and databases across millions of cloud nodes
+- Drives vulnerability management and remediation across Microsoft Azure
+- Automated terminal and email integrations that build live reports and track risk in real time
+- Compliance frameworks: SOC 2, GDPR, FedRAMP, NIST 800-53, and other industry standards
+
+## Career
+- Microsoft (2024-Present): Cloud Security Engineer, Azure
+- Meta (2022-2024): Security Enterprise Technical Program Manager
+- Red Hat (2012-2022): Senior Security Technical Program Manager and Security Senior Technical Support Engineer
+- IBM (2011-2012): Server Test Engineer
+
+## Speaking
+Available for keynotes, panels, and podcasts on two tracks:
+- Corporate / technical: cloud security, AI security agents, compliance automation, vulnerability management at scale
+- Lifestyle / coaching: self-mastery, social dynamics, creative entrepreneurship
+- Past talk: Red Hat Customer Convergence, Raleigh NC (systemd as a feature)
+
+## Consulting & Advisory
+Bryan is open to consulting and advisory engagements focused on AI-powered cloud security: security automation, AI security agents, vulnerability management, least privilege, secret scanning, and compliance automation (SOC 2, GDPR, FedRAMP, NIST 800-53). Best first contact is the website contact page or LinkedIn.
+
+## Creative Studio
+- Music: independent recording artist as RED T7GER (current rap-rock and EDM crossover) and B. Totty (legacy hip hop). Vocalist first, plus music production, mixing and mastering, and multiple instruments. Distributed via UnitedMasters. Site: redt7ger.com
+- Fashion / Apparel: Red Tiger Unlimited brand. Etsy shop: etsy.com/shop/RedTigerUnlimited
+- Design: album covers, single artwork, posters, logos, and full brand identity systems. Expert in Adobe Photoshop.
+- Brand: dark rap-rock visual identity built around the red tiger mark
+
+## Expertise
+Cloud Security Engineering, Security Automation, AI Development, AI Agents (Claude Opus, ChatGPT), Vulnerability Management, Compliance Automation, Least Privilege Enforcement, Secret Scanning, Cybersecurity, Market Analysis, Vocal Performance, Music Production, Mixing & Mastering, Album Cover Design, Photoshop, Brand Identity Design, Public Speaking
+
+## Technical Skills
+Azure, AWS, Docker, Kubernetes, Python, PowerShell, Bash, KQL, Linux, SELinux, GitHub, CI/CD, IAM/RBAC, SIEM, OpenSSL/TLS
+
+## Certifications
+- RHCE (Red Hat Certified Engineer)
+- CCNA (Cisco Certified Network Associate)
+- RHCVA (Red Hat Certified Virtualization Administrator)
+- RHCSA (Red Hat Certified Systems Administrator)
+
+## Education
+- Core Credential of Readiness (CORe), Harvard Business School
+- BS Cyber Security, East Carolina University
+- AS Computer Network Technology, Wake Technical Community College
+
+## Contact
+- LinkedIn: https://www.linkedin.com/in/bryantotty/
+- GitHub: https://github.com/mtg-vox/
+- Website: https://bryantotty.com/contact.html

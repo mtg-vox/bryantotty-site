@@ -1,13 +1,15 @@
 {
   "name": "bryantotty-site",
   "version": "1.0.0",
-  "description": "Personal website for Bryan Totty — bryantotty.com. Static HTML + Tailwind CDN + a small Etsy merch sync.",
+  "description": "Personal website for Bryan Totty \u2014 bryantotty.com. Static HTML + Tailwind CDN + a small Etsy merch sync.",
   "private": true,
   "type": "module",
   "scripts": {
     "merch:sync": "node scripts/sync-etsy-merch.mjs",
     "build:css": "tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css --minify",
-    "watch:css": "tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css --watch"
+    "watch:css": "tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css --watch",
+    "seo": "node scripts/build-seo.mjs",
+    "seo:check": "node scripts/build-seo.mjs --check"
   },
   "engines": {
     "node": ">=18"

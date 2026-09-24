@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bryan Totty Blog</title>
+    <link>https://bryantotty.com/blog.html</link>
+    <atom:link href="https://bryantotty.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Field notes on cloud security, AI, crypto, business, and gear from Bryan Totty.</description>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 23 Sep 2026 12:00:00 GMT</lastBuildDate>
+    <item>
+      <title>A Week in Redmond with Azure Storage Security</title>
+      <link>https://bryantotty.com/blog/microsoft-redmond-azure-storage-security.html</link>
+      <guid isPermaLink="true">https://bryantotty.com/blog/microsoft-redmond-azure-storage-security.html</guid>
+      <pubDate>Wed, 23 Sep 2026 12:00:00 GMT</pubDate>
+      <description>A week at Microsoft's Redmond campus with the Azure Storage security team on AI security, automation, emerging threats, and cloud security metrics.</description>
+      <author>noreply@bryantotty.com (Bryan Totty)</author>
+    </item>
+    <item>
+      <title>Getting Started on Ethereum</title>
+      <link>https://bryantotty.com/blog/getting-started-ethereum.html</link>
+      <guid isPermaLink="true">https://bryantotty.com/blog/getting-started-ethereum.html</guid>
+      <pubDate>Sun, 12 Feb 2023 12:00:00 GMT</pubDate>
+      <description>Notes and resources for getting started in Ethereum development: tools, courses, and community links.</description>
+      <author>noreply@bryantotty.com (Bryan Totty)</author>
+    </item>
+    <item>
+      <title>How Difficult is Harvard's HBX CORe Program?</title>
+      <link>https://bryantotty.com/blog/harvard-hbx-core.html</link>
+      <guid isPermaLink="true">https://bryantotty.com/blog/harvard-hbx-core.html</guid>
+      <pubDate>Sun, 12 Feb 2023 12:00:00 GMT</pubDate>
+      <description>Honest review of Harvard's HBX CORe (Business Analytics, Economics, Financial Accounting). What it costs in time and how to actually pass.</description>
+      <author>noreply@bryantotty.com (Bryan Totty)</author>
+    </item>
+    <item>
+      <title>Do You Need a New Mouse and Keyboard?</title>
+      <link>https://bryantotty.com/blog/mouse-and-keyboard.html</link>
+      <guid isPermaLink="true">https://bryantotty.com/blog/mouse-and-keyboard.html</guid>
+      <pubDate>Sun, 12 Feb 2023 12:00:00 GMT</pubDate>
+      <description>Thoughts on whether you need a new mouse and keyboard for productivity and gaming.</description>
+      <author>noreply@bryantotty.com (Bryan Totty)</author>
+    </item>
+    <item>
+      <title>My Web Development Journey</title>
+      <link>https://bryantotty.com/blog/web-development-journey.html</link>
+      <guid isPermaLink="true">https://bryantotty.com/blog/web-development-journey.html</guid>
+      <pubDate>Sun, 12 Feb 2023 12:00:00 GMT</pubDate>
+      <description>Documenting my web development journey: from early experiments to building modern websites.</description>
+      <author>noreply@bryantotty.com (Bryan Totty)</author>
+    </item>
+    <item>
+      <title>Working at Miami NFT Week</title>
+      <link>https://bryantotty.com/blog/working-nft-miami.html</link>
+      <guid isPermaLink="true">https://bryantotty.com/blog/working-nft-miami.html</guid>
+      <pubDate>Sun, 12 Feb 2023 12:00:00 GMT</pubDate>
+      <description>Working the first ever Miami NFT Week event in Miami, FL 2022: contacts, experiences, and takeaways.</description>
+      <author>noreply@bryantotty.com (Bryan Totty)</author>
+    </item>
+  </channel>
+</rss>

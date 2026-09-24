@@ -1,0 +1,1540 @@
+# Bryan Totty - bryantotty.com (full text)
+
+> Plain-text copy of every public page on bryantotty.com, generated from the site HTML. Author: Bryan Totty. Views are his own.
+
+---
+
+# Bryan Totty - Cloud Security Leader, AI Builder & Investor
+
+URL: https://bryantotty.com/
+Updated: 2026-07-01
+Summary: Bryan Totty is a Cloud Security Engineer at Microsoft building AI security automation for Azure: compliance, least privilege, and vulnerability management.
+
+> MICROSOFT · RED HAT · IBM · META
+##
+Cybersecurity.
+AI Builder.
+Artist.
+I protect cloud infrastructure at Microsoft, build AI-powered security tools, and trade the markets. I also run an independent creative studio spanning music production, design, and brand identity. Available for consulting and speaking.
+Cloud Security
+AI Development
+Market Analysis
+Crypto
+Music Production
+Design & Art
+Brand Identity
+Speaking
+EXPLORE
+PROJECTS
+CREATIVE
+SPEAKING
+(https://www.linkedin.com/in/bryantotty/)
+[Image: Bryan Totty]
+
+---
+
+# About Bryan Totty - Security Leader, AI Builder, Musician
+
+URL: https://bryantotty.com/about.html
+Updated: 2026-09-23
+Summary: Bryan Totty: Microsoft Security Engineer building AI security automation for Azure, with 14+ years across IBM, Red Hat, and Meta. Trader, artist, HBS alum.
+
+Cybersecurity · AI · Music · Markets
+##
+ABOUT BRYAN
+A serious technical career in cloud security and AI, powered by music, markets, and a relentless drive to build.
+[Image: Bryan Totty in red suit]
+00 · The Person
+
+## Who is Bryan Totty?
+I've led international business teams, hiked remote mountainsides, performed in front of large audiences, and studied wealth generation and investing deeply. My friends describe me as driven and a supportive mentor. I aim to inspire others to explore beyond their perceived limitations.
+01 · Career
+
+## 14+ years across IBM, Red Hat, Meta, Microsoft.
+At Microsoft , I'm transitioning into a Security Engineer role focused on automation for cloud infrastructure. I build AI agents and tooling that run compliance audits (SOC 2, GDPR, FedRAMP, and other frameworks), enforce least privilege, and surface exposed secrets at scale. The agents use Claude Opus and the latest OpenAI models to scan combinations of infrastructure and databases, drive vulnerability management and remediation across millions of cloud nodes, and pipe findings into automated terminal and email reports that track risk in real time. Most recently, I spent a week on the Redmond campus with the Azure Storage security team: read the field note .
+Before Microsoft, I was at Meta running enterprise security programs at massive scale. I migrated 30K+ VDI clients for global operations, drove a legal hold program across 100K+ devices, and led a secure USB rollout that touched 10K+ users. Big company, big numbers, fast pace.
+I spent over 10 years at Red Hat , first as a Security Senior Technical Support Engineer leading 7 teams, then as Senior Security TPM overseeing security processes across 16 products with 200+ stakeholders. I led the rollout of a new Incident Response framework, built out the Software Bill of Materials (SBOM) program, onboarded 3 acquired companies into Red Hat's security processes, and spoke at security events across the US.
+I started at IBM as a Server Test Engineer, testing prototype server hardware and software in a multi-million-dollar R&D lab. That's where I got my hands dirty with real infrastructure. LinkedIn (https://www.linkedin.com/in/bryantotty/).
+2011 – 2012
+
+### IBM
+Server Test Engineer
+2012 – 2022
+
+### Red Hat
+Sr. Security TPM
+2022 – 2024
+
+### Meta
+Security Enterprise TPM
+2024 – Present
+
+### Microsoft
+Security Engineer
+02 · AI & Automation
+
+## If AI can handle it, I'm automating it.
+I build AI tools and workflows that make security programs run faster. At Microsoft, that means agents that audit compliance frameworks, enforce least privilege, hunt exposed secrets, and drive vulnerability remediation across millions of cloud nodes, with automated terminal and email reporting on top. Outside of work, I build custom AI agents for market analysis, real estate research, and personal productivity.
+03 · Credentials & Stack
+
+## Certifications.
+■ RHCE / Red Hat Certified Engineer
+■ CCNA / Cisco Certified Network Associate
+■ RHCVA / Red Hat Virtualization Admin
+■ RHCSA / Red Hat Systems Admin
+Tech Stack
+Azure
+AWS
+Docker
+Kubernetes
+Python
+PowerShell
+Bash
+KQL
+Linux
+SELinux
+GitHub
+CI/CD
+IAM / RBAC
+SIEM
+OpenSSL / TLS
+04 · Markets & Investing
+
+## A decade of disciplined study.
+I began studying the traditional stock market and investments pretty intensely around 2015 . Knowledge is power in this space, and contrary to conventional belief, the small investors (non multi-billion dollar funds) have a lot more potential for large returns than the bigger players do. I read every possible book I could get on general finance over the course of years and would fall asleep listening to audio books related to financial success to program myself to think about it constantly.
+In 2019 , I began advanced technical market analysis courses, which I have studied deeply on a daily basis for years to master technical analysis and options trading.
+05 · Entrepreneur
+
+## Music led to business led to crypto.
+My path to becoming an entrepreneur started with my passion for music and evolved out of necessity. In order to market, brand, and get my message out, I had to become one. Later in life, I've taken that passion for business and startups and bundled it into my intense interest in technology and cryptocurrencies. I frequent meetup events and conferences to always keep learning, often where I meet other entrepreneurs whom I partner with. I am an early investor in a few small startups with big potential.
+06 · Crypto
+
+## Tokens travel. So do I.
+The crypto market is a natural fit for my interests and skillset because I have a long background in technology and a deep study and discipline towards investing, trading, and technical analysis. It also bundles in nicely with a nomad lifestyle when you can take your tokens anywhere and easily transact internationally. It can also serve to prepare in the wake of global currency turbulence as we have seen since the 2020 pandemic. These cycles are not new, but have been accelerated by governments around the world.
+07 · Nomad
+
+## Freedom-first community operator.
+Community operator and curator for a high net worth nomad community closely associated with Nomad Capitalist, but not directly affiliated. I can be contacted directly if you would like to join our WhatsApp and Discord groups for the private links.
+We share real-world business experience focused on freedom, tax efficiency, and international business and investing opportunities. I am also knowledgeable about residencies and citizenships for multiple countries to allow optimal flexibility in freedom and lifestyle.
+08 · Music
+
+## By 25, I owned a record label.
+By age 25, I owned a record label, performing live shows, doing radio station interviews, building marketing strategies, and professionally recording myself and clients.
+When I started in music, there were no streaming platforms, YouTube did not exist, and social media wasn't a thing. You had to hustle and network in person . At shows, meeting venue owners through weeks, months, years of dedication. We were on the streets of college campuses handing out fliers and self-promoting our bands. I learned how to network and be persistent because the only exposure route was getting on a radio station or TV.
+I have always enjoyed creating in a way that allows me to express myself and impact others. With my solo rap music, I really dug deep into the lyrical techniques and always challenged myself to rap in different styles and try an array of different music, from classic hip-hop to trap to rock music. Through my music, I embrace a range of ways to connect people: from fun all the way to mysterious and dark music.
+As a side project, I recorded and performed two music videos for the enterprise open source software company Red Hat .
+[Image: Music Video Myrtle Beach]
+(https://youtu.be/rwaaFwTluLU)
+09 · Education
+
+## Where I trained.
+■
+Core Credential of Readiness (CORe)
+HBX | Harvard Business School · Cambridge, MA
+■
+Bachelor of Science (BS), Cyber Security
+East Carolina University · Greenville, NC
+■
+Associate of Science (AS), Computer Network Technology
+Wake Technical Community College · Raleigh, NC
+Interested in booking me to speak?
+SEE SPEAKING TOPICS
+
+---
+
+# Projects - Bryan Totty | Tech, Crypto, Hardware, AI
+
+URL: https://bryantotty.com/projects.html
+Updated: 2026-07-01
+Summary: Bryan Totty's projects spanning AI security automation, AI-powered dashboards, Solana NFT development, IBM hardware R&D, and more.
+
+Builds · experiments · shipped work
+##
+PROJECTS
+Selected work across AI agents , security , crypto , and hardware R&D , from Fortune 500 labs to weekend hackathons.
+01 · Build Matrix
+
+## Selected work, by the numbers.
+[Image: Artist Growth OS: multi-platform AI command center]
+AI AGENT
+AUTOMATION
+
+### Artist Growth OS
+A multi-platform AI command center for independent artists. Meta Ads, smart links, distribution, streaming, social, contracts, and booking in one dashboard.
+[Image: ShadowScan AI: website risk scanner]
+SECURITY
+AI
+
+### ShadowScan AI
+AI-powered website risk scanner that turns deep technical findings into business-impact reports for non-technical owners.
+[Image: Space-Chat Dashboard]
+TECH
+MIAMI HACK WEEK 2023
+
+### Space-Chat
+AI-powered oil tanker tracking dashboard integrating ChatGPT with geospatial data to uncover illicit trade activity.
+[Image: Customizable NFT minting on Solana]
+CRYPTO
+MIAMI HACK WEEK 2022
+
+### NFT Project on Solana (SOL)
+Customizable NFT minting platform on the Solana blockchain with creator-defined templates.
+[Image: IBM Raleigh NC STG Troy engineering team in a hardware lab]
+HARDWARE
+R&D
+
+### IBM PureFlex System
+Firmware test engineering for prototype blade servers in IBM's multi-million dollar R&D laboratory.
+Want to collaborate on a build?
+Mention PROJECTS in your message.
+START A CONVERSATION
+
+---
+
+# Creative Studio | Bryan Totty - Music, Artist Marketing, Fashion
+
+URL: https://bryantotty.com/creative.html
+Updated: 2026-07-01
+Summary: Explore Bryan Totty's Creative Studio: Totty Music LLC, RED T7GER, artist marketing services, RED T7GER Unlimited apparel, album art, and brand identity systems.
+
+Music · Fashion · Design · Brand
+##
+CREATIVE STUDIO
+Music, apparel, design, and brand work under one roof.
+01
+Music
+02
+Marketing
+03
+Fashion
+04
+Shop
+05
+Design & Art
+06
+Brand World
+01 · Music
+
+## Totty Music LLC: label, production, and creative direction.
+I have operated Totty Music LLC for about 10 years and produced music for more than 15 years, working in recording studios across Raleigh, NC and Miami, FL. I am a vocalist first, and I also handle music production, mixing and mastering, and play multiple instruments. Beyond recording and collaborations with a wide range of artists, I lead the full creative system around releases: album concepts, cover design, visual direction, music video concepts, social brand identity, and merchandising strategy. The cards below show the label structure and artist eras, while the following sections break down marketing, design, and brand execution.
+Label · LLC
+
+### Totty Music
+Independent record label. Registered LLC. Owns the masters, brand, and creative output across artist projects under one operating company.
+- · Founded by Bryan Totty
+- · Music publishing & licensing
+- · Artist development
+Current Artist
+
+### Red T7ger
+Current artist project: dark rap-rock and EDM crossover. Full discography, videos, and streaming live on the dedicated artist site.
+Visit redt7ger.com →
+(https://redt7ger.com)
+Legacy Artist
+
+### B. Totty
+Earlier hip-hop project with the deeper catalog and longer history. Active across major streaming platforms and social channels.
+- · Spotify, Apple Music, YouTube Music
+- · Featured by ABC11, News & Observer
+- · Two viral videos for Red Hat
+Broadcast Appearances
+
+### Raleigh media moments around the B. Totty era.
+Radio and TV coverage connected to the music, the Red Hat community, and "We Love Raleigh."
+[Image: B. Totty speaking with ABC11 during a Raleigh news interview]
+ABC11 · Raleigh interview
+B. Totty era · "We Love Raleigh"
+[Image: B. Totty on G105 Bob and The Showgram in Raleigh]
+(https://youtu.be/ovOpE1uqTzI)
+Radio · G105
+
+### Bob & The Showgram
+Featured on G105 Raleigh's #1 Hit Music Station as a special guest, discussing the music and "We Love Raleigh."
+Watch interview ↗
+(https://youtu.be/ovOpE1uqTzI)
+[Image: B. Totty appearing in an ABC11 Raleigh news segment]
+(https://abc11.com/post/red-hat-employee-makes-viral-rap-video-about-raleigh/1185323/)
+Television · ABC11
+
+### ABC11 News segment
+On-air coverage during the Raleigh era, the B. Totty project picked up local news attention alongside the Red Hat community work.
+Watch ABC 11 interview ↗
+(https://abc11.com/post/red-hat-employee-makes-viral-rap-video-about-raleigh/1185323/)
+[Image: ABC11 filming B. Totty during a Raleigh interview]
+ABC11 · Behind the scenes
+The Epic Radio Show
+
+### Episode 39 · long-form interview
+B. Totty appears on The Epic Radio Show , discussing music production, 15 years in the studio, and the Raleigh music scene.
+Watch interview (26:25) ↗
+(https://www.youtube.com/watch?v=uJFIZOv7t8E&t=1585)
+The Hype Magazine
+
+### Producer collaboration feature
+Print feature on B. Totty's studio collaboration with producer LX Xander , a look at the production side of the catalog and the partnerships behind the records.
+Read the article ↗
+(https://www.thehypemagazine.com/2023/07/lyrical-rapper-b-totty-working-with-infamous-producer-lx-xander/)
+Music and visuals are not embedded here. Use the links above to explore.
+02 · Music Marketing & Artist Services
+
+## Growth marketing for independent artists.
+A core service of Totty Music LLC : paid social advertising and AI-powered analytics built for the streaming economy. I run these systems for my own catalog every day. I also take on a small number of independent artists, labels, and creators who want serious infrastructure behind their releases.
+The Edge
+
+### A security engineer's mind on a music marketing problem.
+Most music marketers run campaigns by feel. I treat ad spend the way a security engineer treats telemetry: measured, instrumented, optimized. After more than a decade building automation inside Microsoft, Red Hat, Meta, and IBM, I applied the same engineering discipline to my own artist career. The result is a custom command center I now use to make decisions in real time.
+That tooling is what makes this different. Independent artists rarely get this level of visibility, and almost never from someone who is also an active recording artist running their own paid social.
+Service 01
+
+### Meta Ads for Streams
+Instagram and Facebook campaigns engineered for streaming conversion on Spotify, Apple Music, and YouTube Music. Sales-objective auctions, smart-link routing, pixel-verified results. Not vanity clicks.
+Service 02
+
+### Artist Growth OS Access
+Direct access to the AI-powered analytics platform I built for my own career. Unifies Meta Ads, smart links, distribution, streaming numbers, social, and contracts in one place.
+See the project →
+Service 03
+
+### Strategy & Audit
+One-time deep audit of your current ads, smart links, distribution, and audience. Concrete recommendations on creative, targeting, budget allocation, and stream-quality scoring.
+Independent Artists
+Indie Labels
+Music Managers
+Social Media Influencers
+Creator Brands
+INQUIRE ABOUT ARTIST SERVICES
+Selective engagements. Serious artists only.
+03 · Fashion & Apparel
+
+## Wearable identity. Independent design.
+[Image: RED T7GER tactical streetwear concept in black and red branding]
+RED T7GER tactical concept
+Lookbook Direction
+
+### Tactical streetwear as a brand signal.
+The RED T7GER visual language moves beyond logo placement into a full world: black-and-red tactical styling, artist identity, performance energy, and product concepts that can scale into drops, photoshoots, and campaign creative.
+Tactical
+Streetwear
+Artist Brand
+[Image: RED T7GER custom red and black sneaker design for RED T7GER Unlimited streetwear collection]
+Footwear system · RED T7GER Unlimited
+Fashion is a growing product line under RED T7GER Unlimited : hoodies, hats, tees, tactical concepts, and one-of-one pieces sold direct through Etsy. Future drops and collaborations will continue to build the lookbook.
+House Brand
+
+### RED T7GER Unlimited
+Streetwear-leaning apparel and accessories. Bold graphics, dark palette, designed and shipped independently.
+Browse Current Drops &darr;
+Categories · current + planned
+- Hoodies
+- Tees
+- Hats
+- Limited drops
+- Future: outerwear, accessories, collabs
+Editorial lookbook is in progress. Live pieces are stocked in the Shop section below.
+04 · Shop
+
+## Fashion and brand design, available to wear.
+This storefront is the live product layer of my fashion and brand design work. Apparel, prints, and limited drops from RED T7GER Unlimited are published on Etsy and surfaced here as they go live.
+Shop full Etsy store
+(https://www.etsy.com/shop/RedTigerUnlimited)
+05 · Design & Art
+
+## Visual work. Album art. Identity systems.
+[Image: RED T7GER logo identity mark]
+[Image: B. Totty ft. Riff Raff Hott Chick album cover]
+[Image: B. Totty YouTube profile square artwork]
+[Image: B. Totty To My Haters artwork]
+Single pieces and finished visual work: album covers, single artwork, posters, flyers, logos, and visual experiments. I work primarily in Adobe Photoshop and build complete brand identity systems: logos, type, color, and visual language. Most pieces are produced for music releases or apparel drops, and the design practice also stands on its own.
+Music
+Album & single covers
+Print
+Posters & flyers
+Marks
+Logos & identity
+Apparel
+Graphic design for drops
+Digital
+Web & social visuals
+Experiments
+AI-assisted visual studies
+Selected covers, posters, and brand marks ship into this gallery as releases drop.
+06 · Brand World
+
+## Identity systems, not single pieces.
+The strategic side of the creative work. Building entire brand worlds rather than single deliverables. Music, apparel, design, and storytelling come together as integrated identities with their own visual language, voice, and audience.
+
+### Red T7ger Universe
+Dark, cinematic, rap-rock crossover identity. Spans music, apparel, video, and live presence. Expressed through redt7ger.com.
+
+### RED T7GER Unlimited
+Apparel-led brand identity for the merchandise and product line. Sister brand to the artist universe.
+
+### B. Totty Legacy
+Earlier hip-hop identity. Maintained for catalog, fans, and longstanding social presence. Distinct visual era.
+
+### Future Lines
+New creative ventures, collaborations, and brand experiments. Reserved space for what comes next.
+Interested in collaborating on creative work?
+CONTACT FOR COLLAB
+
+---
+
+# Speaking - Bryan Totty | Tech, AI, Self-Mastery, Social Dynamics
+
+URL: https://bryantotty.com/speaking.html
+Updated: 2026-07-01
+Summary: Bryan Totty speaks on cloud security, AI, creative entrepreneurship, self-mastery, and modern social dynamics. Available for keynotes, panels, podcasts, and workshops.
+
+Available for keynotes · panels · podcasts
+##
+SPEAKING
+Conversations at the intersection of technology , creative work , and how to actually live well in the modern world.
+00 · The Angle
+
+## Not the typical speaker.
+Most conference speakers are operators or coaches. I happen to be both. Over fourteen years inside Fortune 500 security organizations (IBM, Red Hat, Meta, Microsoft) while also building independent music, fashion, and creative businesses. That dual background, corporate execution and creative independence, is what I bring to the room.
+Direct delivery. No corporate hedging. No motivational fluff. Stories, numbers, and tradeoffs.
+01 · Two Speaking Tracks
+
+## Pick the conversation that fits your audience.
+Track A · Corporate / Tech
+
+### Cloud Security, AI, & Modern Operations
+For security teams, engineering orgs, executive briefings, and industry conferences. Operator depth, not vendor pitch.
+Sample Topics
+Cloud Security at Scale
+AI Agents in Security Programs
+SBOM & Supply Chain
+Compliance Automation
+Security Automation with AI Agents
+Acquisition Integration
+Track B · Lifestyle / Self-Mastery
+
+### Identity, Discipline, & Modern Social Dynamics
+For coaching events, lifestyle summits, podcasts, and high-performance communities. Practical frameworks from someone who lives them.
+Sample Topics
+Self-Mastery for Operators
+Modern Social Dynamics
+Building Multiple Identities
+Discipline & Long-Game Wealth
+Creative Entrepreneurship
+Nomad & Sovereign Lifestyle
+Audiences usually want one or the other. Some want both. The cross-pollination is part of the value.
+02 · Formats
+
+## How we can work together.
+Keynote
+30–60 min
+Panel
+Moderated
+Podcast
+Long-form
+Workshop
+Half / full day
+03 · Experience
+
+## The background behind the mic.
+-
+■
+Enterprise security & Linux speaking. Red Hat Customer Convergence Event in Raleigh, NC and other security and open-source community gatherings.
+-
+■
+Live performance. Years of stage experience as a recording artist. Comfortable in front of large rooms and unscripted moments.
+-
+■
+Trained presenter. Formal training through a leading global personal-development brand. Frameworks for delivery, conviction, and connection with the audience.
+-
+■
+Press. ABC11, News & Observer, The Hype Magazine, plus internal Red Hat productions seen by thousands.
+04 · Selected Talks
+
+## A few from the archive.
+Red Hat Customer Convergence · Raleigh, NC
+RHEL7 systemd Basics
+Technical deep-dive: systemd overview, unit management, journald, cgroups, resource management, legacy boot conversion. Deck published on the Red Hat Customer Portal.
+View deck &#8599;
+(https://access.redhat.com/articles/723413)
+More talks being added as I dig through the archive. If we crossed paths at an event, send me a note.
+Want to book a talk, panel, or podcast appearance?
+Mention SPEAKING in your message and which track fits.
+REQUEST A TALK
+
+---
+
+# Blog - Bryan Totty | Cloud Security, Crypto, Web Development
+
+URL: https://bryantotty.com/blog.html
+Updated: 2026-09-23
+Summary: Bryan Totty's blog covering cloud security, cryptocurrency, web development, Harvard Business School, and tech industry insights.
+
+Field notes · long-form · lessons learned
+##
+BLOG
+Notes from the road across tech , crypto , business , and the gear and habits that hold it all together.
+00 · Field Notes
+
+## On the ground, in the room.
+[Image: Bryan Totty at the Microsoft sign on the Redmond campus]
+September 23, 2026
+Cloud Security
+
+### A Week in Redmond with Azure Storage Security
+A week on Microsoft's Redmond campus with the Azure Storage security team, talking AI security, automation, emerging threats, and security metrics at cloud scale.
+Written by Bryan Totty
+01 · Tech & Web
+
+## Building, breaking, learning.
+[Image: Web Development]
+February 12, 2023
+Web Design
+
+### My Web Development Journey
+In this blog, I'm going to document some of my web development journey.
+Written by Bryan Totty
+02 · Crypto
+
+## From the front lines of Web3.
+[Image: Miami NFT Week]
+February 12, 2023
+Crypto
+
+### Working Miami NFT Week
+I had the honor to work the first ever Miami NFT Week event in Miami, FL 2022. During this experience I made contacts internal to the event and with many of the attendees and speakers.
+Written by Bryan Totty
+[Image: Ethereum]
+February 12, 2023
+Crypto
+
+### Getting Started on Ethereum
+An in progress worksheet on some notes for my journey of getting started in Ethereum development.
+Written by Bryan Totty
+03 · Business
+
+## Receipts from the classroom.
+[Image: Harvard HBX CORe: Business Analytics, Economics for Managers, Financial Accounting]
+February 12, 2023
+Business
+
+### How Difficult is Harvard's HBX CORe Program?
+An honest review of HBS Online's Credential of Readiness covering Business Analytics, Economics for Managers, and Financial Accounting. What it costs in time and how to actually pass.
+Written by Bryan Totty
+04 · Gear & Opinion
+
+## Tools, takes, and small obsessions.
+[Image: Gaming Keyboard]
+February 12, 2023
+Opinion
+
+### Do You Need a New Mouse and Keyboard?
+Do you need a new mouse and keyboard?
+Written by Bryan Totty
+Want to talk about anything you read here?
+Mention BLOG in your message.
+GET IN TOUCH
+
+---
+
+# Contact Bryan Totty - Security Leader, AI Builder
+
+URL: https://bryantotty.com/contact.html
+Updated: 2026-07-01
+Summary: Get in touch with Bryan Totty. Security Engineer at Microsoft, AI builder, investor, and musician. Available for cloud and AI security consulting and advisory.
+
+## CONTACT
+> Get in touch · Tell me what you're looking for
+Inquiry Type
+General inquiry
+Speaking. Keynote, panel, podcast
+Music marketing & artist services
+Creative collaboration (music, fashion, design)
+Business / advisory / partnership
+Press & media
+Recruiting / hiring
+Name
+Email
+Organization (optional)
+Message
+SEND MESSAGE
+✓ Message sent successfully. I'll get back to you soon.
+✗ Something went wrong. Please try again or reach out on LinkedIn.
+> Or connect directly
+
+## LinkedIn
+linkedin.com/in/bryantotty
+(https://www.linkedin.com/in/bryantotty/)
+
+---
+
+# A Week in Redmond with Azure Storage Security
+
+URL: https://bryantotty.com/blog/microsoft-redmond-azure-storage-security.html
+Published: 2026-09-23
+Updated: 2026-09-23
+Summary: A week at Microsoft's Redmond campus with the Azure Storage security team on AI security, automation, emerging threats, and cloud security metrics.
+
+← Back to Blog
+Redmond, WA · September 2026
+SEPTEMBER 23, 2026
+·
+CLOUD SECURITY
+·
+AI
+
+## A Week in Redmond with Azure Storage Security
+Face time with the team that protects one of the largest storage platforms on the planet, and a few days exploring the campus where it all gets built.
+[Image: Bryan Totty in a red polo with arms outstretched behind the Microsoft logo sign on the Redmond campus]
+Made it. Microsoft sign at the Redmond campus plaza.
+01 · Why Redmond
+
+## Putting faces to the work.
+Last week I flew from Miami to Redmond, Washington to spend time in person with Microsoft's Azure Storage security team . A lot of security work happens across time zones in chat threads, tickets, and dashboards. Being in the same room for a week changes the conversation. You go deeper, faster, and you leave with a shared picture of where things need to go.
+Azure Storage sits underneath a huge share of what runs in the cloud, so the stakes are high. Microsoft's public guidance covers the fundamentals, like encryption at rest by default (https://learn.microsoft.com/en-us/azure/storage/common/storage-service-encryption) and a detailed set of security recommendations for Blob storage (https://learn.microsoft.com/en-us/azure/storage/blobs/security-recommendations). Our time together was about what comes next.
+[Image: Bryan Totty with members of the Azure Storage security team in front of the Microsoft sign under the timber canopy]
+The crew at the Microsoft sign
+02 · What We Worked On
+
+## AI, automation, and the threats that come with them.
+Without getting into anything internal, the discussions ran along four tracks:
+
+### AI's impact on cloud security
+How AI changes the security picture for infrastructure at massive scale, as both a new attack surface and a powerful defensive tool.
+
+### Defending AI and automation
+How to deploy AI agents and automation safely: with least privilege, strong guardrails, and humans in the loop where it counts.
+
+### Emerging threats
+What attackers are trying now, and how quickly defenses need to adapt when the tools on both sides keep getting faster.
+
+### Security metrics
+How we measure and track risk across cloud environments so progress is visible, comparable, and actionable.
+That lines up with the direction of Microsoft's Secure Future Initiative (https://www.microsoft.com/en-us/trust-center/security/secure-future-initiative), and it's close to my own day-to-day: building AI-driven tooling that turns security work at scale into something automated, measurable, and fast.
+[Image: Team members relaxing in red and gray Adirondack chairs in a courtyard between glass buildings on the Microsoft campus]
+Between sessions in one of the campus courtyards
+03 · Exploring Campus
+
+## Timber, glass, and green space.
+Between sessions I explored the Redmond campus. The newer parts feel more like a well-designed park than a corporate office park: a huge timber-and-glass canopy over the plaza, courtyards full of plants, and Adirondack chairs where teams can take a meeting outside. It's the kind of space that makes it easy to step away from a whiteboard and keep the conversation going.
+I also got into Seattle on my first night to see the waterfront before the work week kicked off.
+[Image: Bryan Totty at night beside the illuminated SEATTLE letters]
+First night in Seattle
+04 · Takeaway
+
+## Security still runs on people.
+AI and automation are changing how we defend cloud infrastructure, and this week made that concrete. The biggest lesson, though, was simple: the best security outcomes still come from people who trust each other and work toward the same goal. I came home with a clearer roadmap, new ideas to build, and a team I'm glad to work alongside.
+Written by Bryan Totty · Sep 2026
+More posts →
+Views are my own and do not represent Microsoft.
+
+---
+
+# Getting Started on Ethereum
+
+URL: https://bryantotty.com/blog/getting-started-ethereum.html
+Published: 2023-02-12
+Updated: 2026-07-01
+Summary: Notes and resources for getting started in Ethereum development: tools, courses, and community links.
+
+← Back to Blog
+[Image: Getting Started on Ethereum]
+
+## Getting Started on Ethereum
+FEBRUARY 12, 2023
+·
+CRYPTO
+·
+In Progress
+Scratch notes from the road into blockchain development — the courses, the community, the install pain, and what to actually study first.
+This document won't be maintained as the ecosystem changes constantly — treat it as a snapshot of my notes from the time I was getting up to speed.
+01 · The Path
+
+## So you want to be a blockchain developer?
+A solid starting reference: tr3y.io / how2bloccchain (https://tr3y.io/articles/crypto/how2bloccchain.html).
+
+### What blockchain devs commonly work with
+- Blockchains
+- Smart Contracts
+- Solidity
+- Truffle
+- Web3
+- React.js
+
+### Realistic timeframe
+Aggressive if you already have technical or development background — assume 10–20 hours/week of focused study.
+1–3 MONTHS
+Possible work on a small NFT project or rug-pull ERC20 (your choice).
+3–6 MONTHS
+Small funded startup — more legitimate projects.
+6–12 MONTHS
+Larger or mid-size company, legitimate business.
+
+### Crypto Devs community on Discord
+Highly recommend joining — but watch for scams in DMs.
+Crypto Devs Discord
+→
+(https://discord.gg/AQ96PSkcrV)
+02 · Online Training
+
+## Self-paced courses.
+Faster ramp, less brand recognition. Bigger employers may want more proof of knowledge, but these get you operational quickly.
+Core Fundamentals
+- → Build an Ethereum Blockchain App (https://www.linkedin.com/learning/paths/build-an-ethereum-blockchain-app) — LinkedIn Learning Path
+- → Ethereum and Solidity: The Complete Developer's Guide (https://www.udemy.com/course/ethereum-and-solidity-the-complete-developers-guide/) — Udemy, $21.99
+- → Blockchain for Business: The New Industrial Revolution (https://www.udemy.com/course/blockchain-for-business-the-new-industrial-revolution/) — Udemy (non-dev)
+- → Ethereum Blockchain Developer Bootcamp With Solidity (2022) (https://www.udemy.com/course/blockchain-developer/) — Udemy
+- → Coursera Ethereum courses (https://www.coursera.org/courses?query=ethereum)
+- → Become a Blockchain Developer (https://www.udacity.com/course/blockchain-developer-nanodegree--nd1309) — Udacity, $1,356 (prerequisites required)
+03 · University Track
+
+## Fast-track university bootcamps.
+More traditional, well-known brands. Mostly FinTech-flavored:
+- → Columbia Engineering FinTech Boot Camp (https://bootcamp.cvn.columbia.edu/fintech/) — 24 weeks · $12k · technical
+- → Oxford Blockchain Strategy (https://oxford.esmelearning.com/products/oxford-blockchain-strategy) — 6 weeks · $3.5k · high-level
+- → Rutgers FinTech Bootcamp (https://bootcamp.rutgers.edu/fintech/) — 24 weeks · $13k · technical
+- → Berkeley FinTech Boot Camp (https://bootcamp.berkeley.edu/fintech/)
+04 · Solidity
+
+## Solidity training.
+- → Solidity Tutorial — Full Course on Ethereum, Blockchain Development, Smart Contracts, and the EVM (https://youtu.be/ipwxYa-F1uY) — 2 hrs, free
+05 · In Their Words
+
+## A working dev's advice.
+"You should start with Solidity. Remix is pretty popular. People use Hardhat as well, but I prefer Remix. remix.ethereum.org (https://remix.ethereum.org/)"
+"Also, if you're going to be doing web3 functions you should get caught up on Linux servers, so you'll know how to deploy the web3 on the backend."
+"There is a test network for both Polygon and Ethereum, so you can make free contracts with those. Just Google the stuff — learning material is slim right now since this is so new."
+"To access web3 and set it up on Linux, you must build an Ethereum node, or go to quicknodes.com and get a membership. The free option has limited calls so you can learn and get started, but if you have the means it's best to run your own node."
+06 · Setup
+
+## Install an Ethereum dev environment.
+Follow along with this free YouTube tutorial (https://www.youtube.com/watch?v=XLahq4qyors&list=PLzGB3STNnvdESHeoaCx37XZ_ZmoMKJ4rn&index=5). In my case I installed Fedora in a VM using Parallels on macOS:
+- → Install Parallels — smoothest onboarding.
+- → I had major performance issues using VirtualBox, even after installing VBox Tools.
+- → Install Fedora from the quick menu.
+- → Install dependencies from ethdocs.org (https://www.ethdocs.org/en/latest/ethereum-clients/cpp-ethereum/building-from-source/linux.html).
+Clone & install dependencies
+git clone --recursive https://github.com/ethereum/cpp-ethereum.git
+cd cpp-ethereum
+dnf install boost-devel leveldb-devel curl-devel libmicrohttpd-devel miniupnpc-devel gmp-devel
+Install Truffle via Snap
+sudo dnf install snapd
+sudo ln -s /var/lib/snapd/snap /snap
+# Reboot
+sudo snap install truffle --beta
+Download and run Ganache (https://next-stack.github.io/ganache/), install Sublime Text, add Ethereum/Solidity syntax highlighting, then:
+npm install
+npm install solc
+sudo npm install -g truffle@5.1.39
+sudo npm install solc-js@0.5.0
+truffle version
+Important: if truffle compile fails — check the versions, reboot, and if it's still broken, uninstall and reinstall truffle and solc globally.
+07 · Fundamentals
+
+## Study the fundamentals.
+- → Solidity by Example (https://solidity-by-example.org/first-app/)
+- → Ethernaut (OpenZeppelin) (https://ethernaut.openzeppelin.com/)
+- → 101 Blockchains — Become an Ethereum Developer (https://101blockchains.com/become-ethereum-developer/)
+- → Ethereum Blockchain Developer (https://ethereum-blockchain-developer.com/) — setting up MetaMask + Remix test env
+Topics worth studying
+Consensus algorithms
+Smart contracts
+Transactions / Gas / Prices
+Miner incentives & security
+PoW vs PoS
+Token standards
+Sharding
+Written by Bryan Totty · Feb 2023
+More posts →
+
+---
+
+# How Difficult is Harvard's HBX CORe Program?
+
+URL: https://bryantotty.com/blog/harvard-hbx-core.html
+Published: 2023-02-12
+Updated: 2026-07-01
+Summary: Honest review of Harvard's HBX CORe (Business Analytics, Economics, Financial Accounting). What it costs in time and how to actually pass.
+
+← Back to Blog
+FEBRUARY 12, 2023
+·
+BUSINESS
+·
+HARVARD
+·
+7 min read
+
+## How Difficult is Harvard's HBX CORe Program?
+An honest review from someone who finished the program. What it actually costs in time, what to expect from each course, and how to set yourself up to pass.
+[Image: Harvard HBX CORe program: Business Analytics, Economics for Managers, Financial Accounting]
+CREDENTIAL OF READINESS · HARVARD BUSINESS SCHOOL ONLINE · SPRING 2018
+3
+COURSES
+~22 hr
+PER WEEK (REAL)
+~95%
+ACCEPTED · NOT WHO PASS
+01 · TL;DR
+
+## It's open to almost anyone, and harder than people expect.
+I came into HBX CORe with a mix of technology and business experience: a bachelor's from East Carolina University in Industrial Technology focused on Information Security and Management, plus two years of formal Program Management at Red Hat in the security org.
+Even with that background, I found the program challenging . The acceptance rate is high (I've heard as high as 95%), but acceptance and completion are two very different things. The classes are designed to make you think, not to memorize, and the exams are tuned to expose that difference.
+02 · The Three Courses
+
+## CORe is three modules, taught in parallel.
+CORe stands for Credential of Readiness . It's the foundational HBS Online program built around three interlocking courses, taught at the same time across roughly 10 to 17 weeks (you pick the pace).
+COURSE 01
+
+### Business Analytics
+Statistics, regression, sampling, and how to make decisions from data. Heavy on Excel.
+COURSE 02
+
+### Economics for Managers
+Demand, supply, pricing power, willingness to pay, and how markets actually behave.
+COURSE 03
+
+### Financial Accounting
+Reading and building financial statements: balance sheet, income statement, cash flow.
+03 · The Platform
+
+## Polished, interactive, and a real upgrade over Blackboard.
+The interactive web interface is a refreshing departure from the standard Blackboard experience that most universities still rely on. I don't dislike Blackboard. I just find that the uniqueness of universities and individual classes can get lost in it. Harvard either built or contracted a genuinely well-designed platform.
+That said, it isn't immune to operational pain. During spring 2018, an 8-hour maintenance window pushed an update that caused a noticeable performance regression, and they had to either roll back or patch within the next couple of days.
+Most of the work happens through pre-recorded videos from three instructors plus on-site case studies filmed at companies like Amazon and PepsiCo . The interviews are usually with senior leaders, and the production quality makes the material stick.
+04 · The Real Difficulty
+
+## High acceptance, high challenge. Don't confuse the two.
+The prerequisites for HBX CORe are minimal, and I've heard acceptance rates as high as 95%. Basically, you'd have to fail to follow the submission guidelines to get rejected. People take that and assume the program must be easy. It isn't.
+Some argue the open admissions could devalue the credential. It doesn't, not if you understand how challenging the program actually is. Accepting a lot of students doesn't mean a lot of students will pass.
+You won't see traditional letter grades. Instead, the program shows percentages and weights so you know where to focus: primarily on end-of-module exams and the final, with participation as a smaller (but real) slice of the grade. You also won't see a running cumulative grade in the way you'd expect from Blackboard, but you can see your individual module scores as they come in.
+05 · Hours You Should Plan For
+
+## The 15 hours/week claim is optimistic.
+Most of the courses are math- and logic-driven. Not advanced math, but it helps a lot if you're fresh out of Algebra, Calculus, and Statistics. For me, it had been at least six years since I'd taken a real math class, and that put me at a disadvantage. I caught up, but it cost me extra hours every week.
+OFFICIAL ESTIMATE
+15 hrs
+/ week
+REALISTIC RANGE
+20–25 hrs
+/ week to pass exams
+RUSTY ON MATH
+25+ hrs
+/ week, plus catch-up
+06 · Lessons Learned
+
+## What I'd tell my past self.
+01 · READ THE QUESTION TWICE
+If you immediately think "oh yeah, this one is easy" , stop. Reread the question, sometimes several times. Many of my mistakes were obvious questions I rushed through.
+02 · UNDERSTAND, DON'T MEMORIZE
+The exams aren't built to reward memorization. The example you saw in the module review will not be the example on the module final. Expect the same idea, dressed up differently.
+03 · EXPECT THE CURVEBALL
+You'll often see something familiar, then catch a curveball that adds an obscure exception to the rule. That's the test. Slow down on the second half of every question.
+04 · PARTICIPATION COMPOUNDS
+It's a smaller slice of the grade than the exams, but it's free points and you'll absorb material faster by engaging with the cohort instead of lurking.
+05 · DON'T PANIC AT MODULE EXAM SCORES
+If you don't pass a module exam or score lower than you're used to, don't bail. The grading is benchmarked against your cohort, and finishing strong matters more than any single low module.
+07 · The Verdict
+
+## Worth it, if you commit to the hours.
+The program is worthwhile and you'll get your money's worth if you stick with it. From what I understand, pass / fail / honors / high honors are determined by where you land within your cohort, not against a fixed cutoff.
+So just do the best work you're capable of, plan for more hours than the brochure says, and you'll come out the other side with a real handle on analytics, economics, and accounting. The three things every operator should know.
+Written by Bryan Totty · Feb 2023
+More posts →
+
+---
+
+# Do You Need a New Mouse and Keyboard?
+
+URL: https://bryantotty.com/blog/mouse-and-keyboard.html
+Published: 2023-02-12
+Updated: 2026-07-01
+Summary: Thoughts on whether you need a new mouse and keyboard for productivity and gaming.
+
+← Back to Blog
+Hardware Opinion · 15+ Years
+FEBRUARY 12, 2023
+·
+OPINION
+·
+HARDWARE
+
+## Do You Need a New Mouse & Keyboard ?
+Short answer: yes. After 15+ years on computers for a living, here's why the cheap setup is silently costing you — and what to actually buy.
+[Image: High-end mechanical gaming keyboard with red and blue backlight]
+Backlit mechanical keys · the kind of peripheral that matters more than you think
+01 · The Case
+
+## Get a high-quality mouse and keyboard.
+I've spent over 15 years working on computers for a living , and even if you're not a "technical" person like a developer or sysadmin, you'll still benefit long-term from a high-quality mouse and keyboard.
+This is especially true for those who work off laptops. Don't make it a long-term habit to type and use the touchpad if you spend more than an hour a day on the laptop. Your fingers will go numb, your posture will collapse, and the daily drag will compound. Use the laptop — just plug in an external mouse and keyboard and put the screen at an optimal distance.
+02 · Wired vs Wireless
+
+## When does the cable matter?
+GAMING
+Always wired. Even in 2020, you can feel the difference. Maybe in a few more years wireless catches up — not yet.
+DESIGN WORK
+Have the option of plugging in. Switch over to wireless on days you want freedom of movement. For accuracy, wired still wins.
+PROFESSIONAL USE
+If you make a decent living and own a multiple-hundred-to-several-thousand-dollar computer, having a 15-year-old cheap mouse is plain silly. Buy quality. Your fingers, arms, wrists, and sanity will thank you for the rest of your life.
+03 · For Non-Gamers
+
+## Do you really need high-end peripherals?
+No, you don't need them. But you'll absolutely notice the difference. Your mouse will glide more seamlessly across the screen, and that matters — you'll likely use a computer for tens of thousands of hours over your lifetime, until devices like these become obsolete.
+Most people don't realize a poor-quality mouse setup inserts a kind of jitter into your mind . The cursor skips small inconsistent distances. People assume that's just how mice work. It's not. I have no proof, but I suspect it's not great for your brain over the long term.
+What you don't need from a "gaming mouse" or "gaming keyboard" is the LED light show. You'll still benefit from reduced latency, higher accuracy, and better ergonomics . The lights are cool and useful in the dark — but optional.
+04 · Wireless Tips
+
+## If you're going wireless, do it right.
+MOUSE
+Skip Bluetooth unless it's a temporary convenience or strictly necessary. Bluetooth is laggy and less accurate. Use the 2.4G dongle if your mouse offers one. Best is wired — but that brings back the cable feel.
+KEYBOARD
+Modern wireless keyboards are usually fast enough that you won't notice much difference, but older ones may lag or degrade over time.
+05 · Brands I Like
+
+## Where to actually shop.
+Corsair → (https://www.corsair.com/)
+I have several high-end mice from them. They make good, long-lasting, accurate products.
+Logitech → (https://www.logitech.com/)
+Unlike Corsair, which targets high-end gamers, Logitech covers the full spectrum — from entry level to keyboards even pricier than Corsair (~$250).
+Apple → (https://www.apple.com/shop/mac/mac-accessories/mice-keyboards)
+Quality default products in true Apple style — with very limited (if any) customization.
+Learn the higher-quality brands instead of relying on an Amazon search — you'll find a lot of junk that gets pushed to the top. Pick a reputable brand with consistent driver updates so bugs, features, and security issues actually get fixed. Go straight to the manufacturer's site to see their full product line and decide from there.
+Written by Bryan Totty · Feb 2023
+More posts →
+
+---
+
+# My Web Development Journey
+
+URL: https://bryantotty.com/blog/web-development-journey.html
+Published: 2023-02-12
+Updated: 2026-07-01
+Summary: Documenting my web development journey: from early experiments to building modern websites.
+
+← Back to Blog
+FEBRUARY 12, 2023
+·
+WEB DEVELOPMENT
+·
+8 min read
+
+## My Web Development Journey
+From writing raw HTML in the late 90s as a kid, to coming back three decades later with a curriculum to build for web3: without spending a fortune.
+[Image: Web development workspace]
+01 · My Journey
+
+## From the early-90s web to web3.
+I started writing HTML in the late 90s — pre-CSS, just a kid trying to figure out how the Interwebs worked. Resources were thin. The few books that existed required a long drive to get my hands on, so I leaned on whatever HTML training sites the early web had to offer and shipped the most basic pages I could imagine.
+Fast-forward to 2022. I'm deep into web3, but my day job leans more toward project and program management than hands-on engineering. I'm not in the trenches the way I was as a Linux engineer.
+I have an idea: start a crypto security company. But I can't just jump straight into Solidity for Ethereum — I need to work backwards. The right starting point matters.
+HTML, CSS, and JavaScript are the foundation. From there, blockchain fundamentals and an object-oriented language like C++. Then Solidity on top.
+Figuring out where to start was the hardest part. I eventually pulled together a curriculum that would have taken a year or two through traditional channels and cost tens of thousands of dollars. I found a focused stack of high-quality courses for under $250 total — well worth the investment.
+My Curriculum
+- → The Complete 2023 Web Development Bootcamp (https://www.udemy.com/course/the-complete-web-development-bootcamp/)
+- → Beginning C++ Programming — From Beginner to Beyond (https://www.udemy.com/course/beginning-c-plus-plus-programming/)
+- → Ethereum Blockchain Developer Bootcamp With Solidity (2022) (https://www.udemy.com/course/blockchain-developer/)
+- → Ethereum and Solidity: The Complete Developer's Guide (https://www.udemy.com/course/ethereum-and-solidity-the-complete-developers-guide/)
+- → The Complete JavaScript Course 2023: From Zero to Expert! (https://www.udemy.com/course/the-complete-javascript-course/)
+02 · A Brief History
+
+## How web development got here.
+The story of web development is inseparable from the story of the internet itself — the web (short for "World Wide Web") is a massive network of interconnected documents and resources accessed over that internet.
+The recognizable shape of the modern internet traces back to the 1960s, when the Advanced Research Projects Agency (ARPA) built ARPANET to connect researchers across universities and research institutions. By the 1970s, the network had expanded beyond research and opened up to commercial use.
+In 1989, Tim Berners-Lee — a computer scientist at CERN — proposed a new way to organize and access information across the internet. He called it the "World Wide Web" and built the first browser and server software himself.
+Early on, the web was primitive and mostly used for sharing scientific and research material. The 1990s changed that fast. The web exploded outward as people found new uses for it, and the tooling raced to keep up.
+In 1994, the first version of JavaScript dropped, opening the door to interactive, dynamic websites. In 1996, PHP arrived, making it dramatically easier to build sites that talked to databases.
+By the late 90s, the rise of e-commerce and the spread of broadband internet sent demand for web development skills through the roof. That demand never reversed. Web development became a load-bearing pillar of the entire technology industry.
+Today the field covers everything from web design and content development to client-side and server-side scripting and network security. It moves fast, and new tools and frameworks show up constantly.
+03 · Getting Started
+
+## Where to begin if you're starting today.
+Web development is the practice of building and maintaining websites. It spans design, content, scripting on both ends, and security. If you want to get started, this is the path I'd suggest:
+
+### 01 Learn the foundations
+- HTML — the markup language for structuring web pages: headings, paragraphs, lists, links, the works.
+- CSS — the style language that controls layout, color, and typography.
+- JavaScript — the language that makes pages interactive: dropdowns, modals, real-time behavior.
+
+### 02 Set up a development environment
+- Local — build and test on your own machine. Visual Studio Code and Sublime Text are both popular.
+- Remote — build and test against a server, often via GitHub or GitLab.
+
+### 03 Pick a server-side language
+- PHP — long-standing, widely used for dynamic sites.
+- Ruby — general-purpose, known for clean syntax and flexibility.
+- Python — readable, beginner-friendly, and everywhere.
+
+### 04 Adopt a framework
+Frameworks let you skip reinventing the wheel. Pair one with the language you chose above:
+Django (Python)
+Ruby on Rails (Ruby)
+Laravel (PHP)
+Express.js (JavaScript)
+
+### 05 Choose a database
+- MySQL — free, open-source, the workhorse of the early web and still going strong.
+- PostgreSQL — free, open-source, object-relational, beloved for its rigor.
+- MongoDB — free, open-source, NoSQL, flexible for document-shaped data.
+
+### 06 Learn version control
+Version control tracks changes to a file (or set of files) over time. Once you start working on anything real, this is non-negotiable.
+Written by Bryan Totty · Feb 2023
+More posts →
+
+---
+
+# Working at Miami NFT Week
+
+URL: https://bryantotty.com/blog/working-nft-miami.html
+Published: 2023-02-12
+Updated: 2026-07-01
+Summary: Working the first ever Miami NFT Week event in Miami, FL 2022: contacts, experiences, and takeaways.
+
+← Back to Blog
+Miami · February 2023
+FEBRUARY 12, 2023
+·
+CRYPTO
+·
+EVENT
+
+## Working Miami NFT Week
+A behind-the-scenes look at the first-ever Miami NFT Week — thousands of attendees, neon-lit Wynwood, and the start of a wild tech week run.
+[Image: Miami NFT Week]
+Miami NFT Week · Mana Wynwood
+01 · The Event
+
+## First-ever Miami NFT Week.
+I had the honor of working the first-ever Miami NFT Week in Miami, FL, 2022. During the run I made contacts internal to the event and connected with many of the attendees and speakers.
+Thousands of people poured into the Mana Wynwood convention center . The event officially kicked off tech week in Miami and set the tone for the wave of conferences that followed — Bitcoin, Shitcoin, the whole circuit.
+02 · The Vibe
+
+## Wynwood, in true Miami color.
+The whole event leaned into the artistic identity of the Wynwood arts district . Vans rolled by with full-screen flashing displays of NFT projects. The walls of the venue felt like an extension of the neighborhood — murals, canvases, and digital art everywhere you looked.
+[Image: Miami NFT Week main stage]
+Main stage lit up in Miami color
+The main stage was lit up with multiple projectors and professional video and audio equipment — in true Miami style and color scheme.
+03 · What's Next
+
+## The future of NFTs is wider than the art.
+The conference mostly framed NFTs through the lens of art and image use cases, but that's just the surface. Other use cases are already emerging:
+REAL ESTATE
+NFTs are moving into property, leveraging their proof-of-ownership capabilities to streamline title and transfer.
+EVENT TICKETING
+NFTs as tickets — with the upgrade that you can layer on features over time and maintain a stronger relationship with the end customer long after the event is over.
+DAOs & COMMUNITY
+NFTs are being used inside Decentralized Autonomous Organizations to reward or track contribution and membership. The recurring lesson from the stage: build community first, then layer in the technology . Don't ship a tech solution without thinking through long-term consequences.
+MUSICIANS
+A strong potential use case — artists getting direct contact with their fans and cutting out the middleman. The musician decides what logic gets programmed into the smart contract: early access to content, unreleased material, event VIP access, anything they want to offer.
+[Image: Setting up the Miami NFT Week main stage]
+Staff setting up the main stage
+04 · On The Floor
+
+## Working the Degen VIP tent.
+The staff was on-site to set up every detail before the event opened and handle anything that came up during the run.
+I spent my time working the VIP tent — where French Montana and Wyclef Jean held a special meet-and-greet for Degen VIP ticket holders.
+miaminftweek.com
+→
+(https://miaminftweek.com/)
+Written by Bryan Totty · Feb 2023
+More posts →
+
+---
+
+# Artist Growth OS - AI Command Center for Musicians
+
+URL: https://bryantotty.com/projects/artist-growth-os.html
+Updated: 2026-05-09
+Summary: Multi-platform Growth OS for independent artists. Meta Ads, smart links, distribution, streaming, social, and booking unified in one AI agent.
+
+← Back to Projects
+World's First AI Artist Agent
+ARTIST GROWTH OS
+##
+A command center
+for independent artists.
+10+ platforms. One agent. Campaigns, streams, social, merch, booking, and contracts: unified into one place to see what deserves attention next.
+SEE THE PRODUCT
+SEE THE SYSTEM
+10+
+Platforms unified
+12
+Dashboard views
+4
+Growth pillars connected
+100%
+Local · read-only safety mode
+01 / Command Center
+
+## One dashboard for growth, revenue, releases, and next moves.
+growth-os.local · dashboard
+NOX V0LTAGE
+GROWTH OS
+
+## NOX V0LTAGE
+Growth Operating System: today's command center
+READ-ONLY
+Sync All
+Refresh
+Followers
+14.2K
+8 platforms
+Streams 28d
+3.8K
+Spotify+Apple
+Ad Spend 7d
+$84.20
+241 results
+Avg CPR 7d
+$0.34
+cost per result
+Streams / $
+22.4
+efficiency
+Live Camps
+1
+running now
+Ask anything… e.g. Which campaign should I scale this week?
+Ask
+
+### Today's Focus
+Scale "Static Bloom": CPR dropped to $0.27
+Pixel learning is stable. Bump daily budget +30% within 24h.
+Pause "Echo Chamber": CPR climbing past $1.80
+Creative fatigue likely. Refresh thumbnail or rotate hook.
+
+### Audience 14.2K total followers
+IG
+5.2K
+followers
++47
+FB
+6.4K
+followers
++82
+YT
+428
+subs
++12
+TT
+347
+followers
++9
+X
+186
+followers
++3
+SC
+512
+followers
++6
+SP
+894
+followers
++24
+AM
+221
+listeners
++11
+
+### Performance Snapshot
+where momentum is right now
+Top Songs by Streams
+UnitedMasters latest
+Static Bloom
+1,420
+Voltage Drop
+1,021
+Nightwave
+768
+Echo Chamber
+453
+Best Ad Creatives
+lowest CPR · last 7d
+Static-V3-15s
+$0.27
+Voltage-Hook2
+$0.34
+Nightwave-Reel
+$0.49
+Echo-V1-Story
+$1.82
+Top Growing Platforms
+follower delta · 7d
+Facebook
++82
+Instagram
++47
+Spotify
++24
+YouTube
++12
+
+---
+
+# IBM PureFlex System
+
+URL: https://bryantotty.com/projects/ibm-pureflex.html
+Updated: 2026-05-09
+Summary: IBM PureFlex System: hardware research and development work on IBM's integrated infrastructure platform.
+
+← Back to Projects
+IBM R&D Lab · 2011 – 2012
+2011 – 2012
+·
+HARDWARE
+·
+FIRMWARE
+
+## IBM PureFlex System
+Firmware test engineering for prototype blade servers in IBM's multi-million dollar R&D laboratory.
+[Image: IBM Raleigh NC STG Troy engineering team in a hardware lab]
+Raleigh NC STG Troy team · IBM hardware R&D lab
+01 · The Role
+
+## Firmware test engineer in IBM's hardware R&D lab.
+As a Firmware Test Engineer at IBM I tested prototype server hardware and software in a multi-million dollar research and development laboratory . The work happened on hardware that hadn't shipped yet — pre-production blade servers, BIOS/UEFI firmware still in flux, and chassis configurations being validated for the first time.
+$M+
+R&D lab
+2
+Server lines tested
+2
+OS families
+02 · What I Did
+
+## Pre-release validation of server firmware and hardware.
+01
+Determined BIOS and UEFI bug root cause analysis for blade servers.
+02
+Functional experience with development to production release cycles and deadlines.
+03
+Created and executed test suites for new hardware, firmware, and software.
+04
+Utilized multiple Linux and Windows operating systems to perform server compatibility tests.
+05
+Tested IBM Power Flex Chassis during developmental stages prior to public release.
+06
+Verified integration of IBM System x and Power Blades in the IBM Flex Chassis.
+07
+Documented and collected detailed technical analysis information of server firmware bugs.
+08
+Determined server firmware functional verification tests and executed those tests.
+09
+Executed stress and performance tests on server equipment in order to verify hardware safeguard features.
+10
+Interpreted developmental hardware schematics for detailed reporting of server hardware and software defects.
+03 · Stack
+
+## What I worked with.
+BIOS
+UEFI
+IBM System x
+IBM Power Blades
+Power Flex Chassis
+Linux
+Windows Server
+Hardware schematics
+Firmware verification
+Stress testing
+IBM · Server R&D · Raleigh, NC
+More projects →
+
+---
+
+# NFT Project on Solana
+
+URL: https://bryantotty.com/projects/nft-solana.html
+Updated: 2026-05-09
+Summary: Miami Hack Week 2022: customizable NFT minting platform on the Solana blockchain with creator-defined templates.
+
+← Back to Projects
+CRYPTO
+Miami Hack Week · 2022
+
+## A customizable NFT minting platform on Solana.
+A creator defines the template — layers, customizable regions, royalty splits. The buyer tweaks it. Solana mints it. Both sides win.
+[Image: Three-step NFT customization flow on Solana]
+01 · The Idea
+
+## Templated NFTs that the buyer helps design.
+Most NFT collections ship as fixed art. The buyer has no say. Our concept inverts that: the creator uploads a template and defines exactly which regions, colors, and patterns can be modified. The buyer then customizes within those rules and mints their unique piece on-chain.
+Think Bored Apes meets a character creator. The creator still controls the brand and earns royalties. The buyer gets a one-of-one piece without needing to be a graphic designer.
+[Image: Whiteboard sketch of the NFT customization concept]
+Concept whiteboarding · Miami Hack Week 2022
+02 · How It Works
+
+## Three steps from template to mint.
+STEP 01
+
+### Creator builds
+Upload artwork, mark which layers are customizable, set royalty splits.
+STEP 02
+
+### Buyer customizes
+Tweak colors, swap patterns, adjust attributes inside the creator's rules.
+STEP 03
+
+### Solana mints
+The personalized NFT lands on-chain in seconds for cents: royalties intact.
+03 · Tech Stack
+
+## Web2 × Web3 × Solana.
+A familiar web interface for upload, customization, and preview: wired to a Solana smart contract for the actual mint. We chose Solana for two reasons: speed (mints settle in under a second) and cost (transaction fees in fractions of a cent). At the time, NFT culture was rapidly migrating from Ethereum gas wars onto Solana for exactly these reasons.
+Solana
+Anchor
+Phantom Wallet
+React
+IPFS
+Metaplex
+04 · What's Next
+
+## It's not just images.
+The hackathon shipped a proof-of-concept around static art, but the same template-and-customize pattern extends naturally to video (creators ship reusable VJ loops, buyers swap colors and audio), music (stems with creator-defined remix bounds), and in-game assets (skin templates that buyers personalize before equip). One concept, many media types.
+Miami Hack Week 2022 ↗ (https://www.miamihackweek.com/)
+More projects →
+
+---
+
+# ShadowScan AI - Website Risk Scanner
+
+URL: https://bryantotty.com/projects/shadowscan-ai.html
+Updated: 2026-05-09
+Summary: ShadowScan AI: an AI-powered website risk scanner that translates technical findings into business-impact reports for non-technical owners.
+
+← Back to Projects
+Live Pilot · 2026
+SHADOWSCAN AI
+##
+Find website risks before they cost sales.
+An AI-powered risk scanner that turns deep technical findings into business-impact reports a non-technical owner can actually act on.
+VIEW LIVE PILOT (https://getshadowscan.com/)
+HOW IT WORKS
+scan.getshadowscan.com/r/4a8f2
+$ shadowscan --target acme-store.com
+[01/12] Resolving DNS & subdomains… ok
+[04/12] Probing public endpoints… ok
+[07/12] Fingerprinting CMS & plugins… ok
+[10/12] AI risk classification… ok
+[12/12] Generating report… ok
+› Found 7 risks 2 critical 3 high 2 low
+Est. revenue at risk: $4,200/mo · SEO impact: medium
+15+
+Yrs security XP
+12
+Scan checks
+4
+Pricing tiers
+$0
+Free preview scan
+01 / The Problem
+
+## Small business websites get attacked the same way enterprises do: without enterprise defenses.
+Most small and mid-sized businesses do not know there is a problem until checkout breaks, search rankings drop, or customer trust is already damaged. Pen-tests cost thousands. SaaS scanners spit out CVE lists no business owner can interpret. And the average WordPress site runs 22+ plugins, any one of which can be the vector.
+ShadowScan AI was built to close that gap: enterprise-grade external risk visibility, packaged for owners who do not have a security team.
+RISK · 01
+
+### Checkout Hijack
+A checkout page can look normal while a hidden script silently exfiltrates card details in the background.
+RISK · 02
+
+### SEO Blacklist
+Attackers plant spam pages through one weak plugin. Rankings collapse. Inbound demand vanishes.
+RISK · 03
+
+### Exposed Files
+Client backups, admin pages, and private uploads sitting public: indexed and waiting to be found.
+02 / The Concept
+
+## From a domain to a board-ready risk report: in minutes.
+The owner enters a URL. ShadowScan does the deep work in the background: discovery, fingerprinting, configuration analysis, AI-powered risk classification: and returns a prioritized action plan written for humans, not engineers.
+STEP 01
+
+### Enter the site
+Owner submits domain + email. No login access. No credit card. Authorization is captured at signup.
+STEP 02
+
+### External recon
+Safe, non-disruptive checks across DNS, subdomains, exposed paths, software versions, and known CVEs.
+STEP 03
+
+### AI translation layer
+Each finding is ranked by business impact and rewritten into plain-English fix steps an owner or vendor can execute.
+03 / The Deliverable
+
+## A sample finding panel.
+Every issue is severity-ranked, business-contextualized, and paired with a concrete remediation step. No raw CVE dumps. No fear-mongering. Just what to fix first and why it matters.
+app.getshadowscan.com / report / r-4a8f2
+CRIT
+Checkout page loads third-party script from unverified domain
+Possible card-skimmer vector. Verify or remove the script tag at /checkout.
+$ revenue
+at risk
+CRIT
+Exposed /wp-admin without rate limiting
+Brute-force attempts can run unchecked. Add a WAF rule or IP allow-list.
+account
+takeover
+HIGH
+Outdated CMS plugin with known CVE
+A patched version was released 4 months ago. Update through the admin panel.
+site
+compromise
+HIGH
+Public S3-style bucket lists internal directory contents
+Disable directory listing or move assets behind a CDN.
+data
+exposure
+MED
+Missing security headers (CSP, HSTS, X-Frame-Options)
+Hand the included snippet to your developer or hosting provider.
+SEO &
+trust
+LOW
+Verbose server banner leaks software version
+Cosmetic risk. Suppress in your web server configuration.
+low
+priority
+Sample output. Demonstration data only.
+04 / Coverage
+
+## What the scanner looks for.
+-
+›
+Outdated software & vulnerable plugins : version fingerprinting cross-referenced against CVE feeds.
+-
+›
+Exposed files & admin areas : backup files, hidden uploads, login portals indexed publicly.
+-
+›
+Misconfigurations : directory listing, missing headers, weak TLS, permissive CORS.
+-
+›
+Reputation & SEO compromise : injected spam, blacklist signals, suspicious redirects.
+-
+›
+Customer-data exposure : checkout integrity, third-party script provenance, form posting destinations.
+-
+›
+Subdomain discovery : forgotten dev, staging, and legacy hosts that widen the attack surface.
+[Image: ShadowScan attack surface dashboard concept]
+05 / Under The Hood
+
+## Engineering approach.
+The MVP combines a headless scanning engine, a CVE intelligence layer, and an LLM translation pipeline that converts technical findings into business-impact narratives. Everything is read-only and externally observed: no credentials, no code execution, no disruption.
+LAYER · 01
+
+### Recon engine
+Headless probes for DNS, subdomains, exposed paths, fingerprints, and security headers. Rate-limited & opt-in only.
+LAYER · 02
+
+### Intelligence enrichment
+Findings cross-referenced with CVE feeds, known-bad indicators, and real-world exploit availability data.
+LAYER · 03
+
+### AI translation
+Each technical finding is rewritten into a business-impact summary plus a concrete fix step a non-engineer can act on.
+Node.js
+Python
+Headless browser
+CVE API
+LLM
+Postgres
+Vercel
+Formspree
+Meta Pixel
+06 / Go-to-Market
+
+## Pricing built for owners: not security teams.
+The funnel is built around a free preview scan that returns a real result. Recurring tiers add monitoring, frequency, and shareable executive reports for businesses that want a permanent safety net.
+PREVIEW
+$0
+One-time scan + sample report
+STARTER
+$49 /mo
+Monthly scans + shareable reports
+GROWTH ★
+$149 /mo
+Weekly scans + continuous monitoring
+PRO
+$399 /mo
+Higher-stakes sites + faster support
+07 / What I Learned
+
+## Building a security product for non-security buyers.
+Translation is the product. The hardest engineering problem was not the scanner: it was the layer that turns a CVE ID into "your checkout page is at risk." Without that, the report is noise.
+Trust is earned at the form. Owners do not enter their domain unless the page makes the safety boundary obvious. The signup explicitly captures authorization and clarifies that the scan is external and non-disruptive.
+Free preview drives the funnel. A real result with real findings: even from a basic scan: converts owners into recurring tiers far better than a feature list ever could.
+Compliance posture has to be designed in. Consent-gated tracking, plain-language terms, and a strict scope-of-scan boundary are not nice-to-haves for a security product: they are the credibility floor.
+08 / What's Next
+
+## The roadmap.
+- → Continuous monitoring with weekly diffs and email alerts when new risks appear.
+- → Agency white-label so web shops can deliver branded ShadowScan reports to their clients.
+- → Compliance overlays (PCI, HIPAA-relevant signals) for owners in regulated verticals.
+- → One-click remediation for the most common findings via integrations with Cloudflare, WordPress, and major hosting providers.
+- → Underwriter partnerships : ShadowScan reports as evidence for cyber-insurance pre-quote screening.
+Pilot is live
+
+## See what your site exposes.
+A free preview scan with no credit card. Built and operated by Bryan Totty.
+VISIT SHADOWSCAN AI (https://getshadowscan.com/)
+CONTACT BRYAN
+
+---
+
+# Space-Chat - AI Oil Tanker Tracking Dashboard
+
+URL: https://bryantotty.com/projects/space-chat.html
+Updated: 2026-05-09
+Summary: AI-powered oil tanker tracking dashboard integrating ChatGPT with geospatial data to uncover illicit trade activity.
+
+← Back to Projects
+TECH
+
+## Space-Chat
+View our Space Chat Presentation (https://drive.google.com/file/d/1lCHVj_Ucjexttehb7u6jttKZHfZRBiHd/view?usp=sharing).
+[Image: Space-Chat Dashboard]
+
+## Summary
+Illicit oil tanker trade violates international sanctions and is a large problem which imposes huge economic and societal costs.
+In order to provide intelligence for government agencies, hedge funds, etc. we created SpaceChat. We used a variety of data sources to track oil tanker locations. Next, we integrated ChatGPT capabilities so that a user can make natural language queries about tanker location and determine potential illicit activity.
+The purpose for the integration is so that the AI can learn based on the data we fed it. This goes far beyond the typical user interface most users are familiar with. The limitation with using the baseline ChatGPT is that the AI can only make determinations based on the data it has, and integration with these premium data sources for tanker location is not included. Additionally, we used proprietary backend logic to integrate multiple sources for natural language queries.
+[Image: Presenting SpaceChat at Miami Hack Week]
+Presenting SpaceChat at Miami Hack Week
+
+## What it does
+SpaceChat integrates ChatGPT into an online dashboard, allowing users to ask questions about oil tanker locations, illicit activity, and other information to try and uncover illegal oil trade.
+This allows humans to immediately interact with complex data via natural language so actions can be taken against the owners of these tankers in real time.
+[Image: Integration of ChatGPT to interactive heatmap for tankers]
+Integration of ChatGPT to interactive heatmap for tankers
+[Image: SpaceChat dashboard view]
+
+## How we built it
+SpaceChat was built by integrating OpenAI's language model ChatGPT into an online webpage dashboard with an up to date embedded vector database. This allows for users to ask natural language questions about oil tanker information and its owners, including location, ship type, and frequency to uncover potential illegal oil trade activity. Additional data sources and functionality were also integrated into the platform to enhance its capabilities.
+
+## Challenges we ran into
+We identified 3 data sources that could provide valuable insight to ChatGPT so that a user could ask targeted questions about tankers and their region or travel.
+These 3 data sources needed to be correlated then merged into a single database and imported into our vector database. This presented a challenge in determining which types of questions could be answered based on how the database information is structured. Integrating priority on the databases was also an area that we had to focus on fine tuning since OpenAI already has their own data set that is outdated.
+
+## Accomplishments
+We are most proud that the tool we built can better help uncover illegal oil and potentially arms transactions by sanctioned countries which causes real economic and other damages.
+Additionally, we built a machine learning algorithm that after training, was able to highlight ships in red for automatic detection of enemy vessels.
+[Image: Automatic detection of enemy vessels using ML]
+Automatic detection of enemy vessels using a Machine Learning model
+
+## What we learned
+Creating a product that integrates multiple data sources and provides relevant information to users in a conversational manner was a learning experience in several areas including:
+- Data engineering: merging and cleaning multiple data sources into a unified database
+- Natural language processing: understanding the intent and context of user queries
+- User experience: creating a user-friendly interface for asking and receiving information
+
+## The Future of SpaceChat
+SpaceChat will become more valuable as it continues to learn. Future use cases include:
+- Government agencies: Use SpaceChat for enforcement
+- Hedge funds: Make trading decisions
+- Illegal oil trade: Estimates based on data
+- Report generation: Create automatic reports around illicit activity
+- Arms trade: Addition of illegal firearms trade
+- Data sources: Add additional intelligence
+- Fine tuning: Tune the AI model for increased accuracy
+Miami Hack Week (https://www.miamihackweek.com/)
+Space-Eyes (https://space-eyes.com/index.html)
+[Image: Miami Hack Week]
