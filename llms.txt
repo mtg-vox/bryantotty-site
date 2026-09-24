@@ -76,6 +76,7 @@ Azure, AWS, Docker, Kubernetes, Python, PowerShell, Bash, KQL, Linux, SELinux, G
 
 ## Projects
 - [Artist Growth OS - AI Command Center for Musicians](https://bryantotty.com/projects/artist-growth-os.html): Multi-platform Growth OS for independent artists. Meta Ads, smart links, distribution, streaming, social, and booking unified in one AI agent.
+- [Housing Decision Agent - Personal Housing AI](https://bryantotty.com/projects/housing-decision-agent.html): Open-source, private AI housing assistant that compares apartments, condos, and houses against your budget, commute, deal-breakers, and your current home.
 - [IBM PureFlex System](https://bryantotty.com/projects/ibm-pureflex.html): IBM PureFlex System: hardware research and development work on IBM's integrated infrastructure platform.
 - [NFT Project on Solana](https://bryantotty.com/projects/nft-solana.html): Miami Hack Week 2022: customizable NFT minting platform on the Solana blockchain with creator-defined templates.
 - [ShadowScan AI - Website Risk Scanner](https://bryantotty.com/projects/shadowscan-ai.html): ShadowScan AI: an AI-powered website risk scanner that translates technical findings into business-impact reports for non-technical owners.

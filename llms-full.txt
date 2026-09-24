@@ -155,6 +155,12 @@ Selected work across AI agents , security , crypto , and hardware R&D , from For
 01 · Build Matrix
 
 ## Selected work, by the numbers.
+[Image: Housing Decision Agent: ranked homes with score breakdown]
+AI AGENT
+OPEN SOURCE
+
+### Housing Decision Agent
+A private, AI-ready assistant for deciding where to live next, or whether to move at all. Compares apartments, condos, and houses against your priorities and current home.
 [Image: Artist Growth OS: multi-platform AI command center]
 AI AGENT
 AUTOMATION
@@ -1167,6 +1173,120 @@ Spotify
 +24
 YouTube
 +12
+
+---
+
+# Housing Decision Agent - Personal Housing AI
+
+URL: https://bryantotty.com/projects/housing-decision-agent.html
+Updated: 2026-09-24
+Summary: Open-source, private AI housing assistant that compares apartments, condos, and houses against your budget, commute, deal-breakers, and your current home.
+
+← Back to Projects
+Open Source · MIT · 2026
+HOUSING DECISION AGENT
+##
+Decide where to live next, or whether to move at all.
+A private, AI-ready housing assistant. Compare apartments, condos, and houses against your budget, commute, and deal-breakers, with every option scored against the home you live in now.
+VIEW ON GITHUB (https://github.com/mtg-vox/housing-decision-agent)
+HOW IT WORKS
+[Image: Housing Decision Agent dashboard ranking candidate homes with a per-category score breakdown, using fictional demo data]
+0
+Accounts or cloud
+3
+Ways to use it
+0
+Python dependencies
+MIT
+Open-source license
+Screenshots use the tool's built-in fictional demo data.
+01 / The Problem
+
+## Listing sites rank homes for their business, not your life.
+Rental and real-estate sites sort by sponsored placement, newest, or cheapest. None of them know how often you commute, what you will not compromise on, or what the true monthly cost is once parking and fees are added. And none of them ask the most important question: is this actually better than where you live now?
+Most people end up juggling spreadsheets, browser tabs, and gut feel. Housing Decision Agent replaces that with a consistent, explainable score built from your own priorities.
+02 / How It Works
+
+## Your priorities in. A ranked, explainable shortlist out.
+STEP 01
+
+### Set up your profile
+Run housing init and answer a few questions: budget, places you travel to often, and deal-breakers. Every question is skippable.
+STEP 02
+
+### Add candidates
+Enter apartments, condos, or houses by hand, or let an AI agent do the research. Every fact records its source and the date it was checked.
+STEP 03
+
+### Compare against home
+Each option gets a weighted score with risk caps and deal-breakers applied, side by side with your current home as the baseline.
+- › Should I even move? Your current home is the benchmark every option has to beat.
+- › True all-in cost including parking and required fees, checked against ideal, soft, and hard budget ceilings.
+- › Commute to the places that matter : work, gym, family, weighted by how often you go.
+- › Risk rules and deal-breakers such as flood-exposed parking or heavy construction nearby cap or rule out a place.
+- › Stale-data warnings so old prices and availability get re-checked instead of trusted.
+[Image: Dashboard overview with budget, move window, and baseline home using fictional demo data]
+03 / Built For AI Agents
+
+## Point and click, or let an agent do the legwork.
+The dashboard and the command line share one backend, so a change made in either shows up in both. AI coding agents that can run terminal commands (Claude Code, Codex, GitHub Copilot, Cursor) can set up your profile, record researched facts with sources, and score candidates, using a clear JSON interface and written agent instructions.
+# Agent asks you the setup questions, then saves your answers
+$ housing --json init --questions
+$ housing --json init --answers '{"budget": {...}, "anchors": [...]}'
+# Record a researched fact with its source and check date
+$ housing --json set-fact harbor-lofts base_rent 2150 \
+--source https://example.com/listing --checked 2026-09-20 \
+--confidence high --kind pricing
+# See the ranked shortlist
+$ housing list
+04 / Private By Design
+
+## Your budget and addresses never leave your machine.
+DATA · 01
+
+### Local files only
+No accounts, no cloud, no database. Your profile is a folder of plain JSON files that you own, kept outside the code.
+DATA · 02
+
+### Local-only server
+The dashboard only listens on your own computer, with a per-launch token. Map tiles are off until you turn them on.
+DATA · 03
+
+### Publish-safe tooling
+A built-in privacy scanner and gitleaks gate help keep personal data out of anything shared publicly.
+05 / Under The Hood
+
+## Simple on purpose.
+Scores are recomputed from facts and judgments every time, never stored, so results stay reproducible and explainable. Writes are coordinated across the dashboard and CLI, so a stale edit returns a conflict instead of silently overwriting newer work.
+Python 3.11+
+Standard library only
+Vanilla JS dashboard
+Leaflet maps
+JSON storage
+CLI + JSON mode
+pytest
+GitHub Actions
+gitleaks
+06 / What I Learned
+
+## Turning a personal tool into something anyone can use.
+Separate the engine from the person. It started as a tool for my own move. Making it shareable meant pulling every personal value into a private profile folder, so the public code holds no one's budget, city, or home.
+Facts, judgments, and math are different things. Keeping sourced facts separate from scored judgments, and letting the code do the math, made recommendations reproducible instead of a guess.
+Design for AI agents from day one. A clean CLI with JSON output and written agent instructions lets an assistant do real research work without editing files directly.
+Privacy has to be verified, not assumed. Before going public, the release was built as a fresh export with no history and checked by automated scanners plus an independent review.
+07 / What's Next
+
+## The roadmap.
+- → MCP server so AI tools can use the agent natively.
+- → More city region packs with local research sources; Miami is the first.
+- → "What if" views that show how the ranking changes if your priorities shift.
+- → Buying support with mortgage-style monthly cost estimates.
+Free and open source
+
+## Try it on your next move.
+Clone the repo, run the fictional demo, then create your own private profile in a few minutes. Built by Bryan Totty.
+VIEW ON GITHUB (https://github.com/mtg-vox/housing-decision-agent)
+CONTACT BRYAN
 
 ---
 

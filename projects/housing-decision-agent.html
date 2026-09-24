@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=()" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io; base-uri 'self'; form-action 'self' https://formspree.io" />
+    <title>Housing Decision Agent - Personal Housing AI - Bryan Totty</title>
+    <meta name="description" content="Open-source, private AI housing assistant that compares apartments, condos, and houses against your budget, commute, deal-breakers, and your current home.">
+    <meta property="og:title" content="Housing Decision Agent - Personal Housing AI - Bryan Totty">
+    <meta property="og:description" content="Open-source, private AI housing assistant that compares apartments, condos, and houses against your budget, commute, deal-breakers, and your current home.">
+    <meta property="og:image" content="https://bryantotty.com/images/projects/housing-decision-agent/og.jpg">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://bryantotty.com/projects/housing-decision-agent.html">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg?v=b-20260430">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png?v=b-20260430">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png?v=b-20260430">
+    <link rel="stylesheet" href="/dist/tailwind.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css?v=20260509a">
+    <style>
+        /* Housing Decision Agent accents: teal, matching the app's own dashboard. Layered on the site theme. */
+        :root { --hd-teal: #14b8a6; --hd-teal-soft: #5eead4; }
+        .hd-text { color: var(--hd-teal-soft); }
+        .hd-eyebrow {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
+            color: var(--hd-teal-soft);
+            padding: 6px 12px; border: 1px solid rgba(20, 184, 166, 0.3);
+            background: rgba(20, 184, 166, 0.07); border-radius: 999px;
+        }
+        .hd-eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--hd-teal); box-shadow: 0 0 12px var(--hd-teal); animation: hd-pulse 2s ease-in-out infinite; }
+        @keyframes hd-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+        .hd-hero-glow {
+            position: absolute; inset: -20% -10% auto auto; width: 60%; height: 80%;
+            background: radial-gradient(ellipse at top right, rgba(20, 184, 166, 0.12), transparent 60%);
+            pointer-events: none; z-index: 0;
+        }
+        .hd-section-label {
+            display: flex; align-items: center; justify-content: center; width: fit-content;
+            font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500;
+            letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255, 255, 255, 0.85);
+            margin: 0 auto 16px; padding: 9px 14px; border-radius: 999px; line-height: 1.2;
+            border: 1px solid rgba(20, 184, 166, 0.5);
+            background: rgba(20, 184, 166, 0.08);
+            box-shadow: 0 0 20px rgba(20, 184, 166, 0.08);
+        }
+        .hd-h2 { font-size: 32px; font-weight: 700; letter-spacing: -0.02em; color: white; margin-bottom: 24px; line-height: 1.15; text-align: center; }
+        .hd-stat { border: 1px solid rgba(255, 255, 255, 0.06); background: rgba(255, 255, 255, 0.015); border-radius: 10px; padding: 18px 20px; transition: all 0.3s ease; }
+        .hd-stat:hover { border-color: rgba(20, 184, 166, 0.35); background: rgba(20, 184, 166, 0.04); }
+        .hd-stat-num { font-family: 'JetBrains Mono', monospace; font-size: 28px; font-weight: 700; color: white; line-height: 1; }
+        .hd-stat-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255, 255, 255, 0.4); margin-top: 8px; }
+        .hd-pillar { border: 1px solid rgba(255, 255, 255, 0.06); background: rgba(255, 255, 255, 0.015); border-radius: 12px; padding: 24px; transition: all 0.3s ease; height: 100%; }
+        .hd-pillar:hover { border-color: rgba(20, 184, 166, 0.3); background: rgba(20, 184, 166, 0.03); transform: translateY(-2px); }
+        .hd-pillar-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--hd-teal); letter-spacing: 0.2em; margin-bottom: 10px; }
+        .hd-shot { border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; overflow: hidden; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), 0 0 60px rgba(20, 184, 166, 0.07); }
+        .hd-term { border: 1px solid rgba(255, 255, 255, 0.08); background: linear-gradient(180deg, rgba(10, 22, 20, 0.95), rgba(6, 12, 11, 0.95)); border-radius: 12px; overflow: hidden; }
+        .hd-term-bar { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-bottom: 1px solid rgba(255, 255, 255, 0.06); background: rgba(255, 255, 255, 0.02); }
+        .hd-term-dot { width: 10px; height: 10px; border-radius: 50%; }
+        .hd-term-body { padding: 20px 22px; font-family: 'JetBrains Mono', monospace; font-size: 12px; line-height: 1.8; overflow-x: auto; white-space: pre; }
+        .hd-tech-pill { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 4px 10px; border: 1px solid rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.55); border-radius: 4px; margin: 3px; background: rgba(255, 255, 255, 0.02); }
+        .hd-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(20, 184, 166, 0.3), transparent); margin: 64px 0; }
+        .hd-cta-card { border: 1px solid rgba(20, 184, 166, 0.25); background: linear-gradient(135deg, rgba(20, 184, 166, 0.08), rgba(13, 148, 136, 0.03)); border-radius: 16px; padding: 40px; text-align: center; }
+        @media (max-width: 767px) {
+            .hd-h2 { font-size: 24px; }
+            .hd-section-label { font-size: 10.5px; padding: 7px 11px; }
+        }
+    </style>
+    <meta property="og:url" content="https://bryantotty.com/projects/housing-decision-agent.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Housing Decision Agent - Personal Housing AI - Bryan Totty">
+    <meta name="twitter:description" content="Open-source, private AI housing assistant that compares apartments, condos, and houses against your budget, commute, deal-breakers, and your current home.">
+    <meta name="twitter:image" content="https://bryantotty.com/images/projects/housing-decision-agent/og.jpg">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Housing Decision Agent","url":"https://bryantotty.com/projects/housing-decision-agent.html","codeRepository":"https://github.com/mtg-vox/housing-decision-agent","programmingLanguage":"Python","license":"https://opensource.org/licenses/MIT","description":"Open-source, private AI housing assistant that compares apartments, condos, and houses against your budget, commute, deal-breakers, and your current home.","image":"https://bryantotty.com/images/projects/housing-decision-agent/og.jpg","creator":{"@type":"Person","name":"Bryan Totty","url":"https://bryantotty.com/about.html"}}</script>
+    <!-- seo:breadcrumbs -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://bryantotty.com/"},{"@type":"ListItem","position":2,"name":"Projects","item":"https://bryantotty.com/projects.html"},{"@type":"ListItem","position":3,"name":"Housing Decision Agent - Personal Housing AI","item":"https://bryantotty.com/projects/housing-decision-agent.html"}]}</script>
+    <!-- /seo:breadcrumbs -->
+</head>
+<body class="bg-dark text-white font-['Inter'] min-h-screen">
+    <div class="grid-bg" aria-hidden="true"></div>
+    <nav class="fixed top-0 w-full z-50 bg-dark/80 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-xl font-black tracking-tighter"><span class="text-white">BRYAN</span><span class="text-glow">TOTTY</span></a>
+            <div class="hidden md:flex gap-8 text-xs font-semibold tracking-[0.2em] uppercase">
+                <a href="/" class="text-white/50 hover:text-glow transition-colors">Home</a>
+                <a href="../about.html" class="text-white/50 hover:text-glow transition-colors">About</a>
+                <a href="../projects.html" class="text-white hover:text-glow transition-colors">Projects</a>
+                <a href="../creative.html" class="text-white/50 hover:text-glow transition-colors">Creative</a>
+                <a href="../speaking.html" class="text-white/50 hover:text-glow transition-colors">Speaking</a>
+                <a href="../blog.html" class="text-white/50 hover:text-glow transition-colors">Blog</a>
+                <a href="../contact.html" class="text-white/50 hover:text-glow transition-colors">Contact</a>
+            </div>
+            <button id="menu-btn" class="md:hidden text-white" aria-label="Toggle menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-dark/95 backdrop-blur-xl">
+            <div class="flex flex-col px-6 py-4 gap-4 text-xs font-semibold tracking-[0.2em] uppercase">
+                <a href="/" class="text-white/50">Home</a>
+                <a href="../about.html" class="text-white/50">About</a>
+                <a href="../projects.html" class="text-white">Projects</a>
+                <a href="../creative.html" class="text-white/50">Creative</a>
+                <a href="../speaking.html" class="text-white/50">Speaking</a>
+                <a href="../blog.html" class="text-white/50">Blog</a>
+                <a href="../contact.html" class="text-white/50">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-28 pb-20 px-6 relative overflow-hidden">
+        <div class="hd-hero-glow" aria-hidden="true"></div>
+
+        <!-- HERO -->
+        <section class="max-w-5xl mx-auto relative">
+            <a href="../projects.html" class="text-white/40 hover:text-glow text-sm mb-8 inline-block transition-colors">&larr; Back to Projects</a>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <div class="hd-eyebrow mb-6">
+                        <span class="hd-eyebrow-dot"></span>
+                        Open Source · MIT · 2026
+                    </div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-md flex items-center justify-center" style="background: rgba(20,184,166,0.15); border: 1px solid rgba(20,184,166,0.3); color: #5eead4;">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h14V9.5"/><path d="M9.5 20v-5.5h5V20"/></svg>
+                        </div>
+                        <span class="font-['JetBrains_Mono'] text-xs tracking-[0.2em] uppercase text-white/40">HOUSING DECISION AGENT</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-5 leading-[1.05]">
+                        Decide where to live next, or <span class="hd-text">whether to move at all.</span>
+                    </h1>
+                    <p class="text-white/60 text-lg leading-relaxed mb-8">
+                        A private, AI-ready housing assistant. Compare apartments, condos, and houses against your budget, commute, and deal-breakers, with every option scored against the home you live in now.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="https://github.com/mtg-vox/housing-decision-agent" target="_blank" rel="noopener noreferrer" class="hero-btn-primary">VIEW ON GITHUB</a>
+                        <a href="#how-it-works" class="hero-btn-outline">HOW IT WORKS</a>
+                    </div>
+                </div>
+
+                <figure class="hd-shot">
+                    <picture>
+                        <source type="image/webp" srcset="../images/projects/housing-decision-agent/ranking-960.webp 960w, ../images/projects/housing-decision-agent/ranking-1440.webp 1440w" sizes="(min-width: 768px) 480px, 100vw">
+                        <img src="../images/projects/housing-decision-agent/ranking-960.jpg" srcset="../images/projects/housing-decision-agent/ranking-960.jpg 960w, ../images/projects/housing-decision-agent/ranking-1440.jpg 1440w" sizes="(min-width: 768px) 480px, 100vw" width="1440" height="975" alt="Housing Decision Agent dashboard ranking candidate homes with a per-category score breakdown, using fictional demo data" class="w-full block" loading="eager" fetchpriority="high">
+                    </picture>
+                </figure>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+                <div class="hd-stat"><div class="hd-stat-num">0</div><div class="hd-stat-label">Accounts or cloud</div></div>
+                <div class="hd-stat"><div class="hd-stat-num">3</div><div class="hd-stat-label">Ways to use it</div></div>
+                <div class="hd-stat"><div class="hd-stat-num">0</div><div class="hd-stat-label">Python dependencies</div></div>
+                <div class="hd-stat"><div class="hd-stat-num">MIT</div><div class="hd-stat-label">Open-source license</div></div>
+            </div>
+            <p class="text-white/30 text-xs italic text-center font-['JetBrains_Mono']">Screenshots use the tool's built-in fictional demo data.</p>
+        </section>
+
+        <div class="hd-divider max-w-5xl mx-auto"></div>
+
+        <!-- PROBLEM -->
+        <section class="max-w-4xl mx-auto">
+            <div class="hd-section-label">01 / The Problem</div>
+            <h2 class="hd-h2">Listing sites rank homes for their business, not your life.</h2>
+            <p class="text-white/60 leading-relaxed text-lg mb-6">
+                Rental and real-estate sites sort by sponsored placement, newest, or cheapest. None of them know how often you commute, what you will not compromise on, or what the true monthly cost is once parking and fees are added. And none of them ask the most important question: is this actually better than where you live now?
+            </p>
+            <p class="text-white/60 leading-relaxed text-lg">
+                Most people end up juggling spreadsheets, browser tabs, and gut feel. Housing Decision Agent replaces that with a consistent, explainable score built from your own priorities.
+            </p>
+        </section>
+
+        <div class="hd-divider max-w-5xl mx-auto"></div>
+
+        <!-- WHAT IT DOES -->
+        <section id="how-it-works" class="max-w-5xl mx-auto">
+            <div class="hd-section-label">02 / How It Works</div>
+            <h2 class="hd-h2">Your priorities in. A ranked, explainable shortlist out.</h2>
+
+            <div class="grid md:grid-cols-3 gap-5 mb-12">
+                <div class="hd-pillar">
+                    <div class="hd-pillar-num">STEP 01</div>
+                    <h3 class="text-white text-xl font-semibold mb-3">Set up your profile</h3>
+                    <p class="text-white/55 text-sm leading-relaxed">Run <code class="hd-text">housing init</code> and answer a few questions: budget, places you travel to often, and deal-breakers. Every question is skippable.</p>
+                </div>
+                <div class="hd-pillar">
+                    <div class="hd-pillar-num">STEP 02</div>
+                    <h3 class="text-white text-xl font-semibold mb-3">Add candidates</h3>
+                    <p class="text-white/55 text-sm leading-relaxed">Enter apartments, condos, or houses by hand, or let an AI agent do the research. Every fact records its source and the date it was checked.</p>
+                </div>
+                <div class="hd-pillar">
+                    <div class="hd-pillar-num">STEP 03</div>
+                    <h3 class="text-white text-xl font-semibold mb-3">Compare against home</h3>
+                    <p class="text-white/55 text-sm leading-relaxed">Each option gets a weighted score with risk caps and deal-breakers applied, side by side with your current home as the baseline.</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-10 items-start">
+                <ul class="space-y-4">
+                    <li class="flex gap-3"><span class="hd-text mt-1">›</span><span class="text-white/70"><strong class="text-white">Should I even move?</strong> Your current home is the benchmark every option has to beat.</span></li>
+                    <li class="flex gap-3"><span class="hd-text mt-1">›</span><span class="text-white/70"><strong class="text-white">True all-in cost</strong> including parking and required fees, checked against ideal, soft, and hard budget ceilings.</span></li>
+                    <li class="flex gap-3"><span class="hd-text mt-1">›</span><span class="text-white/70"><strong class="text-white">Commute to the places that matter</strong>: work, gym, family, weighted by how often you go.</span></li>
+                    <li class="flex gap-3"><span class="hd-text mt-1">›</span><span class="text-white/70"><strong class="text-white">Risk rules and deal-breakers</strong> such as flood-exposed parking or heavy construction nearby cap or rule out a place.</span></li>
+                    <li class="flex gap-3"><span class="hd-text mt-1">›</span><span class="text-white/70"><strong class="text-white">Stale-data warnings</strong> so old prices and availability get re-checked instead of trusted.</span></li>
+                </ul>
+                <figure class="hd-shot">
+                    <picture>
+                        <source type="image/webp" srcset="../images/projects/housing-decision-agent/overview-960.webp 960w, ../images/projects/housing-decision-agent/overview-1440.webp 1440w" sizes="(min-width: 768px) 480px, 100vw">
+                        <img src="../images/projects/housing-decision-agent/overview-960.jpg" srcset="../images/projects/housing-decision-agent/overview-960.jpg 960w, ../images/projects/housing-decision-agent/overview-1440.jpg 1440w" sizes="(min-width: 768px) 480px, 100vw" width="1440" height="620" alt="Dashboard overview with budget, move window, and baseline home using fictional demo data" class="w-full block" loading="lazy">
+                    </picture>
+                </figure>
+            </div>
+        </section>
+
+        <div class="hd-divider max-w-5xl mx-auto"></div>
+
+        <!-- AI AGENTS -->
+        <section class="max-w-5xl mx-auto">
+            <div class="hd-section-label">03 / Built For AI Agents</div>
+            <h2 class="hd-h2">Point and click, or let an agent do the legwork.</h2>
+            <p class="text-white/60 leading-relaxed text-lg mb-10 max-w-3xl mx-auto text-center">
+                The dashboard and the command line share one backend, so a change made in either shows up in both. AI coding agents that can run terminal commands (Claude Code, Codex, GitHub Copilot, Cursor) can set up your profile, record researched facts with sources, and score candidates, using a clear JSON interface and written agent instructions.
+            </p>
+            <div class="hd-term max-w-3xl mx-auto">
+                <div class="hd-term-bar">
+                    <span class="hd-term-dot" style="background:#ef4444;"></span>
+                    <span class="hd-term-dot" style="background:#eab308;"></span>
+                    <span class="hd-term-dot" style="background:#22c55e;"></span>
+                </div>
+<div class="hd-term-body"><span class="text-white/35"># Agent asks you the setup questions, then saves your answers</span>
+<span class="hd-text">$</span> <span class="text-white/80">housing --json init --questions</span>
+<span class="hd-text">$</span> <span class="text-white/80">housing --json init --answers '{"budget": {...}, "anchors": [...]}'</span>
+
+<span class="text-white/35"># Record a researched fact with its source and check date</span>
+<span class="hd-text">$</span> <span class="text-white/80">housing --json set-fact harbor-lofts base_rent 2150 \</span>
+<span class="text-white/80">    --source https://example.com/listing --checked 2026-09-20 \</span>
+<span class="text-white/80">    --confidence high --kind pricing</span>
+
+<span class="text-white/35"># See the ranked shortlist</span>
+<span class="hd-text">$</span> <span class="text-white/80">housing list</span></div>
+            </div>
+        </section>
+
+        <div class="hd-divider max-w-5xl mx-auto"></div>
+
+        <!-- PRIVACY -->
+        <section class="max-w-5xl mx-auto">
+            <div class="hd-section-label">04 / Private By Design</div>
+            <h2 class="hd-h2">Your budget and addresses never leave your machine.</h2>
+            <div class="grid md:grid-cols-3 gap-5">
+                <div class="hd-pillar">
+                    <div class="hd-pillar-num">DATA · 01</div>
+                    <h3 class="text-white text-lg font-semibold mb-2">Local files only</h3>
+                    <p class="text-white/55 text-sm leading-relaxed">No accounts, no cloud, no database. Your profile is a folder of plain JSON files that you own, kept outside the code.</p>
+                </div>
+                <div class="hd-pillar">
+                    <div class="hd-pillar-num">DATA · 02</div>
+                    <h3 class="text-white text-lg font-semibold mb-2">Local-only server</h3>
+                    <p class="text-white/55 text-sm leading-relaxed">The dashboard only listens on your own computer, with a per-launch token. Map tiles are off until you turn them on.</p>
+                </div>
+                <div class="hd-pillar">
+                    <div class="hd-pillar-num">DATA · 03</div>
+                    <h3 class="text-white text-lg font-semibold mb-2">Publish-safe tooling</h3>
+                    <p class="text-white/55 text-sm leading-relaxed">A built-in privacy scanner and gitleaks gate help keep personal data out of anything shared publicly.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="hd-divider max-w-5xl mx-auto"></div>
+
+        <!-- TECH -->
+        <section class="max-w-5xl mx-auto">
+            <div class="hd-section-label">05 / Under The Hood</div>
+            <h2 class="hd-h2">Simple on purpose.</h2>
+            <p class="text-white/60 leading-relaxed text-lg mb-10 max-w-3xl mx-auto text-center">
+                Scores are recomputed from facts and judgments every time, never stored, so results stay reproducible and explainable. Writes are coordinated across the dashboard and CLI, so a stale edit returns a conflict instead of silently overwriting newer work.
+            </p>
+            <div class="text-center">
+                <span class="hd-tech-pill">Python 3.11+</span>
+                <span class="hd-tech-pill">Standard library only</span>
+                <span class="hd-tech-pill">Vanilla JS dashboard</span>
+                <span class="hd-tech-pill">Leaflet maps</span>
+                <span class="hd-tech-pill">JSON storage</span>
+                <span class="hd-tech-pill">CLI + JSON mode</span>
+                <span class="hd-tech-pill">pytest</span>
+                <span class="hd-tech-pill">GitHub Actions</span>
+                <span class="hd-tech-pill">gitleaks</span>
+            </div>
+        </section>
+
+        <div class="hd-divider max-w-5xl mx-auto"></div>
+
+        <!-- LESSONS -->
+        <section class="max-w-4xl mx-auto">
+            <div class="hd-section-label">06 / What I Learned</div>
+            <h2 class="hd-h2">Turning a personal tool into something anyone can use.</h2>
+            <div class="space-y-6 text-white/70 leading-relaxed">
+                <p><strong class="text-white">Separate the engine from the person.</strong> It started as a tool for my own move. Making it shareable meant pulling every personal value into a private profile folder, so the public code holds no one's budget, city, or home.</p>
+                <p><strong class="text-white">Facts, judgments, and math are different things.</strong> Keeping sourced facts separate from scored judgments, and letting the code do the math, made recommendations reproducible instead of a guess.</p>
+                <p><strong class="text-white">Design for AI agents from day one.</strong> A clean CLI with JSON output and written agent instructions lets an assistant do real research work without editing files directly.</p>
+                <p><strong class="text-white">Privacy has to be verified, not assumed.</strong> Before going public, the release was built as a fresh export with no history and checked by automated scanners plus an independent review.</p>
+            </div>
+        </section>
+
+        <div class="hd-divider max-w-5xl mx-auto"></div>
+
+        <!-- ROADMAP -->
+        <section class="max-w-4xl mx-auto">
+            <div class="hd-section-label">07 / What's Next</div>
+            <h2 class="hd-h2">The roadmap.</h2>
+            <ul class="space-y-3 text-white/65 text-base">
+                <li class="flex gap-3"><span class="hd-text font-mono text-sm mt-1">→</span><span><strong class="text-white">MCP server</strong> so AI tools can use the agent natively.</span></li>
+                <li class="flex gap-3"><span class="hd-text font-mono text-sm mt-1">→</span><span><strong class="text-white">More city region packs</strong> with local research sources; Miami is the first.</span></li>
+                <li class="flex gap-3"><span class="hd-text font-mono text-sm mt-1">→</span><span><strong class="text-white">"What if" views</strong> that show how the ranking changes if your priorities shift.</span></li>
+                <li class="flex gap-3"><span class="hd-text font-mono text-sm mt-1">→</span><span><strong class="text-white">Buying support</strong> with mortgage-style monthly cost estimates.</span></li>
+            </ul>
+        </section>
+
+        <div class="hd-divider max-w-5xl mx-auto"></div>
+
+        <!-- CTA -->
+        <section class="max-w-4xl mx-auto">
+            <div class="hd-cta-card">
+                <p class="font-['JetBrains_Mono'] text-xs tracking-[0.25em] uppercase hd-text mb-3">Free and open source</p>
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">Try it on your next move.</h2>
+                <p class="text-white/55 max-w-xl mx-auto mb-8">Clone the repo, run the fictional demo, then create your own private profile in a few minutes. Built by Bryan Totty.</p>
+                <div class="flex flex-wrap gap-3 justify-center">
+                    <a href="https://github.com/mtg-vox/housing-decision-agent" target="_blank" rel="noopener noreferrer" class="hero-btn-primary">VIEW ON GITHUB</a>
+                    <a href="../contact.html" class="hero-btn-outline">CONTACT BRYAN</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-white/5 py-10 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-white/30 tracking-wider">
+            <span class="font-['JetBrains_Mono']">&copy; 2026 BRYAN TOTTY</span>
+            <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 uppercase">
+                <a href="/" class="hover:text-glow transition-colors">Home</a>
+                <a href="../about.html" class="hover:text-glow transition-colors">About</a>
+                <a href="../projects.html" class="hover:text-glow transition-colors">Projects</a>
+                <a href="../creative.html" class="hover:text-glow transition-colors">Creative</a>
+                <a href="../speaking.html" class="hover:text-glow transition-colors">Speaking</a>
+                <a href="../blog.html" class="hover:text-glow transition-colors">Blog</a>
+                <a href="../privacy.html" class="hover:text-glow transition-colors">Privacy</a>
+                <a href="../contact.html" class="hover:text-glow transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../main.js"></script>
+</body>
+</html>
