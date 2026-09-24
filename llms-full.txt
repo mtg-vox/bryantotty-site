@@ -7,7 +7,7 @@
 # Bryan Totty - Cloud Security Leader, AI Builder & Investor
 
 URL: https://bryantotty.com/
-Updated: 2026-07-01
+Updated: 2026-09-23
 Summary: Bryan Totty is a Cloud Security Engineer at Microsoft building AI security automation for Azure: compliance, least privilege, and vulnerability management.
 
 > MICROSOFT · RED HAT · IBM · META
@@ -145,7 +145,7 @@ SEE SPEAKING TOPICS
 # Projects - Bryan Totty | Tech, Crypto, Hardware, AI
 
 URL: https://bryantotty.com/projects.html
-Updated: 2026-07-01
+Updated: 2026-09-23
 Summary: Bryan Totty's projects spanning AI security automation, AI-powered dashboards, Solana NFT development, IBM hardware R&D, and more.
 
 Builds · experiments · shipped work
@@ -194,7 +194,7 @@ START A CONVERSATION
 # Creative Studio | Bryan Totty - Music, Artist Marketing, Fashion
 
 URL: https://bryantotty.com/creative.html
-Updated: 2026-07-01
+Updated: 2026-09-23
 Summary: Explore Bryan Totty's Creative Studio: Totty Music LLC, RED T7GER, artist marketing services, RED T7GER Unlimited apparel, album art, and brand identity systems.
 
 Music · Fashion · Design · Brand
@@ -382,7 +382,7 @@ CONTACT FOR COLLAB
 # Speaking - Bryan Totty | Tech, AI, Self-Mastery, Social Dynamics
 
 URL: https://bryantotty.com/speaking.html
-Updated: 2026-07-01
+Updated: 2026-09-23
 Summary: Bryan Totty speaks on cloud security, AI, creative entrepreneurship, self-mastery, and modern social dynamics. Available for keynotes, panels, podcasts, and workshops.
 
 Available for keynotes · panels · podcasts
@@ -537,7 +537,7 @@ GET IN TOUCH
 # Contact Bryan Totty - Security Leader, AI Builder
 
 URL: https://bryantotty.com/contact.html
-Updated: 2026-07-01
+Updated: 2026-09-23
 Summary: Get in touch with Bryan Totty. Security Engineer at Microsoft, AI builder, investor, and musician. Available for cloud and AI security consulting and advisory.
 
 ## CONTACT
@@ -631,7 +631,7 @@ Views are my own and do not represent Microsoft.
 
 URL: https://bryantotty.com/blog/getting-started-ethereum.html
 Published: 2023-02-12
-Updated: 2026-07-01
+Updated: 2026-09-23
 Summary: Notes and resources for getting started in Ethereum development: tools, courses, and community links.
 
 ← Back to Blog
@@ -750,7 +750,7 @@ More posts →
 
 URL: https://bryantotty.com/blog/harvard-hbx-core.html
 Published: 2023-02-12
-Updated: 2026-07-01
+Updated: 2026-09-23
 Summary: Honest review of Harvard's HBX CORe (Business Analytics, Economics, Financial Accounting). What it costs in time and how to actually pass.
 
 ← Back to Blog
@@ -845,7 +845,7 @@ More posts →
 
 URL: https://bryantotty.com/blog/mouse-and-keyboard.html
 Published: 2023-02-12
-Updated: 2026-07-01
+Updated: 2026-09-23
 Summary: Thoughts on whether you need a new mouse and keyboard for productivity and gaming.
 
 ← Back to Blog
@@ -906,7 +906,7 @@ More posts →
 
 URL: https://bryantotty.com/blog/web-development-journey.html
 Published: 2023-02-12
-Updated: 2026-07-01
+Updated: 2026-09-23
 Summary: Documenting my web development journey: from early experiments to building modern websites.
 
 ← Back to Blog
@@ -985,7 +985,7 @@ More posts →
 
 URL: https://bryantotty.com/blog/working-nft-miami.html
 Published: 2023-02-12
-Updated: 2026-07-01
+Updated: 2026-09-23
 Summary: Working the first ever Miami NFT Week event in Miami, FL 2022: contacts, experiences, and takeaways.
 
 ← Back to Blog
@@ -1042,7 +1042,7 @@ More posts →
 # Artist Growth OS - AI Command Center for Musicians
 
 URL: https://bryantotty.com/projects/artist-growth-os.html
-Updated: 2026-05-09
+Updated: 2026-09-23
 Summary: Multi-platform Growth OS for independent artists. Meta Ads, smart links, distribution, streaming, social, and booking unified in one AI agent.
 
 ← Back to Projects
@@ -1173,7 +1173,7 @@ YouTube
 # IBM PureFlex System
 
 URL: https://bryantotty.com/projects/ibm-pureflex.html
-Updated: 2026-05-09
+Updated: 2026-09-23
 Summary: IBM PureFlex System: hardware research and development work on IBM's integrated infrastructure platform.
 
 ← Back to Projects
@@ -1242,7 +1242,7 @@ More projects →
 # NFT Project on Solana
 
 URL: https://bryantotty.com/projects/nft-solana.html
-Updated: 2026-05-09
+Updated: 2026-09-23
 Summary: Miami Hack Week 2022: customizable NFT minting platform on the Solana blockchain with creator-defined templates.
 
 ← Back to Projects
@@ -1296,7 +1296,7 @@ More projects →
 # ShadowScan AI - Website Risk Scanner
 
 URL: https://bryantotty.com/projects/shadowscan-ai.html
-Updated: 2026-05-09
+Updated: 2026-09-23
 Summary: ShadowScan AI: an AI-powered website risk scanner that translates technical findings into business-impact reports for non-technical owners.
 
 ← Back to Projects
@@ -1483,7 +1483,7 @@ CONTACT BRYAN
 # Space-Chat - AI Oil Tanker Tracking Dashboard
 
 URL: https://bryantotty.com/projects/space-chat.html
-Updated: 2026-05-09
+Updated: 2026-09-23
 Summary: AI-powered oil tanker tracking dashboard integrating ChatGPT with geospatial data to uncover illicit trade activity.
 
 ← Back to Projects
